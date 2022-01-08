@@ -10,6 +10,6 @@ class mainController extends Controller
     //
     function index(){
 
-    	return view('restaurant.dashboard');
+    	return view('restaurant.index');
     }
 }

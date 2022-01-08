@@ -23,5 +23,5 @@ Route::get('/', function () {
 
 	Route::prefix('restaurant')->namespace('restaurant')->group(function(){
 
-		Route::get('/', 'mainController@index')->name('restaurant.dashboard');
+		Route::get('/', 'mainController@index')->name('restaurant.index');
 	});
