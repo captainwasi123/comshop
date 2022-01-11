@@ -1,13 +1,4 @@
-body
-{ 
-  margin:0px;
-  padding: 0px;  
-  font-family: 'Poppins';                                                                                                                                                     
-}
-body::-webkit-scrollbar
-{
-    width: 0px !important;
-}
+
 .sec-1 {
     background: linear-gradient(
 180deg, #71DA80 0%, #18C180 100%);
@@ -229,10 +220,10 @@ a.sec-11 {
     border-radius: 20px;
     margin: 0px 10px 0px 10px;
 }
-.col-1 {
+/*.col-1 {
     padding-right: 0;
     padding-left: 0;
-}
+}*/
 .sec-12 h2 {
     font-size: 18px;
     font-family: 'Poppins';
@@ -266,10 +257,10 @@ a.sec-11 {
     text-align: center;
     padding:0;
 }
-.col-6 {
+/*.col-6 {
     border-right: 1px solid #A098AE;
     height: 25px;
-}
+}*/
 .sec-14 h5 {
     font-weight: bold;
     color: #A6C44A;
@@ -337,54 +328,55 @@ a.sec-11 {
     border-right: 1px solid #DBDBDB;
 }
 .single_quick_activity.sec-24 h3 {
-    font-family: 'Poppins';
-    font-size: 25px;
-    color: black;
-    font-weight: bold;
-    padding-top: 10px;
+    font-size: 24px;
 }
-/*.single_quick_activity.sec-24 {
-    padding-left: 50px;
-}*/
-.single_quick_activity.sec-24 i {
+
+.sec-24 i {
     color: #A6C44A;
     font-size: 18px;
 }
-.single_quick_activity.sec-25 h3 {
-    font-family: 'Poppins';
+.sec-24 i span {
+    color: #A6C44A;
+    font-size: 14px;
+    font-weight: 500;
+}
+.sec-25 h3 {
     font-size: 25px;
-    color: black;
-    font-weight: bold;
-    padding-top: 10px;
 }
-.single_quick_activity.sec-25 {
-    padding-left: 65px;
+.sec-25 {
+    padding-left: 20px;
 }
-.single_quick_activity.sec-25 i {
+.sec-25 i {
     color: #EB5757;
     font-size: 18px;
+}
+.sec-25 i span{
+    color: #EB5757;
+    font-size: 14px;
+    font-weight: 500;
 }
 .sec-26 {
     padding: 40px 0px 30px 20px;
 }
 .sec-27 button {
     color: white;
-    background: #F8B602;
-    border: 1px solid #F8B602;
-    padding: 22px 59px 22px 59px;
-    font-size: 20px !important;
-    font-family: 'Poppins';
-    margin-top: 5px;
+    border:none;
+    padding: 32px 12px 32px 30px;
+    font-size: 18px !important;
     border-radius: 20px 0px 0px 20px;
+    width: 100%;
+}
+.sec-27 {
+    margin-left: 40px;
 }
 /*.sec-26 {
     background: white;
     padding: 40px 0px 30px 20px;
     border-radius: 16px;
 }*/
-.sec-27 {
+/*.sec-27 {
     text-align: end;
-}
+}*/
 .single_quick_activity.sec-25 p 
 {
     font-family: 'Poppins';
@@ -398,13 +390,13 @@ a.sec-11 {
 .count_content p {
     color: #A098AE;
 }
-.sec-28 {
+/*.sec-28 {
     padding-left: 0;
     padding-right: 0;
-}
-.sec-29 {
+}*/
+/*.sec-29 {
     margin-top: 30px;
-}
+}*/
 .sec-30 {
     padding-left: 0;
 }
@@ -420,11 +412,11 @@ a.sec-11 {
     font-family: 'Poppins';
 }
 .sec-33 h4 {
-    color: black;
-    font-family: 'Poppins';
-    font-weight: bold;
-    font-size: 20px;
-    padding-left: 10px;
+ /*   color: black;
+    font-family: 'Poppins';*/
+    font-weight: 700;
+    font-size: 18px;
+  /*  padding-left: 10px;*/
 }
 .sec-32 {
     color: black;
@@ -434,15 +426,19 @@ a.sec-11 {
     font-family: 'Poppins';
     padding: 8px 25px 7px 25px;
 }
-.sec-34 img {
+/*.sec-34 img {
     padding-left: 10px;
-} 
+} */
 .sec-35 h2 {
     font-size: 14px;
-    font-family: 'Poppins';
     color: #A098AE;
     font-weight: 500;
 } 
+.sec-35 h2 span
+{
+   font-weight:700; 
+   font-size: 18px;
+}
 .sec-34 {
     padding-right: 0;
 } 
@@ -453,7 +449,10 @@ a.sec-11 {
 .sec-36 h5 {
     color: #A098AE;
     font-size: 14px;
-    font-family: 'Poppins';
+}
+.sec-36 h5 span {
+    font-size: 18px;
+    font-weight: 700;
 }
 .sec-36 {
     margin-top: -9px;
@@ -465,48 +464,130 @@ div#bar1 .fill {
     background: #F8B602 !important;
 }
 .sec-37 h4 {
-    color: black;
-    font-size: 20px;
-    font-family: 'Poppins';
-    font-weight: bold;
+    /*color: black;*/
+    font-size: 18px;
+    font-weight: 700;
+/*    font-family: 'Poppins';
+    font-weight: bold;*/
+}
+.circle-class {
+    position: absolute;
+    top: 80px;
+    left: 70px;
+    font-weight: 600;
+    font-size: 30px;
+}
+.circle-class i {
+    color: #f8b602;
 }
 .sec-38 {
-    padding: 30px;
+   /* padding: 30px;*/
     background: white;
     border-radius: 20px;
-    margin: 30px 0px;
+   /* margin: 30px 0px;*/
+}
+.padding-all {
+  padding: 30px !important;
+      border-radius: 20px !important;
 }
 .sec-39 p {
     font-size: 14px;
-    font-weight: 500;
-    font-family: 'Poppins';
+    font-weight: 400;
+/*    font-family: 'Poppins';*/
     color: #A098AE;
-    padding-top: 20px;
+ /*   padding-top: 20px;*/
 }
 .sec-40 p {
-    font-size: 15px;
-    color: #A098AE;
-    font-family: 'Poppins';
+    font-size: 14px;
     padding-bottom: 5px;
 }
 .sec-40 h4 {
-    color: black;
-    font-family: 'Poppins';
     font-weight: bold;
-    font-size: 25px;
-    padding-bottom:30px;
+    font-size: 24px;
 }
 .sec-41 {
-    background: white;
-    border-radius: 20px;
-    padding: 40px 30px 10px 35px;
     margin: 0px 10px;
 }
 .sec-42 img {
     padding-top: 7px;
 }
-.sec-43 {
+/*.sec-43 {
     padding-left: 8px;
+}*/
+div#apex_3 {
+    min-height: 200px !important;
+}
+div#apexcharts89zb91j5l {
+    height: 200px !important;
+}
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}
+  .chartjs-render-monitor{animation:chartjs-render-animation 1ms}
+  .chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}
+  .chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}
+  .chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+
+#bar-chart {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+#line-chart {
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+#bar-chart::before, #line-chart::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 240px;
+  height: 30px;
+  left: 155px;
+  top: 254px;
+  background: #FAFAFA;
+  box-shadow: 1px 1px 0 0 #DDD;
+}
+#pie-chart {
+  width: 500px;
+  height: 250px;
+  position: relative;
+}
+#pie-chart::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 115px;
+  left: 315px;
+  top: 0;
+  background: #FAFAFA;
+  box-shadow: 1px 1px 0 0 #DDD;
+}
+#pie-chart::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 260px;
+  left: 70px;
+  width: 170px;
+  height: 2px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 4px rgba(0,0,0,0.1);
+}
+
+
+.bhai {
+    height: 180px !important;
+    width: 100%;
+}
+.main-title h3 {
+    font-weight: bold;
+    font-size: 18px;
+    color: #2e2e2e;
+}
+#piechart {
+      margin-left: -30px;
 }
 .sec-44 {
     margin: 30px 10px 10px 10px;

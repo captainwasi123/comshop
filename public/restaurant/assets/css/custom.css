@@ -12,9 +12,13 @@ section , header , footer {
     float: left;
     width: 100%;
 }
-h1, h2, h3, h4, h5, h6, p{
+h1, h2, h3, h4, h5, h6, p, span{
   font-family: 'Poppins' !important;
   color: #2E2E2E;
+}
+p
+{
+  color: #A098AE ;
 }
 
 /*.custom-scroll1::-webkit-scrollbar-track
@@ -251,6 +255,9 @@ h1, h2, h3, h4, h5, h6, p{
 .m-l-80 {
     margin-left: 80px !important;
 }
+.m-r-10 {
+    margin-right: 10px !important;
+}
 .m-r-20 {
     margin-right: 20px !important;
 }
@@ -395,4 +402,7 @@ input:checked + .slider:before {
 }
 .main_content .main_content_iner {
     padding: 0px 20px 0px 45px;
+}
+.main_content {
+    background: #e5e5e5 !important;
 }
