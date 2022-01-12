@@ -401,7 +401,7 @@ input:checked + .slider:before {
     background-color: #F8B602;
 }
 .main_content .main_content_iner {
-    padding: 0px 20px 0px 45px;
+    padding: 0px 30px 0px 30px;
 }
 .main_content {
     background: #e5e5e5 !important;

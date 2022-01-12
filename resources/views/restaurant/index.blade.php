@@ -3,8 +3,8 @@
 
 @section('content')
 
-	<div class="main_content_iner ">
-        <div class="container-fluid p-0">
+	<div class="main_content_iner">
+        <div class="container-fluid">
             <div class="row">
              	<div class="col-lg-8 col-md-8 col-8">
                		<div class="row sec-26 bg-white bor-radius">

@@ -7,8 +7,6 @@
         </div>
     </div>
     <ul id="sidebar_menu">
-        
-
         <li class="mm-active">
           <a href="#" aria-expanded="false">
             <div class="icon_menu">

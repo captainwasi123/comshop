@@ -12,4 +12,8 @@ class mainController extends Controller
 
     	return view('restaurant.index');
     }
+    function menu(){
+
+    	return view('restaurant.menu');
+    }
 }
