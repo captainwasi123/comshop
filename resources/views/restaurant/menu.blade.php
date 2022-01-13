@@ -469,9 +469,9 @@
                                     <div class="form-group col-lg-4 col-md-4 col-4 no-margin pad-bot-30">
                                         <label for="inputState">Prepration Time <span>(min)</span></label>
                                         <input type="number" class="form-control" id="inputZip">
-                                        <span class='number-wrapper'>
+                                      <!--   <span class='number-wrapper'>
     <input type="number" />
-</span>
+</span> -->
                                     </div>
                                     <div class="form-group col-lg-4 col-md-4 col-4 no-margin pad-bot-30">
                                         <label for="inputZip">Price</label>

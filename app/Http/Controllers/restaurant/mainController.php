@@ -16,4 +16,20 @@ class mainController extends Controller
 
     	return view('restaurant.menu');
     }
+    function profile(){
+
+    	return view('restaurant.profile');
+    }
+    function order(){
+
+        return view('restaurant.order');
+    }
+    function login(){
+
+        return view('restaurant.login');
+    }
+    function review(){
+
+        return view('restaurant.review');
+    }
 }
