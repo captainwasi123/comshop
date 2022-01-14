@@ -406,3 +406,19 @@ input:checked + .slider:before {
 .main_content {
     background: #e5e5e5 !important;
 }
+.profile_info .profile_info_iner {
+      width: 240px;
+}
+.profile_info .profile_info_iner .profile_author_name {
+      background: #f8b602;
+}
+.profile_info .profile_info_iner::before {
+      border-color: transparent transparent #f8b602 transparent;
+}
+.profile_info .profile_info_details a {
+    color: #2e3e5d;
+    font-weight: 400;
+}
+.profile_info .profile_info_details a:hover {
+    color: #f8b602;
+}

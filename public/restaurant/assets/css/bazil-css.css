@@ -14,49 +14,47 @@
 .sec-2 h2 
 {
     font-size: 50px;
-    font-weight: bold;
-    color: black;
-    font-family:poppins;
     text-align: center;
+    font-weight: 700;
 }
 .sec-2 h3 
 {
     color: #AFAFAF;
     font-size: 25px;
-    font-weight: 500;
-    font-family: 'Poppins';
-    text-align: center;
-    padding-bottom: 15px;
+    font-weight: 400;
 }
 .sec-2 h4 {
     font-size: 16px;
-    font-family: 'Poppins';
-    color: black;
-    padding-bottom: 20px;
     text-align: right;
-    padding-top: 10px;
 }
-.sec-2 button {
+.sec-3-btn input {
     background: #FEBE10;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 30%);
-    border-radius: 5px;
-    padding: 14px 150px 12px 150px;
+    border-radius: 14px;
+    padding: 20px 50px;
     color: white !important;
-    text-align: center !important;
-    display: block;
-    margin: 0 auto;
-}
-.form-group.sec-3 
-{
+    border: none;
     width: 100%;
-    margin-bottom: 30px !important;
-    text-align: center !important;
-    display: block;
-    margin: 0 auto;
+    font-size:16px;
 }
-.form-group.sec-3 input 
+
+.sec-3 input 
 {
-    padding: 25px 0px 25px 15px;
+    padding: 30px 30px 30px 80px;
+    border: 1px solid #CCC2C2;
+    font-size: 14px;
+}
+.icon {
+    position: relative;
+    left: 30px;
+    font-size: 24px;
+    top: 43px;
+    float: left;  
+    color: #8b8b8b;
+}
+.sec-3 input:nth-child(1)
+{
+    margin-bottom: 35px;
 }
 .form-group.sec-4 {
     width: 100%;
@@ -70,11 +68,20 @@
 }
 
 .sec-2 {
-    position: absolute;
+  position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 100%;
+    width: 70%;
+    margin: 0 auto;
 }
+.sec-2-back {
+        background-size: cover;
+        background-position:right bottom;
+        background-repeat: no-repeat;
+    }
 /*.col-md-6.col-1 
 {
     padding-left: 0px;
@@ -530,6 +537,9 @@ div#apexcharts89zb91j5l {
   width: 100%;
   height: 200px;
   position: relative;
+}
+#bar-chart::before, #line-chart::before {
+    display: none !important;
 }
 #line-chart {
   width: 500px;

@@ -62,7 +62,7 @@
                             <div class="profile_info_iner">
                                 <div class="profile_author_name">
                                     <p>Neurologist </p>
-                                    <h5>Dr. Robar Smith</h5>
+                                    <h5 class="no-margin">Dr. Robar Smith</h5>
                                 </div>
                                 <div class="profile_info_details">
                                     <a href="#">My Profile </a>
