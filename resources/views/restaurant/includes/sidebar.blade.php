@@ -76,10 +76,10 @@
     </ul>
     <div class="delivery-section">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-8 col-md-8 col-8">
                 <span>Delivery Status</span>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-4 col-4">
                 <label class="switch">
                     <input type="checkbox" checked>
                     <span class="slider round"></span>

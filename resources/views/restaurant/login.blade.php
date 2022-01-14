@@ -20,19 +20,18 @@
 .sec-2-back {
     background-image: url('{{URL::to('/public/restaurant/assets')}}/images/image2.png');
 }
-
 </style>
 </head>
 
 <body class="crm_body_bg">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-6 col-1 no-pad">
+            <div class="col-lg-6 col-md-12 col-12 no-pad">
                 <div class="sec-1">
                     <img src="{{URL::to('/public/restaurant/assets')}}/images/image1.png" width="45%"> 
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-6 sec-2-back">
+            <div class="col-lg-6 col-md-12 col-12 sec-2-back">
                 <div class="sec-2">
                     <h2 class="no-margin pad-bot-20"> RESTAURANT PANEL </h2>
                     <h3 class="no-margin"> LOGIN </h3>

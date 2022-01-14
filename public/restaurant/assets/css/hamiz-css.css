@@ -57,12 +57,6 @@
     font-weight: 400;
 }
 
-/*.main_content .main_content_iner {
-    
-    padding: 0px;
-    border-radius: 16px;
-}*/
-
 .inner-btn-heading {
     font-weight: 700;
     font-size: 24px;
@@ -585,11 +579,11 @@ i.fas.fa-search {
     line-height: 27px;
     color: #EB5757;
 }
-i.fas.fa-arrow-circle-down {
+/*i.fas.fa-arrow-circle-down {
     font-size: 22px;
     padding-right: 5px;
 }
-
+*/
 .grid {
     display: flex;
     align-items: center;
