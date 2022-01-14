@@ -422,6 +422,8 @@ i.fas.fa-search {
     border-radius: 16px !important;
     height: 55px !important;
     padding: 10px 50px 10px 50px;
+    color:black !important;
+    font-size: 16px !important;
 }
 
 
@@ -495,7 +497,7 @@ i.fas.fa-search {
 
 .fa-star {
     color: #F8B602;
-    width: 20px;
+ /*   width: 20px;*/
 }
 
 .order-des {

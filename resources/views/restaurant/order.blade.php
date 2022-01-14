@@ -1,9 +1,9 @@
 @extends('restaurant.includes.master')
-@section('title', 'Menu')
+@section('title', 'Order')
 
 @section('content')
 
-	<div class="main_content_iner ">
+	<div class="main_content_iner p-0">
         <div class="container-fluid profile-main-section">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
@@ -470,7 +470,7 @@
                                                     <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" class="placeholder-image-3">
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-6">
-                                                    <p class="order-name pad-top-20">Pepperoni Pizza</p>
+                                                    <h2 class="order-name pad-top-20 no-margin">Pepperoni Pizza</h2>
                                                     <p class="order-date">x1</p>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-4">
@@ -484,7 +484,7 @@
                                                     <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" class="placeholder-image-3">
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-6">
-                                                    <p class="order-name pad-top-20">Pepperoni Pizza</p>
+                                                    <h2 class="order-name pad-top-20 no-margin">Pepperoni Pizza</h2>
                                                     <p class="order-date">x1</p>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-4">

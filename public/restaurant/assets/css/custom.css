@@ -422,3 +422,6 @@ input:checked + .slider:before {
 .profile_info .profile_info_details a:hover {
     color: #f8b602;
 }
+.header_iner .header_right .header_notification_warp li > a {
+    margin-right: 45px;
+}

@@ -1,10 +1,10 @@
 @extends('restaurant.includes.master')
-@section('title', 'Menu')
+@section('title', 'Profile')
 
 @section('content')
 
 	<div class="main_content_iner ">
-        <div class="container-fluid profile-main-section">
+        <div class="container-fluid profile-main-section p-0">
 	    
 	       	<div class="tab">
                 <button class="tablinks m-b-20" onclick="openCity(event, 'London')" id="defaultOpen">

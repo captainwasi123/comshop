@@ -4,7 +4,7 @@
 @section('content')
 
 	<div class="main_content_iner">
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12 ">
                 	<div class="positive-review">

@@ -7,12 +7,12 @@
         <div class="container-fluid p-0">
 	        <div class="row">
 		        <div class="col-lg-6 col-md-6 col-6">
-		    		<div class="sec-5">
+		    		<!-- <div class="sec-5">
 			            <form>
 			                <input type="text" placeholder="Search..." >
 			                <button> <img src="{{URL::to('/public/restaurant/assets')}}/images/image12.png"> </button>
 			            </form>
-			        </div>                          
+			        </div> -->                          
 		        </div>
 		        <div class="col-lg-6 col-md-6 col-6">
 		        	<div class="sec-6">
