@@ -60,7 +60,7 @@
 		                    	</div>
 
 		                    	</style>
-		                        <div class="col-lg-8 col-md-12 col-12 no-pad">
+		                        <div class="col-lg-8 col-md-6 col-12 no-pad">
 									<svg viewbox="0 0 110 70">
 									  <circle cx="50" cy="50" r="45" fill="#fff"/>
 									  <path fill="none" stroke-linecap="box" stroke-width="10" stroke="#f8b602"
@@ -74,7 +74,7 @@
 										<i class="fas fa-arrow-circle-up"></i>+15%
 									</div>
 		                        </div>
-		                        <div class="col-lg-4 col-md-12 col-12">
+		                        <div class="col-lg-4 col-md-6 col-12">
 		                           <div class="sec-39">
 		                              	<p>Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor</p>
 		                           </div>
@@ -106,13 +106,13 @@
 	                         		</div>
 	                      		</div>
 	                      		<div class="row pad-top-20">
-			                        <div class="col-lg-1 col-md-2 col-2 sec-34">                            
+			                        <div class="col-lg-1 col-md-1 col-2 sec-34">                            
 			                            <img src="{{URL::to('/public/restaurant/assets')}}/images/image13.png">
 			                        </div>
-		                         	<div class="col-lg-2 col-md-4 col-4 sec-35">
+		                         	<div class="col-lg-2 col-md-2 col-4 sec-35">
 		                            	<h2 class="no-margin">Order Total <span> 25.307</span></h2> 
 		                         	</div>
-		                         	<div class="col-lg-3 col-md-5 col-5 no-margin sec-36 no-pad">
+		                         	<div class="col-lg-3 col-md-3 col-5 no-margin sec-36 no-pad">
 		                            	<h5 class="no-margin pad-bot-10">Target &nbsp; &nbsp; &nbsp; &nbsp;<span> 3.982 </span></h5>
 		                            	<div id="bar1" class="barfiller">                               
 		                               		<span class="fill" data-percentage="75"></span>
@@ -126,8 +126,10 @@
 	                  	</div>
                		</div>        
              	</div>
-             	<div class="col-lg-4 col-md-4 col-12 no-pad-mobile">
-	                <div class="sec-41 bg-white padding-all">
+             	<div class="col-lg-4 col-md-12 col-12 no-pad-mobile">
+             		
+             		<div class="for-table-visible">
+             			<div class="sec-41 bg-white padding-all">
 	                 	<div class="row pad-top-10 pad-bot-40">
 		                    <div class="col-lg-3 col-md-3 col-3">
 		                      	<div class="sec-42">
@@ -195,26 +197,108 @@
                       		</div>
                   		</div>
                 	</div>
+             		</div>
+             		<div class="row for-table-invisible">
+             			<div class="col-md-6">
+             				<div class="sec-41 bg-white padding-all">
+	                 	<div class="row pad-top-10 pad-bot-40">
+		                    <div class="col-lg-3 col-md-3 col-3">
+		                      	<div class="sec-42">
+		                        	<img src="{{URL::to('/public/restaurant/assets')}}/images/image14.png">
+		                      	</div>
+		                    </div>
+		                    <div class="col-lg-9 col-md-9 col-9 sec-43 no-pad">
+			                    <div class="sec-40">
+			                        <p>Total Order Complete</p>
+			                        <h4 class="no-margin">2.678</h4>
+			                    </div>
+		                    </div>
+	                 	</div>
+		                <div class="row pad-bot-40">
+		                    <div class="col-lg-3 col-md-3 col-3">
+		                	    <div class="sec-42">
+		                    	    <img src="{{URL::to('/public/restaurant/assets')}}/images/image15.png">
+		                      	</div>
+		                    </div>
+		                    <div class="col-lg-9 col-md-9 col-9 sec-43 no-pad">
+		                      	<div class="sec-40">
+		                        	<p>Total Order Complete</p>
+		                         	<h4 class="no-margin">1.234</h4>
+		                      	</div>
+		                    </div>
+		                </div>
+	                 	<div class="row pad-bot-40">
+		                    <div class="col-lg-3 col-md-3 col-3">
+		                      	<div class="sec-42">
+		                        	<img src="{{URL::to('/public/restaurant/assets')}}/images/image16.png">
+		                      	</div>
+		                    </div>
+		                    <div class="col-lg-9 col-md-9 col-9 sec-43 no-pad">
+		                      	<div class="sec-40">
+		                         	<p>Total Order Complete</p>
+		                         	<h4 class="no-margin">123</h4>
+		                      	</div>
+		                    </div>
+	                 	</div>
+	                 	<div class="row pad-bot-10">
+		                    <div class="col-lg-3 col-md-3 col-3">
+		                      	<div class="sec-42">
+		                        	<img src="{{URL::to('/public/restaurant/assets')}}/images/image17.png">
+		                      	</div>
+		                    </div>
+		                    <div class="col-lg-9 col-md-9 col-9 sec-43 no-pad">
+		                      	<div class="sec-40">
+		                         	<p>Total Order Complete</p>
+		                         	<h4 class="no-margin">432</h4>
+		                      	</div>
+		                    </div>
+	                 	</div>
+	                </div> 
+             			</div>
+             			<div class="col-md-6">
+             				<div class="row">
+                   		<div class="col-lg-12 col-md-12 col-12">
+                      		<div class="sec-44">
+                          		<div class="white_box">
+                            		<div class="box_header">
+                              			<div class="main-title">
+                                			<h3 class="no-margin">Popular Food</h3>
+                              			</div>
+                            		</div>
+                            		<div id="piechart"></div>
+                          		</div>
+                      		</div>
+                  		</div>
+                	</div>
+             			</div>
+
+             			 
+             		</div>
+
+
+	                
              	</div>
           	</div>
-          	<div class="row pad-top-30 m-r-10">
-	            <div class="col-lg-12 col-md-12 col-12 sec-45">
-	                <div class="white_box">
-	                    <div class="row">
-	                    	<div class="col-lg-12 col-md-6 col-6">
-			                   	<div class="sec-33">
-			                      	<h4 class="no-margin">Order Rate</h4>
-			                   	</div>
-	                    	</div>
-	                 	</div>
-	                    <div class="row pad-top-20">
-			      			<div class="col-lg-12 col-md-12 col-12 ">
-		                        <div id="apex_2"></div>
-		                    </div>
-	                     </div>	                    		
-	                </div>
+          	<div class="order-section-chart pad-top-30 m-r-10">
+	          	<div class="row">
+		            <div class="col-lg-12 col-md-12 col-12 sec-45">
+		                <div class="white_box">
+		                    <div class="row">
+		                    	<div class="col-lg-12 col-md-12 col-12">
+				                   	<div class="sec-33">
+				                      	<h4 class="no-margin">Order Rate</h4>
+				                   	</div>
+		                    	</div>
+		                 	</div>
+		                    <div class="row pad-top-20">
+				      			<div class="col-lg-12 col-md-12 col-12 ">
+			                        <div id="apex_2"></div>
+			                    </div>
+		                     </div>	                    		
+		                </div>
+		            </div>
 	            </div>
-            </div> 
+            </div>
         </div>
     </div>
 

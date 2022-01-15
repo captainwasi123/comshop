@@ -6,7 +6,7 @@
 	<div class="main_content_iner ">
         <div class="container-fluid p-0">
 	        <div class="row">
-		        <div class="col-lg-6 col-md-6 col-6">
+		        <div class="col-lg-6 col-md-4 col-4">
 		    		<!-- <div class="sec-5">
 			            <form>
 			                <input type="text" placeholder="Search..." >
@@ -14,10 +14,9 @@
 			            </form>
 			        </div> -->                          
 		        </div>
-		        <div class="col-lg-6 col-md-6 col-6">
+		        <div class="col-lg-6 col-md-8 col-8">
 		        	<div class="sec-6">
-		            	<a href="#" class="btn bg-yellow" data-toggle="modal"
-                                data-target="#exampleModalCenter">Add New Menu</a>
+		            	<a href="#" class="btn bg-yellow" data-toggle="modal" data-target="#exampleModalCenter">Add New Menu</a>
 		            </div>
 		        </div>  
 	        </div>
@@ -33,7 +32,7 @@
 	               	</div>
 	            </div>
 	        </div>
-	        <div class="section-4">
+	        <div class="section-4 desktop">
 				<div class="row">
 				    <div class="col">
 				    	<div class="sec-9 bg-white text-center">
@@ -85,6 +84,60 @@
 		          	</div>
 				</div>
 			</div>
+
+			<div class="section-4 mobile">
+				<div class="row">
+				    <div class="col-md-6 col-6">
+				    	<div class="sec-9 bg-white text-center">
+		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image3.png" width="50%"> 
+		             		<h2 class="no-margin pad-top-10">Bakery</h2>  
+		          		</div>
+		          	</div>
+		          	<div class="col-md-6 col-6">
+				    	<div class="sec-9 bg-white text-center">
+		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image4.png" width="50%"> 
+		             		<h2 class="no-margin pad-top-10">Burger</h2>  
+		          		</div>
+		          	</div>
+		          	<div class="col-md-6 col-6">
+				    	<div class="sec-9 bg-white text-center">
+		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image5.png" width="50%"> 
+		             		<h2 class="no-margin pad-top-10">Beverage</h2>  
+		          		</div>
+		          	</div>
+		          	<div class="col-md-6 col-6">
+				    	<div class="sec-9 bg-white text-center">
+		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image6.png" width="50%"> 
+		             		<h2 class="no-margin pad-top-10">Chicken</h2>  
+		          		</div>
+		          	</div>
+		          	<div class="col-md-6 col-6">
+				    	<div class="sec-9 bg-white text-center">
+		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image7.png" width="50%"> 
+		             		<h2 class="no-margin pad-top-10">Pizza</h2>  
+		          		</div>
+		          	</div>
+		          	<div class="col-md-6 col-6">
+				    	<div class="sec-9 bg-white text-center">
+		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image8.png" width="50%"> 
+		             		<h2 class="no-margin pad-top-10">Seafood</h2>  
+		          		</div>
+		          	</div>
+		          	<div class="col-md-6 col-6">
+				    	<div class="sec-9 bg-white text-center">
+		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image9.png" width="50%"> 
+		             		<h2 class="no-margin pad-top-10">Dessert</h2>  
+		          		</div>
+		          	</div>
+		          	<div class="col-md-6 col-6">
+				    	<div class="sec-9 bg-white text-center">
+		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image10.png" width="50%"> 
+		             		<h2 class="no-margin pad-top-10">Noodle</h2>  
+		          		</div>
+		          	</div>
+				</div>
+			</div>
+
 	    </div>
       	<div class="row">
 	        <div class="col-lg-12 col-md-12 col-12">
@@ -92,20 +145,20 @@
 	              	<h2 class="no-margin">Popular This Week</h2>
 	           	</div>
 	        </div>
-	        <div class="col-lg-3 col-md-3 col-3">
+	        <div class="col-lg-3 col-md-6 col-12">
 	        	<div class="sec-10-main bg-white">
 	            	<div class="row">          
-	                	<div class="col-lg-4 col-md-4 col-4 no-pad">
+	                	<div class="col-lg-4 col-md-3 col-3 no-pad">
 	                  		<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
 	                	</div>
-		                <div class="col-lg-7 col-md-6 col-6">
+		                <div class="col-lg-7 col-md-8 col-8">
 		                  	<div class="sec-10">
 		                     	<h2 class="no-margin">Fish Burger</h2>
 		                     	<h3 class="no-margin pad-top-10 pad-bot-10"> <span style="color:#ffc107">$ </span> 5.59</h3>
 		                     	<i class="fa fa-star"> <span> 5.0 - 1k+ Reviews </span></i>
 		                  	</div>   
 		                </div>
-		                <div class="col-md-1 no-pad">
+		                <div class="col-lg-1 col-md-1 col-1 no-pad">
 		                  	<a class="sec-11" href="#">. . .</a> 
 		                </div>
 		                <div class="col-lg-12 col-md-12 col-12 no-pad">
@@ -116,20 +169,20 @@
 	            	</div>
 	         	</div>
 	        </div>
-	        <div class="col-lg-3 col-md-3 col-3">
+	        <div class="col-lg-3 col-md-6 col-12">
 	        	<div class="sec-10-main bg-white">
 	            	<div class="row">          
-	                	<div class="col-lg-4 col-md-4 col-4 no-pad">
+	                	<div class="col-lg-4 col-md-3 col-3 no-pad">
 	                  		<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
 	                	</div>
-		                <div class="col-lg-7 col-md-6 col-6">
+		                <div class="col-lg-7 col-md-8 col-8">
 		                  	<div class="sec-10">
 		                     	<h2 class="no-margin">Fish Burger</h2>
 		                     	<h3 class="no-margin pad-top-10 pad-bot-10"> <span style="color:#ffc107">$ </span> 5.59</h3>
 		                     	<i class="fa fa-star"> <span> 5.0 - 1k+ Reviews </span></i>
 		                  	</div>   
 		                </div>
-		                <div class="col-md-1 no-pad">
+		                <div class="col-lg-1 col-md-1 col-1 no-pad">
 		                  	<a class="sec-11" href="#">. . .</a> 
 		                </div>
 		                <div class="col-lg-12 col-md-12 col-12 no-pad">
@@ -140,20 +193,20 @@
 	            	</div>
 	         	</div>
 	        </div>
-	        <div class="col-lg-3 col-md-3 col-3">
+	        <div class="col-lg-3 col-md-6 col-12">
 	        	<div class="sec-10-main bg-white">
 	            	<div class="row">          
-	                	<div class="col-lg-4 col-md-4 col-4 no-pad">
+	                	<div class="col-lg-4 col-md-3 col-3 no-pad">
 	                  		<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
 	                	</div>
-		                <div class="col-lg-7 col-md-6 col-6">
+		                <div class="col-lg-7 col-md-8 col-8">
 		                  	<div class="sec-10">
 		                     	<h2 class="no-margin">Fish Burger</h2>
 		                     	<h3 class="no-margin pad-top-10 pad-bot-10"> <span style="color:#ffc107">$ </span> 5.59</h3>
 		                     	<i class="fa fa-star"> <span> 5.0 - 1k+ Reviews </span></i>
 		                  	</div>   
 		                </div>
-		                <div class="col-md-1 no-pad">
+		                <div class="col-lg-1 col-md-1 col-1 no-pad">
 		                  	<a class="sec-11" href="#">. . .</a> 
 		                </div>
 		                <div class="col-lg-12 col-md-12 col-12 no-pad">
@@ -164,20 +217,20 @@
 	            	</div>
 	         	</div>
 	        </div>
-	        <div class="col-lg-3 col-md-3 col-3">
+	        <div class="col-lg-3 col-md-6 col-12">
 	        	<div class="sec-10-main bg-white">
 	            	<div class="row">          
-	                	<div class="col-lg-4 col-md-4 col-4 no-pad">
+	                	<div class="col-lg-4 col-md-3 col-3 no-pad">
 	                  		<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
 	                	</div>
-		                <div class="col-lg-7 col-md-6 col-6">
+		                <div class="col-lg-7 col-md-8 col-8">
 		                  	<div class="sec-10">
 		                     	<h2 class="no-margin">Fish Burger</h2>
 		                     	<h3 class="no-margin pad-top-10 pad-bot-10"> <span style="color:#ffc107">$ </span> 5.59</h3>
 		                     	<i class="fa fa-star"> <span> 5.0 - 1k+ Reviews </span></i>
 		                  	</div>   
 		                </div>
-		                <div class="col-md-1 no-pad">
+		                <div class="col-lg-1 col-md-1 col-1 no-pad">
 		                  	<a class="sec-11" href="#">. . .</a> 
 		                </div>
 		                <div class="col-lg-12 col-md-12 col-12 no-pad">
@@ -202,7 +255,7 @@
 	        </div>
 	    </div>
         <div class="row">
-           	<div class="col-lg-2 col-md-2 col-2">
+           	<div class="col-lg-2 col-md-3 col-6">
               	<div class="sec-12 bg-white">
                  	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
                  	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
@@ -221,7 +274,7 @@
 	              	</div>   
               	</div>
             </div>
-            <div class="col-lg-2 col-md-2 col-2">
+            <div class="col-lg-2 col-md-3 col-6">
               	<div class="sec-12 bg-white">
                  	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
                  	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
@@ -240,7 +293,7 @@
 	              	</div>   
               	</div>
             </div>
-            <div class="col-lg-2 col-md-2 col-2">
+            <div class="col-lg-2 col-md-3 col-6">
               	<div class="sec-12 bg-white">
                  	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
                  	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
@@ -259,7 +312,7 @@
 	              	</div>   
               	</div>
             </div>
-            <div class="col-lg-2 col-md-2 col-2">
+            <div class="col-lg-2 col-md-3 col-6">
               	<div class="sec-12 bg-white">
                  	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
                  	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
@@ -278,26 +331,26 @@
 	              	</div>   
               	</div>
             </div>
-            <div class="col-lg-2 col-md-2 col-2">
+            <div class="col-lg-2 col-md-3 col-6">
               	<div class="sec-12 bg-white">
                  	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
                  	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
                  	<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
-		              	<div class="row pad-top-20">
-		                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
-			                    <div class="sec-13">
-			                       <h2 class="no-margin">Sold 1k</h2>
-			                    </div>
-		                 	</div>
-			                <div class="col-lg-6 col-md-6 col-6 no-pad">
-			                    <div class="sec-14">
-			                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
-			                    </div>
-			                </div>
-		              	</div>   
+	              	<div class="row pad-top-20">
+	                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
+		                    <div class="sec-13">
+		                       <h2 class="no-margin">Sold 1k</h2>
+		                    </div>
+	                 	</div>
+		                <div class="col-lg-6 col-md-6 col-6 no-pad">
+		                    <div class="sec-14">
+		                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
+		                    </div>
+		                </div>
+	              	</div>   
               	</div>
             </div>
-            <div class="col-lg-2 col-md-2 col-2">
+            <div class="col-lg-2 col-md-3 col-6">
               	<div class="sec-12 bg-white">
                  	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
                  	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
@@ -330,7 +383,7 @@
 	        </div>
 	    </div>
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-3">
+            <div class="col-lg-3 col-md-6 col-12">
               	<div class="row sec-19 bg-white">
                 	<div class="col-lg-7 col-md-7 col-7 no-pad"> 
 	                  	<div class="sec-15">
@@ -351,7 +404,7 @@
 	                </div>
               	</div>
            	</div>
-           	<div class="col-lg-3 col-md-3 col-3">
+           	<div class="col-lg-3 col-md-6 col-12">
               	<div class="row sec-19 bg-white">
                 	<div class="col-lg-7 col-md-7 col-7 no-pad"> 
 	                  	<div class="sec-15">
@@ -372,7 +425,7 @@
 	                </div>
               	</div>
            	</div>
-           	<div class="col-lg-3 col-md-3 col-3">
+           	<div class="col-lg-3 col-md-6 col-12">
               	<div class="row sec-19 bg-white">
                 	<div class="col-lg-7 col-md-7 col-7 no-pad"> 
 	                  	<div class="sec-15">
@@ -393,7 +446,7 @@
 	                </div>
               	</div>
            	</div>
-           	<div class="col-lg-3 col-md-3 col-3">
+           	<div class="col-lg-3 col-md-6 col-12">
               	<div class="row sec-19 bg-white">
                 	<div class="col-lg-7 col-md-7 col-7 no-pad"> 
 	                  	<div class="sec-15">

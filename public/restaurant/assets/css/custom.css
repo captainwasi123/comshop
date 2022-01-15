@@ -370,7 +370,6 @@ input:checked + .slider:before {
   .serach_field-area h2 {
     font-weight: 700;
     font-size: 36px;
-    line-height: 54px;
     color: #2E2E2E;
 }
 
@@ -756,7 +755,7 @@ input:checked + .slider:before {
 .sec-27 button {
     color: white;
     border:none;
-    padding: 32px 12px 32px 30px;
+    padding: 32px 10px 32px 25px;
     font-size: 18px !important;
     border-radius: 20px 0px 0px 20px;
     width: 100%;
@@ -832,8 +831,8 @@ input:checked + .slider:before {
 }
 .circle-class {
     position: absolute;
-    top: 80px;
-    left: 70px;
+    top: 70px;
+    left: 60px;
     font-weight: 600;
     font-size: 30px;
 }
@@ -1084,7 +1083,12 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 4px;
     margin-bottom: 20px
 }
-
+.for-table-invisible {
+    display: none;
+}
+.for-table-visible {
+    display: block;
+}
 /*BAZIL CSS CLOSE*/ 
 
 
@@ -1126,12 +1130,163 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 16px;
 }
 
+.header_iner .header_right .header_notification_warp li > a {
+    margin-right: 35px;
+}
+.header_iner .header_right .header_notification_warp li > a img {
+    width: 100% !important;
+}
+.sec-26 {
+    padding: 25px 0px 20px 10px;
+}
+.count_content h3 {
+    font-size: 25px;
+ /*   padding-top: 10px;*/
+}
+.sec-25 {
+     padding-left: 0px; 
+}
+.sec-27 {
+    margin-left: 30px;
+    padding-top: 10px;
+}
+.sec-27 button {
+    padding: 20px 5px 20px 16px;
+    font-size: 16px !important;
+}
+.sec-24 i {
+    font-size: 16px;
+}
+.sec-25 i {
+    font-size: 16px;
+}
+.sec-30 {
+    padding: 0px;
+}
+.sec-38 {
+    margin-top: 20px;
+}
+svg {
+    width: calc(100% + 30px);
+}
+.circle-class {
+    top: 100px;
+    left: 100px;
+    font-size: 40px;
+}
+.sec-39 p {
+    font-size: 16px;
+    padding-top: 10px;
+}
+.sec-33 h4 {
+    padding-top: 5px;
+}
+.sec-36 {
+    margin-top: -9px !important;
+}
+.sec-36 h5 {
+    padding-bottom: 5px !important;
+}
+#myChart {
+    padding-top: 15px;
+}
+.sec-41 {
+    margin: 20px 0px;
+}
+.sec-42 img {
+    padding-top: 0px;
+}
+.sec-40 p {
+    font-size: 12px;
+    padding-bottom: 0px;
+}
+.sec-40 h4 {
+    font-size: 20px;
+}
+.sec-44 {
+    margin: 0px 0px 0px 0px;
+}
+.box_header {
+    margin-bottom: 10px;
+}
+.order-section-chart {
+    margin: 0px !important;
+    padding-top: 20px !important;
+}
+.main_content {
+    padding: 120px 0 50px 0;
+}
+#piechart {
+    margin-left: -20px;
+}
+#piechart svg {
+    width: calc(89% + 0px);
+}
+.sidebar_icon i {
+    font-size: 25px;
+    color: black;
+}
+.serach_field-area h2 {
+    font-size: 30px;
+    padding-left: 20px;
+}
+.no-pad-mobile {
+    padding: 0px !important;
+}
+.for-table-invisible {
+    display: flex;
+    align-items: center;
+}
+.for-table-visible {
+    display: none;
+}
+
+.sec-7 h2 {
+    font-size: 20px;
+}
+.sec-8 a {
+    font-size: 16px;
+}
+.sec-6 a {
+    font-size: 16px;
+    padding: 10px 25px;
+}
+.sec-10-main {
+    margin-bottom: 20px;
+}
+.sec-10 h3 {
+    padding: 5px 0px !important;
+}
+.sec-12 h2 {
+    font-size: 16px;
+}
+.sec-12 h3 {
+    font-size: 20px;
+}
+.sec-13 h2 {
+    font-size: 14px;
+}
+.sec-14 h5 {
+    font-size: 14px;
+}
+.sec-12 {
+    margin-bottom: 20px;
+}
+.sec-19 {
+    margin-bottom: 20px;
+}
 }
 
 /*Mobile Devices*/
 @media screen and (max-width:519px) and (min-width:320px) { 
 .no-pad-mobile {
     padding: 0px !important;
+}
+.for-table-invisible {
+    display: none;
+}
+.for-table-visible {
+    display: block;
 }
 .main_content .main_content_iner {
     padding: 0px 20px 0px 20px;
@@ -1218,6 +1373,76 @@ svg {
 }
 .sec-41 {
     margin: 20px 0px;
+}
+.sec-42 img {
+    padding-top: 0px;
+}
+.sec-40 p {
+    font-size: 12px;
+    padding-bottom: 0px;
+}
+.sec-40 h4 {
+    font-size: 20px;
+}
+.sec-44 {
+    margin: 0px 0px 0px 0px;
+}
+.box_header {
+    margin-bottom: 10px;
+}
+.order-section-chart {
+    margin: 0px !important;
+    padding-top: 20px !important;
+}
+.main_content {
+    padding: 120px 0 50px 0;
+}
+#piechart {
+    margin-left: -20px;
+}
+#piechart svg {
+    width: calc(89% + 0px);
+}
+.sidebar_icon i {
+    font-size: 25px;
+    color: black;
+}
+.sec-7 h2 {
+    font-size: 20px;
+}
+.sec-8 a {
+    font-size: 16px;
+}
+.sec-6 a {
+    font-size: 16px;
+    padding: 10px 25px;
+}
+.sec-10-main {
+    margin-bottom: 20px;
+}
+.sec-10 h3 {
+    padding: 5px 0px !important;
+}
+.sec-12 h2 {
+    font-size: 14px;
+}
+.sec-12 h3 {
+    font-size: 20px;
+}
+.sec-13 h2 {
+    font-size: 14px;
+}
+.sec-14 h5 {
+    font-size: 14px;
+}
+.sec-12 {
+    margin-bottom: 20px;
+}
+.sec-19 {
+    margin-bottom: 20px;
+}
+.sec-9 {
+    margin-bottom: 20px;
 }
 /*.form-group.sec-4 input {
     padding: 21px 0px 21px 15px;
