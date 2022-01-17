@@ -1655,9 +1655,6 @@ i.fas.fa-search {
     align-items: center;
     border: none;
     display: unset;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 27px;
     color: #F8B602;
@@ -1918,8 +1915,28 @@ svg {
 .mobile {
     display: block;
 }
+.tab {
+    height: 66vh !important;
+}
+.input-form label {
+    font-size: 14px;
+}
+.form-row {
+    padding-top: 0px !important;
+}
+.input-form {
+    padding-top: 20px;
+}
+.tabcontent {
+    height: 840px;
+}
+.tab-head {
+    font-size: 14px;
+}
 
-
+.tabcontent {
+    padding: 50px 40px 40px 40px;
+}
 
 
 
@@ -2142,6 +2159,57 @@ svg {
 .mobile {
     display: block;
 }
+.tab {
+    height: 65vh !important;
+}
+.input-form label {
+    font-size: 14px;
+}
+.form-row {
+    padding-top: 0px !important;
+}
+.input-form {
+    padding-top: 20px;
+}
+.tabcontent {
+    height: 780px;
+}
+.tab-head {
+    font-size: 14px;
+}
+.security-section {
+    width: 100%;
+}
+.list-btn {
+    padding: 13px;
+}
+.list-btn img {
+    width: 80%;
+}
+.search_inner input {
+    height: 47px !important;
+}
+.page-shows p {
+    font-size: 14px;
+    padding-top: 14px;
+}
+.Paginate {
+    float: none;
+    padding-left: 12%;
+}
+.messages_box_area {
+    grid-template-columns: auto !important;
+}
+.order-cell {
+    padding: 20px 30px 20px 20px;
+}
+.right-arrow {
+    padding: 5px 10px;
+    font-size: 18px;
+}
+.order-date {
+    padding-bottom: 20px;
+}
 /*.form-group.sec-4 input {
     padding: 21px 0px 21px 15px;
 }*/
@@ -2257,8 +2325,9 @@ svg {
 }
 
 .order-time-est {
-    WIDTH: 48% !important;
+    width: 50% !important;
     display: inline-block;
+    padding-top: 20px;
 }
 .order-time.o-t {
     WIDTH: 48% !important;

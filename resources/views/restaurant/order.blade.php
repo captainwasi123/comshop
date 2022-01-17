@@ -430,14 +430,14 @@
                                 <h3 class="inner-order-head no-margin pad-bot-20">Order Details</h3>
                                 <div class="order-detail-section">
                                     <div class="row">
-                                        <div class="col-lg-8 col-md-6 col-5">
+                                        <div class="col-lg-8 col-md-6 col-12">
                                             <h4 class="order-name no-margin">Order #1</h4>
                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                         </div>
-                                        <div class="col-lg-1 col-md-3 col-5 no-pad">
+                                        <div class="col-lg-1 col-md-3 col-3 no-pad">
                                             <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" class="placeholder-images">
                                         </div>
-                                        <div class="col-lg-3 col-md-9 col-8 ">
+                                        <div class="col-lg-3 col-md-9 col-8">
                                             <h4 class="order-name no-margin">Ruby Roben</h4>
                                             <p class="order-date">User since 2020</p>
                                         </div>
