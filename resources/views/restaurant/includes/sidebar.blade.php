@@ -8,7 +8,7 @@
     </div>
     <ul id="sidebar_menu">
         <li class="mm-active">
-          <a href="#" aria-expanded="false">
+          <a href="{{URL::to('/restaurant')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/dashboard-icon.png" alt="">
             </div>
@@ -16,7 +16,7 @@
           </a>
         </li>
         <li class="">
-          <a href="#" aria-expanded="false">
+          <a href="{{URL::to('/restaurant/menu')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
             </div>
@@ -24,7 +24,7 @@
           </a>
         </li>
         <li class="mm-active">
-          <a href="#" aria-expanded="false">
+          <a href="{{URL::to('/restaurant/order')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/order-icon.png" alt="">
             </div>
@@ -32,7 +32,7 @@
           </a>
         </li>
         <li class="mm-active">
-          <a href="#" aria-expanded="false">
+          <a href="{{URL::to('/restaurant/review')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/review-icon.png" alt="">
             </div>
@@ -40,7 +40,7 @@
           </a>
         </li>
         <li class="mm-active">
-          <a href="#" aria-expanded="false">
+          <a href="{{URL::to('/restaurant/profile')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/setting-icon.png" alt="">
             </div>
@@ -57,7 +57,7 @@
         </li> -->
 
 
-        
+
           <!-- extra menu -->
           <!-- <li class="mm-active">
             <a class="has-arrow"  href="#"  aria-expanded="false">
@@ -91,4 +91,3 @@
 <!-- sidebar part end -->
 
 
- 
