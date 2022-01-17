@@ -87,49 +87,49 @@
 
 			<div class="section-4 mobile">
 				<div class="row">
-				    <div class="col-md-6 col-6">
+				    <div class="col-md-4 col-6">
 				    	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image3.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Bakery</h2>  
 		          		</div>
 		          	</div>
-		          	<div class="col-md-6 col-6">
+		          	<div class="col-md-4 col-6">
 				    	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image4.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Burger</h2>  
 		          		</div>
 		          	</div>
-		          	<div class="col-md-6 col-6">
+		          	<div class="col-md-4 col-6">
 				    	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image5.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Beverage</h2>  
 		          		</div>
 		          	</div>
-		          	<div class="col-md-6 col-6">
+		          	<div class="col-md-4 col-6">
 				    	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image6.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Chicken</h2>  
 		          		</div>
 		          	</div>
-		          	<div class="col-md-6 col-6">
+		          	<div class="col-md-4 col-6">
 				    	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image7.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Pizza</h2>  
 		          		</div>
 		          	</div>
-		          	<div class="col-md-6 col-6">
+		          	<div class="col-md-4 col-6">
 				    	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image8.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Seafood</h2>  
 		          		</div>
 		          	</div>
-		          	<div class="col-md-6 col-6">
+		          	<div class="col-md-4 col-6">
 				    	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image9.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Dessert</h2>  
 		          		</div>
 		          	</div>
-		          	<div class="col-md-6 col-6">
+		          	<div class="col-md-4 col-6">
 				    	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image10.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Noodle</h2>  
