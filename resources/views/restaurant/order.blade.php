@@ -34,10 +34,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -50,10 +50,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -66,10 +66,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -82,10 +82,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -98,10 +98,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -114,10 +114,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -130,10 +130,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -146,10 +146,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -167,10 +167,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -183,10 +183,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -199,10 +199,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -215,10 +215,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -231,10 +231,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -247,10 +247,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -263,10 +263,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -279,10 +279,10 @@
                                                             <h4 class="order-name no-margin">Order #1</h4>
                                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-4 order-price-col">
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
                                                             <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
                                                             <i class="fa fa-angle-right right-arrow"></i>
                                                         </div>
                                                     </div>
@@ -293,137 +293,137 @@
 
                                     <div id="menu2" class="tab-pane fade">
                                         <ul>
-                                        <li class="order-cell">
-                                            <a href="#" class="order-link">
-                                                <div class="row">
-                                                    <div class="col-lg-7 col-md-6 col-6">
-                                                        <h4 class="order-name no-margin">Order #1</h4>
-                                                        <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                            <li class="order-cell">
+                                                <a href="#" class="order-link">
+                                                    <div class="row">
+                                                        <div class="col-lg-7 col-md-6 col-6">
+                                                            <h4 class="order-name no-margin">Order #1</h4>
+                                                            <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
+                                                            <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                        </div>
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
+                                                            <i class="fa fa-angle-right right-arrow"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-3 col-md-4 col-4 order-price-col">
-                                                        <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                </a>
+                                            </li>
+                                            <li class="order-cell">
+                                                <a href="#" class="order-link">
+                                                    <div class="row">
+                                                        <div class="col-lg-7 col-md-6 col-6">
+                                                            <h4 class="order-name no-margin">Order #1</h4>
+                                                            <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
+                                                            <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                        </div>
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
+                                                            <i class="fa fa-angle-right right-arrow"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
-                                                        <i class="fa fa-angle-right right-arrow"></i>
+                                                </a>
+                                            </li>
+                                            <li class="order-cell">
+                                                <a href="#" class="order-link">
+                                                    <div class="row">
+                                                        <div class="col-lg-7 col-md-6 col-6">
+                                                            <h4 class="order-name no-margin">Order #1</h4>
+                                                            <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
+                                                            <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                        </div>
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
+                                                            <i class="fa fa-angle-right right-arrow"></i>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="order-cell">
-                                            <a href="#" class="order-link">
-                                                <div class="row">
-                                                    <div class="col-lg-7 col-md-6 col-6">
-                                                        <h4 class="order-name no-margin">Order #1</h4>
-                                                        <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                </a>
+                                            </li>
+                                            <li class="order-cell">
+                                                <a href="#" class="order-link">
+                                                    <div class="row">
+                                                        <div class="col-lg-7 col-md-6 col-6">
+                                                            <h4 class="order-name no-margin">Order #1</h4>
+                                                            <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
+                                                            <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                        </div>
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
+                                                            <i class="fa fa-angle-right right-arrow"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-3 col-md-4 col-4 order-price-col">
-                                                        <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                </a>
+                                            </li>
+                                            <li class="order-cell">
+                                                <a href="#" class="order-link">
+                                                    <div class="row">
+                                                        <div class="col-lg-7 col-md-6 col-6">
+                                                            <h4 class="order-name no-margin">Order #1</h4>
+                                                            <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
+                                                            <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                        </div>
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
+                                                            <i class="fa fa-angle-right right-arrow"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
-                                                        <i class="fa fa-angle-right right-arrow"></i>
+                                                </a>
+                                            </li>
+                                            <li class="order-cell">
+                                                <a href="#" class="order-link">
+                                                    <div class="row">
+                                                        <div class="col-lg-7 col-md-6 col-6">
+                                                            <h4 class="order-name no-margin">Order #1</h4>
+                                                            <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
+                                                            <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                        </div>
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
+                                                            <i class="fa fa-angle-right right-arrow"></i>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="order-cell">
-                                            <a href="#" class="order-link">
-                                                <div class="row">
-                                                    <div class="col-lg-7 col-md-6 col-6">
-                                                        <h4 class="order-name no-margin">Order #1</h4>
-                                                        <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                </a>
+                                            </li>
+                                            <li class="order-cell">
+                                                <a href="#" class="order-link">
+                                                    <div class="row">
+                                                        <div class="col-lg-7 col-md-6 col-6">
+                                                            <h4 class="order-name no-margin">Order #1</h4>
+                                                            <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
+                                                            <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                        </div>
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
+                                                            <i class="fa fa-angle-right right-arrow"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-3 col-md-4 col-4 order-price-col">
-                                                        <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                </a>
+                                            </li>
+                                            <li class="order-cell">
+                                                <a href="#" class="order-link">
+                                                    <div class="row">
+                                                        <div class="col-lg-7 col-md-6 col-6">
+                                                            <h4 class="order-name no-margin">Order #1</h4>
+                                                            <p class="order-date">June 1, 2020, 08:22 AM</p>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-4 order-price-col">
+                                                            <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
+                                                        </div>
+                                                        <div class="col-lg-2 col-md-3 col-2 right-arrow-col">
+                                                            <i class="fa fa-angle-right right-arrow"></i>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
-                                                        <i class="fa fa-angle-right right-arrow"></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="order-cell">
-                                            <a href="#" class="order-link">
-                                                <div class="row">
-                                                    <div class="col-lg-7 col-md-6 col-6">
-                                                        <h4 class="order-name no-margin">Order #1</h4>
-                                                        <p class="order-date">June 1, 2020, 08:22 AM</p>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-4 col-4 order-price-col">
-                                                        <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
-                                                    </div>
-                                                    <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
-                                                        <i class="fa fa-angle-right right-arrow"></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="order-cell">
-                                            <a href="#" class="order-link">
-                                                <div class="row">
-                                                    <div class="col-lg-7 col-md-6 col-6">
-                                                        <h4 class="order-name no-margin">Order #1</h4>
-                                                        <p class="order-date">June 1, 2020, 08:22 AM</p>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-4 col-4 order-price-col">
-                                                        <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
-                                                    </div>
-                                                    <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
-                                                        <i class="fa fa-angle-right right-arrow"></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="order-cell">
-                                            <a href="#" class="order-link">
-                                                <div class="row">
-                                                    <div class="col-lg-7 col-md-6 col-6">
-                                                        <h4 class="order-name no-margin">Order #1</h4>
-                                                        <p class="order-date">June 1, 2020, 08:22 AM</p>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-4 col-4 order-price-col">
-                                                        <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
-                                                    </div>
-                                                    <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
-                                                        <i class="fa fa-angle-right right-arrow"></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="order-cell">
-                                            <a href="#" class="order-link">
-                                                <div class="row">
-                                                    <div class="col-lg-7 col-md-6 col-6">
-                                                        <h4 class="order-name no-margin">Order #1</h4>
-                                                        <p class="order-date">June 1, 2020, 08:22 AM</p>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-4 col-4 order-price-col">
-                                                        <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
-                                                    </div>
-                                                    <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
-                                                        <i class="fa fa-angle-right right-arrow"></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="order-cell">
-                                            <a href="#" class="order-link">
-                                                <div class="row">
-                                                    <div class="col-lg-7 col-md-6 col-6">
-                                                        <h4 class="order-name no-margin">Order #1</h4>
-                                                        <p class="order-date">June 1, 2020, 08:22 AM</p>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-4 col-4 order-price-col">
-                                                        <h4 class="price-symbol no-margin"><span class="col-yellow">$</span>202.00</h4>
-                                                    </div>
-                                                    <div class="col-lg-2 col-md-2 col-2 right-arrow-col">
-                                                        <i class="fa fa-angle-right right-arrow"></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>                                                
-                                    </ul>
+                                                </a>
+                                            </li>                                                
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                         <div class="messages_chat">
                             <div class="white_box ">
@@ -434,10 +434,10 @@
                                             <h4 class="order-name no-margin">Order #1</h4>
                                             <p class="order-date">June 1, 2020, 08:22 AM</p>
                                         </div>
-                                        <div class="col-lg-1 col-md-3 col-3 no-pad">
+                                        <div class="col-lg-1 col-md-2 col-4 no-pad order-detail-sec">
                                             <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" class="placeholder-images">
                                         </div>
-                                        <div class="col-lg-3 col-md-9 col-8">
+                                        <div class="col-lg-3 col-md-4 col-7">
                                             <h4 class="order-name no-margin">Ruby Roben</h4>
                                             <p class="order-date">User since 2020</p>
                                         </div>
@@ -466,28 +466,28 @@
                                     <ul>
                                         <li class="product pad-top-20 pad-bot-20">
                                             <div class="row">
-                                                <div class="col-lg-2 col-md-6 col-6">
+                                                <div class="col-lg-2 col-md-3 col-4">
                                                     <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" class="placeholder-image-3">
                                                 </div>
-                                                <div class="col-lg-8 col-md-8 col-6">
+                                                <div class="col-lg-8 col-md-5 col-4 no-pad-for-mobile">
                                                     <h2 class="order-name pad-top-20 no-margin">Pepperoni Pizza</h2>
                                                     <p class="order-date">x1</p>
                                                 </div>
-                                                <div class="col-lg-2 col-md-2 col-4">
+                                                <div class="col-lg-2 col-md-4 col-4">
                                                     <h4 class="price-symbol no-margin pad-top-40">+<span class="col-yellow">$</span>5.59</h4>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="product pad-bot-20">
+                                        <li class="product pad-top-20 pad-bot-20">
                                             <div class="row">
-                                                <div class="col-lg-2 col-md-6 col-6">
+                                                <div class="col-lg-2 col-md-3 col-4">
                                                     <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" class="placeholder-image-3">
                                                 </div>
-                                                <div class="col-lg-8 col-md-8 col-6">
+                                                <div class="col-lg-8 col-md-5 col-4 no-pad-for-mobile">
                                                     <h2 class="order-name pad-top-20 no-margin">Pepperoni Pizza</h2>
                                                     <p class="order-date">x1</p>
                                                 </div>
-                                                <div class="col-lg-2 col-md-2 col-4">
+                                                <div class="col-lg-2 col-md-4 col-4">
                                                     <h4 class="price-symbol no-margin pad-top-40">+<span class="col-yellow">$</span>5.59</h4>
                                                 </div>
                                             </div>
@@ -505,11 +505,11 @@
                                 </div>
                 
                                 <div class="row pad-top-30">
-                                    <div class="col-lg-4 col-md-6 col-0"></div>
-                                    <div class="col-lg-4 col-md-6 col-12 no-pad">
+                                    <div class="col-lg-4 col-md-2 col-0"></div>
+                                    <div class="col-lg-4 col-md-5 col-6 no-pad">
                                         <a href="#" class="btn rejectorder">Reject Order</a>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 col-7 ">
+                                    <div class="col-lg-4 col-md-5 col-6">
                                         <a href="#" class="acceptorder bg-yellow">Accept Order</a> <br><br><br>
                                         <a href="#" class="printorder bg-yellow"><i class="fas fa-print print-icon"></i>&nbsp;&nbsp;Print Invoice</a>
                                     </div>                    

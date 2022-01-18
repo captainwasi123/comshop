@@ -515,18 +515,15 @@
                                     <input type="text" class="form-control" id="inputAddress" placeholder="">
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-lg-4 col-md-4 col-4 no-margin pad-bot-30">
+                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
                                         <label for="inputCity">Category</label>
                                         <input type="text" class="form-control" id="inputCity">
                                     </div>
-                                    <div class="form-group col-lg-4 col-md-4 col-4 no-margin pad-bot-30">
+                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
                                         <label for="inputState">Prepration Time <span>(min)</span></label>
                                         <input type="number" class="form-control" id="inputZip">
-                                      <!--   <span class='number-wrapper'>
-    <input type="number" />
-</span> -->
                                     </div>
-                                    <div class="form-group col-lg-4 col-md-4 col-4 no-margin pad-bot-30">
+                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
                                         <label for="inputZip">Price</label>
                                         <input type="number" class="form-control" id="inputZip" placeholder="10">
                                     </div>
