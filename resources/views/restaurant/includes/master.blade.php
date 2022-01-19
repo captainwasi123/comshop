@@ -17,22 +17,21 @@
       @yield('addStyle')
 
    </head>
+   <!-- <div id="websiteOverlay"><div class="loader"></div></div> -->
    <body class="crm_body_bg">
+      
       <!-- Header Section Starts Here -->
       @include('restaurant.includes.sidebar')
-      <section class="main_content dashboard_part default_content">
+   
+      <section class="main_content dashboard_part default_content" >
       @include('restaurant.includes.header')
       <!-- Header Section Ends Here -->
 
       @yield('content')
 
       </section>
-
-      <!-- Footer Section Starts Here -->
-         <!-- @include('restaurant.includes.footer') -->
-      <!-- Footer Section Ends Here -->
-      <!-- Bootstrap Javascript -->
          @include('restaurant.includes.script')
+
          @yield('addScript')
    </body>
 </html>
