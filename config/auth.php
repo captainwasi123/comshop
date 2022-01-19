@@ -40,6 +40,17 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'restaurant' => [
+            'driver' => 'session',
+            'provider' => 'restaurant',
+        ],
+
+        'restaurant-api' => [
+            'driver' => 'token',
+            'provider' => 'restaurant',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -63,6 +74,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'restaurant' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Restaurant\Restaurant::class,
         ],
 
         // 'users' => [

@@ -14,22 +14,19 @@ class mainController extends Controller
     }
     function menu(){
 
-    	return view('restaurant.menu');
+    	return view('restaurant.menus.menu');
     }
     function profile(){
 
-    	return view('restaurant.profile');
+    	return view('restaurant.setting.profile');
     }
     function order(){
 
-        return view('restaurant.order');
+        return view('restaurant.orders.order');
     }
-    function login(){
 
-        return view('restaurant.login');
-    }
     function review(){
 
-        return view('restaurant.review');
+        return view('restaurant.reviews.review');
     }
 }

@@ -16,7 +16,7 @@
           </a>
         </li>
         <li class="">
-          <a href="{{URL::to('/restaurant/menu')}}" aria-expanded="false">
+          <a href="{{URL::to('/restaurant/menus/menu')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
             </div>
@@ -24,7 +24,7 @@
           </a>
         </li>
         <li class="mm-active">
-          <a href="{{URL::to('/restaurant/order')}}" aria-expanded="false">
+          <a href="{{URL::to('/restaurant/orders/order')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/order-icon.png" alt="">
             </div>
@@ -32,7 +32,7 @@
           </a>
         </li>
         <li class="mm-active">
-          <a href="{{URL::to('/restaurant/review')}}" aria-expanded="false">
+          <a href="{{URL::to('/restaurant/reviews/review')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/review-icon.png" alt="">
             </div>
@@ -40,7 +40,7 @@
           </a>
         </li>
         <li class="mm-active">
-          <a href="{{URL::to('/restaurant/profile')}}" aria-expanded="false">
+          <a href="{{URL::to('/restaurant/setting/profile')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/setting-icon.png" alt="">
             </div>

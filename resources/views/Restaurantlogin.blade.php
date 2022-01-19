@@ -36,12 +36,13 @@
                     <h2 class="no-margin pad-bot-20"> RESTAURANT PANEL </h2>
                     <h3 class="no-margin"> LOGIN </h3>
                     <div class="white_card_body">     
-                        <form>               
+                        <form action="" method="POST">
+                        @csrf               
                             <div class="form-group sec-3 no-margin pad-top-30 pad-bot-60">
                                 <i class="fa fa-user icon"></i>
-                                <input type="text" class="form-control" name="inputText" id="inputText" placeholder="Username">
+                                <input type="email" class="form-control" name="email" id="inputText" placeholder="Email">
                                 <i class="fa fa-lock icon"></i>
-                                <input type="password" class="form-control" name="inputPassword" id="inputPassword" placeholder="Password">
+                                <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password">
                                 <h4 class="no-margin pad-top-20">Forgot password?</h4>
                             </div>
                             <div class="form-group sec-3-btn no-margin">

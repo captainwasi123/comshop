@@ -18,6 +18,9 @@
 <!-- owl carousel -->
 <script src="{{URL::to('/public/restaurant/assets')}}/vendors/owl_carousel/js/owl.carousel.min.js"></script>
 
+
+
+
 <!-- responsive table -->
 <script src="{{URL::to('/public/restaurant/assets')}}/vendors/datatable/js/jquery.dataTables.min.js"></script>
 <script src="{{URL::to('/public/restaurant/assets')}}/vendors/datatable/js/dataTables.responsive.min.js"></script>
@@ -63,7 +66,7 @@
 	google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawCharts);
 function drawCharts() {
-  
+
   // BEGIN BAR CHART
   /*
   // create zero data so the bars will 'grow'
@@ -137,9 +140,9 @@ function drawCharts() {
   var barChart = new google.visualization.ColumnChart(document.getElementById('bar-chart'));
   //barChart.draw(barZeroData, barOptions);
   barChart.draw(barData, barOptions);
-  
+
   // BEGIN LINE GRAPH
-  
+
   function randomNumber(base, step) {
     return Math.floor((Math.random()*step)+base);
   }
@@ -160,7 +163,7 @@ function drawCharts() {
     }
   }
   var lineData = google.visualization.arrayToDataTable(randomLineData);
-  
+
 	/*
   var animLineData = [
     ['Year', 'Page Views', 'Unique Views']
@@ -223,9 +226,9 @@ function drawCharts() {
   var lineChart = new google.visualization.LineChart(document.getElementById('line-chart'));
   //lineChart.draw(zeroLineData, lineOptions);
   lineChart.draw(lineData, lineOptions);
-  
+
   // BEGIN PIE CHART
-  
+
   // pie chart data
   var pieData = google.visualization.arrayToDataTable([
     ['Country', 'Page Hits'],
@@ -239,15 +242,15 @@ function drawCharts() {
   var pieOptions = {
     backgroundColor: 'transparent',
     pieHole: 0.4,
-    colors: [ "cornflowerblue", 
-              "olivedrab", 
-              "orange", 
-              "tomato", 
-              "crimson", 
-              "purple", 
-              "turquoise", 
-              "forestgreen", 
-              "navy", 
+    colors: [ "cornflowerblue",
+              "olivedrab",
+              "orange",
+              "tomato",
+              "crimson",
+              "purple",
+              "turquoise",
+              "forestgreen",
+              "navy",
               "gray"],
     pieSliceText: 'value',
     tooltip: {

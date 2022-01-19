@@ -5,7 +5,7 @@
 
 	<div class="main_content_iner ">
         <div class="container-fluid profile-main-section p-0">
-	    
+
 	       	<div class="tab">
                 <button class="tablinks m-b-20" onclick="openCity(event, 'London')" id="defaultOpen">
                     <div class="row">
@@ -157,37 +157,83 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="row">
-                            <form class="profile-form pad-top-40 pad-bot-20">
+                        <div class="alert alert-success" role="alert" id="successMsg" style="display: none" >
+                        Password Has been updated Successfully changed! 
+                        </div>
+                         <form class="profile-form pad-top-40 pad-bot-20" id="SubmitForm" action="javascript:void(0)" method="post">
+                            @csrf
                                 <div class="form-row security-section">
                                     <div class="col-lg-12 col-md-12 col-12 no-margin">
                                     	<div class="input-form">
-	                                        <label for="inputEmail4" class="no-margin pad-bot-10">Current Password</label>
-	                                        <input type="password" class="form-control">
-	                                    </div>
+	                                        <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Current Password</label>
+	                                        <input type="password" id="inputCurrentPassword" name="current_password" value="{{ empty($old_password) ? "" : $old_password }}" class="form-control">
+                                            <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
+                                        </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12 no-margin">
                                     	<div class="input-form pad-top-20">
-                                        	<label for="inputPassword4" class="no-margin pad-bot-10">New Password</label>
-                                        	<input type="password" class="form-control">
+                                        	<label for="inputPassword" class="no-margin pad-bot-10">New Password</label>
+                                        	<input type="password" id="inputPassword" name="new_password" id="password" value="{{ empty($new_password) ? "" : $new_password }}" class="form-control">
+                                            <span class="text-danger" id="PasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12 no-margin">
                                         <div class="input-form pad-top-20">
-                                        	<label for="inputPassword4" class="no-margin pad-bot-10">Confirm Password</label>
-                                        	<input type="password" class="form-control">
+                                        	<label for="inputConfirmPassword" class="no-margin pad-bot-10">Confirm Password</label>
+                                        	<input type="password" id="inputConfirmPassword" name="confirm_password" id="conform_password" value="{{ empty($confirm_password) ? "" : $confirm_password }}" class="form-control">
+                                             <span class="text-danger" id="ConfirmPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                 </div>
+                            <input type="hidden" name="id" value="{{empty(\Auth::guard('restaurant')->user()->id) ? '' : ' '.\Auth::guard('restaurant')->user()->id}}">
+
                                 <div class="sav-button pad-top-50 pad-right-20">
-                                	<input type="submit" name="Save Setting" class="bg-yellow">
+                                	{{--  <input type="Submit"  valur="submit" >  --}}
+                                          <button type="submit" class="bg-yellow">Submit</button>
+
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-	       
+
 	    </div>
     </div>
+
+@endsection
+@section('addScript')
+<!-- ajax  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript">
+
+$('#SubmitForm').on('submit',function(e){
+    e.preventDefault();
+
+    let name = $('#inputCurrentPassword').val();
+    let email = $('#InputEinputPasswordmail').val();
+    let mobile = $('#inputConfirmPassword').val();
   
+    $.ajax({
+      url: "{{route('restaurant.changepassword')}}",
+      type:"POST",
+      data:{
+        "_token": "{{ csrf_token() }}",
+      
+          password:new_password,
+      
+      
+      },
+      success:function(response){
+        $('#successMsg').show();
+        console.log(response);
+      },
+      error: function(response) {
+        $('#CurrentPasswordErrorMsg').text(response.responseJSON.errors.current_password);
+        $('#PasswordErrorMsg').text(response.responseJSON.errors.new_password);
+        $('#ConfirmPasswordErrorMsg').text(response.responseJSON.errors.confirm_password);
+      },
+      });
+    });
+  </script>
 @endsection
