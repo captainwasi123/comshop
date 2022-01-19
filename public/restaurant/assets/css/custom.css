@@ -1138,7 +1138,7 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 16px;
 }
 
-.file {
+.profilePic {
   visibility: hidden;
   position: absolute;
 }
@@ -1152,7 +1152,7 @@ input#file {
     display: none;
 }
 
-button.browse.btn.btn-primary {
+button.browseProfilePhoto.btn.btn-primary {
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;

@@ -55,10 +55,10 @@
         </div>
     </div>
            
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{URL::to('/public/restaurant/assets')}}/js/jquery-3.4.1.min.js"></script>
+    <script src="{{URL::to('/public/restaurant/assets')}}/js/popper.min.js"></script>
+    <script src="{{URL::to('/public/restaurant/assets')}}/js/bootstrap.min.js"></script>
+    <script src="{{URL::to('/public/restaurant/assets')}}/js/custom.js"></script>
   
 </body>
 </html>

@@ -55,19 +55,17 @@
                         <p class="logo-head pad-top-40 pad-bot-20">Restaurant Logo</p>
                         <div class="row">
                             <div class="col-lg-2 col-md-3 col-5">
-                                <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" id="preview" class="img-thumbnail">
+                                <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">
                             </div>
                             <div class="col-lg-10 col-md-9 col-7">
                                 <div id="msg"></div>
                                 <form method="post" id="image-form">
-                                    <input type="file" name="img[]" class="file" accept="image/*">
-	                                    <div class="input-group">
-	                                        <input type="text" class="form-control" style="visibility: hidden;" disabled
-	                                            placeholder="Upload File" id="file">
-	                                        <div class="input-group-append">
-	                                            <button type="button" class="browse btn btn-primary">Change photo</button>
-	                                        </div>
-	                                    </div>
+                                    <input type="file" name="profile_image" class="profilePic" accept="image/*">
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <button type="button" class="browseProfilePhoto btn btn-primary">Change photo</button>
+                                            </div>
+                                        </div>
                                 </form>
                             </div>
                         </div>
@@ -77,13 +75,13 @@
                                     <div class="col-lg-6 col-md-6 col-12 no-margin">
                                     	<div class="input-form">
                                         	<label for="inputEmail4" class="no-margin pad-bot-10">Restaurant Name</label>
-                                        	<input type="text" class="form-control">
+                                        	<input type="text" class="form-control" name="resturant_name" required>
                                     	</div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12 no-margin">
                                     	<div class="input-form">
 	                                        <label for="inputPassword4" class="no-margin pad-bot-10">Phone</label>
-	                                        <input type="Phone" class="form-control">
+	                                        <input type="phone" class="form-control" name="phone" required>
 	                                    </div>
                                     </div>
                                 </div>
@@ -91,13 +89,13 @@
                                     <div class="col-lg-6 col-md-6 col-12 no-margin">
                                     	<div class="input-form">
 	                                        <label for="inputPassword4" class="no-margin pad-bot-10">Owner</label>
-	                                        <input type="text" class="form-control">
+	                                        <input type="text" class="form-control" name="owner_name" required>
 	                                    </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12 no-margin">
                                     	<div class="input-form">
 	                                        <label for="inputEmail4" class="no-margin pad-bot-10">Email</label>
-	                                        <input type="email" class="form-control">
+	                                        <input type="email" class="form-control" name="email" required>
 	                                    </div>
                                     </div>
                                 </div>
@@ -157,40 +155,34 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="row">
-                        <div class="alert alert-success" role="alert" id="successMsg" style="display: none" >
-                        Password Has been updated Successfully changed! 
-                        </div>
-                         <form class="profile-form pad-top-40 pad-bot-20" id="SubmitForm" action="javascript:void(0)" method="post">
+                         <form class="profile-form pad-top-40 pad-bot-20" id="resetPasswordForm" action="{{route('restaurant.changepassword')}}" method="post">
                             @csrf
                                 <div class="form-row security-section">
                                     <div class="col-lg-12 col-md-12 col-12 no-margin">
                                     	<div class="input-form">
 	                                        <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Current Password</label>
-	                                        <input type="password" id="inputCurrentPassword" name="current_password" value="{{ empty($old_password) ? "" : $old_password }}" class="form-control">
+	                                        <input type="password" name="current_password" value="" class="form-control" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12 no-margin">
                                     	<div class="input-form pad-top-20">
                                         	<label for="inputPassword" class="no-margin pad-bot-10">New Password</label>
-                                        	<input type="password" id="inputPassword" name="new_password" id="password" value="{{ empty($new_password) ? "" : $new_password }}" class="form-control">
+                                        	<input type="password" name="new_password" id="password" value="" class="form-control" required>
                                             <span class="text-danger" id="PasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12 no-margin">
                                         <div class="input-form pad-top-20">
                                         	<label for="inputConfirmPassword" class="no-margin pad-bot-10">Confirm Password</label>
-                                        	<input type="password" id="inputConfirmPassword" name="confirm_password" id="conform_password" value="{{ empty($confirm_password) ? "" : $confirm_password }}" class="form-control">
+                                        	<input type="password" name="confirm_password" id="conform_password" value="" class="form-control" required>
                                              <span class="text-danger" id="ConfirmPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                 </div>
-                            <input type="hidden" name="id" value="{{empty(\Auth::guard('restaurant')->user()->id) ? '' : ' '.\Auth::guard('restaurant')->user()->id}}">
 
                                 <div class="sav-button pad-top-50 pad-right-20">
-                                	{{--  <input type="Submit"  valur="submit" >  --}}
-                                          <button type="submit" class="bg-yellow">Submit</button>
-
+                                	<input type="Submit" value="Submit" class="bg-yellow">
                                 </div>
                             </form>
                         </div>
@@ -202,38 +194,5 @@
     </div>
 
 @endsection
-@section('addScript')
-<!-- ajax  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-<script type="text/javascript">
 
-$('#SubmitForm').on('submit',function(e){
-    e.preventDefault();
 
-    let name = $('#inputCurrentPassword').val();
-    let email = $('#InputEinputPasswordmail').val();
-    let mobile = $('#inputConfirmPassword').val();
-  
-    $.ajax({
-      url: "{{route('restaurant.changepassword')}}",
-      type:"POST",
-      data:{
-        "_token": "{{ csrf_token() }}",
-      
-          password:new_password,
-      
-      
-      },
-      success:function(response){
-        $('#successMsg').show();
-        console.log(response);
-      },
-      error: function(response) {
-        $('#CurrentPasswordErrorMsg').text(response.responseJSON.errors.current_password);
-        $('#PasswordErrorMsg').text(response.responseJSON.errors.new_password);
-        $('#ConfirmPasswordErrorMsg').text(response.responseJSON.errors.confirm_password);
-      },
-      });
-    });
-  </script>
-@endsection

@@ -40,7 +40,7 @@
           </a>
         </li>
         <li class="mm-active">
-          <a href="{{URL::to('/restaurant/setting/profile')}}" aria-expanded="false">
+          <a href="{{route('restaurant.profile')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/setting-icon.png" alt="">
             </div>
