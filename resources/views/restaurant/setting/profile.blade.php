@@ -53,15 +53,16 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-12">
                         <p class="logo-head pad-top-40 pad-bot-20">Restaurant Logo</p>
-                            <form class="restProfileUpdateForm" id="image-form" action="{{route('restaurant.restprofilesetting')}}" method="post" >
+                            <form class="restProfileUpdateForm" id="image-form" action="{{route('restaurant.restprofilesetting')}}" method="post"  enctype="multipart/form-data" >
                             @csrf
                             <div class="row">
                                 <div class="col-lg-2 col-md-3 col-5">
-                                    <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">
+                              <img src="{{URL::to('/public/storage/restaurant/logo/')}}/{{Auth::guard('restaurant')->user()->logo_img}}"   onerror="this.src={{URL::to('/public/restaurant/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">
+                                    
                                 </div>
                                 <div class="col-lg-10 col-md-9 col-7">
                                     <div id="msg"></div>
-                                        <input type="file" name="logo_img" class="profilePic" accept="image/*">
+                                        <input type="file" name="logo_img" class="profilePic"    accept="image/*">
                                             <div class="input-group">
                                                 <div class="input-group-append">
                                                     <button type="button" class="browseProfilePhoto btn btn-primary">Change photo</button>
@@ -76,13 +77,13 @@
                                     <div class="col-lg-6 col-md-6 col-12 no-margin">
                                     	<div class="input-form">
                                         	<label for="inputEmail4" class="no-margin pad-bot-10">Restaurant Name</label>
-                                        	<input type="text" class="form-control" name="resturant_name" required>
+                                        	<input type="text" class="form-control" name="resturant_name" value="{{Auth::guard('restaurant')->user()->name}}" required>
                                     	</div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12 no-margin">
                                     	<div class="input-form">
 	                                        <label for="inputPassword4" class="no-margin pad-bot-10">Phone</label>
-	                                        <input type="phone" class="form-control" name="phone" required>
+	                                        <input type="phone" class="form-control" name="phone"  value="{{Auth::guard('restaurant')->user()->phone}}" required>
 	                                    </div>
                                     </div>
                                 </div>
@@ -90,13 +91,13 @@
                                     <div class="col-lg-6 col-md-6 col-12 no-margin">
                                     	<div class="input-form">
 	                                        <label for="inputPassword4" class="no-margin pad-bot-10">Owner</label>
-	                                        <input type="text" class="form-control" name="owner_name" required>
+	                                        <input type="text" class="form-control" name="owner_name"  value="{{Auth::guard('restaurant')->user()->owner_name}}" required>
 	                                    </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12 no-margin">
                                     	<div class="input-form">
 	                                        <label for="inputEmail4" class="no-margin pad-bot-10">Email</label>
-	                                        <input type="email" class="form-control" name="email" required>
+	                                        <input type="email" class="form-control" name="email" value="{{Auth::guard('restaurant')->user()->email}}" readonly >
 	                                    </div>
                                     </div>
                                 </div>

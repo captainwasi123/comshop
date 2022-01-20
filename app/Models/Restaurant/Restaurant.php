@@ -17,15 +17,14 @@ class Restaurant extends Authenticatable
         $r = Restaurant::find(Auth::guard('restaurant')->user()->id);
         $r->name = $data['resturant_name'];
         $r->phone = $data['phone'];
-        $r->email = $data['email'];
         $r->owner_name = $data['owner_name'];
         $r->save();
 
     }
 
     public static function updateLogo($filename){
-        $u = Restaurant::find(Auth::guard('restaurant')->user()->id);
-        $u->logo_img = $filename;
-        $u->save();
+        $r = Restaurant::find(Auth::guard('restaurant')->user()->id);
+        $r->logo_img = $filename;
+        $r->save();
     }
 }

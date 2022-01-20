@@ -45,16 +45,14 @@ class authController extends Controller
         $data =$request->all();
         Restaurant::updateRestProfile($data);
 
-        if ($request->hasFile('logo_img')) {
+        if($request->hasFile('logo_img')) {
             $file = $request->file('logo_img');
             $filename = Auth::guard('restaurant')->user()->id.'-'.date('dmyHis').'.'.$file->getClientOriginalExtension();
             $file->move(base_path('/public/storage/restaurant/logo/'), $filename);
             Restaurant::updateLogo($filename);
         }
         
-        return json_encode(['status' => '200', 'message' => 'Profile Successfully Updated.']);
-        
-
+        return redirect()->back()->with('success', 'Profile Updated Successfully.');
     }
 
 
