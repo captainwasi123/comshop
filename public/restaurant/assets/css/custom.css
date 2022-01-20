@@ -1151,30 +1151,30 @@ input[type=number]::-webkit-inner-spin-button {
 input#file {
     display: none;
 }
-
-button.browseProfilePhoto.btn.btn-primary {
-    font-family: Poppins;
-    font-style: normal;
+.browseProfilePhoto {
     font-weight: 500;
-    font-size: 16px;
-    line-height: 27px;
     color: #2E2E2E;
-    border-radius: 12px;
+    border-radius: 12px !important;
     padding: 10px 14px 10px 14px;
     background: #FFFFFF;
     border: 1px solid #A098AE;
-    box-sizing: border-box;
     border-radius: 8px;
+    margin-top: 25px;
+}
+.browseProfilePhoto:hover {
+    background: #F8B602;
+    border: 1px solid #F8B602;
+
 }
 
-form#image-form {
+/*form#image-form {
     display: table;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-}
+}*/
 
 .input-group{
     display: table-cell;

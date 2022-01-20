@@ -53,24 +53,24 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-12">
                         <p class="logo-head pad-top-40 pad-bot-20">Restaurant Logo</p>
-                        <div class="row">
-                            <div class="col-lg-2 col-md-3 col-5">
-                                <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">
-                            </div>
-                            <div class="col-lg-10 col-md-9 col-7">
-                                <div id="msg"></div>
-                                <form method="post" id="image-form">
-                                    <input type="file" name="profile_image" class="profilePic" accept="image/*">
-                                        <div class="input-group">
-                                            <div class="input-group-append">
-                                                <button type="button" class="browseProfilePhoto btn btn-primary">Change photo</button>
+                            <form method="post" id="image-form">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-5">
+                                    <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">
+                                </div>
+                                <div class="col-lg-10 col-md-9 col-7">
+                                    <div id="msg"></div>
+                                        <input type="file" name="profile_image" class="profilePic" accept="image/*">
+                                            <div class="input-group">
+                                                <div class="input-group-append">
+                                                    <button type="button" class="browseProfilePhoto btn btn-primary">Change photo</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                </form>
+                                    
+                                </div>
                             </div>
-                        </div>
                         <div class="row">
-                            <form class="profile-form">
+                            <div class="profile-form">
                                 <div class="form-row pad-top-40">
                                     <div class="col-lg-6 col-md-6 col-12 no-margin">
                                     	<div class="input-form">
@@ -102,8 +102,9 @@
                                 <div class="sav-button pad-top-50 pad-right-20">
                                 	<input type="submit" name="Save Setting" class="bg-yellow">
                                 </div>
-                            </form>
+                            </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -116,29 +117,31 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="row">
-                            <form class="profile-form pad-top-40 pad-bot-20">
-                                <div class="form-row">
-                                    <div class="col-lg-6 col-md-6 col-12 no-margin">
-                                    	<div class="input-form">
-	                                        <label for="inputEmail4" class="no-margin pad-bot-10">Address Details</label>
-	                                        <input type="text" class="form-control">
-	                                    </div>
+                            <form>
+                                <div class="profile-form pad-top-40 pad-bot-20">
+                                    <div class="form-row">
+                                        <div class="col-lg-6 col-md-6 col-12 no-margin">
+                                        	<div class="input-form">
+                                                <label for="inputEmail4" class="no-margin pad-bot-10">Address Details</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12 no-margin">
+                                        	<div class="input-form">
+                                                <label for="inputPassword4" class="no-margin pad-bot-10">Service Radius (km)</label>
+                                                <input type="number" class="form-control" placeholder="0">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-12 no-margin">
+                                        	<div class="input-form location-section pad-top-50">
+                                                <label for="inputPassword4">Location</label>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188820.0433106018!2d-71.11036704065482!3d42.31451859033202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3652d0d3d311b%3A0x787cbf240162e8a0!2sBoston%2C%20MA%2C%20USA!5e0!3m2!1sen!2s!4v1641387636311!5m2!1sen!2s" width="100%" height="300px" style="border:0;"></iframe>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-12 no-margin">
-                                    	<div class="input-form">
-	                                        <label for="inputPassword4" class="no-margin pad-bot-10">Service Radius (km)</label>
-	                                        <input type="number" class="form-control" placeholder="0">
-	                                    </div>
+                                    <div class="sav-button pad-top-50 pad-right-20">
+                                    	<input type="submit" name="Save Setting" class="bg-yellow">
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-12 no-margin">
-                                    	<div class="input-form location-section pad-top-50">
-	                                        <label for="inputPassword4">Location</label>
-	                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188820.0433106018!2d-71.11036704065482!3d42.31451859033202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3652d0d3d311b%3A0x787cbf240162e8a0!2sBoston%2C%20MA%2C%20USA!5e0!3m2!1sen!2s!4v1641387636311!5m2!1sen!2s" width="100%" height="300px" style="border:0;"></iframe>
-	                                    </div>
-                                    </div>
-                                </div>
-                                <div class="sav-button pad-top-50 pad-right-20">
-                                	<input type="submit" name="Save Setting" class="bg-yellow">
                                 </div>
                             </form>
                         </div>
