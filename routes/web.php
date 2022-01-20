@@ -43,6 +43,7 @@ use App\Http\Middleware;
 
                         Route::prefix('setting')->group(function(){
                                 Route::get('/', 'mainController@profile')->name('restaurant.profile');
+                                Route::post('/restprofilesetting', 'authController@restProfilesetting')->name('restaurant.restprofilesetting');
                                 Route::post('/changepassword', 'authController@changePassword')->name('restaurant.changepassword');
                         });
 

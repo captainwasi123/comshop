@@ -53,14 +53,15 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-12">
                         <p class="logo-head pad-top-40 pad-bot-20">Restaurant Logo</p>
-                            <form method="post" id="image-form">
+                            <form class="restProfileUpdateForm" id="image-form" action="{{route('restaurant.restprofilesetting')}}" method="post" >
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-2 col-md-3 col-5">
                                     <img src="{{URL::to('/public/restaurant/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">
                                 </div>
                                 <div class="col-lg-10 col-md-9 col-7">
                                     <div id="msg"></div>
-                                        <input type="file" name="profile_image" class="profilePic" accept="image/*">
+                                        <input type="file" name="logo_img" class="profilePic" accept="image/*">
                                             <div class="input-group">
                                                 <div class="input-group-append">
                                                     <button type="button" class="browseProfilePhoto btn btn-primary">Change photo</button>
@@ -147,8 +148,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </div> 
             <div id="Tokyo" class="tabcontent">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
@@ -192,7 +192,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
 	    </div>
     </div>
 

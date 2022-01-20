@@ -27,4 +27,28 @@ $(document).ready(function(){
         }, 'json');
         
     });
+
+// Restaurant Profile Update
+    $('#image-form').on('submit',function(e){
+        e.preventDefault();
+        Alert('abc');
+        var form = $(this);
+        var actionurl = e.currentTarget.action;
+        var datalsit =$(this).serialize();
+    
+        $.post(actionurl, datalsit, function(response){
+          if(response.status == '200'){
+                Swal.fire(
+                  'Success!',
+                  response.message,
+                  'success'
+                );
+         console.log(response)
+            
+        }, 'json');
+
+
+    });
+
+
 });
