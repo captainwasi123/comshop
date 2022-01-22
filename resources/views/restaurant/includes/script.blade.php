@@ -14,3 +14,11 @@
 <script src="{{URL::to('/public/restaurant/assets')}}/js/custom2.js"></script>
 <script src="{{URL::to('/public/restaurant/assets')}}/js/dev.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+   $(document).ready(function() {
+   
+   setTimeout(function() {
+      $('#websiteOverlay').addClass('loaded');
+   }, 2500);
+})
+</script>

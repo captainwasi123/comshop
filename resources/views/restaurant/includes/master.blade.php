@@ -17,9 +17,13 @@
       @yield('addStyle')
 
    </head>
-   <!-- <div id="websiteOverlay"><div class="loader"></div></div> -->
+
+   <div id="websiteOverlay">
+      <div class="loader"></div>
+   </div>
+   
    <body class="crm_body_bg">
-      
+
       <!-- Header Section Starts Here -->
       @include('restaurant.includes.sidebar')
    
