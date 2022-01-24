@@ -1694,7 +1694,7 @@ i.fas.fa-search {
     border-top: 16px solid #f8b602;
     width: 120px;
     height: 120px;
-    -webkit-animation: spin 2s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
     animation: spin 2s linear infinite;
     position: absolute;
     left: 48%;
@@ -1718,7 +1718,9 @@ i.fas.fa-search {
 
 /*Tablet Devices*/
 @media screen and (max-width:992px) and (min-width:768px) { 
-
+.tablet {
+    display: block !important;
+}
 .sec-1 {
     height: 40vh;
 }
@@ -2226,7 +2228,7 @@ svg {
     display: block;
 }
 .tab {
-    height: 55vh !important;
+    height: 125px !important;
 }
 .input-form label {
     font-size: 14px;
@@ -2251,7 +2253,10 @@ div#Tokyo {
 }
 
 .tab-head {
-    font-size: 14px;
+    padding-top: 10px;
+}
+.tab-image img {
+    width: 20%;
 }
 .security-section {
     width: 100%;
@@ -2414,6 +2419,11 @@ aa.btn.rejectorder {
 }
 .review-chart-section {
     margin: 0px;
+}
+.tab button {
+    display: inline-block;
+    width: 32%;
+    text-align: center;
 }
 
 

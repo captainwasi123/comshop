@@ -9,35 +9,35 @@
 	       	<div class="tab">
                 <button class="tablinks m-b-20" onclick="openCity(event, 'London')" id="defaultOpen">
                     <div class="row">
-                        <div class="col-lg-2 col-md-3 col-2 no-margin tab-image">
-                        	<img src="{{URL::to('/public/restaurant/assets')}}/images/restaurant-profile-image.png"     width="50%">
+                        <div class="col-lg-2 col-md-3 col-12 no-margin tab-image">
+                        	<img src="{{URL::to('/public/restaurant/assets')}}/images/restaurant-profile-image.png" width="50%">
                         </div>
-                        <div class="col-lg-10 col-md-9 col-10 no-pad">
-                        	<h3 class="tab-head no-margin pad-bot-10">Restaurant Profile</h3>
-                            <p class="btn-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <div class="col-lg-10 col-md-9 col-12 no-pad">
+                        	<h3 class="tab-head no-margin pad-bot-10">Profile</h3>
+                            <p class="btn-text desktop tablet">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                         </div>
                     </div>
                 </button>
                 <button class="tablinks m-b-20" onclick="openCity(event, 'Paris')">
                     <div class="row">
-                        <div class="col-lg-2 col-md-3 col-2 no-margin tab-image">
+                        <div class="col-lg-2 col-md-3 col-12 no-margin tab-image">
                         	<img src="{{URL::to('/public/restaurant/assets')}}/images/location-image.png">
                         </div>
-                        <div class="col-lg-10 col-md-9 col-10 no-pad">
+                        <div class="col-lg-10 col-md-9 col-12 no-pad">
                         	<h3 class="tab-head no-margin pad-bot-10">Location</h3>
-                            <p class="btn-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            <p class="btn-text desktop tablet">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod tempor.</p>
                         </div>
                     </div>
                 </button>
                 <button class="tablinks m-b-20" onclick="openCity(event, 'Tokyo')">
                     <div class="row">
-                        <div class="col-lg-2 col-md-3 col-2 no-margin tab-image">
+                        <div class="col-lg-2 col-md-3 col-12 no-margin tab-image">
                         	<img class="tab-image" src="{{URL::to('/public/restaurant/assets')}}/images/security-image.png">
                         </div>
-                        <div class="col-lg-10 col-md-9 col-10 no-pad">
+                        <div class="col-lg-10 col-md-9 col-12 no-pad">
                         	<h3 class="tab-head no-margin pad-bot-10">Security</h3>
-                            <p class="btn-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            <p class="btn-text desktop tablet">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod tempor.</p>
                         </div>
                     </div>

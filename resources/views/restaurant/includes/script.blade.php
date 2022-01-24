@@ -19,6 +19,6 @@
    
    setTimeout(function() {
       $('#websiteOverlay').addClass('loaded');
-   }, 2500);
+   }, 1000);
 })
 </script>
