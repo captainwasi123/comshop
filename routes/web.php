@@ -50,3 +50,8 @@ use App\Http\Middleware;
                 });
 
 	});
+
+        Route::prefix('admin')->namespace('admin')->group(function(){
+
+                Route::get('/', 'adminController@index')->name('admin.index');
+        });
