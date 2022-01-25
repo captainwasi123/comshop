@@ -1,5 +1,5 @@
 @extends('admin.includes.master')
-@section('title', 'Dashboard')
+@section('title', 'Blocked Restaurants')
 
 @section('content')
 
@@ -11,7 +11,7 @@
 	                <div class="white_box">
 	                   <div class="QA_section">
                             <div class="white_box_tittle list_header no-margin">
-                                <h3 class="inner-order-head no-margin pad-bot-10">Restaurants</h3>
+                                <h3 class="inner-order-head no-margin pad-bot-10">Blocked Restaurants</h3>
                                 <div class="add_button m-b-20 pad-top-10">
                                     <a href="#" class="bg-yellow">Add New</a>
                                 </div>

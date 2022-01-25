@@ -54,4 +54,9 @@ use App\Http\Middleware;
         Route::prefix('admin')->namespace('admin')->group(function(){
 
                 Route::get('/', 'adminController@index')->name('admin.index');
+                Route::get('/add-restaurants', 'adminController@addrestaurants')->name('admin.addrestaurants');
+                Route::get('/active-restaurants', 'adminController@activerestaurants')->name('admin.activerestaurants');
+                Route::get('/trashed-restaurants', 'adminController@trashedrestaurants')->name('admin.trashedrestaurants');
+                Route::get('/blocked-restaurants', 'adminController@blockedrestaurants')->name('admin.blockedrestaurants');
+
         });

@@ -11,4 +11,21 @@ class adminController extends Controller
     {
         return view('admin.index');
     }
+    function addrestaurants()
+    {
+        return view('admin.add-restaurants');
+    }
+    function activerestaurants()
+    {
+        return view('admin.active-restaurants');
+    }
+    function trashedrestaurants()
+    {
+        return view('admin.trashed-restaurants');
+    }
+    function blockedrestaurants()
+    {
+        return view('admin.blocked-restaurants');
+    }
+
 }

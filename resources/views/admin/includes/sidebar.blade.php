@@ -14,13 +14,12 @@
               <!-- <div class="icon_menu">
                   <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
               </div> -->
-              <span>Restaurant Manage</span>
+              <span>Restaurants</span>
             </a>
             <ul>
-              <li><a href="{{URL::to('/admin')}}" class="active">All Restaurant</a></li>
-              <li><a href="{{URL::to('/admin')}}" class="active">Add Restaurant</a></li>
-              <li><a href="{{URL::to('/admin')}}">Update Restaurant</a></li>
-              <li><a href="{{URL::to('/admin')}}">Delete Restaurant</a></li>
+              <li><a href="{{URL::to('/admin')}}" class="active">Active</a></li>
+              <li><a href="{{URL::to('/admin')}}" class="active">Blocked</a></li>
+              <li><a href="{{URL::to('/admin')}}">Trashed</a></li>
             </ul>
         </li>
         <li>
@@ -28,13 +27,13 @@
               <!-- <div class="icon_menu">
                   <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
               </div> -->
-              <span>Driver Manage</span>
+              <span>Drivers</span>
             </a>
             <ul>
-              <li><a href="{{URL::to('/admin')}}" class="active">All Drivers</a></li>
-              <li><a href="{{URL::to('/admin')}}" class="active">Add Driver</a></li>
-              <li><a href="{{URL::to('/admin')}}">Update Driver</a></li>
-              <li><a href="{{URL::to('/admin')}}">Delete Driver</a></li>
+              <li><a href="{{URL::to('/admin')}}" class="active">New Request</a></li>
+              <li><a href="{{URL::to('/admin')}}" class="active">Active</a></li>
+              <li><a href="{{URL::to('/admin')}}">Blocked</a></li>
+              <li><a href="{{URL::to('/admin')}}">Transhed</a></li>
             </ul>
         </li>
         <li class="">
