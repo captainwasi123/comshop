@@ -59,4 +59,7 @@ use App\Http\Middleware;
                 Route::get('/trashed-restaurants', 'adminController@trashedrestaurants')->name('admin.trashedrestaurants');
                 Route::get('/blocked-restaurants', 'adminController@blockedrestaurants')->name('admin.blockedrestaurants');
 
-        });
+                Route::get('/add-drivers', 'adminController@adddrivers')->name('admin.adddrivers');
+                Route::get('/new-drivers', 'adminController@newdrivers')->name('admin.newdrivers');
+
+        });     

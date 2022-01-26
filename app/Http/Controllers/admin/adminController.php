@@ -27,5 +27,14 @@ class adminController extends Controller
     {
         return view('admin.blocked-restaurants');
     }
+    function adddrivers()
+    {
+        return view('admin.add-drivers');
+    }
+    function newdrivers()
+    {
+        return view('admin.new-drivers');
+    }
+    
 
 }
