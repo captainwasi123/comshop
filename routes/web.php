@@ -54,12 +54,12 @@ use App\Http\Middleware;
         Route::prefix('admin')->namespace('admin')->group(function(){
 
                 Route::get('/', 'adminController@index')->name('admin.index');
-                Route::get('/add-restaurants', 'adminController@addrestaurants')->name('admin.addrestaurants');
-                Route::get('/active-restaurants', 'adminController@activerestaurants')->name('admin.activerestaurants');
-                Route::get('/trashed-restaurants', 'adminController@trashedrestaurants')->name('admin.trashedrestaurants');
-                Route::get('/blocked-restaurants', 'adminController@blockedrestaurants')->name('admin.blockedrestaurants');
+                Route::get('/add-restaurants', 'adminController@addrestaurants')->name('admin.restaurant.add');
+                Route::get('/active-restaurants', 'adminController@activerestaurants')->name('admin.restaurant.active');
+                Route::get('/trashed-restaurants', 'adminController@trashedrestaurants')->name('admin.restaurant.trashed');
+                Route::get('/blocked-restaurants', 'adminController@blockedrestaurants')->name('admin.restaurant.blocked');
 
-                Route::get('/add-drivers', 'adminController@adddrivers')->name('admin.adddrivers');
-                Route::get('/new-drivers', 'adminController@newdrivers')->name('admin.newdrivers');
+                Route::get('/add-drivers', 'adminController@adddrivers')->name('admin.drivers.add');
+                Route::get('/new-drivers', 'adminController@newdrivers')->name('admin.drivers.new');
 
         });     

@@ -17,9 +17,9 @@
               <span>Restaurants</span>
             </a>
             <ul>
-              <li><a href="{{URL::to('/admin')}}" class="active">Active</a></li>
-              <li><a href="{{URL::to('/admin')}}" class="active">Blocked</a></li>
-              <li><a href="{{URL::to('/admin')}}">Trashed</a></li>
+              <li><a href="{{route('admin.restaurant.active')}}" class="active">Active</a></li>
+              <li><a href="{{route('admin.restaurant.blocked')}}" class="active">Blocked</a></li>
+              <li><a href="{{route('admin.restaurant.trashed')}}">Trashed</a></li>
             </ul>
         </li>
         <li>
@@ -30,10 +30,10 @@
               <span>Drivers</span>
             </a>
             <ul>
-              <li><a href="{{URL::to('/admin')}}" class="active">New Request</a></li>
-              <li><a href="{{URL::to('/admin')}}" class="active">Active</a></li>
-              <li><a href="{{URL::to('/admin')}}">Blocked</a></li>
-              <li><a href="{{URL::to('/admin')}}">Transhed</a></li>
+              <li><a href="{{route('admin.drivers.new')}}" class="active">New Request</a></li>
+              <li><a href="" class="active">Active</a></li>
+              <li><a href="">Blocked</a></li>
+              <li><a href="">Transhed</a></li>
             </ul>
         </li>
         <li class="">

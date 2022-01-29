@@ -3,6 +3,11 @@
 
 @section('content')
 
+<style type="text/css">
+.sec-46 {
+    padding: 0px 10px 10px 0px;
+}
+</style>
 <div class="main_content_iner">
     <div class="container-fluid">
       	<div class="order-section-chart ">
@@ -13,7 +18,7 @@
                             <div class="white_box_tittle list_header no-margin">
                                 <h3 class="inner-order-head no-margin pad-bot-10">New Drivers</h3>
                                 <div class="add_button m-b-20 pad-top-10">
-                                    <a href="#" class="bg-yellow">Add New</a>
+                                    <a href="{{route('admin.drivers.add')}}" class="bg-yellow">Add New</a>
                                 </div>
                             </div>
                             <hr>
@@ -37,7 +42,9 @@
                                             <td>Syed</td>
                                             <td>abc@gmail.com</td>
                                             <td>XYZ</td>
-                                            <td><a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver">View</a></td>
+                                            <td>
+                                                <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver">View</a>
+                                            </td>
                                             <td>
                                             	<a href="#" class="status-icons"><i class="fa fa-pencil-square-o"></i></a>
                                             	<a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
@@ -57,7 +64,7 @@
 <!-- Driver View popup -->
 
     <div class="modal fade" id="new-driver" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 70%;" role="document">
             <div class="modal-content">
                 <div class="modal-header sec-46">
                     <h5 class="modal-title" id="exampleModalLongTitle">View Details</h5>
@@ -65,53 +72,53 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
-                <!-- <div class="sec-51"> 
-                    <div class="item-wrapper one">
-                        <div class="item">
-                            <form data-validation="true" action="#" method="post" enctype="multipart/form-data">
-                                <div class="item-inner">
-                                    <div class="item-content">
-                                        <div class="image-upload"> 
-                                            <label style="cursor: pointer;" for="file_upload"> <img src="" alt="" class="uploaded-image">
-                                                <div class="h-100">
-                                                    <div class="dplay-tbl">
-                                                        <div class="dplay-tbl-cell">
-                                                            <img src="{{URL::to('/public/restaurant/assets')}}/images/upload-icon.png">
-                                                            <h5> Image Upload</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <input data-required="image" type="file" name="image_name" id="file_upload" class="image-input" data-traget-resolution="image_resolution" value="">
-                                            </label> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                <div class="row">
+                    <div class="col-lg-12 col-md-6 col-6">
+                        <div class="drive-sec-2">
+                            <h5>First Name: <span>MR.Cone</span> &nbsp;</h5>
+                            <h5>Last Name:  <span>Cone</span> &nbsp;</h5>
+                            <h5>Phone: <span>+92-30100-999</span> &nbsp;</h5>
+                            <h5>Email: <span>xyz@gmail.com</span> &nbsp;</h5>
                         </div>
                     </div>
-                </div> -->
-                <div class="sec-50">
-                    <hr>
-                    <div class="row pop-up-form">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-6">
-                                    <div class="drivers-sec-1">
-                                        <p class="no-margin col-black pad-bot-10">Card Front: </p>
-                                        <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" width="100%">
-                                    </div>                                    
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-6">
-                                    <div class="drivers-sec-1">
-                                        <p class="no-margin col-black pad-bot-10">Card Back: </p>
-                                        <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" width="100%">
-                                    </div>                                    
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="sec-50">
+                            <hr>
+                            <div class="row pop-up-form">
+                                <div class="col-md-12">
+                                
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="drivers-sec-1">
+                                                <!-- <p class="no-margin col-black pad-bot-10">Card Front: </p> -->
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
+                                            </div>                                    
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="drivers-sec-1">
+                                                <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
+                                            </div>                                    
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="drivers-sec-1">
+                                                <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
+                                            </div>                                    
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="drivers-sec-1">
+                                                <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
+                                            </div>                                    
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>

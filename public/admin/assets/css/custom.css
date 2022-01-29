@@ -1795,7 +1795,33 @@ div#DataTables_Table_0_paginate .current {
 .sec-50 hr {
     margin: 5px 0px 20px 0px;
 }
-
+.upload-btn .input-group {
+    width: 100%;
+    display: block !important;
+    margin: 0 auto;
+}
+.upload-btn .input-group-append {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.upload-btn .browseProfilePhoto {
+    margin-top: 20px;
+}
+.drive-sec-2 h5 {
+    display: inline-block;
+    font-size: 18px;
+    padding-right: 20px;
+}
+.drive-sec-2 h5 span {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+}
+.pop-up-form h2 {
+    font-size: 22px;
+}
 /*admin close*/
 
 
