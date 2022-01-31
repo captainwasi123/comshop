@@ -16,7 +16,7 @@
           </a>
         </li>
         <li class="">
-          <a href="{{URL::to('/restaurant/menus/menu')}}" aria-expanded="false">
+          <a href="{{route('restaurant.menu')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
             </div>
