@@ -31,13 +31,13 @@
             </a>
             <ul>
               <li><a href="{{route('admin.drivers.new')}}" class="active">New Request</a></li>
-              <li><a href="" class="active">Active</a></li>
-              <li><a href="">Blocked</a></li>
-              <li><a href="">Transhed</a></li>
+              <li><a href="{{route('admin.drivers.active')}}" class="active">Active</a></li>
+              <li><a href="{{route('admin.drivers.blocked')}}">Blocked</a></li>
+              <li><a href="{{route('admin.drivers.trashed')}}">Transhed</a></li>
             </ul>
         </li>
         <li class="">
-          <a href="{{URL::to('/admin/menus/menu')}}" aria-expanded="false">
+          <a href="{{route('admin.reviewrating')}}" aria-expanded="false">
            <!--  <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
             </div> -->

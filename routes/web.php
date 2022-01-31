@@ -61,5 +61,10 @@ use App\Http\Middleware;
 
                 Route::get('/add-drivers', 'adminController@adddrivers')->name('admin.drivers.add');
                 Route::get('/new-drivers', 'adminController@newdrivers')->name('admin.drivers.new');
+                Route::get('/active-drivers', 'adminController@activedrivers')->name('admin.drivers.active');
+                Route::get('/blocked-drivers', 'adminController@blockeddrivers')->name('admin.drivers.blocked');
+                Route::get('/trashed-drivers', 'adminController@trasheddrivers')->name('admin.drivers.trashed');
+                Route::get('/review-rating', 'adminController@reviewrating')->name('admin.reviewrating');
+                Route::get('/view-reviews', 'adminController@viewreviews')->name('admin.review.view');
 
         });     

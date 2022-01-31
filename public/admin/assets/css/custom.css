@@ -1822,6 +1822,23 @@ div#DataTables_Table_0_paginate .current {
 .pop-up-form h2 {
     font-size: 22px;
 }
+.view-review-section h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+.view-review-section h2 span {
+    font-size: 14px;
+    font-weight: 300;
+}
+.view-review-section p {
+    font-size: 16px;
+    color: #2e2e2e;
+    font-weight: 400;
+}
+
+.view-review-section img {
+    border-radius: 50px;
+}
 /*admin close*/
 
 

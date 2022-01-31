@@ -35,6 +35,27 @@ class adminController extends Controller
     {
         return view('admin.new-drivers');
     }
+    function activedrivers()
+    {
+        return view('admin.active-drivers');
+    }
+    function blockeddrivers()
+    {
+        return view('admin.blocked-drivers');
+    }
+    function trasheddrivers()
+    {
+        return view('admin.trashed-drivers');
+    }
+    function reviewrating()
+    {
+        return view('admin.review-rating');
+    }
+    function viewreviews()
+    {
+        return view('admin.view-review');
+    }
+
     
 
 }
