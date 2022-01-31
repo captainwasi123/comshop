@@ -55,7 +55,29 @@ class adminController extends Controller
     {
         return view('admin.view-review');
     }
-
-    
+    function generalcatagories()
+    {
+        return view('admin.general-catagories');
+    }
+    function generalsetting()
+    {
+        return view('admin.general-setting');
+    }    
+    function activeusers()
+    {
+        return view('admin.active-users');
+    }
+    function blockedusers()
+    {
+        return view('admin.blocked-users');
+    }
+    function trashedusers()
+    {
+        return view('admin.trashed-users');
+    }   
+    function addusers()
+    {
+        return view('admin.add-users');
+    }    
 
 }
