@@ -119,33 +119,42 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="row">
-                            <form>
-                                <div class="profile-form pad-top-40 pad-bot-20">
-                                    <div class="form-row">
-                                        <div class="col-lg-6 col-md-6 col-12 no-margin">
-                                        	<div class="input-form">
-                                                <label for="inputEmail4" class="no-margin pad-bot-10">Address Details</label>
-                                                <input type="text" class="form-control">
+                            <div class="col-lg-12">
+                                <form method="post" action="{{route('restaurant.profile.location')}}">
+                                    @csrf
+                                    <input type="hidden" name="latitude" id="lat" value="{{Auth::guard('restaurant')->user()->latitude}}">
+                                    <input type="hidden" name="longitude" id="long" value="{{Auth::guard('restaurant')->user()->longitude}}">
+                                    <div class="profile-form pad-top-40 pad-bot-20">
+                                        <div class="form-row">
+                                            <div class="col-lg-8 col-md-8 col-12 no-margin">
+                                            	<div class="input-form">
+                                                    <label for="inputEmail4" class="no-margin pad-bot-10">Address Details</label>
+                                                    <input type="text" class="form-control" id="add-input" value="{{Auth::guard('restaurant')->user()->address}}" name="address" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12 no-margin">
+                                            	<div class="input-form">
+                                                    <label for="inputPassword4" class="no-margin pad-bot-10">Service Radius (km)</label>
+                                                    <input type="number" class="form-control" value="{{Auth::guard('restaurant')->user()->service_radius}}" name="radius" required>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-12 no-margin">
-                                        	<div class="input-form">
-                                                <label for="inputPassword4" class="no-margin pad-bot-10">Service Radius (km)</label>
-                                                <input type="number" class="form-control" placeholder="0">
+                                        <div class="form-row">
+                                            <div class="col-lg-12 col-md-12 col-12 no-margin">
+                                            	<div class="input-form location-section pad-top-50">
+                                                    <label for="inputPassword4">Location</label>
+                                                    <div class="map_block" id="map">
+                                                        
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12 col-md-12 col-12 no-margin">
-                                        	<div class="input-form location-section pad-top-50">
-                                                <label for="inputPassword4">Location</label>
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188820.0433106018!2d-71.11036704065482!3d42.31451859033202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3652d0d3d311b%3A0x787cbf240162e8a0!2sBoston%2C%20MA%2C%20USA!5e0!3m2!1sen!2s!4v1641387636311!5m2!1sen!2s" width="100%" height="300px" style="border:0;"></iframe>
-                                            </div>
+                                        <div class="sav-button pad-top-50 pad-right-20">
+                                        	<input type="submit" value="Save Setting" class="bg-yellow">
                                         </div>
                                     </div>
-                                    <div class="sav-button pad-top-50 pad-right-20">
-                                    	<input type="submit" name="Save Setting" class="bg-yellow">
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,5 +208,67 @@
     </div>
 
 @endsection
+@section('addScript')
+    <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', searchInitialize);
+        function searchInitialize() {
+            var input = document.getElementById('add-input');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+            autocomplete.addListener('place_changed', function () {
+                var place = autocomplete.getPlace();
+                // place variable will have all the information you are looking for.
+                $('#lat').val(place.geometry['location'].lat());
+                $('#long').val(place.geometry['location'].lng());
+            });
+        }
 
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        function initialize() {
+
+            var lat = parseFloat({{Auth::guard('restaurant')->user()->latitude}});
+            var lng = parseFloat({{Auth::guard('restaurant')->user()->longitude}});
+            var rad = {{empty(Auth::guard('restaurant')->user()->service_radius) ? 0 : Auth::guard('restaurant')->user()->service_radius}};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 12,
+              center: new google.maps.LatLng(lat, lng),
+            });
+
+            var circle = new google.maps.Circle({
+              map: map,
+              center: map.getCenter(),
+              radius: rad*1000,
+              strokeColor: "#404780",
+              strokeOpacity: 0.5,
+              strokeWeight: 1,
+              fillColor: "#F8B602",
+              fillOpacity: 0.5,
+            });
+            var currMarker = new google.maps.Marker({
+              position: map.getCenter(),
+              draggable: true,
+             
+              map: map
+            });
+            circle.bindTo('center', currMarker, 'position');
+
+            google.maps.event.addListener(currMarker, 'dragend', function(e){
+                placeMarkerAndPanTo(e.latLng, map,e.latLng.lat(),e.latLng.lng(), rad);
+            });    
+        }
+
+
+        function placeMarkerAndPanTo(latLng, map,lat,lng, rad) { 
+            $('#lat').val(lat);
+            $('#long').val(lng);
+            var latlngs = lat+ " , "+ lng;
+            var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlngs + "&sensor=false&key={{env('GOOGLE_MAP_API')}}&libraries=places";
+            $.getJSON(url, function (data) {  
+                var address = data.results[0].formatted_address
+                $('#add-input').val(address);
+            });
+        }
+    </script>
+@endsection
 

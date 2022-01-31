@@ -31,5 +31,6 @@
     <link rel="stylesheet" href="{{URL::to('/public/restaurant/assets')}}/css/metisMenu.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{URL::to('/public/restaurant/assets')}}/css/style.css" />
+    <link rel="stylesheet" href="{{URL::to('/public/restaurant/assets')}}/css/dev.css" />
     <link rel="stylesheet" href="{{URL::to('/public/restaurant/assets')}}/css/custom.css" />
     <link rel="stylesheet" href="{{URL::to('/public/restaurant/assets')}}/css/colors/default.css" id="colorSkinCSS">

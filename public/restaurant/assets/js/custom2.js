@@ -1,3 +1,39 @@
+var host = $("meta[name='host']").attr("content");
+$(document).ready(function(){
+    'use strict'
+
+
+    setTimeout(function() {
+       $('#websiteOverlay').addClass('loaded');
+    }, 500);
+
+    $(document).on('change', '#service_status',function() {
+        var status = 0;
+        if($(this).prop('checked')) {
+            status = 1;
+        } else {
+            status = 0;
+        }
+
+        $.getJSON(host+'/setting/status/'+status, function(response){
+            if(response.status == '100'){
+                Swal.fire(
+                    "Success!",
+                    "Status Updated.",
+                    "success"
+                );
+            }else{
+                Swal.fire(
+                    "Warning!",
+                    "Something went wrong.",
+                    "warning"
+                );
+            }
+        });
+
+    });
+});
+
 
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;

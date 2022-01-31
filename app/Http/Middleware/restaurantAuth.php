@@ -22,7 +22,7 @@ class restaurantAuth
         if(Auth::guard('restaurant')->check()){
             return $next($request);
         }else{
-            return redirect('/');
+            return redirect('/restaurant/login');
         }
     }
 

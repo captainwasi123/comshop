@@ -23,7 +23,7 @@ use App\Http\Middleware;
 	Route::prefix('restaurant')->namespace('restaurant')->group(function(){
                 Route::get('/login', 'authController@login')->name('restaurant.login');
                 Route::post('/login', 'authController@loginSubmit');
-                Route::get('/logout', 'authController@logout');
+                Route::get('/logout', 'authController@logout')->name('restaurant.logout');
       
         //MiddleWare
                 Route::middleware('restaurantAuth')->group(function(){
@@ -42,9 +42,12 @@ use App\Http\Middleware;
 
 
                         Route::prefix('setting')->group(function(){
-                                Route::get('/', 'mainController@profile')->name('restaurant.profile');
-                                Route::post('/restprofilesetting', 'authController@restProfilesetting')->name('restaurant.restprofilesetting');
-                                Route::post('/changepassword', 'authController@changePassword')->name('restaurant.changepassword');
+                                Route::get('/', 'settingController@profile')->name('restaurant.profile');
+                                Route::post('/restprofilesetting', 'settingController@restProfilesetting')->name('restaurant.restprofilesetting');
+                                Route::post('/changepassword', 'settingController@changePassword')->name('restaurant.changepassword');
+                                Route::post('/location', 'settingController@locationSubmit')->name('restaurant.profile.location');
+
+                                Route::get('/status/{status}', 'settingController@statusChange');
                         });
 
                 });
@@ -55,7 +58,7 @@ use App\Http\Middleware;
 
                 Route::get('/', 'adminController@index')->name('admin.index');
                 Route::get('/add-restaurants', 'adminController@addrestaurants')->name('admin.addrestaurants');
-                Route::get('/active-restaurants', 'adminController@activerestaurants')->name('admin.activerestaurants');
+                Route::get('/active-restaurants', 'adminController@activerestaurants')->name('admin.restaurants.active');
                 Route::get('/trashed-restaurants', 'adminController@trashedrestaurants')->name('admin.trashedrestaurants');
                 Route::get('/blocked-restaurants', 'adminController@blockedrestaurants')->name('admin.blockedrestaurants');
 

@@ -17,7 +17,7 @@
               <span>Restaurants</span>
             </a>
             <ul>
-              <li><a href="{{URL::to('/admin')}}" class="active">Active</a></li>
+              <li><a href="{{route('admin.restaurants.active')}}" class="active">Active</a></li>
               <li><a href="{{URL::to('/admin')}}" class="active">Blocked</a></li>
               <li><a href="{{URL::to('/admin')}}">Trashed</a></li>
             </ul>

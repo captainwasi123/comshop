@@ -16,10 +16,6 @@ class mainController extends Controller
 
     	return view('restaurant.menus.menu');
     }
-    function profile(){
-
-    	return view('restaurant.setting.profile');
-    }
     function order(){
 
         return view('restaurant.orders.order');
