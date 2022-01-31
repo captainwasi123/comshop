@@ -1,5 +1,5 @@
 @extends('admin.includes.master')
-@section('title', 'New Drivers')
+@section('title', 'Reviews & Ratings')
 
 @section('content')
 
@@ -16,38 +16,38 @@
 	                <div class="white_box">
 	                   <div class="QA_section">
                             <div class="white_box_tittle list_header no-margin">
-                                <h3 class="inner-order-head no-margin pad-bot-10">New Drivers</h3>
-                                <div class="add_button m-b-20 pad-top-10">
+                                <h3 class="inner-order-head no-margin pad-bot-10">Reviews & Ratings</h3>
+                                <!-- <div class="add_button m-b-20 pad-top-10">
                                     <a href="{{route('admin.drivers.add')}}" class="bg-yellow">Add New</a>
-                                </div>
+                                </div> -->
                             </div>
                             <hr>
                             <div class="QA_table restaurant-section">
                                 <table class="table lms_table_active ">
                                     <thead>
                                         <tr>
-                                            <th scope="col">First Name</th>
-                                            <th scope="col">Last Name</th>
-                                            <th scope="col">Phone</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">City</th>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Rating & Reviews</th>
                                             <th scope="col">Details</th>
-                                            <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Mr cone</td>
-                                            <td>+92-30100-999</td>
-                                            <td>Syed</td>
-                                            <td>abc@gmail.com</td>
+                                            <td>1</td>
+                                            <td>MR.coone</td>
                                             <td>XYZ</td>
                                             <td>
-                                                <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver">View</a>
-                                            </td>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                 5.0 <span>(14)</span>
+                                             </td>
                                             <td>
-                                            	<a href="#" class="status-icons"><i class="fa fa-pencil-square-o"></i></a>
-                                            	<a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
+                                                <a href="{{route('admin.review.view')}}" class="status_btn">View</a>
                                             </td>
                                         </tr>                                            
                                     </tbody>

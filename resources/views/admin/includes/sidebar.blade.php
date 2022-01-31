@@ -17,9 +17,15 @@
               <span>Restaurants</span>
             </a>
             <ul>
+<<<<<<< HEAD
               <li><a href="{{route('admin.restaurants.active')}}" class="active">Active</a></li>
               <li><a href="{{URL::to('/admin')}}" class="active">Blocked</a></li>
               <li><a href="{{URL::to('/admin')}}">Trashed</a></li>
+=======
+              <li><a href="{{route('admin.restaurant.active')}}" class="active">Active</a></li>
+              <li><a href="{{route('admin.restaurant.blocked')}}" class="active">Blocked</a></li>
+              <li><a href="{{route('admin.restaurant.trashed')}}">Trashed</a></li>
+>>>>>>> ba74f070ae912692356aae2c43574e51c8945505
             </ul>
         </li>
         <li>
@@ -30,14 +36,14 @@
               <span>Drivers</span>
             </a>
             <ul>
-              <li><a href="{{URL::to('/admin')}}" class="active">New Request</a></li>
-              <li><a href="{{URL::to('/admin')}}" class="active">Active</a></li>
-              <li><a href="{{URL::to('/admin')}}">Blocked</a></li>
-              <li><a href="{{URL::to('/admin')}}">Transhed</a></li>
+              <li><a href="{{route('admin.drivers.new')}}" class="active">New Request</a></li>
+              <li><a href="{{route('admin.drivers.active')}}" class="active">Active</a></li>
+              <li><a href="{{route('admin.drivers.blocked')}}">Blocked</a></li>
+              <li><a href="{{route('admin.drivers.trashed')}}">Transhed</a></li>
             </ul>
         </li>
         <li class="">
-          <a href="{{URL::to('/admin/menus/menu')}}" aria-expanded="false">
+          <a href="{{route('admin.reviewrating')}}" aria-expanded="false">
            <!--  <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
             </div> -->

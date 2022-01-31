@@ -1,5 +1,5 @@
 @extends('admin.includes.master')
-@section('title', 'New Drivers')
+@section('title', 'Active Drivers')
 
 @section('content')
 

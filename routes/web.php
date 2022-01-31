@@ -57,12 +57,24 @@ use App\Http\Middleware;
         Route::prefix('admin')->namespace('admin')->group(function(){
 
                 Route::get('/', 'adminController@index')->name('admin.index');
+<<<<<<< HEAD
                 Route::get('/add-restaurants', 'adminController@addrestaurants')->name('admin.addrestaurants');
                 Route::get('/active-restaurants', 'adminController@activerestaurants')->name('admin.restaurants.active');
                 Route::get('/trashed-restaurants', 'adminController@trashedrestaurants')->name('admin.trashedrestaurants');
                 Route::get('/blocked-restaurants', 'adminController@blockedrestaurants')->name('admin.blockedrestaurants');
+=======
+                Route::get('/add-restaurants', 'adminController@addrestaurants')->name('admin.restaurant.add');
+                Route::get('/active-restaurants', 'adminController@activerestaurants')->name('admin.restaurant.active');
+                Route::get('/trashed-restaurants', 'adminController@trashedrestaurants')->name('admin.restaurant.trashed');
+                Route::get('/blocked-restaurants', 'adminController@blockedrestaurants')->name('admin.restaurant.blocked');
+>>>>>>> ba74f070ae912692356aae2c43574e51c8945505
 
-                Route::get('/add-drivers', 'adminController@adddrivers')->name('admin.adddrivers');
-                Route::get('/new-drivers', 'adminController@newdrivers')->name('admin.newdrivers');
+                Route::get('/add-drivers', 'adminController@adddrivers')->name('admin.drivers.add');
+                Route::get('/new-drivers', 'adminController@newdrivers')->name('admin.drivers.new');
+                Route::get('/active-drivers', 'adminController@activedrivers')->name('admin.drivers.active');
+                Route::get('/blocked-drivers', 'adminController@blockeddrivers')->name('admin.drivers.blocked');
+                Route::get('/trashed-drivers', 'adminController@trasheddrivers')->name('admin.drivers.trashed');
+                Route::get('/review-rating', 'adminController@reviewrating')->name('admin.reviewrating');
+                Route::get('/view-reviews', 'adminController@viewreviews')->name('admin.review.view');
 
         });     
