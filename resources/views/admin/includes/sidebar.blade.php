@@ -49,11 +49,11 @@
               <!-- <div class="icon_menu">
                   <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
               </div> -->
-              <span>Setting</span>
+              <span>General</span>
             </a>
             <ul>
-              <li><a href="{{URL::to('/admin')}}" class="active">Catagories</a></li>
-              <li><a href="{{URL::to('/admin')}}">Commission System</a></li>
+              <li><a href="{{route('admin.general.catagories')}}" class="active">Catagories</a></li>
+              <li><a href="{{route('admin.general.setting')}}">Setting</a></li>
             </ul>
         </li>
         <li>
@@ -61,29 +61,15 @@
               <!-- <div class="icon_menu">
                   <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
               </div> -->
-              <span>User Manage</span>
+              <span>Users</span>
             </a>
             <ul>
-              <li><a href="{{URL::to('/admin')}}" class="active">All Users</a></li>
-              <li><a href="{{URL::to('/admin')}}" class="active">Add User</a></li>
-              <li><a href="{{URL::to('/admin')}}">Update User</a></li>
-              <li><a href="{{URL::to('/admin')}}">Delete User</a></li>
+              <li><a href="{{route('admin.users.active')}}" class="active">Active</a></li>
+              <li><a href="{{route('admin.users.blocked')}}" class="active">Blocked</a></li>
+              <li><a href="{{route('admin.users.trashed')}}">Trashed</a></li>
             </ul>
         </li>
     </ul>
-  <!--   <div class="delivery-section">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-8">
-                <span>Delivery Status</span>
-            </div>
-            <div class="col-lg-4 col-md-4 col-4">
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-    </div> -->
 </nav>
 <!-- sidebar part end -->
 

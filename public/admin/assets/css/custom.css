@@ -1839,6 +1839,9 @@ div#DataTables_Table_0_paginate .current {
 .view-review-section img {
     border-radius: 50px;
 }
+.bg-red {
+    background:red;
+}
 /*admin close*/
 
 
