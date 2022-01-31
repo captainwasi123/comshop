@@ -10,66 +10,50 @@
     </div>
     <ul id="sidebar_menu">
         <li>
-            <a class="has-arrow"  href="#"  aria-expanded="false">
-              <!-- <div class="icon_menu">
-                  <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
-              </div> -->
+            <a class="has-arrow"  href="javascript:void(0)"  aria-expanded="false">
               <span>Restaurants</span>
             </a>
             <ul>
-              <li><a href="{{route('admin.restaurants.active')}}" class="active">Active</a></li>
-              <li><a href="{{URL::to('/admin')}}" class="active">Blocked</a></li>
-              <li><a href="{{URL::to('/admin')}}">Trashed</a></li>
-              <li><a href="{{route('admin.restaurant.active')}}" class="active">Active</a></li>
-              <li><a href="{{route('admin.restaurant.blocked')}}" class="active">Blocked</a></li>
-              <li><a href="{{route('admin.restaurant.trashed')}}">Trashed</a></li>
+              <li><a href="{{route('admin.restaurants.add')}}">Add New</a></li>
+              <li><a href="{{route('admin.restaurants.active')}}">Active</a></li>
+              <li><a href="{{route('admin.restaurants.blocked')}}">Blocked</a></li>
+              <li><a href="{{route('admin.restaurants.trashed')}}">Trashed</a></li>
             </ul>
         </li>
         <li>
-            <a class="has-arrow"  href="#"  aria-expanded="false">
-              <!-- <div class="icon_menu">
-                  <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
-              </div> -->
+            <a class="has-arrow"  href="javascript:void(0)"  aria-expanded="false">
               <span>Drivers</span>
             </a>
             <ul>
-              <li><a href="{{route('admin.drivers.new')}}" class="active">New Request</a></li>
-              <li><a href="{{route('admin.drivers.active')}}" class="active">Active</a></li>
+              <li><a href="{{route('admin.drivers.newRequest')}}" class="active">New Request</a></li>
+              <li><a href="{{route('admin.drivers.add')}}">Add New</a></li>
+              <li><a href="{{route('admin.drivers.active')}}">Active</a></li>
               <li><a href="{{route('admin.drivers.blocked')}}">Blocked</a></li>
-              <li><a href="{{route('admin.drivers.trashed')}}">Transhed</a></li>
+              <li><a href="{{route('admin.drivers.trashed')}}">Trashed</a></li>
             </ul>
         </li>
         <li class="">
-          <a href="{{route('admin.reviewrating')}}" aria-expanded="false">
-           <!--  <div class="icon_menu">
-                <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
-            </div> -->
+          <a href="{{route('admin.reviews')}}" aria-expanded="false">
             <span>Reviews & Ratings</span>
           </a>
         </li>
         <li>
-            <a class="has-arrow"  href="#"  aria-expanded="false">
-              <!-- <div class="icon_menu">
-                  <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
-              </div> -->
-              <span>General</span>
-            </a>
-            <ul>
-              <li><a href="{{route('admin.general.catagories')}}" class="active">Catagories</a></li>
-              <li><a href="{{route('admin.general.setting')}}">Setting</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="has-arrow"  href="#"  aria-expanded="false">
-              <!-- <div class="icon_menu">
-                  <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
-              </div> -->
+            <a class="has-arrow"  href="javascript:void(0)"  aria-expanded="false">
               <span>Users</span>
             </a>
             <ul>
-              <li><a href="{{route('admin.users.active')}}" class="active">Active</a></li>
-              <li><a href="{{route('admin.users.blocked')}}" class="active">Blocked</a></li>
-              <li><a href="{{route('admin.users.trashed')}}">Trashed</a></li>
+              <li><a href="{{route('admin.users.add')}}">Add New</a></li>
+              <li><a href="{{route('admin.users.active')}}">Active</a></li>
+              <li><a href="{{route('admin.users.blocked')}}">Blocked</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="has-arrow"  href="javascript:void(0)"  aria-expanded="false">
+              <span>Setting</span>
+            </a>
+            <ul>
+              <li><a href="{{route('admin.settings.general')}}">General</a></li>
+              <li><a href="{{route('admin.settings.catagories')}}">Catagories</a></li>
             </ul>
         </li>
     </ul>

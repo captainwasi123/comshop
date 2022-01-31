@@ -26,11 +26,11 @@
                                 <table class="table lms_table_active ">
                                     <thead>
                                         <tr>
-                                            <th scope="col">S.No</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Rating & Reviews</th>
-                                            <th scope="col">Details</th>
+                                            <th scope="col" style="width:5%">S.No</th>
+                                            <th scope="col" style="width:30%">Name</th>
+                                            <th scope="col" style="width:40%">Address</th>
+                                            <th scope="col" style="width:15%">Rating & Reviews</th>
+                                            <th scope="col" style="width:10%">Details</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -40,14 +40,10 @@
                                             <td>XYZ</td>
                                             <td>
                                                 <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                 5.0 <span>(14)</span>
+                                                 5.0 <small>(14 reviews)</small>
                                              </td>
                                             <td>
-                                                <a href="{{route('admin.review.view')}}" class="status_btn">View</a>
+                                                <a href="{{route('admin.review.details')}}" class="status_btn">View</a>
                                             </td>
                                         </tr>                                            
                                     </tbody>
