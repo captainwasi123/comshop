@@ -321,6 +321,7 @@
 <!-- custom js -->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="{{URL::to('/public/restaurant/assets')}}/js/custom.js"></script>
+<script src="{{URL::to('/public/restaurant/assets')}}/js/dashboard.js"></script>
 <script src="{{URL::to('/public/restaurant/assets')}}/vendors/chartjs/chartjs_init.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script type="text/javascript">

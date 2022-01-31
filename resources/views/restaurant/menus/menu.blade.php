@@ -16,7 +16,7 @@
 		        </div>
 		        <div class="col-lg-6 col-md-8 col-8">
 		        	<div class="sec-6">
-		            	<a href="#" class="btn bg-yellow" data-toggle="modal" data-target="#exampleModalCenter">Add New Menu</a>
+		            	<a href="#" class="btn bg-yellow" data-toggle="modal" data-target="#addMenuModal">Add New Menu</a>
 		            </div>
 		        </div>  
 	        </div>
@@ -472,19 +472,19 @@
 
     <!-- menu popup -->
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="addMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
             <div class="modal-content">
-                <div class="modal-header sec-46">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add Menu</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="sec-51"> 
-                  	<div class="item-wrapper one">
-					    <div class="item">
-					        <form data-validation="true" action="#" method="post" enctype="multipart/form-data">
+		        <form data-validation="true" action="#" method="post" enctype="multipart/form-data">
+	                <div class="modal-header sec-46">
+	                    <h5 class="modal-title" id="exampleModalLongTitle">Add Menu</h5>
+	                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                        <span aria-hidden="true">&times;</span>
+	                    </button>
+	                </div>
+	                <div class="sec-51"> 
+	                  	<div class="item-wrapper one">
+						    <div class="item">
 					            <div class="item-inner">
 					                <div class="item-content">
 					                    <div class="image-upload"> 
@@ -502,44 +502,42 @@
 					                    </div>
 					                </div>
 					            </div>
-					        </form>
-					    </div>
-					</div>
-                </div>
-                <div class="sec-50">
-                    <div class="row pop-up-form">
-                        <div class="col-md-12">
-                            <form>
-                                <div class="form-group pad-bot-30 no-margin">
-                                    <label for="inputAddress">Title</label>
-                                    <input type="text" class="form-control" id="inputAddress" placeholder="">
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
-                                        <label for="inputCity">Category</label>
-                                        <input type="text" class="form-control" id="inputCity">
-                                    </div>
-                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
-                                        <label for="inputState">Prepration Time <span>(min)</span></label>
-                                        <input type="number" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
-                                        <label for="inputZip">Price</label>
-                                        <input type="number" class="form-control" id="inputZip" placeholder="10">
-                                    </div>
-                                </div>                                
-                                <div class="form-group">
-                                    <label for="inputAddress">Description</label>
-                                    <textarea class="form-control" rows="5"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pad-top-30">
-                    <button type="button" class="btn sec-49" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn sec-48">Save</button>
-                </div>
+						    </div>
+						</div>
+	                </div>
+	                <div class="sec-50">
+	                    <div class="row pop-up-form">
+	                        <div class="col-md-12">
+	                                <div class="form-group pad-bot-30 no-margin">
+	                                    <label for="inputAddress">Title</label>
+	                                    <input type="text" class="form-control" id="inputAddress" placeholder="">
+	                                </div>
+	                                <div class="form-row">
+	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
+	                                        <label for="inputCity">Category</label>
+	                                        <input type="text" class="form-control" id="inputCity">
+	                                    </div>
+	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
+	                                        <label for="inputState">Prepration Time <span>(min)</span></label>
+	                                        <input type="number" class="form-control" id="inputZip">
+	                                    </div>
+	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
+	                                        <label for="inputZip">Price</label>
+	                                        <input type="number" class="form-control" id="inputZip" placeholder="10">
+	                                    </div>
+	                                </div>                                
+	                                <div class="form-group">
+	                                    <label for="inputAddress">Description</label>
+	                                    <textarea class="form-control" rows="5"></textarea>
+	                                </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="modal-footer pad-top-30">
+	                    <button type="button" class="btn sec-49" data-dismiss="modal">Cancel</button>
+	                    <button type="button" class="btn sec-48">Save</button>
+	                </div>
+                </form>
             </div>
         </div>
     </div>

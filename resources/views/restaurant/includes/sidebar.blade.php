@@ -16,7 +16,7 @@
           </a>
         </li>
         <li class="">
-          <a href="{{URL::to('/restaurant/menus/menu')}}" aria-expanded="false">
+          <a href="{{route('restaurant.menu')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/menu-icon.png" alt="">
             </div>
@@ -81,7 +81,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-4">
                 <label class="switch">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" name="service_status" id="service_status" {{Auth::guard('restaurant')->user()->service_status == '1' ? 'checked' : ''}}>
                     <span class="slider round"></span>
                 </label>
             </div>
