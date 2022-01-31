@@ -137,8 +137,8 @@
 		          	</div>
 				</div>
 			</div>
-
 	    </div>
+
       	<div class="row">
 	        <div class="col-lg-12 col-md-12 col-12">
 	          	<div class="sec-7 pad-top-30 pad-bot-20">
@@ -242,232 +242,46 @@
 	         	</div>
 	        </div>
       	</div>
-      	<div class="row pad-top-30 pad-bot-20">
-	        <div class="col-lg-6 col-md-6 col-6">
-	          	<div class="sec-7">
-	              	<h2 class="no-margin">Best Seller</h2>
-	           	</div>
-	        </div>
-	        <div class="col-lg-6 col-md-6 col-6">
-	          	<div class="sec-8">
-	              	<a href="#" class="next col-yellow">View all &nbsp; ></a> 
-	           	</div>
-	        </div>
-	    </div>
-        <div class="row">
-           	<div class="col-lg-2 col-md-3 col-6">
-              	<div class="sec-12 bg-white">
-                 	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-                 	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
-                 	<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
-	              	<div class="row pad-top-20">
-	                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
-		                    <div class="sec-13">
-		                       <h2 class="no-margin">Sold 1k</h2>
-		                    </div>
-	                 	</div>
-		                <div class="col-lg-6 col-md-6 col-6 no-pad">
-		                    <div class="sec-14">
-		                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
-		                    </div>
-		                </div>
-	              	</div>   
-              	</div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-              	<div class="sec-12 bg-white">
-                 	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-                 	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
-                 	<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
-	              	<div class="row pad-top-20">
-	                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
-		                    <div class="sec-13">
-		                       <h2 class="no-margin">Sold 1k</h2>
-		                    </div>
-	                 	</div>
-		                <div class="col-lg-6 col-md-6 col-6 no-pad">
-		                    <div class="sec-14">
-		                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
-		                    </div>
-		                </div>
-	              	</div>   
-              	</div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-              	<div class="sec-12 bg-white">
-                 	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-                 	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
-                 	<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
-	              	<div class="row pad-top-20">
-	                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
-		                    <div class="sec-13">
-		                       <h2 class="no-margin">Sold 1k</h2>
-		                    </div>
-	                 	</div>
-		                <div class="col-lg-6 col-md-6 col-6 no-pad">
-		                    <div class="sec-14">
-		                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
-		                    </div>
-		                </div>
-	              	</div>   
-              	</div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-              	<div class="sec-12 bg-white">
-                 	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-                 	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
-                 	<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
-	              	<div class="row pad-top-20">
-	                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
-		                    <div class="sec-13">
-		                       <h2 class="no-margin">Sold 1k</h2>
-		                    </div>
-	                 	</div>
-		                <div class="col-lg-6 col-md-6 col-6 no-pad">
-		                    <div class="sec-14">
-		                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
-		                    </div>
-		                </div>
-	              	</div>   
-              	</div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-              	<div class="sec-12 bg-white">
-                 	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-                 	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
-                 	<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
-	              	<div class="row pad-top-20">
-	                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
-		                    <div class="sec-13">
-		                       <h2 class="no-margin">Sold 1k</h2>
-		                    </div>
-	                 	</div>
-		                <div class="col-lg-6 col-md-6 col-6 no-pad">
-		                    <div class="sec-14">
-		                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
-		                    </div>
-		                </div>
-	              	</div>   
-              	</div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-              	<div class="sec-12 bg-white">
-                 	<img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-                 	<h2 class="no-margin pad-top-20 pad-bot-10"> Pepperoni Pizza </h2>
-                 	<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
-	              	<div class="row pad-top-20">
-	                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
-		                    <div class="sec-13">
-		                       <h2 class="no-margin">Sold 1k</h2>
-		                    </div>
-	                 	</div>
-		                <div class="col-lg-6 col-md-6 col-6 no-pad">
-		                    <div class="sec-14">
-		                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
-		                    </div>
-		                </div>
-	              	</div>   
-              	</div>
-            </div>
-        </div>
-        <div class="row pad-top-30 pad-bot-20">
-	        <div class="col-lg-6 col-md-6 col-6">
-	          	<div class="sec-7">
-	              	<h2 class="no-margin">Promo</h2>
-	           	</div>
-	        </div>
-	        <div class="col-lg-6 col-md-6 col-6">
-	          	<div class="sec-8">
-	              	<a href="#" class="next col-yellow">View all &nbsp; ></a> 
-	           	</div>
-	        </div>
-	    </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-12">
-              	<div class="row sec-19 bg-white">
-                	<div class="col-lg-7 col-md-7 col-7 no-pad"> 
-	                  	<div class="sec-15">
-	                     	<h5 class="no-margin col-white"> 15% Off</h5>
-	                     	<h2 class="no-margin">Fish Burger</h2>
-	                     	<h4 class="no-margin">
-	                     		<span class="sec-17 col-yellow">$</span> 
-	                     		<span class="sec-18"> 3.59 </span> <del>$5.59</del> </h4>
-	                     	<h3 class="no-margin">
-	                     		<i class="fa fa-star"> <span> 5.0 . 1k+  Reviews </span></i>
-	                     	</h3>
-	                  	</div>
-                	</div>
-	                <div class="col-lg-5 col-md-5 col-5 no-pad"> 
-		                <div class="sec-16">
-		                    <img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-		                </div>
-	                </div>
-              	</div>
-           	</div>
-           	<div class="col-lg-3 col-md-6 col-12">
-              	<div class="row sec-19 bg-white">
-                	<div class="col-lg-7 col-md-7 col-7 no-pad"> 
-	                  	<div class="sec-15">
-	                     	<h5 class="no-margin col-white"> 15% Off</h5>
-	                     	<h2 class="no-margin">Fish Burger</h2>
-	                     	<h4 class="no-margin">
-	                     		<span class="sec-17 col-yellow">$</span> 
-	                     		<span class="sec-18"> 3.59 </span> <del>$5.59</del> </h4>
-	                     	<h3 class="no-margin">
-	                     		<i class="fa fa-star"> <span> 5.0 . 1k+  Reviews </span></i>
-	                     	</h3>
-	                  	</div>
-                	</div>
-	                <div class="col-lg-5 col-md-5 col-5 no-pad"> 
-		                <div class="sec-16">
-		                    <img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-		                </div>
-	                </div>
-              	</div>
-           	</div>
-           	<div class="col-lg-3 col-md-6 col-12">
-              	<div class="row sec-19 bg-white">
-                	<div class="col-lg-7 col-md-7 col-7 no-pad"> 
-	                  	<div class="sec-15">
-	                     	<h5 class="no-margin col-white"> 15% Off</h5>
-	                     	<h2 class="no-margin">Fish Burger</h2>
-	                     	<h4 class="no-margin">
-	                     		<span class="sec-17 col-yellow">$</span> 
-	                     		<span class="sec-18"> 3.59 </span> <del>$5.59</del> </h4>
-	                     	<h3 class="no-margin">
-	                     		<i class="fa fa-star"> <span> 5.0 . 1k+  Reviews </span></i>
-	                     	</h3>
-	                  	</div>
-                	</div>
-	                <div class="col-lg-5 col-md-5 col-5 no-pad"> 
-		                <div class="sec-16">
-		                    <img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-		                </div>
-	                </div>
-              	</div>
-           	</div>
-           	<div class="col-lg-3 col-md-6 col-12">
-              	<div class="row sec-19 bg-white">
-                	<div class="col-lg-7 col-md-7 col-7 no-pad"> 
-	                  	<div class="sec-15">
-	                     	<h5 class="no-margin col-white"> 15% Off</h5>
-	                     	<h2 class="no-margin">Fish Burger</h2>
-	                     	<h4 class="no-margin">
-	                     		<span class="sec-17 col-yellow">$</span> 
-	                     		<span class="sec-18"> 3.59 </span> <del>$5.59</del> </h4>
-	                     	<h3 class="no-margin">
-	                     		<i class="fa fa-star"> <span> 5.0 . 1k+  Reviews </span></i>
-	                     	</h3>
-	                  	</div>
-                	</div>
-	                <div class="col-lg-5 col-md-5 col-5 no-pad"> 
-		                <div class="sec-16">
-		                    <img src="{{URL::to('/public/restaurant/assets')}}/images/image11.png">
-		                </div>
-	                </div>
-              	</div>
-           	</div>
-        </div>
+
+      	@foreach($categories as $val)
+      		@if(count($val->menu) > 0)
+		      	<div class="row pad-top-30 pad-bot-20">
+			        <div class="col-lg-6 col-md-6 col-6">
+			          	<div class="sec-7">
+			              	<h2 class="no-margin">{{$val->name}}</h2>
+			           	</div>
+			        </div>
+			        <div class="col-lg-6 col-md-6 col-6">
+			          	<div class="sec-8">
+			           	</div>
+			        </div>
+			    </div>
+		        <div class="row">
+			    	@foreach($val->menu as $menu)
+			           	<div class="col-lg-2 col-md-3 col-6">
+			              	<div class="sec-12 bg-white">
+			                 	<img src="{{URL::to('/public/storage/restaurant/menu/'.$menu->image)}}">
+			                 	<h2 class="no-margin pad-top-20 pad-bot-10"> {{$menu->title}} </h2>
+			                 	<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
+				              	<div class="row pad-top-20">
+				                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
+					                    <div class="sec-13">
+					                       <h2 class="no-margin">Sold 1k</h2>
+					                    </div>
+				                 	</div>
+					                <div class="col-lg-6 col-md-6 col-6 no-pad">
+					                    <div class="sec-14">
+					                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
+					                    </div>
+					                </div>
+				              	</div>   
+			              	</div>
+			            </div>
+			        @endforeach
+		        </div>
+
+	        @endif
+        @endforeach
     </div>
 
     <!-- menu popup -->
@@ -475,7 +289,8 @@
     <div class="modal fade" id="addMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
             <div class="modal-content">
-		        <form data-validation="true" action="#" method="post" enctype="multipart/form-data">
+		        <form data-validation="true" action="{{route('restaurant.menu.add')}}" method="post" enctype="multipart/form-data">
+		        	@csrf
 	                <div class="modal-header sec-46">
 	                    <h5 class="modal-title" id="exampleModalLongTitle">Add Menu</h5>
 	                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -497,7 +312,7 @@
 					                                    </div>
 					                                </div>
 					                            </div>
-												<input data-required="image" type="file" name="image_name" id="file_upload" class="image-input" data-traget-resolution="image_resolution" value="">
+												<input data-required="image" type="file" name="image_name" id="file_upload" class="image-input" data-traget-resolution="image_resolution" required>
 					                        </label> 
 					                    </div>
 					                </div>
@@ -510,32 +325,37 @@
 	                        <div class="col-md-12">
 	                                <div class="form-group pad-bot-30 no-margin">
 	                                    <label for="inputAddress">Title</label>
-	                                    <input type="text" class="form-control" id="inputAddress" placeholder="">
+	                                    <input type="text" class="form-control" id="inputAddress" name="title" placeholder="" required>
 	                                </div>
 	                                <div class="form-row">
 	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
 	                                        <label for="inputCity">Category</label>
-	                                        <input type="text" class="form-control" id="inputCity">
+	                                        <select class="form-control" name="category" required>
+	                                        	<option value="">Select</option>
+	                                        	@foreach($categories as $val)
+	                                        		<option value="{{$val->id}}">{{$val->name}}</option>
+	                                        	@endforeach
+	                                        </select>
 	                                    </div>
 	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
 	                                        <label for="inputState">Prepration Time <span>(min)</span></label>
-	                                        <input type="number" class="form-control" id="inputZip">
+	                                        <input type="number" class="form-control" id="inputZip" name="prepration_time" required>
 	                                    </div>
 	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
 	                                        <label for="inputZip">Price</label>
-	                                        <input type="number" class="form-control" id="inputZip" placeholder="10">
+	                                        <input type="number" class="form-control" id="inputZip" name="price" value="10">
 	                                    </div>
 	                                </div>                                
 	                                <div class="form-group">
 	                                    <label for="inputAddress">Description</label>
-	                                    <textarea class="form-control" rows="5"></textarea>
+	                                    <textarea class="form-control" rows="5" name="description" required></textarea>
 	                                </div>
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="modal-footer pad-top-30">
 	                    <button type="button" class="btn sec-49" data-dismiss="modal">Cancel</button>
-	                    <button type="button" class="btn sec-48">Save</button>
+	                    <button type="submit" class="btn sec-48">Save</button>
 	                </div>
                 </form>
             </div>

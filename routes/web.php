@@ -30,7 +30,8 @@ use App\Http\Middleware;
                         Route::get('/', 'mainController@index')->name('restaurant.index');
 
                         Route::prefix('menus')->group(function(){
-                                Route::get('/', 'mainController@menu')->name('restaurant.menu');
+                                Route::get('/', 'menuController@menu')->name('restaurant.menu');
+                                Route::post('/add', 'menuController@addMenu')->name('restaurant.menu.add');
                         });
                         Route::prefix('orders')->group(function(){
                                 Route::get('/order', 'mainController@order')->name('restaurant.order');

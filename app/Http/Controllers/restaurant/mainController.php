@@ -12,10 +12,6 @@ class mainController extends Controller
 
     	return view('restaurant.index');
     }
-    function menu(){
-
-    	return view('restaurant.menus.menu');
-    }
     function order(){
 
         return view('restaurant.orders.order');
