@@ -20,12 +20,7 @@
 			                <button> <img src="{{URL::to('/public/restaurant/assets')}}/images/image12.png"> </button>
 			            </form>
 			        </div> -->                          
-		        </div>
-		        <div class="col-lg-6 col-md-8 col-8">
-		        	<div class="sec-6">
-		            	<a href="#" class="btn bg-yellow" data-toggle="modal" data-target="#addMenuModal">Add New Menu</a>
-		            </div>
-		        </div>  
+		        </div> 
 	        </div>
 	        <div class="row pad-top-30 pad-bot-20">
 	            <div class="col-lg-6 col-md-6 col-6">
@@ -33,11 +28,11 @@
 	                	<h2 class="no-margin">Category</h2>
 	               	</div>
 	            </div>
-	            <div class="col-lg-6 col-md-6 col-6">
-	               	<div class="sec-8">
-	                	<a href="#" class="next col-yellow">View all &nbsp; ></a> 
-	               	</div>
-	            </div>
+		        <div class="col-lg-6 col-md-8 col-8">
+		        	<div class="sec-6">
+		            	<a href="#" class="btn bg-yellow" data-toggle="modal" data-target="#addMenuModal">Add New Menu</a>
+		            </div>
+		        </div> 
 	        </div>
 	        <div class="section-4">
 	        	<div class="carousel"> 
@@ -276,7 +271,7 @@
 					                <div class="item-content">
 						                <div class="file-upload image-upload">
 						                   	<div class="image-upload-wrap">
-						                     	<input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+						                     	<input class="file-upload-input" name="image_name" type='file' onchange="readURL(this);" accept="image/*" />
 							                    <div class="drag-text">
 							                    	<h3>
 							                    		<i class="fas fa-cloud-download-alt"></i>

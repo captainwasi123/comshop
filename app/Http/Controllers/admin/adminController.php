@@ -10,6 +10,11 @@ class adminController extends Controller
     function index()
     {
         return view('admin.index');
+    }
+
+    function login(){
+
+        return view('admin.login');
     }   
 
 }

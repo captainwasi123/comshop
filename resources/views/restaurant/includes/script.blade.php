@@ -22,12 +22,12 @@
 	$(document).ready(function(){
   $('.carousel').slick({
     speed: 400,
-    slidesToShow: 7,
+    slidesToShow: 8,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2500,
     dots:false,
-    centerMode: true,
+    centerMode: false,
     responsive: [{
       breakpoint: 1024,
       settings: {
@@ -68,10 +68,10 @@
     speed: 400,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2500,
     dots:false,
-    centerMode: true,
+    centerMode: false,
     responsive: [{
       breakpoint: 1024,
       settings: {

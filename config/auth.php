@@ -51,6 +51,17 @@ return [
             'provider' => 'restaurant',
             'hash' => false,
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admin',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -79,6 +90,11 @@ return [
         'restaurant' => [
             'driver' => 'eloquent',
             'model' => App\Models\Restaurant\Restaurant::class,
+        ],
+
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Restaurant\Admin::class,
         ],
 
         // 'users' => [
