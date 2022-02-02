@@ -3,6 +3,13 @@
 
 @section('content')
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css" />
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+
+
+
 	<div class="main_content_iner ">
         <div class="container-fluid p-0">
 	        <div class="row">
@@ -32,110 +39,63 @@
 	               	</div>
 	            </div>
 	        </div>
-	        <div class="section-4 desktop">
-				<div class="row">
-				    <div class="col">
-				    	<div class="sec-9 bg-white text-center">
+	        <div class="section-4">
+	        	<div class="carousel"> 
+			      	<div>				        
+			          	<div class="sec-9 bg-white text-center">
+	             			<img src="{{URL::to('/public/restaurant/assets')}}/images/image3.png" width="50%"> 
+	             			<h2 class="no-margin pad-top-10">Bakery</h2>  
+	          			</div>				
+			      	</div> 
+			      	<div>				        
+			          	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image3.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Bakery</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col">
-				    	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image4.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Burger</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col">
-				    	<div class="sec-9 bg-white text-center">
+		          		</div>				
+			      	</div>
+			      	<div>				        
+			          	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image5.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Beverage</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col">
-				    	<div class="sec-9 bg-white text-center">
+		          		</div>				
+			      	</div> 
+			      	<div>				        
+			          	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image6.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Chicken</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col">
-				    	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image7.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Pizza</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col">
-				    	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image8.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Seafood</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col">
-				    	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image9.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Dessert</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col">
-				    	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image10.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Noodle</h2>  
-		          		</div>
-		          	</div>
-				</div>
-			</div>
-
-			<div class="section-4 mobile">
-				<div class="row">
-				    <div class="col-md-4 col-6">
-				    	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image3.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Bakery</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col-md-4 col-6">
-				    	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image4.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Burger</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col-md-4 col-6">
-				    	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image5.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Beverage</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col-md-4 col-6">
-				    	<div class="sec-9 bg-white text-center">
+		          		</div>				
+			      	</div> 
+			      	<div>				        
+			          	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image6.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Chicken</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col-md-4 col-6">
-				    	<div class="sec-9 bg-white text-center">
+		          		</div>				
+			      	</div>
+			      	<div>				        
+			          	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image7.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Pizza</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col-md-4 col-6">
-				    	<div class="sec-9 bg-white text-center">
+		          		</div>			
+			      	</div>
+			      	<div>				        
+			          	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image8.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Seafood</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col-md-4 col-6">
-				    	<div class="sec-9 bg-white text-center">
+		          		</div>			
+			      	</div>
+			      	<div>				        
+			          	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image9.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Dessert</h2>  
-		          		</div>
-		          	</div>
-		          	<div class="col-md-4 col-6">
-				    	<div class="sec-9 bg-white text-center">
+		          		</div>		
+			      	</div>
+			      	<div>				        
+			          	<div class="sec-9 bg-white text-center">
 		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image10.png" width="50%"> 
 		             		<h2 class="no-margin pad-top-10">Noodle</h2>  
-		          		</div>
-		          	</div>
-				</div>
+		          		</div>		
+			      	</div>
+    			</div>		
 			</div>
 	    </div>
 
@@ -257,36 +217,48 @@
 			        </div>
 			    </div>
 		        <div class="row">
-			    	@foreach($val->menu as $menu)
-			           	<div class="col-lg-2 col-md-3 col-6">
-			              	<div class="sec-12 bg-white">
-			                 	<img src="{{URL::to('/public/storage/restaurant/menu/'.$menu->image)}}">
-			                 	<h2 class="no-margin pad-top-20 pad-bot-10"> {{$menu->title}} </h2>
-			                 	<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
-				              	<div class="row pad-top-20">
-				                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
-					                    <div class="sec-13">
-					                       <h2 class="no-margin">Sold 1k</h2>
-					                    </div>
-				                 	</div>
-					                <div class="col-lg-6 col-md-6 col-6 no-pad">
-					                    <div class="sec-14">
-					                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
-					                    </div>
-					                </div>
-				              	</div>   
-			              	</div>
-			            </div>
-			        @endforeach
+		        	<div class="col-lg-12 col-md-12 col-12">
+		           		<div class="carousel1"> 
+			    			@foreach($val->menu as $menu)
+						      	<div>				        
+						          	<div class="sec-12 bg-white">
+			                 			<img src="{{URL::to('/public/storage/restaurant/menu/'.$menu->image)}}">
+			                 			<h2 class="no-margin pad-top-20 pad-bot-10"> {{$menu->title}} </h2>
+			                 			<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
+				              			<div class="row pad-top-20">
+						                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
+							                    <div class="sec-13">
+							                       <h2 class="no-margin">Sold 1k</h2>
+							                    </div>
+						                 	</div>
+							                <div class="col-lg-6 col-md-6 col-6 no-pad">
+							                    <div class="sec-14">
+							                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
+							                    </div>
+							                </div>
+				              			</div>   
+			              			</div>				
+						      	</div> 			          						
+			        		@endforeach
+		        		</div>			              	
+			        </div>
 		        </div>
-
 	        @endif
         @endforeach
     </div>
-
+   
     <!-- menu popup -->
 
-    <div class="modal fade" id="addMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered sec-47" role="document">
+            <div class="modal-content">
+                
+            </div>
+        </div>
+    </div>
+
+	<div class="modal fade" id="addMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
             <div class="modal-content">
 		        <form data-validation="true" action="{{route('restaurant.menu.add')}}" method="post" enctype="multipart/form-data">
@@ -302,23 +274,24 @@
 						    <div class="item">
 					            <div class="item-inner">
 					                <div class="item-content">
-					                    <div class="image-upload"> 
-					                    	<label style="cursor: pointer;" for="file_upload"> <img src="" alt="" class="uploaded-image">
-					                            <div class="h-100">
-					                                <div class="dplay-tbl">
-					                                    <div class="dplay-tbl-cell">
-					                                    	<img src="{{URL::to('/public/restaurant/assets')}}/images/upload-icon.png">
-					                                        <h5> Image Upload</h5>
-					                                    </div>
-					                                </div>
-					                            </div>
-												<input data-required="image" type="file" name="image_name" id="file_upload" class="image-input" data-traget-resolution="image_resolution" required>
-					                        </label> 
-					                    </div>
+						                <div class="file-upload image-upload">
+						                   	<div class="image-upload-wrap">
+						                     	<input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+							                    <div class="drag-text">
+							                    	<h3>
+							                    		<i class="fas fa-cloud-download-alt"></i>
+							                    		<br> Upload Image
+							                    	</h3>
+							                     </div>
+						                   </div>
+						                    <div class="file-upload-content sec-53">
+						                    	<img class="file-upload-image" src="#" alt="your image" width="100%" />
+						                    </div>    
+						                </div>
 					                </div>
 					            </div>
 						    </div>
-						</div>
+						</div>                
 	                </div>
 	                <div class="sec-50">
 	                    <div class="row pop-up-form">
@@ -362,4 +335,38 @@
         </div>
     </div>
 
+<script type="text/javascript">
+function readURL(input) {
+  if (input.files && input.files[0]) {
+
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.image-upload-wrap').hide();
+
+      $('.file-upload-image').attr('src', e.target.result);
+      $('.file-upload-content').show();
+
+      $('.image-title').html(input.files[0].name);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+
+  } else {
+    removeUpload();
+  }
+}
+
+function removeUpload() {
+  $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+  $('.file-upload-content').hide();
+  $('.image-upload-wrap').show();
+}
+$('.image-upload-wrap').bind('dragover', function () {
+    $('.image-upload-wrap').addClass('image-dropping');
+  });
+  $('.image-upload-wrap').bind('dragleave', function () {
+    $('.image-upload-wrap').removeClass('image-dropping');
+});
+</script>
 @endsection

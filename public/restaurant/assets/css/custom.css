@@ -19,18 +19,18 @@ h1, h2, h3, h4, h5, h6, p, span {
 p {
   color: #A098AE;
 }
-body::-webkit-scrollbar {
-  width: 8px;               /* width of the entire scrollbar */
+::-webkit-scrollbar {
+  width: 8px !important;               /* width of the entire scrollbar */
 }
 
-body::-webkit-scrollbar-track {
-  background: #F8B602;        /* color of the tracking area */
+::-webkit-scrollbar-track {
+  background: #F8B602 !important;        /* color of the tracking area */
 }
 
-body::-webkit-scrollbar-thumb {
-  background-color: #2E2E2E;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 2px solid #2E2E2E;  /* creates padding around scroll thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #2E2E2E !important;    /* color of the scroll thumb */
+  border-radius: 20px !important;       /* roundness of the scroll thumb */
+  border: 2px solid #2E2E2E !important;  /* creates padding around scroll thumb */
 }
 .col-yellow {
     color:#F8B602 !important;
@@ -1032,9 +1032,23 @@ input[type=number]::-webkit-inner-spin-button {
 .item .item-content {
     padding: 10px 10px 0px 10px;
 }
+.drag-text h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
+.drag-text h3 i{
+    font-size: 50px;
+    padding-bottom: 10px;
+}
+.drag-text {
+    padding: 30px 0px 30px 0px;
+}
+.item-wrapper input {
+    height: 100%;
+}
 .image-upload {
     width: 23%;
-    height: 130px;
+    height: 150px;
     border: 1px dashed #A098AE;
     border-radius: 5px;
     margin-bottom: 30px;
@@ -1054,7 +1068,7 @@ input[type=number]::-webkit-inner-spin-button {
     overflow: hidden
 }
 .image-upload img {
-    height: 100% !important;
+    height: 150px !important;
     width: auto !important;
     border-radius: 0px;
     margin: 0 auto
@@ -1713,6 +1727,17 @@ i.fas.fa-search {
   100% { transform: rotate(360deg); }
 }
 
+.slick-slide img {
+    display: initial !important;
+}
+.slick-slide {
+    padding: 0px 12px;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 22px;
+    opacity: 1;
+    color: #2e2e2e !important;
+}
 
 /*MEDIA QUERY START*/
 

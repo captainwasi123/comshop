@@ -34,3 +34,6 @@
     <link rel="stylesheet" href="{{URL::to('/public/restaurant/assets')}}/css/dev.css" />
     <link rel="stylesheet" href="{{URL::to('/public/restaurant/assets')}}/css/custom.css" />
     <link rel="stylesheet" href="{{URL::to('/public/restaurant/assets')}}/css/colors/default.css" id="colorSkinCSS">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'><link rel="stylesheet" href="./style.css">
