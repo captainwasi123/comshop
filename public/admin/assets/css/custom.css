@@ -1602,6 +1602,14 @@ i.fas.fa-search {
     padding: 12px 20px;
     border-color: #F8B602;
 }
+.page-item.active a {
+    background: #f8b602 !important;
+    color: white !important;
+}
+.page-item.disable a {
+    background: #d3d3d3 !important;
+    color: white !important;
+}
 .page-item {
     padding: 5px;
     display: flex;
@@ -1617,7 +1625,7 @@ i.fas.fa-search {
     display: unset;
     font-size: 16px;
     line-height: 27px;
-    color: #F8B602;
+    color: #2E2E2E;
 }
 
 .page-shows p{

@@ -1605,6 +1605,14 @@ i.fas.fa-search {
     padding: 5px;
     display: flex;
 }
+.page-item.active a {
+    background: #f8b602 !important;
+    color: white !important;
+}
+.page-item.disable a {
+    background: #d3d3d3 !important;
+    color: white !important;
+}
 .page-link-nav {
     position: relative;
     margin-left: 0px;
@@ -1616,7 +1624,7 @@ i.fas.fa-search {
     display: unset;
     font-size: 16px;
     line-height: 27px;
-    color: #F8B602;
+    color: #2E2E2E;
 }
 
 .page-shows p{
