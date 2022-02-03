@@ -405,7 +405,7 @@ input:checked + .slider:before {
 .profile_info img {
     max-width: 60px;
     max-height: 60px;
-    border-radius: 0px; 
+    border-radius: 50%; 
     cursor: pointer;
 }
 .header_iner.default_header {

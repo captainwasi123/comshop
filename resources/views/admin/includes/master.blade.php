@@ -5,7 +5,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <meta name="host" content="{{URL::to('/')}}">
+      <meta name="host" content="{{URL::to('/admin')}}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +35,7 @@
       @yield('content')
 
       </section>
-         @include('admin.includes.script')
-
-         @yield('addScript')
+      @include('admin.includes.script')
+      @yield('addScript')
    </body>
 </html>

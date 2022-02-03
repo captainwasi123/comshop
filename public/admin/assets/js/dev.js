@@ -1,32 +1,26 @@
-
+var host = $("meta[name='host']").attr("content");  
 $(document).ready(function(){
     'use strict'
 
 
-    $('#resetPasswordForm').on('submit',function(e){
-        e.preventDefault();
-        var form = $(this);
-        var actionurl = e.currentTarget.action;
-        var datalist = $(this).serialize();
+    $(document).on('change', '.restaurantStatus', function(){
+        var val = $(this).data('val');
+        var status = 0;
+        if($(this).prop('checked')){
+            status = 1;
+        }else{
+            status = 2;
+        }
 
-        $.post(actionurl, datalist, function(response) {
-            if(response.status == '100'){
-                Swal.fire(
-                  'Alert!',
-                  response.message,
-                  'warning'
-                );
-            }else if(response.status == '200'){
+        $.getJSON(host+'/restaurants/status/'+val+'/'+status, function(data){
+            if(data.status == '100'){
                 Swal.fire(
                   'Success!',
-                  response.message,
+                  data.message,
                   'success'
                 );
-                form.trigger("reset");
             }
-        }, 'json');
-        
+        });
     });
-
 
 });

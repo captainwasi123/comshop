@@ -19,7 +19,7 @@ use App\Http\Middleware;
 // });
 
 
-// restaurant
+// Restaurant
 	Route::prefix('restaurant')->namespace('restaurant')->group(function(){
                 Route::get('/login', 'authController@login')->name('restaurant.login');
                 Route::post('/login', 'authController@loginSubmit');
@@ -55,47 +55,56 @@ use App\Http\Middleware;
 
 	});
 
-        Route::prefix('admin')->namespace('admin')->group(function(){
-            Route::get('/', 'adminController@index')->name('admin.restaurant');
-            Route::get('/login', 'adminController@login')->name('admin.login');
-                //Restaurants
-                    Route::prefix('restaurants')->group(function(){
-                        Route::get('/', 'restaurantController@index')->name('admin.restaurant');
-                        Route::get('/add', 'restaurantController@add')->name('admin.restaurants.add');
-                        Route::get('/active', 'restaurantController@active')->name('admin.restaurants.active');
-                        Route::get('/blocked', 'restaurantController@blocked')->name('admin.restaurants.blocked');
-                        Route::get('/trashed', 'restaurantController@trashed')->name('admin.restaurants.trashed');     
-                    });
+// Admin
+    Route::prefix('admin')->namespace('admin')->group(function(){
+        Route::get('/login', 'adminController@login')->name('admin.login');
+        Route::post('/login', 'adminController@loginSubmit')->name('admin.login');
+        Route::get('/logout', 'adminController@logout')->name('admin.logout');
 
-                //Drivers
-                    Route::prefix('drivers')->group(function(){
-                        Route::get('/new-request', 'driverController@newRequest')->name('admin.drivers.newRequest');
-                        Route::get('/add', 'driverController@add')->name('admin.drivers.add');
-                        Route::get('/active', 'driverController@active')->name('admin.drivers.active');
-                        Route::get('/blocked', 'driverController@blocked')->name('admin.drivers.blocked');
-                        Route::get('/trashed', 'driverController@trashed')->name('admin.drivers.trashed');
-                    });
+        //Middleware
+            Route::middleware('adminAuth')->group(function(){
+                Route::get('/', 'adminController@index')->name('admin.restaurant');
+                    //Restaurants
+                        Route::prefix('restaurants')->group(function(){
+                            Route::get('/', 'restaurantController@index')->name('admin.restaurant');
+                            Route::get('/add', 'restaurantController@add')->name('admin.restaurants.add');
+                            Route::get('/active', 'restaurantController@active')->name('admin.restaurants.active');
+                            Route::get('/blocked', 'restaurantController@blocked')->name('admin.restaurants.blocked');
+                            Route::get('/trashed', 'restaurantController@trashed')->name('admin.restaurants.trashed');
 
-                //Reviews & Ratings
-                    Route::prefix('reviews')->group(function(){
-                        Route::get('/', 'reviewsController@index')->name('admin.reviews');
-                        Route::get('/details', 'reviewsController@details')->name('admin.review.details');
-                    });
+                            Route::get('/status/{id}/{status}', 'restaurantController@statusChange');     
+                        });
 
-                //Users
-                    Route::prefix('users')->group(function(){
-                        Route::get('/add', 'userController@add')->name('admin.users.add');
-                        Route::get('/active', 'userController@active')->name('admin.users.active');
-                        Route::get('/blocked', 'userController@blocked')->name('admin.users.blocked');
-                    });
+                    //Drivers
+                        Route::prefix('drivers')->group(function(){
+                            Route::get('/new-request', 'driverController@newRequest')->name('admin.drivers.newRequest');
+                            Route::get('/add', 'driverController@add')->name('admin.drivers.add');
+                            Route::get('/active', 'driverController@active')->name('admin.drivers.active');
+                            Route::get('/blocked', 'driverController@blocked')->name('admin.drivers.blocked');
+                            Route::get('/trashed', 'driverController@trashed')->name('admin.drivers.trashed');
+                        });
 
-                //Settings
-                    Route::prefix('settings')->group(function(){
+                    //Reviews & Ratings
+                        Route::prefix('reviews')->group(function(){
+                            Route::get('/', 'reviewsController@index')->name('admin.reviews');
+                            Route::get('/details', 'reviewsController@details')->name('admin.review.details');
+                        });
 
-                        Route::get('/general', 'settingsController@general')->name('admin.settings.general');
-                        //Categories
-                            Route::prefix('categories')->group(function(){
-                                Route::get('/', 'settingsController@catagories')->name('admin.settings.catagories');
-                            });
-                    });
-        });     
+                    //Users
+                        Route::prefix('users')->group(function(){
+                            Route::get('/add', 'userController@add')->name('admin.users.add');
+                            Route::get('/active', 'userController@active')->name('admin.users.active');
+                            Route::get('/blocked', 'userController@blocked')->name('admin.users.blocked');
+                        });
+
+                    //Settings
+                        Route::prefix('settings')->group(function(){
+
+                            Route::get('/general', 'settingsController@general')->name('admin.settings.general');
+                            //Categories
+                                Route::prefix('categories')->group(function(){
+                                    Route::get('/', 'settingsController@catagories')->name('admin.settings.catagories');
+                                });
+                        });
+                });   
+            });  

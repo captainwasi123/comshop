@@ -3570,7 +3570,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child::befor
 
 /* line 244, G:/admin_project/6 admin/marketing/scss/_header.scss */
 .profile_info .profile_info_iner .profile_author_name {
-  padding: 20px 25px;
+  padding: 12px 15px;
   background: #14256A;
   border-radius: 10px 15px 0px 0px;
 }
@@ -3585,6 +3585,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child::befor
   font-size: 16px;
   font-weight: 400;
   color: #fff;
+  line-height: 8px;
 }
 
 /* line 259, G:/admin_project/6 admin/marketing/scss/_header.scss */
@@ -3592,6 +3593,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child::befor
   font-size: 20px;
   color: #fff;
   font-weight: 600;
+  line-height: 30px;
 }
 
 /* line 266, G:/admin_project/6 admin/marketing/scss/_header.scss */

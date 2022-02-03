@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use  Auth;
-class restaurantAuth
+use Auth;
+
+class adminAuth
 {
     /**
      * Handle an incoming request.
@@ -16,15 +17,11 @@ class restaurantAuth
      */
     public function handle(Request $request, Closure $next)
     {
-       
-        if(Auth::guard('restaurant')->check()){
+        
+        if(Auth::guard('admin')->check()){
             return $next($request);
         }else{
-            return redirect('/restaurant/login');
+            return redirect('/admin/login');
         }
     }
-
-        
-    
-     
 }

@@ -52,16 +52,14 @@
                             </li>
                         </div>
                         <div class="profile_info">
-                            <img src="{{URL::to('/public/restaurant/assets')}}/images/user-icon.png" alt="#">
+                            <img src="{{URL::to('/public/admin/assets')}}/images/user-placeholder.jpg" alt="#">
                             <div class="profile_info_iner">
                                 <div class="profile_author_name">
-                                    <p>Neurologist </p>
-                                    <h5 class="no-margin">Dr. Robar Smith</h5>
+                                    <p>Admin </p>
+                                    <h5 class="no-margin">{{Auth::guard('admin')->user()->fullname}}</h5>
                                 </div>
                                 <div class="profile_info_details">
-                                    <a href="#">My Profile </a>
-                                    <a href="#">Settings</a>
-                                    <a href="{{URL::to('/restaurant/logout')}}">Log Out </a>
+                                    <a href="{{route('admin.logout')}}">Log Out </a>
                                 </div>
                             </div>
                         </div>

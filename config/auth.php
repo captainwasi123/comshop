@@ -54,7 +54,7 @@ return [
 
         'admin' => [
             'driver' => 'session',
-            'provider' => 'admin',
+            'provider' => 'admins',
         ],
 
         'admin-api' => [
@@ -92,9 +92,9 @@ return [
             'model' => App\Models\Restaurant\Restaurant::class,
         ],
 
-        'admin' => [
+        'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Restaurant\Admin::class,
+            'model' => App\Models\Admin::class,
         ],
 
         // 'users' => [

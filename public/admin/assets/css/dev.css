@@ -1,0 +1,14 @@
+.cut-address { 
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  width: 220px; 
+  height: 1.2em; 
+  white-space: nowrap;
+}
+.restaurant-section table tr td p {
+    font-size: 14px !important;
+    color: #2E2E2E !important;
+    font-family: 'Poppins' !important;
+    font-weight: 500 !important;
+    margin-top: -7px;
+}

@@ -32,6 +32,7 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="{{URL::to('/public/admin/assets')}}/css/style.css" />
     <link rel="stylesheet" href="{{URL::to('/public/admin/assets')}}/css/custom.css" />
+    <link rel="stylesheet" href="{{URL::to('/public/admin/assets')}}/css/dev.css" />
     <link rel="stylesheet" href="{{URL::to('/public/admin/assets')}}/css/colors/default.css" id="colorSkinCSS">
 
     <link rel="stylesheet" href="{{URL::to('/public/admin/assets')}}/vendors/datatable/css/jquery.dataTables.min.css" />
