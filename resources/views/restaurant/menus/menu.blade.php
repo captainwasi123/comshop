@@ -219,7 +219,7 @@
 						          	<div class="sec-12 bg-white">
 			                 			<img src="{{URL::to('/public/storage/restaurant/menu/'.$menu->image)}}">
 			                 			<h2 class="no-margin pad-top-20 pad-bot-10"> {{$menu->title}} </h2>
-			                 			<h3 class="no-margin"><span class="col-yellow">$</span>5.59</h3>
+			                 			<h3 class="no-margin"><span class="col-yellow">$</span>{{number_format($menu->price, 1)}}</h3>
 				              			<div class="row pad-top-20">
 						                	<div class="col-lg-6 col-md-6 col-6 no-pad" style="border-right: 1px solid #DBDBDB;">
 							                    <div class="sec-13">

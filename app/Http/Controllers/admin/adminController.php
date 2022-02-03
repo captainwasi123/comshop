@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 
 class adminController extends Controller
 {
@@ -16,5 +17,20 @@ class adminController extends Controller
 
         return view('admin.login');
     }   
+
+    function loginSubmit(Request $request){
+        $data = $request->all();
+        if(Auth::guard('admin')->attempt(['username' => $data['username'], 'password' => $data['password']])){
+            return redirect('/admin');
+        }else{
+            return redirect()->back()->with('error', 'Username or Password is incorrect.');
+        }
+    }
+
+    function logout(){
+        Auth::guard('admin')->logout();
+
+        return redirect(route('admin.login'));
+    }
 
 }

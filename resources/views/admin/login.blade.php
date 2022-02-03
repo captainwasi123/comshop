@@ -33,19 +33,23 @@
             <div class="col-lg-6 col-md-12 col-12 sec-2-back">
                 <div class="sec-2">
                     <h2 class="no-margin pad-bot-20"> ADMIN PANEL </h2>
-                    <h3 class="no-margin"> LOGIN </h3>
+                    <h3 class="no-margin  pad-bot-20"> LOGIN </h3>
                     <div class="white_card_body">     
+                        @if(session()->has('error'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('error') }}
+                            </div>
+                        @endif
                         <form action="" method="POST">
                         @csrf               
-                            <div class="form-group sec-3 no-margin pad-top-30 pad-bot-60">
+                            <div class="form-group sec-3 no-margin pad-bot-40">
                                 <i class="fa fa-user icon"></i>
-                                <input type="email" class="form-control" name="email" id="inputText" placeholder="Email">
+                                <input type="text" class="form-control" name="username" placeholder="Username" required>
                                 <i class="fa fa-lock icon"></i>
-                                <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password">
-                                <h4 class="no-margin pad-top-20">Forgot password?</h4>
+                                <input type="password" class="form-control" name="password" placeholder="Password" required>
                             </div>
                             <div class="form-group sec-3-btn no-margin">
-                                <input type="submit" class="bg-yellow" name="login" value="LOGIN">              
+                                <input type="submit" class="bg-yellow" value="LOGIN">              
                             </div> 
                         </form>        
                     </div>   
