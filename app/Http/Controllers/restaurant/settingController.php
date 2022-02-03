@@ -25,7 +25,7 @@ class settingController extends Controller
             $file = $request->file('logo_img');
             $filename = Auth::guard('restaurant')->user()->id.'-'.date('dmyHis').'.'.$file->getClientOriginalExtension();
             $file->move(base_path('/public/storage/restaurant/logo/'), $filename);
-            Restaurant::updateLogo($filename);
+            Restaurant::updateLogo(Auth::guard('restaurant')->user()->id, $filename);
         }
         
         return redirect()->back()->with('success', 'Profile Updated Successfully.');

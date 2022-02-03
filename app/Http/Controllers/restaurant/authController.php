@@ -34,9 +34,9 @@ class authController extends Controller
     	if(Auth::guard('restaurant')->check()){
     		Auth::guard('restaurant')->logout();
 
-    		return redirect('/');
+    		return redirect('/restaurant');
     	}else{
-    		return redirect('/');
+    		return redirect('/restaurant');
     	}
     }
 

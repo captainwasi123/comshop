@@ -36,6 +36,17 @@
 
       </section>
       @include('admin.includes.script')
+      @if(session()->has('success'))
+         <script>
+            $(document).ready(function(){
+               Swal.fire(
+                  "Success!",
+                  "{{ session()->get('success') }}",
+                  "success"
+               );
+            });
+         </script>
+      @endif
       @yield('addScript')
    </body>
 </html>

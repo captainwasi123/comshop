@@ -22,7 +22,6 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">S.No</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Phone</th>
                                             <th scope="col">Owner</th>
@@ -48,8 +47,8 @@
     								                </label>
     								            </td>
                                                 <td>
-                                                	<a href="#" class="status-icons"><i class="fa fa-pencil-square-o"></i></a>
-                                                	<a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
+                                                	<a href="javascript:void(0)" class="status-icons editRestaurant" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
+                                                	<a href="javascript:void(0)" class="status-icons deleteRestaurant" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach

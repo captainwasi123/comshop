@@ -57,7 +57,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-lg-2 col-md-3 col-5">
-                              <img src="{{URL::to('/public/storage/restaurant/logo/')}}/{{Auth::guard('restaurant')->user()->logo_img}}"   onerror="this.src={{URL::to('/public/restaurant/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">
+                              <img src="{{URL::to('/public/storage/restaurant/logo/')}}/{{Auth::guard('restaurant')->user()->logo_img}}" onerror="this.onerror=null;this.src='{{URL::to('/public/restaurant/assets')}}/images/placeholder.png';" id="previewProfilePhoto" class="img-thumbnail">
                                     
                                 </div>
                                 <div class="col-lg-10 col-md-9 col-7">
