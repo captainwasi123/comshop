@@ -60,12 +60,7 @@
 	            </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-12 page-shows-col">
-                    <div class="page-shows">
-                        <p>Showing <strong style="color: black;">1-5</strong> from <strong  style="color: black;">100</strong> data</p>
-                    </div>                  
-                </div>
-                <div class="col-lg-6 col-md-6 col-12 page-shows-nav">
+                <div class="col-lg-12 col-md-12 col-12 page-shows-nav">
                     <nav aria-label="Page navigation example" class="Paginate">
                         <ul class="pagination">
                             <li class="page-item">
@@ -75,7 +70,7 @@
                             </li>
                             <li class="page-item active"><a class="page-link-nav " href="#">1</a></li>
                             <li class="page-item"><a class="page-link-nav" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link-nav" href="#">3</a></li>
+                            <li class="page-item disable"><a class="page-link-nav" href="#">3</a></li>
                             <li class="page-item">
                                 <a class="page-link rigt-arrow" href="#" aria-label="Next">
                                     <span aria-hidden="true"><i class="fas fa-angle-right"></i></span>
