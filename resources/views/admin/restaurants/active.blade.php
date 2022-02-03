@@ -21,7 +21,11 @@
                                 <table class="table lms_table_active ">
                                     <thead>
                                         <tr>
+<<<<<<< HEAD
                                             <th scope="col">#</th>
+=======
+                                            <th scope="col">S.No</th>
+>>>>>>> 286643fff8c32fb397c17500891edb71a403f2c2
                                             <th scope="col">Name</th>
                                             <th scope="col">Phone</th>
                                             <th scope="col">Owner</th>
@@ -32,6 +36,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+<<<<<<< HEAD
                                         @foreach($restaurant as $key => $val)
                                             <tr>
                                                 <td>{{++$key}}</td>
@@ -57,12 +62,59 @@
                                                 <td colspan="8">No Restaurant Found.</td>
                                             </tr>
                                         @endif                                         
+=======
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mr cone</td>
+                                            <td>+92-30100-999</td>
+                                            <td>Syed</td>
+                                            <td>abc@gmail.com</td>
+                                            <td>XYZ</td>
+                                            <td>16</td>
+                                            <td>
+                                            	<label class="switch">
+							                    <input type="checkbox" checked>
+							                    <span class="slider round"></span>
+								                </label>
+								            </td>
+                                            <td>
+                                            	<a href="#" class="status-icons"><i class="fa fa-pencil-square-o"></i></a>
+                                            	<a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>                                            
+>>>>>>> 286643fff8c32fb397c17500891edb71a403f2c2
                                     </tbody>
                                 </table>
                             </div>
                         </div>                    		
 	                </div>
 	            </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12 page-shows-col">
+                    <div class="page-shows">
+                        <p>Showing <strong style="color: black;">1-5</strong> from <strong  style="color: black;">100</strong> data</p>
+                    </div>                  
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 page-shows-nav">
+                    <nav aria-label="Page navigation example" class="Paginate">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link left-arrow" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><i class="fas fa-angle-left"></i></span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link-nav " href="#">1</a></li>
+                            <li class="page-item"><a class="page-link-nav" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link-nav" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link rigt-arrow" href="#" aria-label="Next">
+                                    <span aria-hidden="true"><i class="fas fa-angle-right"></i></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>

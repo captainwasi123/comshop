@@ -10,10 +10,6 @@
 .browseProfilePhoto {
     margin-top: 50px;
 }
-/*.form-row {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #cbcfd1;
-}*/
 </style>
 <div class="main_content_iner">
     <div class="container-fluid">

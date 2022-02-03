@@ -1,5 +1,5 @@
 @extends('admin.includes.master')
-@section('title', 'Reviews & Ratings')
+@section('title', 'Details Reviews')
 
 @section('content')
 
@@ -17,11 +17,8 @@
 	                   <div class="QA_section">
                             <div class="white_box_tittle list_header no-margin">
                                 <h3 class="inner-order-head no-margin pad-bot-10">View Reviews</h3>
-                                <!-- <div class="add_button m-b-20 pad-top-10">
-                                    <a href="{{route('admin.drivers.add')}}" class="bg-yellow">Add New</a>
-                                </div> -->
                                 <div class="drive-sec-2">
-                                    <h5>Restaurant Name: <span>MR.Cone</span> &nbsp;</h5>
+                                    <h5>Restaurant Name: <span><b>MR.Cone</b></span></h5>
                                 </div>                                
                             </div>
                             <hr>

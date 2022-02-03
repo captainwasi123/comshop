@@ -264,25 +264,44 @@
 	                        <span aria-hidden="true">&times;</span>
 	                    </button>
 	                </div>
-	                <div class="sec-51"> 
+	                <div class="sec-51">
+
 	                  	<div class="item-wrapper one">
 						    <div class="item">
 					            <div class="item-inner">
 					                <div class="item-content">
+
 						                <div class="file-upload image-upload">
+
 						                   	<div class="image-upload-wrap">
-						                     	<input class="file-upload-input" name="image_name" type='file' onchange="readURL(this);" accept="image/*" />
+						                     	<input class="file-upload-input" name="image_name" type='file' onchange="readURL(this);" accept="image/*"/>
 							                    <div class="drag-text">
 							                    	<h3>
 							                    		<i class="fas fa-cloud-download-alt"></i>
 							                    		<br> Upload Image
 							                    	</h3>
 							                     </div>
-						                   </div>
-						                    <div class="file-upload-content sec-53">
+						                    </div>
+						                    <div class="file-upload-content sec-53" style="display: none;">
+						                    	<button type="button" onclick="removeUpload()" class="remove-image">
+						                    		<span> x Remove</span>
+						                    	</button>
 						                    	<img class="file-upload-image" src="#" alt="your image" width="100%" />
-						                    </div>    
+												  
+						                    </div> 
+<style type="text/css">
+	button.remove-image {
+    display: contents;
+    background: red !important;
+}
+.remove-image span {
+    font-size: 16px;
+    color: red;
+    font-weight: 500;
+}
+</style>
 						                </div>
+
 					                </div>
 					            </div>
 						    </div>
