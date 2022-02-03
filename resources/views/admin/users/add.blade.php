@@ -74,7 +74,6 @@
                                      <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Role</label>
-                                            <!-- <input type="text" name="" value="" class="form-control" required> -->
                                             <select class="form-control">
                                                 <option>Admin</option>
                                                 <option>User</option>
@@ -85,7 +84,6 @@
                                     <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputPassword" class="no-margin pad-bot-10">Status</label>
-                                            <!-- <input type="text" name="new_password" id="password" value="" class="form-control" required> -->
                                             <select class="form-control">
                                                 <option>Active</option>
                                                 <option>Inactive</option>

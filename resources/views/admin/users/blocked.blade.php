@@ -18,6 +18,7 @@
                                 <table class="table lms_table_active ">
                                     <thead>
                                         <tr>
+                                            <th scope="col">S.No</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Phone</th>
                                             <th scope="col">Email</th>
@@ -29,6 +30,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td>1</td>
                                             <td>Syed</td>
                                             <td>+92-30100-999</td>
                                             <td>abc@gmail.com</td>
@@ -45,6 +47,32 @@
                             </div>
                         </div>                          
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12 page-shows-col">
+                    <div class="page-shows">
+                        <p>Showing <strong style="color: black;">1-5</strong> from <strong  style="color: black;">100</strong> data</p>
+                    </div>                  
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 page-shows-nav">
+                    <nav aria-label="Page navigation example" class="Paginate">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link left-arrow" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><i class="fas fa-angle-left"></i></span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link-nav " href="#">1</a></li>
+                            <li class="page-item"><a class="page-link-nav" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link-nav" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link rigt-arrow" href="#" aria-label="Next">
+                                    <span aria-hidden="true"><i class="fas fa-angle-right"></i></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
