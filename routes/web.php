@@ -71,8 +71,12 @@ use App\Http\Middleware;
                             Route::get('/active', 'restaurantController@active')->name('admin.restaurants.active');
                             Route::get('/blocked', 'restaurantController@blocked')->name('admin.restaurants.blocked');
                             Route::get('/trashed', 'restaurantController@trashed')->name('admin.restaurants.trashed');
+                            Route::get('/status/{id}/{status}', 'restaurantController@statusChange'); 
+                            Route::get('/restore/{id}', 'restaurantController@restore'); 
+                            Route::get('/edit/{id}', 'restaurantController@edit');
 
-                            Route::get('/status/{id}/{status}', 'restaurantController@statusChange');     
+                            Route::post('/add', 'restaurantController@addSubmit')->name('admin.restaurants.add');
+                            Route::post('/update', 'restaurantController@editSubmit')->name('admin.restaurants.update');    
                         });
 
                     //Drivers

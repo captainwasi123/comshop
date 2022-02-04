@@ -1,5 +1,5 @@
 @extends('admin.includes.master')
-@section('title', 'Add Restaurants')
+@section('title', 'Edit Restaurants')
 
 @section('content')
 
@@ -12,13 +12,6 @@
 .browseProfilePhoto {
     margin-top: 50px;
 }
-
-@media screen and (max-width:519px) and (min-width:320px) { 
-.browseProfilePhoto {
-    margin-top: 10px;
-    margin-left: 8px;
-}
-}
 </style>
 
 
@@ -30,9 +23,9 @@
                     <div class="white_box">
                         <div class="row">
                             <div class="drive-sec">
-                                <h4 class="no-margin">Add Restaurants</h4>
+                                <h4 class="no-margin">Edit Restaurants</h4>
                             </div>
-                            <form class="profile-form pad-top-40 pad-bot-20" id="resetPasswordForm" method="post" enctype="multipart/form-data">
+                            <form class="profile-form pad-top-40 pad-bot-20" id="resetPasswordForm" method="post" enctype="multipart/form-data" action="{{route('admin.restaurants.update')}}">
                                 @csrf
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
@@ -43,20 +36,16 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <input type="hidden" name="latitude" id="lat">
-                                <input type="hidden" name="longitude" id="long">
+                                <input type="hidden" name="res_id" value="{{base64_encode($restaurant->id)}}">
+                                <input type="hidden" name="latitude" id="lat" value="{{$restaurant->latitude}}">
+                                <input type="hidden" name="longitude" id="long" value="{{$restaurant->longitude}}">
                                 <div class="form-row">                                    
-                                    <div class="col-lg-12 col-md-12 col-12 no-margin">
+                                    <div class="col-lg-12 col-md-4 col-12 no-margin">
                                         <div class="row">
-<<<<<<< HEAD
-                                            <div class="col-lg-2 col-md-4 col-8">
-                                                <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">                                            
-=======
                                             <div class="col-lg-2 col-md-5 col-5">
-                                                <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" class="previewProfilePhoto previewProfilePhotoRes img-thumbnail">                                            
->>>>>>> 6360cb6f610be45e3ebbfe1c30b8dd4980c2a9b5
+                                                <img src="{{URL::to('/public/storage/restaurant/logo/')}}/{{$restaurant->logo_img}}" class="previewProfilePhoto previewProfilePhotoRes img-thumbnail"  onerror="this.onerror=null;this.src='{{URL::to('/public/restaurant/assets')}}/images/placeholder.png';">                                            
                                             </div>
-                                            <div class="col-lg-10 col-md-8 col-12">
+                                            <div class="col-lg-10 col-md-9 col-7">
                                                 <div id="msg"></div>
                                                     <input type="file" name="logo_img" class="profilePic profilePicRes" accept="image/*">
                                                     <div class="input-group">
@@ -70,14 +59,14 @@
                                     <div class="col-lg-5 col-md-5 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Restaurant Name</label>
-                                            <input type="text" name="name" class="form-control" required>
+                                            <input type="text" name="name" class="form-control" value="{{$restaurant->name}}" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Owner Name</label>
-                                            <input type="text" name="owner_name" class="form-control" required>
+                                            <input type="text" name="owner_name" class="form-control" value="{{$restaurant->owner_name}}" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>    
@@ -86,37 +75,21 @@
                                     <div class="col-lg-4 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Email</label>
-                                            <input type="email" name="email" class="form-control" required>
+                                            <input type="email" name="email" class="form-control" value="{{$restaurant->email}}" disabled>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                      <div class="col-lg-2 col-md-2 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Phone</label>
-                                            <input type="text" name="phone" class="form-control" required>
+                                            <input type="text" name="phone" class="form-control" value="{{$restaurant->phone}}" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputPassword" class="no-margin pad-bot-10">Service Radius <small>(km)</small></label>
-                                            <input type="number" name="service_radius" value="15" class="form-control" required>
-                                            <span class="text-danger" id="PasswordErrorMsg"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">  
-                                    <div class="col-lg-4 col-md-4 col-12 no-margin">
-                                        <div class="input-form res-section-1">
-                                            <label for="inputPassword" class="no-margin pad-bot-10">Password</label>
-                                            <input type="password" name="password" class="form-control" required>
-                                            <span class="text-danger" id="PasswordErrorMsg"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-12 no-margin">
-                                        <div class="input-form res-section-1">
-                                            <label for="inputPassword" class="no-margin pad-bot-10">Confirm Password</label>
-                                            <input type="text" name="password_confirmation" class="form-control" required>
+                                            <input type="number" name="service_radius"  value="{{$restaurant->service_radius}}" class="form-control" required>
                                             <span class="text-danger" id="PasswordErrorMsg"></span>
                                         </div>
                                     </div>
@@ -125,7 +98,7 @@
                                     <div class="col-lg-8 col-md-8 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputPassword" class="no-margin pad-bot-10">Address Details</label>
-                                            <textarea class="form-control" rows="3" name="address" id="add-input" required></textarea>
+                                            <textarea class="form-control" rows="3" name="address" id="add-input" required>{{$restaurant->address}}</textarea>
                                             <span class="text-danger" id="PasswordErrorMsg"></span>
                                         </div>
                                     </div>
