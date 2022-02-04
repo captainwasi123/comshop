@@ -18,11 +18,10 @@
                             </div>
                             <hr>
                             <div class="QA_table restaurant-section">
-                                <table class="table lms_table_active ">
+                                <table class="table lms_table_active">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">S.No</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Phone</th>
                                             <th scope="col">Owner</th>

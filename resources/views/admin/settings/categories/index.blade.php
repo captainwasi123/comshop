@@ -9,6 +9,17 @@
 .sec-46 h5 {
     font-size: 22px;
 }
+@media screen and (max-width:519px) and (min-width:320px) { 
+.browseProfilePhoto {
+    margin-top: 10px;
+    margin-left: 8px;
+}
+}
+@media screen and (max-width:992px) and (min-width:768px) { 
+.browseProfilePhoto {
+    margin-top: 80px;
+}
+}
 
 </style>
 <div class="main_content_iner">
@@ -100,12 +111,12 @@
                 <div class="row">
                             <form class="profile-form pad-top-20 pad-bot-20" id="resetPasswordForm" action="" method="post">
                                 <div class="form-row">                                    
-                                    <div class="col-lg-12 col-md-4 col-12 no-margin">
+                                    <div class="col-lg-12 col-md-12 col-12 no-margin">
                                         <div class="row">
-                                            <div class="col-lg-4 col-md-5 col-5">
+                                            <div class="col-lg-4 col-md-4 col-7">
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">                                            
                                             </div>
-                                            <div class="col-lg-8 col-md-9 col-7">
+                                            <div class="col-lg-8 col-md-8 col-12">
                                                 <div id="msg"></div>
                                                     <input type="file" name="logo_img" class="profilePic" accept="image/*">
                                                     <div class="input-group">
@@ -116,7 +127,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-4 col-12 no-margin">
+                                    <div class="col-lg-12 col-md-12 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Name</label>
                                             <input type="text" name="" value="" class="form-control" required>

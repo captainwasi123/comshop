@@ -23,12 +23,12 @@
                             </div>
                             <hr>
                             <div class="row">
-                                <div class="col-lg-1 col-md-1 col-1">
+                                <div class="col-lg-1 col-md-2 col-4">
                                     <div class="view-review-section">
                                         <img src="{{URL::to('/public/restaurant/assets')}}/images/user-icon.png" alt="" width="100%">
                                     </div>
                                 </div>
-                                <div class="col-lg-11 col-md-11 col-11">
+                                <div class="col-lg-11 col-md-10 col-12">
                                     <div class="view-review-section">
                                         <h2 class="no-margin pad-bot-10">John Doe <span>5 minutes ago</span></h2>
                                         <p class="no-margin">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
@@ -42,12 +42,12 @@
                                         <hr>
                                     </div>                                    
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-1">
+                                <div class="col-lg-1 col-md-2 col-4">
                                     <div class="view-review-section">
                                         <img src="{{URL::to('/public/restaurant/assets')}}/images/user-icon.png" alt="" width="100%">
                                     </div>
                                 </div>
-                                <div class="col-lg-11 col-md-11 col-11">
+                                <div class="col-lg-11 col-md-10 col-12">
                                     <div class="view-review-section">
                                         <h2 class="no-margin pad-bot-10">John Doe <span>5 minutes ago</span></h2>
                                         <p class="no-margin">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
@@ -61,12 +61,12 @@
                                         <hr>
                                     </div>                                    
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-1">
+                                <div class="col-lg-1 col-md-2 col-4">
                                     <div class="view-review-section">
                                         <img src="{{URL::to('/public/restaurant/assets')}}/images/user-icon.png" alt="" width="100%">
                                     </div>
                                 </div>
-                                <div class="col-lg-11 col-md-11 col-11">
+                                <div class="col-lg-11 col-md-10 col-12">
                                     <div class="view-review-section">
                                         <h2 class="no-margin pad-bot-10">John Doe <span>5 minutes ago</span></h2>
                                         <p class="no-margin">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
