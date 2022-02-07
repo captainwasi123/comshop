@@ -29,26 +29,28 @@
                                 <table class="table lms_table_active ">
                                     <thead>
                                         <tr>
-                                            <th scope="col">S.No</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">No. of Restaurants</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Action</th>
+                                            <th scope="col">#</th>
+                                            <th scope="col" style="width:15%">Image</th>
+                                            <th scope="col" style="width:50%">Name</th>
+                                            <th scope="col">No. of Items</th>
+                                            <th scope="col" style="width:15%; text-align: right;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mr cone</td>
-                                            <td>52</td>
-                                            <td>
-                                            	<a href="#" class="status_btn">Active</a>
-								            </td>
-                                            <td>
-                                            	<a href="#" class="status-icons"><i class="fa fa-pencil-square-o"></i></a>
-                                            	<a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>                                            
+                                        @foreach($categories as $key => $val)
+                                            <tr>
+                                                <td>{{++$key}}</td>
+                                                <td>
+                                                    <img src="{{URL::to('/public/storage/category/'.$val->image)}}" width="50px"> 
+                                                </td>
+                                                <td>{{$val->name}}</td>
+                                                <td>{{count($val->menu)}}</td>
+                                                <td style=" text-align: right;">
+                                                	<a href="javascript:void(0)" class="status-icons editCategory" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
+                                                	<a href="javascript:void(0)" class="status-icons deleteCategory" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>                               
+                                        @endforeach             
                                     </tbody>
                                 </table>
                             </div>
@@ -56,32 +58,7 @@
 	                </div>
 	            </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-12 page-shows-col">
-                    <div class="page-shows">
-                        <p>Showing <strong style="color: black;">1-5</strong> from <strong  style="color: black;">100</strong> data</p>
-                    </div>                  
-                </div>
-                <div class="col-lg-6 col-md-6 col-12 page-shows-nav">
-                    <nav aria-label="Page navigation example" class="Paginate">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link left-arrow" href="#" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="fas fa-angle-left"></i></span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link-nav " href="#">1</a></li>
-                            <li class="page-item"><a class="page-link-nav" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link-nav" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link rigt-arrow" href="#" aria-label="Next">
-                                    <span aria-hidden="true"><i class="fas fa-angle-right"></i></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            {{$categories->links()}}
         </div>
     </div>
 </div>
@@ -98,38 +75,53 @@
                     </button>
                 </div>
                 <div class="row">
-                            <form class="profile-form pad-top-20 pad-bot-20" id="resetPasswordForm" action="" method="post">
-                                <div class="form-row">                                    
-                                    <div class="col-lg-12 col-md-4 col-12 no-margin">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-5 col-5">
-                                                <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">                                            
-                                            </div>
-                                            <div class="col-lg-8 col-md-9 col-7">
-                                                <div id="msg"></div>
-                                                    <input type="file" name="logo_img" class="profilePic" accept="image/*">
-                                                    <div class="input-group">
-                                                        <div class="input-group-append">
-                                                            <button type="button" class="browseProfilePhoto btn btn-primary">Change photo</button>
-                                                        </div>
-                                                    </div>                                            
-                                            </div>
-                                        </div>
+                    <form class="profile-form pad-top-20 pad-bot-20" id="resetPasswordForm" action="{{route('admin.settings.catagories.add')}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-row">                                    
+                            <div class="col-lg-12 col-md-4 col-12 no-margin">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-5 col-5">
+                                        <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" class="previewProfilePhoto previewProfilePhotoCat img-thumbnail">
                                     </div>
-                                    <div class="col-lg-12 col-md-4 col-12 no-margin">
-                                        <div class="input-form res-section-1">
-                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Name</label>
-                                            <input type="text" name="" value="" class="form-control" required>
-                                            <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
-                                        </div>
+                                    <div class="col-lg-8 col-md-9 col-7">
+                                        <div id="msg"></div>
+                                        <input type="file" name="logo_img" class="profilePic profilePicCat" accept="image/*" required>
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <button type="button" class="browseProfilePhoto browseProfilePhotoCat btn btn-primary">Change photo</button>
+                                            </div>
+                                        </div>                                            
                                     </div>
-                                    
                                 </div>
-                                <div class="sav-button pad-top-30 pad-right-20">
-                                    <input type="Submit" value="Submit" class="bg-yellow">
+                            </div>
+                            <div class="col-lg-12 col-md-4 col-12 no-margin">
+                                <div class="input-form res-section-1">
+                                    <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Name</label>
+                                    <input type="text" name="name" class="form-control" required>
+                                    <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                 </div>
-                            </form>
-                        </div>                 
+                            </div>
+                        </div>
+                        <div class="sav-button pad-top-30 pad-right-20">
+                            <input type="Submit" value="Submit" class="bg-yellow">
+                        </div>
+                    </form>
+                </div>                 
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="edit-catagories" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 30%;" role="document">
+            <div class="modal-content">
+                <div class="modal-header sec-46">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Catagories</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row">
+                </div>                 
             </div>
         </div>
     </div>

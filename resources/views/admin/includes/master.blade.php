@@ -47,6 +47,17 @@
             });
          </script>
       @endif
+      @if(session()->has('error'))
+         <script>
+            $(document).ready(function(){
+               Swal.fire(
+                  "Alert!",
+                  "{{ session()->get('error') }}",
+                  "warning"
+               );
+            });
+         </script>
+      @endif
       @yield('addScript')
    </body>
 </html>

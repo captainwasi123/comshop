@@ -1577,7 +1577,13 @@ i.fas.fa-search {
 .Paginate {
     float: right;
 }
-
+.page-item.disabled .page-link {
+    color: #ffffff;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #d7d7d7;
+    border-color: #dee2e6;
+}
 .pagination {
     padding-top: 30px;
 }

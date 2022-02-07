@@ -21,38 +21,37 @@ use App\Http\Middleware;
 
 // Restaurant
 	Route::prefix('restaurant')->namespace('restaurant')->group(function(){
-                Route::get('/login', 'authController@login')->name('restaurant.login');
-                Route::post('/login', 'authController@loginSubmit');
-                Route::get('/logout', 'authController@logout')->name('restaurant.logout');
+        Route::get('/login', 'authController@login')->name('restaurant.login');
+        Route::post('/login', 'authController@loginSubmit');
+        Route::get('/logout', 'authController@logout')->name('restaurant.logout');
       
         //MiddleWare
-                Route::middleware('restaurantAuth')->group(function(){
-                        Route::get('/', 'mainController@index')->name('restaurant.index');
+            Route::middleware('restaurantAuth')->group(function(){
+                Route::get('/', 'mainController@index')->name('restaurant.index');
 
-                        Route::prefix('menus')->group(function(){
-                                Route::get('/', 'menuController@menu')->name('restaurant.menu');
-                                Route::post('/add', 'menuController@addMenu')->name('restaurant.menu.add');
-                        });
-                        Route::prefix('orders')->group(function(){
-                                Route::get('/order', 'mainController@order')->name('restaurant.order');
-                        });
-
-                        Route::prefix('reviews')->group(function(){
-                                Route::get('/review', 'mainController@review')->name('restaurant.review');
-                        });
-
-
-                        Route::prefix('setting')->group(function(){
-                                Route::get('/', 'settingController@profile')->name('restaurant.profile');
-                                Route::post('/restprofilesetting', 'settingController@restProfilesetting')->name('restaurant.restprofilesetting');
-                                Route::post('/changepassword', 'settingController@changePassword')->name('restaurant.changepassword');
-                                Route::post('/location', 'settingController@locationSubmit')->name('restaurant.profile.location');
-
-                                Route::get('/status/{status}', 'settingController@statusChange');
-                        });
-
+                Route::prefix('menus')->group(function(){
+                        Route::get('/', 'menuController@menu')->name('restaurant.menu');
+                        Route::post('/add', 'menuController@addMenu')->name('restaurant.menu.add');
+                });
+                Route::prefix('orders')->group(function(){
+                        Route::get('/order', 'mainController@order')->name('restaurant.order');
                 });
 
+                Route::prefix('reviews')->group(function(){
+                        Route::get('/review', 'mainController@review')->name('restaurant.review');
+                });
+
+
+                Route::prefix('setting')->group(function(){
+                        Route::get('/', 'settingController@profile')->name('restaurant.profile');
+                        Route::post('/restprofilesetting', 'settingController@restProfilesetting')->name('restaurant.restprofilesetting');
+                        Route::post('/changepassword', 'settingController@changePassword')->name('restaurant.changepassword');
+                        Route::post('/location', 'settingController@locationSubmit')->name('restaurant.profile.location');
+
+                        Route::get('/status/{status}', 'settingController@statusChange');
+                });
+
+            });
 	});
 
 // Admin
@@ -105,10 +104,15 @@ use App\Http\Middleware;
                         Route::prefix('settings')->group(function(){
 
                             Route::get('/general', 'settingsController@general')->name('admin.settings.general');
+                            Route::post('/general', 'settingsController@generalUpdate')->name('admin.settings.general');
                             //Categories
                                 Route::prefix('categories')->group(function(){
                                     Route::get('/', 'settingsController@catagories')->name('admin.settings.catagories');
+                                    Route::get('/delete/{id}', 'settingsController@catagoriesDelete');
+                                    Route::get('/edit/{id}', 'settingsController@catagoriesEdit');
+                                    Route::post('/add', 'settingsController@catagoriesAdd')->name('admin.settings.catagories.add');
+                                    Route::post('/update', 'settingsController@catagoriesUpdate')->name('admin.settings.catagories.update');
                                 });
                         });
                 });   
-            });  
+    });  

@@ -6,20 +6,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css" />
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
-
-
-
 	<div class="main_content_iner ">
         <div class="container-fluid p-0">
 	        <div class="row">
-		        <div class="col-lg-6 col-md-4 col-4">
-		    		<!-- <div class="sec-5">
-			            <form>
-			                <input type="text" placeholder="Search..." >
-			                <button> <img src="{{URL::to('/public/restaurant/assets')}}/images/image12.png"> </button>
-			            </form>
-			        </div> -->                          
+		        <div class="col-lg-6 col-md-4 col-4">                      
 		        </div> 
 	        </div>
 	        <div class="row pad-top-30 pad-bot-20">
@@ -36,60 +26,14 @@
 	        </div>
 	        <div class="section-4">
 	        	<div class="carousel"> 
-			      	<div>				        
-			          	<div class="sec-9 bg-white text-center">
-	             			<img src="{{URL::to('/public/restaurant/assets')}}/images/image3.png" width="50%"> 
-	             			<h2 class="no-margin pad-top-10">Bakery</h2>  
-	          			</div>				
-			      	</div> 
-			      	<div>				        
-			          	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image3.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Bakery</h2>  
-		          		</div>				
-			      	</div>
-			      	<div>				        
-			          	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image5.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Beverage</h2>  
-		          		</div>				
-			      	</div> 
-			      	<div>				        
-			          	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image6.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Chicken</h2>  
-		          		</div>				
-			      	</div> 
-			      	<div>				        
-			          	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image6.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Chicken</h2>  
-		          		</div>				
-			      	</div>
-			      	<div>				        
-			          	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image7.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Pizza</h2>  
-		          		</div>			
-			      	</div>
-			      	<div>				        
-			          	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image8.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Seafood</h2>  
-		          		</div>			
-			      	</div>
-			      	<div>				        
-			          	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image9.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Dessert</h2>  
-		          		</div>		
-			      	</div>
-			      	<div>				        
-			          	<div class="sec-9 bg-white text-center">
-		             		<img src="{{URL::to('/public/restaurant/assets')}}/images/image10.png" width="50%"> 
-		             		<h2 class="no-margin pad-top-10">Noodle</h2>  
-		          		</div>		
-			      	</div>
+	        		@foreach($categories as $val)
+				      	<div>				        
+				          	<div class="sec-9 bg-white text-center">
+		             			<img src="{{URL::to('/public/storage/category/'.$val->image)}}" width="50%"> 
+		             			<h2 class="no-margin pad-top-10">{{$val->name}}</h2>  
+		          			</div>				
+				      	</div> 
+			      	@endforeach
     			</div>		
 			</div>
 	    </div>
@@ -214,7 +158,7 @@
 		        <div class="row">
 		        	<div class="col-lg-12 col-md-12 col-12">
 		           		<div class="carousel1"> 
-			    			@foreach($val->menu as $menu)
+			    			@foreach($val->menuRes as $menu)
 						      	<div>				        
 						          	<div class="sec-12 bg-white">
 			                 			<img src="{{URL::to('/public/storage/restaurant/menu/'.$menu->image)}}">
