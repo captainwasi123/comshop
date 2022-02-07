@@ -12,6 +12,13 @@
 .browseProfilePhoto {
     margin-top: 50px;
 }
+
+@media screen and (max-width:519px) and (min-width:320px) { 
+.browseProfilePhoto {
+    margin-top: 10px;
+    margin-left: 8px;
+}
+}
 </style>
 
 
@@ -39,12 +46,17 @@
                                 <input type="hidden" name="latitude" id="lat">
                                 <input type="hidden" name="longitude" id="long">
                                 <div class="form-row">                                    
-                                    <div class="col-lg-12 col-md-4 col-12 no-margin">
+                                    <div class="col-lg-12 col-md-12 col-12 no-margin">
                                         <div class="row">
+<<<<<<< HEAD
+                                            <div class="col-lg-2 col-md-4 col-8">
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail">                                            
+=======
                                             <div class="col-lg-2 col-md-5 col-5">
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" class="previewProfilePhoto previewProfilePhotoRes img-thumbnail">                                            
+>>>>>>> 6360cb6f610be45e3ebbfe1c30b8dd4980c2a9b5
                                             </div>
-                                            <div class="col-lg-10 col-md-9 col-7">
+                                            <div class="col-lg-10 col-md-8 col-12">
                                                 <div id="msg"></div>
                                                     <input type="file" name="logo_img" class="profilePic profilePicRes" accept="image/*">
                                                     <div class="input-group">

@@ -101,7 +101,7 @@
                     </button>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12 col-md-6 col-6">
+                    <div class="col-lg-12 col-md-12 col-12">
                         <div class="drive-sec-2">
                             <h5>First Name: <span>MR.Cone</span> &nbsp;</h5>
                             <h5>Last Name:  <span>Cone</span> &nbsp;</h5>
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>               
             </div>
         </div>
     </div>

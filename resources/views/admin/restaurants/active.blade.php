@@ -18,7 +18,7 @@
                             </div>
                             <hr>
                             <div class="QA_table restaurant-section">
-                                <table class="table lms_table_active ">
+                                <table class="table lms_table_active">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
