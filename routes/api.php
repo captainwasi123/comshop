@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\buyer\profileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('UserRegister', [AuthController::class, 'UserRegister']);
+Route::post('login', [AuthController::class, 'login']);
+     
+Route::middleware('auth:sanctum')->group( function () {
+    Route::post('profileUpdate', [profileController::class, 'profile_save']);
 });
+
+

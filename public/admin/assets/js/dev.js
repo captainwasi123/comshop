@@ -80,6 +80,27 @@ $(document).ready(function(){
                     Swal.close();
                 }
             });
+            
+        });
+
+           $(document).on('click', '.editUser', function(){
+            var val = $(this).data('id');
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "Want to edit this user!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, edit it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = host+'/users/edit/'+val;
+                }else{
+                    Swal.close();
+                }
+            });
+            
         });
 
 

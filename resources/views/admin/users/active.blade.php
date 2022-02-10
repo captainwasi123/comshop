@@ -7,6 +7,18 @@
     <div class="container-fluid">
       	<div class="order-section-chart ">
           	<div class="row">
+                   <div class="col-md-6">
+                        @if(session()->has('success'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success') }}
+                            </div>
+                        @endif
+                        @if(session()->has('error'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('error') }}
+                            </div>
+                        @endif
+                    </div>
 	            <div class="col-lg-12 col-md-12 col-12 sec-45">
 	                <div class="white_box">
 	                   <div class="QA_section">
@@ -19,6 +31,7 @@
                             <hr>
                             <div class="QA_table restaurant-section">
                                 <table class="table lms_table_active">
+                                
                                     <thead>
                                         <tr>
                                             <th scope="col">S.No</th>
@@ -31,20 +44,36 @@
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody>                                    
+                                        @forelse ($users as $key => $val)                                                                             
                                         <tr>
-                                            <td>1</td>
-                                            <td>Syed</td>
-                                            <td>+92-30100-999</td>
-                                            <td>abc@gmail.com</td>
-                                            <td>XYZ</td>
-                                            <td>Admin</td>
-                                            <td><a href="#" class="status_btn">Active</a></td>
+                                        <td>{{++$key}}</td>
+                                        <td>{{$val->name}}</td>
+                                        <td>{{$val->phone}}</td>
+                                        <td>{{$val->email}}</td>
+                                        <td>{{@$val->user_address->address}}</td>
+                                        <td>Admin</td>
+                                        <td>  
+                                            @switch($val->status)
+                                        @case('1')
+                                            <a href="#" class="status_btn">Active</a>
+                                            @break
+
+                                        @case('')
+                                            <center> <label class="label label-danger">Expired</label></center>
+                                                @break
+
+                                        @endswitch</td>
                                             <td>
-                                            	<a href="#" class="status-icons"><i class="fa fa-pencil-square-o"></i></a>
+                                                <a href="javascript:void(0)" class="status-icons editUser" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
                                             	<a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
                                             </td>
-                                        </tr>                                            
+                                        </tr>  
+                                         @empty
+                                    
+                                            <h3>No user record found</h3>
+                                        
+                                        @endforelse                                          
                                     </tbody>
                                 </table>
                             </div>

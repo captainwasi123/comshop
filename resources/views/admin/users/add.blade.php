@@ -31,7 +31,8 @@
                             <div class="drive-sec">
                                 <h4 class="no-margin">Add Users</h4>
                             </div>
-                            <form class="profile-form pad-top-40 pad-bot-20" id="resetPasswordForm" action="" method="post">
+                            <form class="profile-form pad-top-40 pad-bot-20" id="resetPasswordForm" action="{{URL::to('/admin/users/added')}}" method="post">
+                            @csrf
                                 <div class="form-row">                                    
                                     <div class="col-lg-12 col-md-12 col-12 no-margin">
                                         <div class="row">
@@ -52,7 +53,7 @@
                                     <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">First Name</label>
-                                            <input type="text" name="" value="" class="form-control" required>
+                                            <input type="text" name="name" value="" class="form-control" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
@@ -66,14 +67,21 @@
                                     <div class="col-lg-3 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Email</label>
-                                            <input type="email" name="" value="" class="form-control" required>
+                                            <input type="email" name="email" value="" class="form-control" required>
+                                            <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
+                                        </div>
+                                    </div>
+                                      <div class="col-lg-3 col-md-4 col-12 no-margin">
+                                        <div class="input-form res-section-1">
+                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Phone</label>
+                                            <input type="text" name="phone" value="" class="form-control" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputPassword" class="no-margin pad-bot-10">Address</label>
-                                            <input type="text" name="new_password" id="password" value="" class="form-control" required>
+                                            <input type="text" name="" id="password" value="" class="form-control" required>
                                             <span class="text-danger" id="PasswordErrorMsg"></span>
                                         </div>
                                     </div>
@@ -100,15 +108,15 @@
                                     
                                     <div class="col-lg-3 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
-                                            <label for="inputPassword" class="no-margin pad-bot-10">Password</label>
-                                            <input type="text" name="new_password" id="password" value="" class="form-control" required>
+                                            <label for="password" class="no-margin pad-bot-10">Password</label>
+                                            <input type="password" name="password" id="password" value="" class="form-control" required>
                                             <span class="text-danger" id="PasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputPassword" class="no-margin pad-bot-10">Confirm Password</label>
-                                            <input type="text" name="new_password" id="password" value="" class="form-control" required>
+                                            <input type="password" name="confirmation_password" id="password" value="" class="form-control" required>
                                             <span class="text-danger" id="PasswordErrorMsg"></span>
                                         </div>
                                     </div>

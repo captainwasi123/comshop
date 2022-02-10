@@ -97,7 +97,9 @@ use App\Http\Middleware;
                         Route::prefix('users')->group(function(){
                             Route::get('/add', 'userController@add')->name('admin.users.add');
                             Route::get('/active', 'userController@active')->name('admin.users.active');
+                            Route::post('/added', 'userController@buyerRegister')->name('admin.users.added');
                             Route::get('/blocked', 'userController@blocked')->name('admin.users.blocked');
+                            Route::get('/edit/{id}', 'userController@edit');
                         });
 
                     //Settings
