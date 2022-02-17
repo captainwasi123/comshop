@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\categories;
+use App\Models\city;
 
 class getCityController extends Controller
 {
@@ -15,8 +15,8 @@ class getCityController extends Controller
      */
     public function getCity()
     {
-        $categories = categories::all();
-        return response()->json(['categories'=> $categories]);         
+        $cities = city::all();
+        return response()->json(['cities'=> $cities]);         
     }
 
     /**

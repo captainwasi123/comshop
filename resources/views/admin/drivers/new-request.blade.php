@@ -33,25 +33,45 @@
                                             <th scope="col">Email</th>
                                             <th scope="col">City</th>
                                             <th scope="col">Details</th>
+                                            <th scope="col">Status</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                     @forelse ($driver as $key => $val)  
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mr cone</td>
-                                            <td>+92-30100-999</td>
-                                            <td>Syed</td>
-                                            <td>abc@gmail.com</td>
-                                            <td>XYZ</td>
+                                            <td>{{++$key}}</td>
+                                            <td>{{$val->first_name}}</td>
+                                            <td>{{$val->last_name}}</td>
+                                            <td>{{$val->phone_number}}</td>
+                                            <td>{{$val->email_address}}</td>
+                                            <td>{{@$val->city->name}}</td>
+                                            
                                             <td>
-                                                <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver">View</a>
+                                                <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver"  href="#">View</a>
                                             </td>
                                             <td>
-                                            	<a href="#" class="status-icons"><i class="fa fa-pencil-square-o"></i></a>
-                                            	<a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
+                                         @switch($val->status)
+                                                @case('0')
+                                                    <a href="#" class="status_btn">Pending</a>
+                                                    @break
+
+
+                                        @endswitch
+                                        </td>
+                                            <td>
+                                            	<a href="javascript:void(0)"  class="status-icons driverActive" data-id="{{base64_encode($val->id)}}"><i class="fa fa-check"></i></a>
+                                            	<a href="javascript:void(0)" class="status-icons driverEdit"  data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
+                                            	<a href="javascript:void(0)"  class="status-icons driverDeleted" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
+                                            	<a href="javascript:void(0)"  class="status-icons driverBlock" data-id="{{base64_encode($val->id)}}"><i class="fa fa-ban"></i></a>
+
                                             </td>
-                                        </tr>                                            
+                                        </tr>  
+                                          @empty
+                                         <tr>
+                                                <td colspan="8">No Driver Record Found</td>
+                                        </tr>
+                                        @endforelse                                                    
                                     </tbody>
                                 </table>
                             </div>
@@ -100,13 +120,14 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+         @forelse ($driver as $key => $val)  
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="drive-sec-2">
-                            <h5>First Name: <span>MR.Cone</span> &nbsp;</h5>
-                            <h5>Last Name:  <span>Cone</span> &nbsp;</h5>
-                            <h5>Phone: <span>+92-30100-999</span> &nbsp;</h5>
-                            <h5>Email: <span>xyz@gmail.com</span> &nbsp;</h5>
+                            <h5>First Name: <span>{{$val->first_name}}</span> &nbsp;</h5>
+                            <h5>Last Name:  <span>{{$val->last_name}}</span> &nbsp;</h5>
+                            <h5>Phone: <span>{{$val->phone_number}}</span> &nbsp;</h5>
+                            <h5>Email: <span>{{$val->email_address}}</span> &nbsp;</h5>
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-12">
@@ -119,26 +140,40 @@
                                         <div class="col-lg-3 col-md-6 col-6">
                                             <div class="drivers-sec-1">
                                                 <!-- <p class="no-margin col-black pad-bot-10">Card Front: </p> -->
+                        
+                                                 @if($val->driverDoc->card_front!= 0)
+                                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$val->driverDoc->card_front)}}" width="100%">
+                                                @else
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
+                                                @endif                                            </div>                                    
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="drivers-sec-1">
+                                                <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
+                                                @if($val->driverDoc->card_front!= 0)
+                                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$val->driverDoc->card_front)}}" width="100%">
+                                                @else
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
+                                                @endif                                            </div>                                    
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="drivers-sec-1">
+                                                <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
+                                                @if($val->driverDoc->card_front!= 0)
+                                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$val->driverDoc->card_front)}}" width="100%">
+                                                @else
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
+                                                @endif
                                             </div>                                    
                                         </div>
                                         <div class="col-lg-3 col-md-6 col-6">
                                             <div class="drivers-sec-1">
                                                 <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
+                                                 @if($val->driverDoc->card_front!= 0)
+                                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$val->driverDoc->card_front)}}" width="100%">
+                                                @else
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
-                                            </div>                                    
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-6">
-                                            <div class="drivers-sec-1">
-                                                <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
-                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
-                                            </div>                                    
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-6">
-                                            <div class="drivers-sec-1">
-                                                <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
-                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
-                                            </div>                                    
+                                                @endif                                            </div>                                    
                                         </div>
 
                                     </div>
@@ -146,7 +181,13 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div> 
+         @empty
+                    <tr>
+                        <td colspan="8">No Driver Record Found</td>
+                     </tr>
+        @endforelse  
+
             </div>
         </div>
     </div>

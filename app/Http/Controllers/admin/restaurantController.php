@@ -26,7 +26,7 @@ class restaurantController extends Controller
             $file = $request->file('logo_img');
             $filename = $id.'-'.date('dmyHis').'.'.$file->getClientOriginalExtension();
             $file->move(base_path('/public/storage/restaurant/logo/'), $filename);
-            Restaurant::updateLogo($filename);
+            Restaurant::updateLogo($id, $filename);
         }
         return redirect()->back()->with('success', 'New Restaurant Added.');
     }
