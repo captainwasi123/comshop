@@ -50,17 +50,64 @@ class userController extends Controller
     function edit($id)
     {
         $id = base64_decode($id);
-        $data['User'] = User::find($id);
-        dd($data['User']);
-        return view('admin.restaurants.edit')->with($data);
+        $data['user'] = User::find($id);
+       
+        return view('admin.users.edit')->with($data);
     }
 
+
+    function editSubmit(Request $request){
+        $data = $request->all();
+        $id = base64_decode($data['user_id']);
+        User::updateUser($id, $data);
+
+      
+        return redirect()->back()->with('success', 'User Updated.');
+    }
     function blocked()
     {
-        return view('admin.users.blocked');
+        $data = array(
+            'users' => User::where('status', '2')->get()
+        );
+        return view('admin.users.blocked')->with($data);
     }
+
+    function statusBlock($id, $status){
+        $id = base64_decode($id);
+        $u = User::find($id);
+        $u->status = $status;
+        $u->save();
+
+        return redirect()->back()->with('success', 'User Block Updated.');
+    }
+
+
+    function userDeleted($id, $status){
+        $id = base64_decode($id);
+        $u = User::find($id);
+        $u->status = $status;
+        $u->save();
+
+        return redirect()->back()->with('success', 'User Deleted.');
+    }
+
+
+   
     function trashed()
     {
-        return view('admin.users.trashed');
+        $data = array(
+            'users' => User::where('status', '4')->get()
+        );
+    
+        return view('admin.users.trashed')->with($data);
     }   
+
+    function restore($id){
+        $id = base64_decode($id);
+        $u = User::find($id);
+        $u->status = '1';
+        $u->save();
+
+        return redirect()->back()->with('success', 'User is Activated.');
+    }
 }

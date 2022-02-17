@@ -29,6 +29,23 @@ class User extends Authenticatable
 
         return $u;
     }
+
+    public static function updateUser($id, array $data){
+        $u = User::find($id);
+        $u->name = $data['name'];
+        $u->email = $data['email'];
+        $u->phone = $data['phone'];
+        $u->facebook_id ='0';
+        $u->google_id = '0';
+        $u->status = '1';
+        $u->save();
+
+
+        return $u->id;
+    }
+
+
+
     protected $guarded = [];
     /**
      * The attributes that are mass assignable.

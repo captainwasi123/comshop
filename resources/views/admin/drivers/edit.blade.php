@@ -27,7 +27,7 @@
                             <div class="drive-sec">
                                 <h4 class="no-margin">Add Drivers</h4>
                             </div>
-                            <form class="profile-form pad-top-40 pad-bot-20" id="resetPasswordForm"  method="post" enctype="multipart/form-data">
+                            <form class="profile-form pad-top-40 pad-bot-20" id="resetPasswordForm" action="{{URL::to('/admin/drivers/update')}}" method="post" enctype="multipart/form-data">
                             @csrf
                                @if ($errors->any())
                                     <div class="alert alert-danger">
@@ -38,6 +38,7 @@
                                         </ul>
                                     </div>
                                 @endif
+                                 <input type="hidden" name="driver_id" value="{{base64_encode($driver->id)}}">
                                 <div class="form-row pad-bot-20">                                    
                                     <div class="col-lg-12 col-md-12 col-12 no-margin">
                                         <div class="row">
@@ -61,32 +62,32 @@
                                     <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">First Name</label>
-                                            <input type="text" name="first_name" value="" class="form-control" required>
+                                            <input type="text" name="first_name" value="{{$driver->first_name}}" class="form-control" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Last Name</label>
-                                            <input type="text" name="last_name" value="" class="form-control" required>
+                                            <input type="text" name="last_name" value="{{$driver->last_name}}" class="form-control" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Phone</label>
-                                            <input type="text" name="phone_number" value="" class="form-control" required>
+                                            <input type="text" name="phone_number" value="{{$driver->phone_number}}" class="form-control" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Email</label>
-                                            <input type="email" name="email_address" value="" class="form-control" required>
+                                            <input type="email" name="email_address" value="{{$driver->email_address}}" class="form-control" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
                                         </div>
                                     </div>
-                                    <div class="col-lg-2 col-md-4 col-12 no-margin">
+                                    {{--  <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputPassword" class="no-margin pad-bot-10">Password</label>
                                             <input type="password" name="password" id="password" value="" class="form-control" required>
@@ -99,13 +100,16 @@
                                             <input type="password" name="password_confirmation" id="password" value="" class="form-control" required>
                                             <span class="text-danger" id="PasswordErrorMsg"></span>
                                         </div>
-                                    </div>
+                                    </div>  --}}
                                     <div class="col-lg-2 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">City</label>
-                                            <select class="form-control" name="city_id" required>
+                                            <select class="form-control" name="city_id"  required>
+                                            <option value="">Select</option>
                                               @foreach ($cities as $city)
-                                                  <option value="{{$city->id}}">{{$city->name}}</option>
+                                                  <option value="{{$city->id}}"
+                                                  {{$city->id == $driver->city_id ?  'selected' : '' }}
+                                                  >{{$city->name}}</option>
                                               @endforeach 
                                             </select>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
@@ -118,7 +122,13 @@
                                     <div class="col-lg-3 col-md-6 col-12 no-margin">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-11 col-11">
-                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDCF" style="width:100%; height: 200px;">                                            
+                                                {{--  <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDCF" style="width:100%; height: 200px;">                                              --}}
+                                            
+                                             @if($driver->driverDoc->card_front!= 0)
+                                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$driver->driverDoc->card_front)}}" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDCF" style="width:100%; height: 200px;">
+                                                @else
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDCF" style="width:100%; height: 200px;">
+                                                @endif 
                                             </div>
                                             <div class="col-lg-12 col-md-11 col-11">
                                                 <div class="upload-btn">
@@ -136,7 +146,14 @@
                                     <div class="col-lg-3 col-md-6 col-12 no-margin">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-11 col-11">
-                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDCB" style="width:100%; height: 200px;">                                            
+                                                                                          
+                                            
+                                             @if($driver->driverDoc->card_front!= 0)
+                                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$driver->driverDoc->card_back)}}" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDCB" style="width:100%; height: 200px;">
+                                                @else
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDCB" style="width:100%; height: 200px;">
+                                                @endif 
+                                            
                                             </div>
                                             <div class="col-lg-12 col-md-11 col-11">
                                                 <div class="upload-btn">
@@ -154,7 +171,13 @@
                                     <div class="col-lg-3 col-md-6 col-12 no-margin">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-11 col-11">
-                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDLF" style="width:100%; height: 200px;">                                            
+                                                                                        
+                                           
+                                                 @if($driver->driverDoc->card_front!= 0)
+                                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$driver->driverDoc->license_back)}}" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDLF" style="width:100%; height: 200px;">
+                                                @else
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDLF" style="width:100%; height: 200px;">
+                                                @endif 
                                             </div>
                                             <div class="col-lg-12 col-md-11 col-11">
                                                 <div class="upload-btn">
@@ -172,7 +195,13 @@
                                     <div class="col-lg-3 col-md-6 col-12 no-margin">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-11 col-11">
+                                               
+                                            
+                                                @if($driver->driverDoc->card_front!= 0)
+                                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$driver->driverDoc->license_front)}}" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDLB" style="width:100%; height: 200px;">
+                                                @else
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" id="previewProfilePhoto" class="img-thumbnail previewProfilePhotoDLB" style="width:100%; height: 200px;">
+                                                @endif 
                                             </div>
                                             <div class="col-lg-12 col-md-11 col-11">
                                                 <div class="upload-btn">

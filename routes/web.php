@@ -82,9 +82,20 @@ use App\Http\Middleware;
                         Route::prefix('drivers')->group(function(){
                             Route::get('/new-request', 'driverController@newRequest')->name('admin.drivers.newRequest');
                             Route::get('/add', 'driverController@add')->name('admin.drivers.add');
+                            Route::post('/add', 'driverController@addSubmit')->name('admin.drivers.add');
+                            Route::get('/edit/{id}', 'driverController@edit');
+                            Route::post('/update', 'driverController@editSubmit')->name('admin.drivers.update');
+
                             Route::get('/active', 'driverController@active')->name('admin.drivers.active');
                             Route::get('/blocked', 'driverController@blocked')->name('admin.drivers.blocked');
                             Route::get('/trashed', 'driverController@trashed')->name('admin.drivers.trashed');
+
+                            Route::get('/statusActive/{id}/{status}', 'driverController@statusActive'); 
+                            Route::get('/statusBlock/{id}/{status}', 'driverController@statusBlock'); 
+                            Route::get('/driverDeleted/{id}/{status}', 'driverController@driverDeleted'); 
+                            Route::get('/restore/{id}', 'driverController@restore'); 
+
+
                         });
 
                     //Reviews & Ratings
@@ -100,6 +111,18 @@ use App\Http\Middleware;
                             Route::post('/added', 'userController@buyerRegister')->name('admin.users.added');
                             Route::get('/blocked', 'userController@blocked')->name('admin.users.blocked');
                             Route::get('/edit/{id}', 'userController@edit');
+                            Route::post('/update', 'userController@editSubmit')->name('admin.users.update');
+                            Route::get('/trashed', 'userController@trashed')->name('admin.users.trashed');
+
+                            Route::get('/statusBlock/{id}/{status}', 'userController@statusBlock'); 
+                            Route::get('/userDeleted/{id}/{status}', 'userController@userDeleted'); 
+                            Route::get('/restore/{id}', 'userController@restore'); 
+
+
+
+
+                           
+
                         });
 
                     //Settings
