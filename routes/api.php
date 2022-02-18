@@ -33,6 +33,10 @@ Route::post('login', [AuthController::class, 'login']);
 
 
 Route::get('getCity', [getCityController::class, 'getCity']);
+Route::get('getCategories', [getCityController::class, 'getCategories']);
+Route::get('getmenu', [getCityController::class, 'getmenu']);
+
+
 
 // DRIVER LOGIN
 Route::post('driverlogin', [driverAuthController::class, 'login']);
