@@ -65,14 +65,16 @@
 
                                         @endswitch</td>
                                             <td>
+                                            
                                                 <a href="javascript:void(0)" class="status-icons editUser" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
-                                            	<a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
+                                            	<a href="javascript:void(0)" class="status-icons blocktUser" data-id="{{base64_encode($val->id)}}"><i class="fa fa-ban"></i></a>
+                                                <a href="javascript:void(0)" class="status-icons userDeleted" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>  
                                          @empty
-                                    
-                                            <h3>No user record found</h3>
-                                        
+                                         <tr>
+                                                <td colspan="8">No User Record Found</td>
+                                        </tr>
                                         @endforelse                                          
                                     </tbody>
                                 </table>

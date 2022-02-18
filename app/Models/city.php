@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class userAddress extends Model
+class city extends Model
 {
     use HasFactory;
-    protected $table = 'tbl_user_address_info';
-    public $timestamps = false;
-    protected $guarded =[];
+    protected $table ='tbl_city_info';
+
 }

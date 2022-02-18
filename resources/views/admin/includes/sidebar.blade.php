@@ -45,6 +45,7 @@
               <li><a href="{{route('admin.users.add')}}">Add New</a></li>
               <li><a href="{{route('admin.users.active')}}">Active</a></li>
               <li><a href="{{route('admin.users.blocked')}}">Blocked</a></li>
+              <li><a href="{{route('admin.users.trashed')}}">Trashed</a></li>
             </ul>
         </li>
         <li>

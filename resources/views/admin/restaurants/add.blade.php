@@ -56,10 +56,21 @@
                                 <div class="form-row">                                    
                                     <div class="col-lg-12 col-md-12 col-12 no-margin">
                                         <div class="row">
+<<<<<<< HEAD
                                             <div class="col-lg-2 col-md-4 col-8">
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" id="previewProfilePhoto" class="img-thumbnail"> 
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" class="previewProfilePhoto previewProfilePhotoRes img-thumbnail">
                                             </div>                                           
+=======
+
+                                            <div class="col-lg-2 col-md-4 col-8">
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" id="previewProfilePhotoD" class="img-thumbnail">                                            
+
+                                            <div class="col-lg-2 col-md-5 col-5">
+                                                <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" class="previewProfilePhoto previewProfilePhotoRes img-thumbnail">                                            
+
+                                            </div>
+>>>>>>> b0e46f1a65ba872a078cebca9c1c3bec8d63f709
                                             <div class="col-lg-10 col-md-8 col-12">
                                                 <div id="msg"></div>
                                                     <input type="file" name="logo_img" class="profilePic profilePicRes" accept="image/*">

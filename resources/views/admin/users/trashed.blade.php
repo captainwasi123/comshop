@@ -29,19 +29,36 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                         @forelse ($users as $key => $val)                                                                             
                                         <tr>
-                                            <td>1</td>
-                                            <td>Syed</td>
-                                            <td>+92-30100-999</td>
-                                            <td>abc@gmail.com</td>
-                                            <td>XYZ</td>
-                                            <td>Admin</td>
-                                            <td><a href="#" class="status_btn bg-red">Trashed</a></td>
+                                        <td>{{++$key}}</td>
+                                        <td>{{$val->name}}</td>
+                                        <td>{{$val->phone}}</td>
+                                        <td>{{$val->email}}</td>
+                                        <td>{{@$val->user_address->address}}</td>
+                                        <td>Admin</td>
+                                        <td>  
+                                            @switch($val->status)
+                                        @case('1')
+                                            <a href="#" class="status_btn">Active</a>
+                                            @break
+
+                                        @case('4')
+                                            <a href="#" class="status_btn  bg-red">Deleted</a>
+                                                @break
+
+                                        @endswitch</td>
                                             <td>
-                                                <a href="#" class="status-icons"><i class="fa fa-pencil-square-o"></i></a>
-                                                <a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
+                                                <a href="javascript:void(0)" class="status-icons editUser" data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
+                                                <a href="javascript:void(0)" class="status-icons restoreUser" data-id="{{base64_encode($val->id)}}"><i class="fa fa-refresh"></i></a>
+                                                
                                             </td>
-                                        </tr>                                            
+                                        </tr>  
+                                         @empty
+                                    
+                                            <h3>No user record found</h3>
+                                        
+                                        @endforelse                                  
                                     </tbody>
                                 </table>
                             </div>

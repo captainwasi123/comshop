@@ -41,6 +41,15 @@ return [
             'provider' => 'users',
         ],
 
+       
+
+        
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
+        
+
         'restaurant' => [
             'driver' => 'session',
             'provider' => 'restaurant',
@@ -51,6 +60,19 @@ return [
             'provider' => 'restaurant',
             'hash' => false,
         ],
+
+       
+
+        'driver' => [
+            'driver' => 'session',
+            'provider' => 'drivers',
+        ],
+
+        'driver-api' => [
+            'driver' => 'sanctum',
+            'provider' => 'drivers',
+        ],
+        
 
         'admin' => [
             'driver' => 'session',
@@ -64,6 +86,8 @@ return [
         ],
     ],
 
+
+    
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -92,9 +116,15 @@ return [
             'model' => App\Models\Restaurant\Restaurant::class,
         ],
 
+
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+
+        'drivers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Driver\driver::class,
         ],
 
         // 'users' => [

@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\BaseController as BaseController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
+use App\Models\userAddress;
 
 
 class AuthController extends BaseController
@@ -49,6 +50,36 @@ class AuthController extends BaseController
         
     }
 
+    public function update(Request $request,$id)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+           
+        ]);
+   
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
+
+
+        $user=User::find($id);
+        $user->update($request->all());
+
+        return response()->json(['success' => $user]);
+      
+
+    }
+
+    public function show($id)
+    {
+        return User::find($id);
+    }
+
+
+ 
+
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -73,17 +104,37 @@ class AuthController extends BaseController
         } 
     } 
 
-    
+
+    public function logout(){
+
+        return Auth::user();
+      
+        $user = request()->user(); //or Auth::user()
+        // Revoke current user token
+        $user->tokens()->where('id', $user->currentAccessToken()->id)->delete();
+
+        return response()->json([
+            'logout' => true,
+            'message' => 'logout successfully'
+            ]);
+    }
+
+    // public function logout(Request $request){
+
+
+    //     auth()->user()->tokens()->logout();
+
+    //     return [
+    //         'message'=>'Logged out'
+    //     ];
+    // }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+  
 
     /**
      * Store a newly created resource in storage.
@@ -96,16 +147,6 @@ class AuthController extends BaseController
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -125,10 +166,7 @@ class AuthController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+  
 
     /**
      * Remove the specified resource from storage.
@@ -136,8 +174,9 @@ class AuthController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    // public function destroy($id)
+    // {
+    //     $find = User::find($id);
+    //     return $find->delete() ? [ 'response_status' => true, 'message' => 'Record has been deleted' ] : [ 'response_status' => false, 'message' => 'Record cannot delete' ];
+    // }
 }

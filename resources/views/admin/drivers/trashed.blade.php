@@ -33,25 +33,49 @@
                                             <th scope="col">Email</th>
                                             <th scope="col">City</th>
                                             <th scope="col">Details</th>
+                                            <th scope="col">Status</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                     @forelse ($driver as $key => $val)  
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mr cone</td>
-                                            <td>+92-30100-999</td>
-                                            <td>Syed</td>
-                                            <td>abc@gmail.com</td>
-                                            <td>XYZ</td>
+                                            <td>{{++$key}}</td>
+                                            <td>{{$val->first_name}}</td>
+                                            <td>{{$val->last_name}}</td>
+                                            <td>{{$val->phone_number}}</td>
+                                            <td>{{$val->email_address}}</td>
+                                            <td>{{@$val->city->name}}</td>
+                                            
+                                            <td>
+                                                <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver"  href="#">View</a>
+                                            </td>
+                                            <td>
+                                         @switch($val->status)
+                                                @case('3')
+                                                    <a href="#" class="status_btn">Pending</a>
+                                                    @break
+
+
+                                        @endswitch
+                                        </td>
                                             <td>
                                                 <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver">View</a>
                                             </td>
                                             <td>
-                                            	<a href="#" class="status-icons"><i class="fa fa-pencil-square-o"></i></a>
-                                            	<a href="#" class="status-icons"><i class="fa fa-trash"></i></a>
+                                            
+                                                <a href="javascript:void(0)"  class="status-icons driverActive" data-id="{{base64_encode($val->id)}}"><i class="fa fa-check"></i></a>
+                                            	<a href="javascript:void(0)" class="status-icons driverEdit"  data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
+                                            	<a href="javascript:void(0)"  class="status-icons driverBlock" data-id="{{base64_encode($val->id)}}"><i class="fa fa-ban"></i></a>
+                                                <a href="javascript:void(0)" class="status-icons driverRestore" data-id="{{base64_encode($val->id)}}"><i class="fa fa-refresh"></i></a>
+
                                             </td>
-                                        </tr>                                            
+                                        </tr> 
+                                           @empty
+                                         <tr>
+                                                <td colspan="8">No Driver Record Found</td>
+                                        </tr>
+                                        @endforelse                                            
                                     </tbody>
                                 </table>
                             </div>

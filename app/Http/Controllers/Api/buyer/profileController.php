@@ -8,7 +8,7 @@ use App\Http\Controllers\Api\BaseController as BaseController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\userAddress;
-
+use Validator;
 class profileController extends BaseController
 {
     /**
@@ -19,28 +19,33 @@ class profileController extends BaseController
 
     public function profile_save(Request $request)
     {
-        $user = User::where('id',Auth::id())->first();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->save();
-        $check_address = userAddress::where('user_id',Auth::id())->first();
+        $validator = Validator::make($request->all(), [
+            'address' => 'required',
+       
+          
+        ]);
 
-        if(!empty($check_address)){
-            $address = $check_address;
-        }else{
-            $address = new userAddress();
-            
-        }
-        $address->user_id = $request->user_id;
-        $address->address = $request->address;
-        $address->latitude = $request->latitude;
-        $address->longitude = $request->longitude;
-        $address->postcode = $request->postcode;
-        $address->save();
+        if($validator->fails()){
+            return  ['success' => false, 'error' =>  $validator->errors()];
+          }
 
-        return $this->sendResponse($success, 'Profile Updated Successfully.');
 
+          $data = array(
+
+            'user_id' => Auth::user()->id,
+            'address' => $request->address,
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
+        );
+
+
+        $success= userAddress::create($data);
+
+     
+        // return response()->json(['success' => $success]);
+        
+        list($status,$data) = $success ? [true, userAddress::find($success->id)] : [false, ''];
+        return ['success' => $status,'data' => $data];
         
     }
 
