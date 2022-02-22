@@ -63,13 +63,14 @@ Route::post('driverlogin', [driverAuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group( function () {
 
     Route::post('profileUpdate', [profileController::class, 'profile_save']);
+    Route::post('changePassword', [profileController::class, 'changePassword']);
 
     Route::get('getRestuarant', [bookingController::class, 'getRestuarant']);
 
     Route::put('user/{id}',[AuthController::class,'update']);
     Route::get('user/{id}',[AuthController::class,'show']);
 
-    Route::post('/logout',[AuthController::class,'logout']);
+    Route::post('logout',[AuthController::class,'logout']);
 
   
 

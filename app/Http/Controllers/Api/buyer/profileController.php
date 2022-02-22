@@ -9,6 +9,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\userAddress;
 use Validator;
+use Hash;
+use bcrypt;
+
 class profileController extends BaseController
 {
     /**
@@ -50,61 +53,7 @@ class profileController extends BaseController
     }
 
     
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, $id)
     {
         //
@@ -121,8 +70,91 @@ class profileController extends BaseController
         //
     }
 
-    public function changePassword()
-    {
-        //
+
+    //changePassword again:
+
+
+    public function changePassword(Request $request) {
+
+         $validator = Validator::make($request->all(), [
+         'current-password' => 'required',
+            'password' => ['required','string', 'min:6'],
+            'confirm_password' => 'required|same:password',
+           
+        ]);
+   
+        if($validator->fails()){
+            return  ['success' => false, 'error' =>  $validator->errors()];
+          }
+
+        if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
+            // The passwords matches
+         return response()->json(['status' => false ,
+                                 "error" => "Your current password does not matches with the password."]);
+        }
+        if(strcmp($request->get('current-password'), $request->get('password')) == 0){
+            // Current password and new password same
+        return response()->json(['status' => false ,"error" => "New Password cannot be same as your current password."]);
+        
+        }
+    
+        //Change Password
+        $user = Auth::user();
+        $user->password = bcrypt($request->get('password'));
+        $user->save();
+
+            return response()->json(['status' => true ,"error" => "Password successfully changed!"]);
     }
+
+
+    // function changePassword(Request $request){
+
+
+    //     $validator = Validator::make($request->all(), [
+    //         'old_password' => ['required','string'],
+    //         'password' => ['required','string', 'min:8'],
+    //         'confirm_password' => 'required|same:password',
+             
+    //     ]);
+   
+    //     if($validator->fails()){
+    //         return  ['success' => false, 'error' =>  $validator->errors()];
+    //       }
+    //     $old_password = $request->input('old_password');
+    //     $password =  $request->input('password');
+    //     $confirm_password = $request->input('confirm_password');
+
+        
+        
+    //     $user = User::find(Auth::id());
+
+    //     if (!Hash::check($old_password, $user->password)) {
+
+           
+    //         return response()->json(['status' => false, 'error' =>'Current password is incorrect.']);
+    //     }else{
+
+    //         if($password == $confirm_password ){
+
+    //             $user->password = bcrypt($request->password);
+    //             $user->save();
+
+    //             return response()->json(['status' => True, 'success' => 'Password updated.']);
+               
+    //         }else{
+    //             return response()->json(['status' => false, 'error' => 'Password does not match.']);
+              
+    //         }
+    //     }
+    // }
+
+    public function logout(Request $request)
+    {
+        dd('logout');
+        $request->user()->token()->revoke();
+        return response()->json([
+            'message' => 'Successfully logged out'
+        ]);
+    }
+
 }
