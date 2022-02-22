@@ -42,18 +42,25 @@ class driverAuthController extends BaseController
     } 
 
   
+   
+
+
     public function logout(){
 
-         return Auth::guard('driver')->user();
-         $user = request()->user(); //or Auth::user()
-         // Revoke current user token
-         $user->tokens()->where('id', $user->currentAccessToken()->id)->delete();
+        
+        Auth::guard('driver-api')->user()->tokens->each(function($token, $key) {
+            $token->delete();
+        });
 
         return response()->json([
             'logout' => true,
             'message' => 'logout successfully'
             ]);
     }
+
+
+
+
 
     
     

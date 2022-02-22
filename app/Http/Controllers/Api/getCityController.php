@@ -19,7 +19,7 @@ class getCityController extends Controller
      */
     public function getCity()
     {
-        $user = Auth::guard('driver-api')->user();
+        $user = Auth::guard('driver-api')->user()->id;
         
        
         

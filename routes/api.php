@@ -62,12 +62,12 @@ Route::post('driverlogin', [driverAuthController::class, 'login']);
      
 Route::middleware('auth:sanctum')->group( function () {
 
-    Route::post('profileUpdate', [profileController::class, 'profile_save']);
+    Route::post('BuyerlocationUpdate/{id}/{lat}/{lon}', [profileController::class, 'buyerLocationsupdate']);
 
     Route::get('getRestuarant', [bookingController::class, 'getRestuarant']);
 
-    Route::put('user/{id}',[AuthController::class,'update']);
-    Route::get('user/{id}',[AuthController::class,'show']);
+    Route::put('buyerProfileUpdate/{id}',[AuthController::class,'update']);
+    Route::get('buyerusershow/{id}',[AuthController::class,'show']);
 
     Route::post('/logout',[AuthController::class,'logout']);
 
@@ -83,6 +83,9 @@ Route::middleware('auth:sanctum')->group( function () {
 Route::middleware('auth:driver-api')->group( function () {
 
     Route::get('getCity', [getCityController::class, 'getCity']);
+
+    Route::get('DriverchangePassword', [driverprofileController::class, 'changePassword']);
+
 
     Route::post('/logoutdriver',[driverAuthController::class,'logout']);
 

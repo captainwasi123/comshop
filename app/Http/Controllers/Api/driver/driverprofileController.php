@@ -8,6 +8,8 @@ use App\Models\Driver\driver;
 use App\Models\Driver\driverDocument;
 use App\Models\city;
 use Validator;
+use Auth;
+use Hash;
 
 class driverprofileController extends Controller
 {
@@ -108,12 +110,53 @@ class driverprofileController extends Controller
       
         list($status,$data) = $id ? [ true , driver::find($id->id) ] : [ false , ''];
 
-     
         list($status_dd,$data_dd) = $dd ? [ true , driverDocument::find($dd->id) ] : [ false , ''];
         return ['status' => $status,'data' => $data , 'success' => $success, 'status_dd' => $status_dd, 'data_dd.' => $data_dd ];
    
    
         
+    }
+
+
+    function changePassword(Request $request){
+
+
+        $validator = Validator::make($request->all(), [
+            'old_password' => ['required','string'],
+            'password' => ['required','string', 'min:8'],
+            'confirm_password' => 'required|same:password',
+             
+        ]);
+   
+        if($validator->fails()){
+            return  ['success' => false, 'error' =>  $validator->errors()];
+          }
+        $old_password = $request->input('old_password');
+        $password =  $request->input('password');
+        $confirm_password = $request->input('confirm_password');
+
+        
+        $id = Auth::guard('driver-api')->user()->id;
+        $user = driver::find($id);
+
+        if (!Hash::check($old_password, $user->password)) {
+
+           
+            return response()->json(['status' => false, 'error' =>'Current password is incorrect.']);
+        }else{
+
+            if($password == $confirm_password ){
+
+                $user->password = bcrypt($request->password);
+                $user->save();
+
+                return response()->json(['status' => True, 'success' => 'Password updated.']);
+               
+            }else{
+                return response()->json(['status' => false, 'error' => 'Password does not match.']);
+              
+            }
+        }
     }
 
     /**
