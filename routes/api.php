@@ -35,11 +35,23 @@ Route::post('login', [AuthController::class, 'login']);
 
 Route::get('getCity', [getCityController::class, 'getCity']);
 Route::get('getCity/{id}', [getCityController::class, 'show']);
+
+
+
 Route::post('order', [orderController::class, 'store']);
 Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
 Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
 Route::get('destroy/{id}', [orderController::class, 'destroy']);
 Route::get('search/{keyword}', [orderController::class, 'search']);
+
+
+
+Route::get('getCategories', [getCityController::class, 'getCategories']);
+Route::get('getmenu', [getCityController::class, 'getmenu']);
+
+
+
+
 
 
 
@@ -58,9 +70,27 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::get('user/{id}',[AuthController::class,'show']);
 
     Route::post('/logout',[AuthController::class,'logout']);
+
+  
+
+});
+
+
+
+
+
+// Driver Middleware
+Route::middleware('auth:driver-api')->group( function () {
+
+    Route::get('getCity', [getCityController::class, 'getCity']);
+
     Route::post('/logoutdriver',[driverAuthController::class,'logout']);
 
 });
+
+
+
+
 
 
 
