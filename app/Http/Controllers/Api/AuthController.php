@@ -54,7 +54,7 @@ class AuthController extends BaseController
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:tbl_users_info'
             'phone' => 'required',
            
         ]);
@@ -105,13 +105,21 @@ class AuthController extends BaseController
     } 
 
 
+  
     public function logout(){
 
+<<<<<<< HEAD
     
       
         $user = request()->user(); //or Auth::user()
         // Revoke current user token
         $user->tokens()->where('id', $user->currentAccessToken()->id)->delete();
+=======
+        
+        Auth::user()->tokens->each(function($token, $key) {
+            $token->delete();
+        });
+>>>>>>> 43404a31dba6243226c50e66abfaa2a05a1cbba2
 
         return response()->json([
             'logout' => true,
