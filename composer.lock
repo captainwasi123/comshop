@@ -961,6 +961,18 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
+            "version": "v8.83.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "29bc8779103909ebc428478b339ee6fa8703e193"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/29bc8779103909ebc428478b339ee6fa8703e193",
+                "reference": "29bc8779103909ebc428478b339ee6fa8703e193",
+=======
             "version": "v8.83.1",
             "source": {
                 "type": "git",
@@ -971,6 +983,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/bddba117f8bce2f3c9875ca1ca375a96350d0f4d",
                 "reference": "bddba117f8bce2f3c9875ca1ca375a96350d0f4d",
+>>>>>>> b0e46f1a65ba872a078cebca9c1c3bec8d63f709
                 "shasum": ""
             },
             "require": {
@@ -1130,7 +1143,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
+            "time": "2022-02-08T15:44:51+00:00"
+=======
             "time": "2022-02-15T15:05:20+00:00"
+>>>>>>> b0e46f1a65ba872a078cebca9c1c3bec8d63f709
         },
         {
             "name": "laravel/sanctum",
@@ -5847,6 +5864,18 @@
         },
         {
             "name": "laravel/sail",
+<<<<<<< HEAD
+            "version": "v1.13.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sail.git",
+                "reference": "ede5e861549be2c3a8b789cdb34203a5aef5b92a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/ede5e861549be2c3a8b789cdb34203a5aef5b92a",
+                "reference": "ede5e861549be2c3a8b789cdb34203a5aef5b92a",
+=======
             "version": "v1.13.3",
             "source": {
                 "type": "git",
@@ -5857,6 +5886,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/53dd949a2134bd468f50defce85de566a7800dd9",
                 "reference": "53dd949a2134bd468f50defce85de566a7800dd9",
+>>>>>>> b0e46f1a65ba872a078cebca9c1c3bec8d63f709
                 "shasum": ""
             },
             "require": {
@@ -5903,7 +5933,11 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
+<<<<<<< HEAD
+            "time": "2022-02-08T14:14:12+00:00"
+=======
             "time": "2022-02-11T14:28:50+00:00"
+>>>>>>> b0e46f1a65ba872a078cebca9c1c3bec8d63f709
         },
         {
             "name": "mockery/mockery",
@@ -5993,9 +6027,6 @@
             },
             "require": {
                 "php": "^7.1 || ^8.0"
-            },
-            "replace": {
-                "myclabs/deep-copy": "self.version"
             },
             "require-dev": {
                 "doctrine/collections": "^1.0",
@@ -7387,6 +7418,18 @@
         },
         {
             "name": "sebastian/global-state",
+<<<<<<< HEAD
+            "version": "5.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/global-state.git",
+                "reference": "19c519631c5a511b7ed0ad64a6713fdb3fd25fe4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/19c519631c5a511b7ed0ad64a6713fdb3fd25fe4",
+                "reference": "19c519631c5a511b7ed0ad64a6713fdb3fd25fe4",
+=======
             "version": "5.0.5",
             "source": {
                 "type": "git",
@@ -7397,6 +7440,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/0ca8db5a5fc9c8646244e629625ac486fa286bf2",
                 "reference": "0ca8db5a5fc9c8646244e629625ac486fa286bf2",
+>>>>>>> b0e46f1a65ba872a078cebca9c1c3bec8d63f709
                 "shasum": ""
             },
             "require": {
@@ -7439,7 +7483,11 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/global-state/issues",
+<<<<<<< HEAD
+                "source": "https://github.com/sebastianbergmann/global-state/tree/5.0.4"
+=======
                 "source": "https://github.com/sebastianbergmann/global-state/tree/5.0.5"
+>>>>>>> b0e46f1a65ba872a078cebca9c1c3bec8d63f709
             },
             "funding": [
                 {
@@ -7447,7 +7495,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
+            "time": "2022-02-10T07:01:19+00:00"
+=======
             "time": "2022-02-14T08:28:10+00:00"
+>>>>>>> b0e46f1a65ba872a078cebca9c1c3bec8d63f709
         },
         {
             "name": "sebastian/lines-of-code",
@@ -7905,5 +7957,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }

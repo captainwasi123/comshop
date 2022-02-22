@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\city;
+use App\Models\categories;
+use App\Models\Restaurant\menu;
+
 
 class getCityController extends Controller
 {
@@ -17,6 +20,22 @@ class getCityController extends Controller
     {
         $cities = city::all();
         return response()->json(['cities'=> $cities]);         
+    }
+
+    //  get Category
+
+    
+    public function getCategories()
+    {
+        $data = categories::all();
+        return response()->json(['categories'=> $data]);         
+    }
+
+    // get menus
+    public function getmenu()
+    {
+        $data = menu::all();
+        return response()->json(['menus'=> $data]);         
     }
 
     /**

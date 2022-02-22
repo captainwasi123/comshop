@@ -110,7 +110,7 @@ class driverprofileController extends Controller
 
      
         list($status_dd,$data_dd) = $dd ? [ true , driverDocument::find($dd->id) ] : [ false , ''];
-        return ['status' => $status,'data' => $data , 'success' => $success, 'status_dd' => $status_dd, 'data_dd' => $data_dd ];
+        return ['status' => $status,'data' => $data , 'success' => $success, 'status_dd' => $status_dd, 'data_dd.' => $data_dd ];
    
    
         
