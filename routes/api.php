@@ -27,40 +27,39 @@ use App\Http\Controllers\Api\driver\driverprofileController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//  buyer Reg
 Route::post('UserRegister', [AuthController::class, 'UserRegister']);
+// Driver Reg
 Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']);
-
+// buyer Login
 Route::post('login', [AuthController::class, 'login']);
+// Driver login
+Route::post('driverlogin', [driverAuthController::class, 'login']);
 
 
-<<<<<<< HEAD
-// Route::get('getCity', [getCityController::class, 'getCity']);
-=======
-Route::get('getCity', [getCityController::class, 'getCity']);
-<<<<<<< HEAD
-Route::get('getCity/{id}', [getCityController::class, 'show']);
+
+
+
+
 Route::post('order', [orderController::class, 'store']);
 Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
 Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
 Route::get('destroy/{id}', [orderController::class, 'destroy']);
 Route::get('search/{keyword}', [orderController::class, 'search']);
 
-Route::get('search/{keyword}', [orderController::class, 'search']);
-=======
->>>>>>> 3c8afbfeec1c00405355b2ee7257480f148c7582
 Route::get('getCategories', [getCityController::class, 'getCategories']);
 Route::get('getmenu', [getCityController::class, 'getmenu']);
->>>>>>> 5472fc407944dde98bb834f79b37bf7013b8f3a3
 
 
 
-// DRIVER LOGIN
-Route::post('driverlogin', [driverAuthController::class, 'login']);
 
-     
+
+
+
+// Buyer Middleware
 Route::middleware('auth:sanctum')->group( function () {
-   
-  
+
+
     Route::post('profileUpdate', [profileController::class, 'profile_save']);
 
     Route::get('getRestuarant', [bookingController::class, 'getRestuarant']);
@@ -69,20 +68,22 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::get('user/{id}',[AuthController::class,'show']);
 
     Route::post('/logout',[AuthController::class,'logout']);
-    Route::post('/logoutdriver',[driverAuthController::class,'logout']);
+  
 
 
 });
 
+// Driver Middleware
 Route::middleware('auth:driver-api')->group( function () {
 
-     
     Route::get('getCity', [getCityController::class, 'getCity']);
+    Route::post('/logoutdriver',[driverAuthController::class,'logout']);
+ 
 
 });
 
 
-   
+
 
 
 
