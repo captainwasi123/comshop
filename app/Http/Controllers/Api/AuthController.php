@@ -108,18 +108,18 @@ class AuthController extends BaseController
   
     public function logout(){
 
-<<<<<<< HEAD
+
     
       
         $user = request()->user(); //or Auth::user()
         // Revoke current user token
         $user->tokens()->where('id', $user->currentAccessToken()->id)->delete();
-=======
+
         
         Auth::user()->tokens->each(function($token, $key) {
             $token->delete();
         });
->>>>>>> 43404a31dba6243226c50e66abfaa2a05a1cbba2
+
 
         return response()->json([
             'logout' => true,
@@ -127,61 +127,15 @@ class AuthController extends BaseController
             ]);
     }
 
-    // public function logout(Request $request){
-
-
-    //     auth()->user()->tokens()->logout();
-
-    //     return [
-    //         'message'=>'Logged out'
-    //     ];
-    // }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-  
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
+   
     public function store(Request $request)
     {
         //
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
   
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     // public function destroy($id)
     // {
     //     $find = User::find($id);
