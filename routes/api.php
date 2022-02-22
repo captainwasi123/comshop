@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\buyer\profileController;
 
 use App\Http\Controllers\Api\getCityController;
+use App\Http\Controllers\Api\order\orderController;
 
 use App\Http\Controllers\Api\booking\bookingController;
 use App\Http\Controllers\Api\driver\driverAuthController;
@@ -33,6 +34,16 @@ Route::post('login', [AuthController::class, 'login']);
 
 
 Route::get('getCity', [getCityController::class, 'getCity']);
+Route::get('getCity/{id}', [getCityController::class, 'show']);
+Route::post('order', [orderController::class, 'store']);
+Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
+Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
+Route::get('destroy/{id}', [orderController::class, 'destroy']);
+Route::get('search/{keyword}', [orderController::class, 'search']);
+
+Route::get('search/{keyword}', [orderController::class, 'search']);
+
+
 
 // DRIVER LOGIN
 Route::post('driverlogin', [driverAuthController::class, 'login']);

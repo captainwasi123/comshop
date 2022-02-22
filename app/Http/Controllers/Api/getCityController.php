@@ -38,7 +38,13 @@ class getCityController extends Controller
      */
     public function show($id)
     {
-        //
+        $city = city::find($id);
+
+        if (is_null($city)) {
+            return response()->json('Data not found', 404); 
+        }
+        
+        return response()->json(['city' => $city]);
     }
 
     /**

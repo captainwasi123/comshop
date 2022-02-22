@@ -120,4 +120,9 @@ class profileController extends BaseController
     {
         //
     }
+
+    public function changePassword()
+    {
+        //
+    }
 }
