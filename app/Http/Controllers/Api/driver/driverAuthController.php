@@ -18,27 +18,6 @@ class driverAuthController extends BaseController
     {
 
 
-
-        // $validator = Validator::make($request->all(), [
-        //     'email_address' => 'required|email',
-        //     'password' => 'required|min:6',
-        // ]);
-        // if ($validator->fails()) {
-        //     return response()->json(['error'=>$validator->errors()], 401);
-        // }
-
-        // $credentials = $request->only('email_address', 'password');
-        
-        // if(Auth::guard('driver')->attempt($credentials)){
-        //     $user = Auth::guard('driver');
-        //     $success['token'] =  $user->createToken('MyApp')->accessToken;
-        //     return response()->json(['success' => $success], $this->successStatus);
-        // }
-        // else{
-        //     return response()->json(['error'=>'Email or password incorrect'], 401);
-        // }
-      
-
         $validator = Validator::make($request->all(), [
             'email_address' => 'required',
             'password' => 'required',

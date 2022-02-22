@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\city;
 use App\Models\categories;
 use App\Models\Restaurant\menu;
+use Illuminate\Support\Facades\Auth;
 
 
 class getCityController extends Controller
@@ -18,8 +19,15 @@ class getCityController extends Controller
      */
     public function getCity()
     {
+        $user = Auth::guard('driver-api')->user();
+        
+       
+        
         $cities = city::all();
-        return response()->json(['cities'=> $cities]);         
+        return response()->json(['cities'=> $cities, 'user' => $user]);
+     
+    
+    
     }
 
     //  get Category

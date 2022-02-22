@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Restaurant\Restaurant;
 use App\Models\Restaurant\menu;
-
+use Auth;
 
 class bookingController extends Controller
 {
          function getRestuarant()
         {
+
+          $user= Auth::user()->name;
           
             $lat='24.9867287';
             $lon='67.0625024';
@@ -60,7 +62,7 @@ class bookingController extends Controller
          
          $menu=menu::whereIn('restaurant_id', $ids)->get();
 
-         return response()->json(['data' => $avg, 'menus' => $menu]);
+         return response()->json(['data' => $avg, 'menus' => $menu, 'user' =>$user]);
       }
 
       

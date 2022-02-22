@@ -10,6 +10,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+
+
 class driver extends Authenticatable
 {
 
@@ -91,5 +96,7 @@ class driver extends Authenticatable
          return $this->belongsTo(driverDocument::class, 'id', 'driver_id');
     }
 
-
+    protected $hidden = [
+        'password',
+    ];
 }

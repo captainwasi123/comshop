@@ -32,7 +32,7 @@ Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']
 Route::post('login', [AuthController::class, 'login']);
 
 
-Route::get('getCity', [getCityController::class, 'getCity']);
+// Route::get('getCity', [getCityController::class, 'getCity']);
 Route::get('getCategories', [getCityController::class, 'getCategories']);
 Route::get('getmenu', [getCityController::class, 'getmenu']);
 
@@ -43,7 +43,8 @@ Route::post('driverlogin', [driverAuthController::class, 'login']);
 
      
 Route::middleware('auth:sanctum')->group( function () {
-
+   
+  
     Route::post('profileUpdate', [profileController::class, 'profile_save']);
 
     Route::get('getRestuarant', [bookingController::class, 'getRestuarant']);
@@ -54,7 +55,20 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('/logout',[AuthController::class,'logout']);
     Route::post('/logoutdriver',[driverAuthController::class,'logout']);
 
+
 });
+
+Route::middleware('auth:driver-api')->group( function () {
+
+     
+    Route::get('getCity', [getCityController::class, 'getCity']);
+
+});
+
+
+   
+
+
 
 
 
