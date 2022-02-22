@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\buyer\profileController;
 
 use App\Http\Controllers\Api\getCityController;
+use App\Http\Controllers\Api\order\orderController;
 
 use App\Http\Controllers\Api\booking\bookingController;
 use App\Http\Controllers\Api\driver\driverAuthController;
@@ -32,9 +33,24 @@ Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']
 Route::post('login', [AuthController::class, 'login']);
 
 
+<<<<<<< HEAD
 // Route::get('getCity', [getCityController::class, 'getCity']);
+=======
+Route::get('getCity', [getCityController::class, 'getCity']);
+<<<<<<< HEAD
+Route::get('getCity/{id}', [getCityController::class, 'show']);
+Route::post('order', [orderController::class, 'store']);
+Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
+Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
+Route::get('destroy/{id}', [orderController::class, 'destroy']);
+Route::get('search/{keyword}', [orderController::class, 'search']);
+
+Route::get('search/{keyword}', [orderController::class, 'search']);
+=======
+>>>>>>> 3c8afbfeec1c00405355b2ee7257480f148c7582
 Route::get('getCategories', [getCityController::class, 'getCategories']);
 Route::get('getmenu', [getCityController::class, 'getmenu']);
+>>>>>>> 5472fc407944dde98bb834f79b37bf7013b8f3a3
 
 
 
