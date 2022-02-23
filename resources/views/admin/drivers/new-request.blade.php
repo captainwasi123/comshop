@@ -48,7 +48,7 @@
                                             <td>{{@$val->city->name}}</td>
                                             
                                             <td>
-                                                <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver"  href="#">View</a>
+                                                <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver" data-id="{{base64_encode($val->id)}}">View</a>
                                             </td>
                                             <td>
                                          @switch($val->status)
@@ -141,7 +141,7 @@
                                             <div class="drivers-sec-1">
                                                 <!-- <p class="no-margin col-black pad-bot-10">Card Front: </p> -->
                         
-                                                 @if($val->driverDoc->card_front!= 0)
+                                                 @if(@$val->driverDoc->card_front!= 0)
                                                 <img src="{{URL::to('/public/storage/driver/imginfo/'.$val->driverDoc->card_front)}}" width="100%">
                                                 @else
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
@@ -150,7 +150,7 @@
                                         <div class="col-lg-3 col-md-6 col-6">
                                             <div class="drivers-sec-1">
                                                 <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
-                                                @if($val->driverDoc->card_front!= 0)
+                                                @if(@$val->driverDoc->card_front!= 0)
                                                 <img src="{{URL::to('/public/storage/driver/imginfo/'.$val->driverDoc->card_front)}}" width="100%">
                                                 @else
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
@@ -159,7 +159,7 @@
                                         <div class="col-lg-3 col-md-6 col-6">
                                             <div class="drivers-sec-1">
                                                 <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
-                                                @if($val->driverDoc->card_front!= 0)
+                                                @if(@$val->driverDoc->card_front!= 0)
                                                 <img src="{{URL::to('/public/storage/driver/imginfo/'.$val->driverDoc->card_front)}}" width="100%">
                                                 @else
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">
@@ -169,7 +169,7 @@
                                         <div class="col-lg-3 col-md-6 col-6">
                                             <div class="drivers-sec-1">
                                                 <!-- <p class="no-margin col-black pad-bot-10">Card Back: </p> -->
-                                                 @if($val->driverDoc->card_front!= 0)
+                                                 @if(@$val->driverDoc->card_front!= 0)
                                                 <img src="{{URL::to('/public/storage/driver/imginfo/'.$val->driverDoc->card_front)}}" width="100%">
                                                 @else
                                                 <img src="{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png" width="100%">

@@ -5,6 +5,8 @@ namespace App\Models\Restaurant;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
+use App\Models\categories;
+
 
 class menu extends Model
 {
@@ -30,4 +32,10 @@ class menu extends Model
         $i->image = $filename;
         $i->save();
     }
+
+    public function cat()
+    {
+    	return $this->belongsTo(categories::class,'category_id','id');
+    }
+
 }

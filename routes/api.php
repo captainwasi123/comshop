@@ -67,6 +67,9 @@ Route::middleware('auth:sanctum')->group( function () {
 
     Route::get('getRestuarant', [bookingController::class, 'getRestuarant']);
 
+    Route::get('searchRestMenu/{search}', [bookingController::class, 'searchRestMenu']);
+
+
     Route::put('user/{id}',[AuthController::class,'update']);
     Route::get('user/{id}',[AuthController::class,'show']);
 

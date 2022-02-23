@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Auth;
+use App\Models\Restaurant\menu;
 
 class Restaurant extends Authenticatable
 {
@@ -59,4 +60,10 @@ class Restaurant extends Authenticatable
         $r->logo_img = $filename;
         $r->save();
     }
+
+    public function menus()
+    {
+    	return $this->hasMany(menu::class, 'restaurant_id', 'id');
+    }
+
 }
