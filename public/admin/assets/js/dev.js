@@ -458,4 +458,16 @@ $(document).ready(function(){
                 }
             });
         });
+
+
+        //Driver Details
+
+        $(document).on('click', '.viewDriverDetail', function(){
+            var id = $(this).data('id');
+            $('#driverDetailModal').modal('show');
+            $('#driverModalContent').html('<div class="loaderBlock"><img src="'+host+'/../public/loader.gif"/></div>');
+            $.get(host+'/drivers/details/'+id, function(data){
+                $('#driverModalContent').html(data);
+            });
+        });
 });

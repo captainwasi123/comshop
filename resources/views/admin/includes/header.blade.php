@@ -6,7 +6,7 @@
                         <i class="ti-menu"></i>
                     </div>
                     <div class="serach_field-area align-items-center">
-                        <h2 class="no-margin col-black">Orders</h2>
+                        <h2 class="no-margin col-black">@yield('title')</h2>
                     </div>
                     <div class="header_right d-flex justify-content-between align-items-center">
                         <div class="header_notification_warp d-flex align-items-center">

@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-lg-6 col-md-6 col-12 page-shows-col">
         <div class="page-shows">
-            <p>Showing <strong style="color: black;">{{$paginator->firstItem()}}-{{$paginator->lastItem()}}</strong> from <strong  style="color: black;">{{$paginator->count()}}</strong> data</p>
+            <p>Showing <strong style="color: black;">{{$paginator->firstItem()}}-{{$paginator->lastItem()}}</strong> from <strong  style="color: black;">{{$paginator->total()}}</strong> data</p>
         </div>                  
     </div>
     <div class="col-lg-6 col-md-6 col-12 page-shows-nav">

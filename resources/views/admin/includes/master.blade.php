@@ -35,6 +35,8 @@
       @yield('content')
 
       </section>
+
+      @include('admin.includes.modals')
       @include('admin.includes.script')
       @if(session()->has('success'))
          <script>

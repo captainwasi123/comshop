@@ -95,7 +95,7 @@ use App\Http\Middleware;
                             Route::get('/driverDeleted/{id}/{status}', 'driverController@driverDeleted'); 
                             Route::get('/restore/{id}', 'driverController@restore'); 
 
-
+                            Route::get('/details/{id}', 'driverController@details');
                         });
 
                     //Reviews & Ratings

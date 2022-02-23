@@ -12,3 +12,11 @@
     font-weight: 500 !important;
     margin-top: -7px;
 }
+#driverDetailModal .loaderBlock {
+    height: 200px;
+    width: 100%;
+    text-align: center;
+}
+#driverDetailModal .loaderBlock img {
+    height: 200px;
+}

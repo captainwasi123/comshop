@@ -14,7 +14,7 @@ class driverController extends Controller
     function newRequest()
     {
         $data = array(
-            'driver' => driver::where('status', '0')->with(['driverDoc'])->get()
+            'driver' => driver::where('status', '0')->with(['driverDoc'])->paginate(10)
         );
 
      
@@ -219,5 +219,11 @@ class driverController extends Controller
         return redirect()->back()->with('success', 'Driver is Activated.');
     }
 
+    function details($id){
+        $id = base64_decode($id);
+        $data = driver::find($id);
+
+        return view('admin.drivers.response.details', ['data' => $data]);
+    }
 
 }
