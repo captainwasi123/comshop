@@ -5,18 +5,13 @@
 
 
 <style type="text/css">
-    .img-thumbnail {
+.img-thumbnail {
     height: 150px;
-    width: 75%;
+    width: 90%;
 }
 .browseProfilePhoto {
     margin-top: 50px;
 }
-.previewProfilePhoto {
-    position: absolute;
-    left: 0px;
-}
-
 @media screen and (max-width:519px) and (min-width:320px) { 
 .browseProfilePhoto {
     margin-top: 10px;
@@ -25,6 +20,10 @@
 .previewProfilePhoto {
     top: 18px;
     left: 15px;
+}
+    .img-thumbnail {
+    height: 150px;
+    width: 70%;
 }
 }
 </style>
@@ -53,21 +52,17 @@
                             <input type="hidden" name="latitude" id="lat">
                             <input type="hidden" name="longitude" id="long">
                             <div class="row">                                    
-                                <div class="col-lg-12 col-md-12 col-12">
-                                    <div class="row">
-                                        <div class="col-lg-2 col-md-5 col-5">
-                                            <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" class="previewProfilePhoto previewProfilePhotoRes img-thumbnail">
+                                <div class="col-lg-2 col-md-5 col-12">
+                                    <img src="{{URL::to('/public/admin/assets')}}/images/placeholder.png" class="previewProfilePhoto previewProfilePhotoRes img-thumbnail">
+                                </div>
+                                <div class="col-lg-10 col-md-8 col-12">
+                                    <div id="msg"></div>
+                                    <input type="file" name="logo_img" class="profilePic profilePicRes" accept="image/*">
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <button type="button" class="browseProfilePhoto browseProfilePhotoRes btn btn-primary">Change photo</button>
                                         </div>
-                                        <div class="col-lg-10 col-md-8 col-12">
-                                            <div id="msg"></div>
-                                                <input type="file" name="logo_img" class="profilePic profilePicRes" accept="image/*">
-                                                <div class="input-group">
-                                                    <div class="input-group-append">
-                                                        <button type="button" class="browseProfilePhoto browseProfilePhotoRes btn btn-primary">Change photo</button>
-                                                    </div>
-                                                </div>                                            
-                                        </div>
-                                    </div>
+                                    </div>                                            
                                 </div>
                             </div>
                             <div class="row">
