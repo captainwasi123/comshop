@@ -65,7 +65,7 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('profileUpdate', [profileController::class, 'profile_save']);
     Route::post('changePassword', [profileController::class, 'changePassword']);
 
-    Route::get('getRestuarant', [bookingController::class, 'getRestuarant']);
+    Route::get('getRestuarant/{lat}/{lon}', [bookingController::class, 'getRestuarant']);
 
     Route::get('searchRestMenu/{search}', [bookingController::class, 'searchRestMenu']);
 

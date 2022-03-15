@@ -12,15 +12,14 @@ use Auth;
 
 class bookingController extends Controller
 {
-         function getRestuarant()
+         function getRestuarant($lat,$lon)
         {
 
           $categories = categories::all();
 
           $user= Auth::user()->name;
           
-            $lat='24.9867287';
-            $lon='67.0625024';
+          
 
 
             $avg=DB::table("tbl_restaurant_info")
