@@ -223,7 +223,7 @@ class driverController extends Controller
         $id = base64_decode($id);
         $data = driver::find($id);
 
-        return view('admin.drivers.response.details', ['data' => $data]);
+          
     }
 
 }

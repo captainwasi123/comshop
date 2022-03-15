@@ -53,7 +53,7 @@
                                             <td>
                                          @switch($val->status)
                                                 @case('1')
-                                                    <a href="#" class="status_btn">Pending</a>
+                                                    <a href="#" class="status_btn">Active</a>
                                                     @break
 
 

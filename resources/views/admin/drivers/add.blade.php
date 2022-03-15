@@ -6,8 +6,7 @@
     .img-thumbnail {
     height: 150px;
     width: 80%;
-}
-.browseProfilePhoto {
+} .browseProfilePhoto {
     margin-top: 50px;
 }
 @media screen and (max-width:519px) and (min-width:320px) { 
