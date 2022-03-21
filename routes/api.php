@@ -4,10 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\buyer\profileController;
-
 use App\Http\Controllers\Api\getCityController;
 use App\Http\Controllers\Api\order\orderController;
-
 use App\Http\Controllers\Api\booking\bookingController;
 use App\Http\Controllers\Api\driver\driverAuthController;
 use App\Http\Controllers\Api\driver\driverprofileController;
@@ -77,7 +75,7 @@ Route::middleware('auth:sanctum')->group( function () {
 
   
 
-});
+});   
 
 
 

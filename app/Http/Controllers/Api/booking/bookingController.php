@@ -28,7 +28,7 @@ class bookingController extends Controller
      * cos(radians(tbl_restaurant_info.longitude) - radians(" . $lon . ")) 
      + sin(radians(" .$lat. ")) 
      * sin(radians(tbl_restaurant_info.latitude))) AS distance"))
-     ->having('distance', '<', 50)
+     ->having('distance', '<', 5)
      ->where([['status','1'], ['service_status', '1']])->get();
      
          
