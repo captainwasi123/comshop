@@ -21,7 +21,7 @@ class menu extends Model
         $m->price = $data['price'];
         $m->preparation_time = $data['prepration_time'];
         $m->description = $data['description'];
-        $m->status = '0';
+        $m->status = '1';
         $m->save();
 
         return $m->id;
