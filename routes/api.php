@@ -25,6 +25,10 @@ use App\Http\Controllers\Api\driver\driverprofileController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('getsingleRest/{id}', [bookingController::class, 'getsingleRest']);
+
+
 Route::post('UserRegister', [AuthController::class, 'UserRegister']);
 Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']);
 
@@ -66,6 +70,9 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::get('getRestuarant/{lat}/{lon}', [bookingController::class, 'getRestuarant']);
 
     Route::get('searchRestMenu/{search}', [bookingController::class, 'searchRestMenu']);
+
+   
+
 
 
     Route::put('user/{id}',[AuthController::class,'update']);
