@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\buyer\profileController;
 use App\Http\Controllers\Api\getCityController;
 use App\Http\Controllers\Api\order\orderController;
 use App\Http\Controllers\Api\booking\bookingController;
+use App\Http\Controllers\Api\booking\cartController;
 use App\Http\Controllers\Api\driver\driverAuthController;
 use App\Http\Controllers\Api\driver\driverprofileController;
 
@@ -29,6 +30,8 @@ use App\Http\Controllers\Api\driver\driverprofileController;
 Route::get('getsingleRest/{id}', [bookingController::class, 'getsingleRest']);
 
 
+
+
 Route::post('UserRegister', [AuthController::class, 'UserRegister']);
 Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']);
 
@@ -40,11 +43,7 @@ Route::get('getCity/{id}', [getCityController::class, 'show']);
 
 
 
-Route::post('order', [orderController::class, 'store']);
-Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
-Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
-Route::get('destroy/{id}', [orderController::class, 'destroy']);
-Route::get('search/{keyword}', [orderController::class, 'search']);
+
 
 
 
@@ -53,15 +52,10 @@ Route::get('getmenu', [getCityController::class, 'getmenu']);
 
 
 
-
-
-
-
-
 // DRIVER LOGIN
 Route::post('driverlogin', [driverAuthController::class, 'login']);
 
-     
+// User Middleware
 Route::middleware('auth:sanctum')->group( function () {
 
     Route::post('profileUpdate', [profileController::class, 'profile_save']);
@@ -70,6 +64,23 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::get('getRestuarant/{lat}/{lon}', [bookingController::class, 'getRestuarant']);
 
     Route::get('searchRestMenu/{search}', [bookingController::class, 'searchRestMenu']);
+
+// add to cart
+    Route::post('addCart', [cartController::class, 'addtocart']);
+    Route::get('ShowAllCart', [cartController::class, 'ShowAllCart']);
+    Route::post('updateCart/{id}', [cartController::class, 'updateCart']);
+    Route::post('destroyCart/{id}', [cartController::class, 'destroyCart']);
+    
+
+
+    // checkout
+    Route::post('checkout', [orderController::class, 'store']);
+Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
+Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
+Route::get('destroy/{id}', [orderController::class, 'destroy']);
+Route::get('search/{keyword}', [orderController::class, 'search']);
+   
+
 
    
 

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\userAddress;
+use App\Models\cart;
 
 class User extends Authenticatable
 {
@@ -88,4 +89,14 @@ class User extends Authenticatable
     {
     	return $this->belongsTo(userAddress::class,'id','user_id');
     }
+
+
+    public function cart()
+    {
+    	return $this->hasMany(cart::class, 'user_id','id');
+    }
+
+    
+
+
 }

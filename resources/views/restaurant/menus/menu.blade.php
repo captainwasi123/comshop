@@ -233,17 +233,6 @@
 						                    	<img class="file-upload-image" src="#" alt="your image" width="100%" />
 												  
 						                    </div> 
-<style type="text/css">
-	button.remove-image {
-    display: contents;
-    background: red !important;
-}
-.remove-image span {
-    font-size: 16px;
-    color: red;
-    font-weight: 500;
-}
-</style>
 						                </div>
 
 					                </div>
@@ -276,14 +265,39 @@
 	                                        <label for="inputZip">Price</label>
 	                                        <input type="number" class="form-control" id="inputZip" name="price" value="10">
 	                                    </div>
-	                                </div>                                
+	                                </div>  
+	                                <div class="form-row">
+	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
+	                                        <label for="inputState">Variant Name</label>
+	                                        <input type="text" class="form-control" name="variant_name[]">
+	                                        </select>
+	                                    </div>
+	                                    <div class="form-group col-lg-6 col-md-12 col-12 no-margin pad-bot-30">
+	                                        <label for="inputState">Variant Description</label>
+	                                        <input type="text" class="form-control" name="variant_description[]">
+	                                        </select>
+	                                    </div>
+	                                    <div class="form-group col-lg-2 col-md-12 col-12 no-margin pad-bot-30">
+	                                        <label for="inputZip"></label>
+	                                        <button type="button" id="addVariant" class="btn btn-primary">Add</button>
+	                                    </div>
+	                                </div> 
+	                                <div id="variant_block">
+	                                	
+	                                </div>
 	                                <div class="form-group">
 	                                    <label for="inputAddress">Description</label>
 	                                    <textarea class="form-control" rows="5" name="description" required></textarea>
 	                                </div>
+									
 	                        </div>
-	                    </div>
+	                   
+					    </div>
+
+						
 	                </div>
+					
+					
 	                <div class="modal-footer pad-top-30">
 	                    <button type="button" class="btn sec-49" data-dismiss="modal">Cancel</button>
 	                    <button type="submit" class="btn sec-48">Save</button>
@@ -327,4 +341,37 @@ $('.image-upload-wrap').bind('dragover', function () {
     $('.image-upload-wrap').removeClass('image-dropping');
 });
 </script>
+ 
 @endsection
+@section('addScript')
+	<script type="text/javascript">
+		$(document).ready(function(){
+			'use strict'
+
+			$(document).on('click', '#addVariant', function(){
+				$('#variant_block').append('<div class="form-row">\n\
+	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">\n\
+	                                        <label for="inputState">Variant Name</label>\n\
+	                                        <input type="text" class="form-control" name="variant_name[]">\n\
+	                                        </select>\n\
+	                                    </div>\n\
+	                                    <div class="form-group col-lg-6 col-md-12 col-12 no-margin pad-bot-30">\n\
+	                                        <label for="inputState">Variant Description</label>\n\
+	                                        <input type="text" class="form-control" name="variant_description[]">\n\
+	                                        </select>\n\
+	                                    </div>\n\
+	                                    <div class="form-group col-lg-2 col-md-12 col-12 no-margin pad-bot-30">\n\
+	                                        <label for="inputZip"></label>\n\
+	                                        <button type="button" class="btn btn-primary removeVariant">remove</button>\n\
+	                                    </div>\n\
+	                                </div>');
+			});
+
+			$(document).on('click', '.removeVariant', function(){
+				var ele = $(this).parent().parent();
+				ele.remove();
+			});
+		});
+	</script>
+@endsection
+

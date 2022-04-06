@@ -23,7 +23,7 @@ class driver extends Authenticatable
     protected $table ='tbl_driver_info';
     protected $guarded=[];
 
-    public static function addDriver(array $data   ){
+    public static function addDriver(array $data){
         $d = new driver;
         $d->first_name = $data['first_name'];
         $d->last_name = $data['last_name'];
@@ -52,15 +52,7 @@ class driver extends Authenticatable
         return $d->id;
     }
 
-    // public static function updateDocumentDriver($idd, array $data){
-        
-    //     $dd = driverDocument::find($id);
-    //     $dd->driver_id = driver::where('id', $d_id)->first();   
-    //     $dd->card_status = '1';
-    //     $dd->save();
-
-    //     return $dd->id;
-    // }
+  
 
     public static function card_frontImage($idd, $filename){
         $r = driverDocument::find($idd);

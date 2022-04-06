@@ -20,7 +20,7 @@ class profileController extends BaseController
      * @return \Illuminate\Http\Response
      */
 
-    public function buyerLocationsupdate(Request $request,$id, $lat, $lon, )
+    public function buyerLocationsupdate(Request $request,$id, $lat, $lon )
     {
         $validator = Validator::make($request->all(), [
             'address' => 'required',
@@ -34,19 +34,7 @@ class profileController extends BaseController
 
           $success=userAddress::find($id);
           $success->update($request->all());
-        //   $data = array(
-
-        //     'user_id' => Auth::user()->id,
-        //     'address' => $request->address,
-        //     'latitude' => $lat,
-        //     'longitude' => $lon,
-        // );
-
-
-        // $success= userAddress::update($data);
-
-     
-        // return response()->json(['success' => $success]);
+    
         
         list($status,$data) = $success ? [true, userAddress::find($success->id)] : [false, ''];
         return ['success' => $status,'data' => $data];

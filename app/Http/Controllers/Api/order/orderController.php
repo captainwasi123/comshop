@@ -5,7 +5,12 @@ namespace App\Http\Controllers\Api\order;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\order\order;
+use App\Models\cart;
+use App\Models\User;
+use App\Models\paymentmethod;
+use App\Models\marketplace;
 use Validator;
+use Auth;
 
 class orderController extends Controller
 {
@@ -27,36 +32,58 @@ class orderController extends Controller
      */
     public function store(Request $request)
     {
+
+
+        // $getcart = cart::where('user_id',Auth::id())->get();
+        // $sub_total=$getcart->sum('price');
+        // $total_quantity=$getcart->sum('quantity');
+        // $total_price=$sub_total * $total_quantity;
+        // dd($total_price);
+
+        $data = array(
+            'pymentmethods' => paymentmethod::get(), 
+            'marketplace' => marketplace::get(), 
+
+        );
+
+      
+
+
+
+
+
          $validator = Validator::make($request->all(),[
-          
+
             'sub_total' => 'required',
             'vat_value' => 'required',
             'total_price' => 'required',
             'payment_method' => 'required',
-           
+
         ]);
 
         if($validator->fails()){
-            return response()->json($validator->errors());       
+            return response()->json($validator->errors());
         }
 
         $success = order::create([
-            'user_id' => $request->user_id,
+            'user_id' => Auth::id(),
             'restaurant_id' => $request->restaurant_id,
             'sub_total' => $request->sub_total,
             'vat_value' => $request->vat_value,
             'total_price' => $request->total_price,
             'payment_method' => $request->payment_method,
             'special_instructions' => $request->special_instructions,
-            'status' => $request->status
+            'status' => '1'
          ]);
 
-            list($status,$data) = $success ? [true, order::find($success->id)] : [false, ''];
+         if($success){
+                 $findcart=cart::where('user_id', Auth::id())->delete();
+            }
+
+        list($status,$data) = $success ? [true, order::find($success->id)] : [false, ''];
         return ['success' => $status,'data' => $data];
 
-        // // return response()->json(['Program created successfully.', new ProgramResource($program)]);
-        // return response()->json(['program'=> $program]);
-        // // return response()->json(['cities'=> $cities]);   
+
     }
 
     /**
@@ -70,9 +97,9 @@ class orderController extends Controller
          $orderShow = order::find($id);
 
         if (is_null($orderShow)) {
-            return response()->json('Data not found', 404); 
+            return response()->json('Data not found', 404);
         }
-        
+
         return response()->json(['orderShow' => $orderShow]);
     }
 
@@ -86,45 +113,33 @@ class orderController extends Controller
     public function orderUpdate(Request $request, $id)
     {
         $validator = Validator::make($request->all(),[
-           
+
             'sub_total' => 'required',
             'vat_value' => 'required',
             'total_price' => 'required',
             'payment_method' => 'required',
-           
+
         ]);
 
         if($validator->fails()){
-            return response()->json($validator->errors());       
+            return response()->json($validator->errors());
         }
 
           $success=order::find($id);
           $success->update($request->all());
-       
+
         list($status,$data) = $success ? [true, order::find($success->id)] : [false, ''];
         return ['success' => $status,'data' => $data];
          }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function destroy($id)
-    // {
-    //     $del=order::destroy($id);
 
-        
-    //     return response()->json(['success' => 'Record has been deleted', 'status' => $del]);
-    // }
 
     public function destroy($id)
     {
-    
+
         $find =order::find($id);
-     
-        if($find != null) 
+
+        if($find != null)
         {
             $find->delete();
             return ['response_status' => true, 'message' => "Record has been deleted"];
@@ -144,5 +159,5 @@ class orderController extends Controller
             return ['status' => true, 'data' => $search];
 
     }
-    
+
 }
