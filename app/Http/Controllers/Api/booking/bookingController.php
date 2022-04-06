@@ -146,12 +146,15 @@ class bookingController extends Controller
 //  get  single Restaurant with menu
 
       public function getsingleRest($id){
-        
-        $getRest = Restaurant::where('id',$id)->with('menuswithCat')->first();
+
+        $getRest = Restaurant::where('id',$id)->with('menuswithCat')->get();
            
         $getCat=categories::whereHas('menu', function($q) use ($id){
                   return $q->where('restaurant_id', $id);
-              })->orderBy('id')->get();
+              })->with('menu')
+              ->orderBy('id')->get();
+
+
 
 
         if (is_null($getRest) || is_null($getCat)) {

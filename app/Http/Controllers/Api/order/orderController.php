@@ -19,9 +19,19 @@ class orderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function cartSummary()
     {
-        //
+        // $vat_percent=marketplace::orderBy('id', 'DESC')->first();
+       
+        $getcart = cart::where('user_id',Auth::id())->get();
+    
+       if (is_null($getcart)) {
+           return response()->json('Record not found', 404); 
+       }      
+    //    return response()->json(['AllcartSRecords' => $getcart, 'Vat' =>$vat_percent->vat ]);
+
+       return response()->json(['AllcartSRecords' => $getcart ]);
+
     }
 
     /**
@@ -30,27 +40,16 @@ class orderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$vat,$pymenttype)
     {
 
+        $cart=cart::where('user_id',Auth::id())->first();
+        if($cart){
+        $sum_price=cart::where('user_id',Auth::id())->sum('price');
+        $sum_quantity=cart::where('user_id',Auth::id())->sum('quantity');
+        $sub_total=$sum_price * $sum_quantity;
 
-        // $getcart = cart::where('user_id',Auth::id())->get();
-        // $sub_total=$getcart->sum('price');
-        // $total_quantity=$getcart->sum('quantity');
-        // $total_price=$sub_total * $total_quantity;
-        // dd($total_price);
-
-        $data = array(
-            'pymentmethods' => paymentmethod::get(), 
-            'marketplace' => marketplace::get(), 
-
-        );
-
-      
-
-
-
-
+        $total_price=$sub_total+$vat;
 
          $validator = Validator::make($request->all(),[
 
@@ -68,10 +67,10 @@ class orderController extends Controller
         $success = order::create([
             'user_id' => Auth::id(),
             'restaurant_id' => $request->restaurant_id,
-            'sub_total' => $request->sub_total,
-            'vat_value' => $request->vat_value,
-            'total_price' => $request->total_price,
-            'payment_method' => $request->payment_method,
+            'sub_total' => $sub_total,
+            'vat_value' => $vat,
+            'total_price' => $total_price,
+            'payment_method' => $pymenttype,
             'special_instructions' => $request->special_instructions,
             'status' => '1'
          ]);
@@ -82,6 +81,12 @@ class orderController extends Controller
 
         list($status,$data) = $success ? [true, order::find($success->id)] : [false, ''];
         return ['success' => $status,'data' => $data];
+
+        }
+        else{
+
+            return response()->json('Record not found', 404);
+        }
 
 
     }
