@@ -70,11 +70,15 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::get('ShowAllCart', [cartController::class, 'ShowAllCart']);
     Route::post('updateCart/{id}', [cartController::class, 'updateCart']);
     Route::post('destroyCart/{id}', [cartController::class, 'destroyCart']);
+
+// cart summary
+
+Route::get('cartSummary', [orderController::class, 'cartSummary']);
     
 
 
     // checkout
-    Route::post('checkout', [orderController::class, 'store']);
+    Route::post('checkout/{vat}/{pymenttype}', [orderController::class, 'store']);
 Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
 Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
 Route::get('destroy/{id}', [orderController::class, 'destroy']);
