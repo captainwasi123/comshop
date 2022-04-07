@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
 use App\Models\categories;
+use App\Models\variant;
 
 
 class menu extends Model
@@ -27,6 +28,18 @@ class menu extends Model
         return $m->id;
     }
 
+    public static function editMenu($id, array $data){
+        $m = menu::find($id);
+        $m->category_id = $data['category'];
+        $m->title = $data['title'];
+        $m->price = $data['price'];
+        $m->preparation_time = $data['prepration_time'];
+        $m->description = $data['description'];
+        $m->save();
+
+        return $m->id;
+    }
+
     public static function updateImage($id, $filename){
         $i = menu::find($id);
         $i->image = $filename;
@@ -36,6 +49,10 @@ class menu extends Model
     public function cat()
     {
     	return $this->belongsTo(categories::class,'category_id','id');
+    }
+
+    public function variant(){
+        return $this->hasMany(variant::class, 'product_id', 'id')->orderBy('id');
     }
 
 }

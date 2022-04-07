@@ -161,7 +161,7 @@
 			    			@foreach($val->menuRes as $menu)
 						      	<div>				        
 						          	<div class="sec-12 bg-white">
-			                 			<img src="{{URL::to('/public/storage/restaurant/menu/'.$menu->image)}}">
+			                 			<img class="product_image" src="{{URL::to('/public/storage/restaurant/menu/'.$menu->image)}}">
 			                 			<h2 class="no-margin pad-top-20 pad-bot-10"> {{$menu->title}} </h2>
 			                 			<h3 class="no-margin"><span class="col-yellow">$</span>{{number_format($menu->price, 1)}}</h3>
 				              			<div class="row pad-top-20">
@@ -172,7 +172,14 @@
 						                 	</div>
 							                <div class="col-lg-6 col-md-6 col-6 no-pad">
 							                    <div class="sec-14">
-							                       <h5 class="no-margin">+ 15% <i class="fas fa-arrow-alt-circle-up"> </i></h5>
+							                      <h5 class="no-margin">
+							                       	<a href="javascript:void(0)" class="btn btn-sm btn-primary editProduct" data-id="{{base64_encode($menu->id)}}">
+							                       		<i class="fa fa-edit"></i>
+							                       	</a>
+							                       	<a href="javascript:void(0)" class="btn btn-sm btn-danger deleteProduct" data-id="{{base64_encode($menu->id)}}">
+							                       		<i class="fa fa-trash"></i>
+							                       	</a>
+							                      </h5>
 							                    </div>
 							                </div>
 				              			</div>   
@@ -187,16 +194,6 @@
     </div>
    
     <!-- menu popup -->
-
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered sec-47" role="document">
-            <div class="modal-content">
-                
-            </div>
-        </div>
-    </div>
-
 	<div class="modal fade" id="addMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
             <div class="modal-content">
@@ -269,17 +266,17 @@
 	                                <div class="form-row">
 	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">
 	                                        <label for="inputState">Variant Name</label>
-	                                        <input type="text" class="form-control" name="variant_name[]">
+	                                        <input type="text" class="form-control" name="variant_name[]" required>
 	                                        </select>
 	                                    </div>
 	                                    <div class="form-group col-lg-6 col-md-12 col-12 no-margin pad-bot-30">
 	                                        <label for="inputState">Variant Description</label>
-	                                        <input type="text" class="form-control" name="variant_description[]">
+	                                        <input type="text" class="form-control" name="variant_description[]" required>
 	                                        </select>
 	                                    </div>
 	                                    <div class="form-group col-lg-2 col-md-12 col-12 no-margin pad-bot-30">
 	                                        <label for="inputZip"></label>
-	                                        <button type="button" id="addVariant" class="btn btn-primary">Add</button>
+	                                        <button type="button" id="addVariant" class="btn btn-primary" style="margin-top: 31px;">Add</button>
 	                                    </div>
 	                                </div> 
 	                                <div id="variant_block">
@@ -306,6 +303,14 @@
             </div>
         </div>
     </div>
+
+  <div class="modal fade" id="editMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
+      <div class="modal-content">
+      	
+      </div>
+    </div>
+  </div>
 
 <script type="text/javascript">
 function readURL(input) {
@@ -348,29 +353,7 @@ $('.image-upload-wrap').bind('dragover', function () {
 		$(document).ready(function(){
 			'use strict'
 
-			$(document).on('click', '#addVariant', function(){
-				$('#variant_block').append('<div class="form-row">\n\
-	                                    <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">\n\
-	                                        <label for="inputState">Variant Name</label>\n\
-	                                        <input type="text" class="form-control" name="variant_name[]">\n\
-	                                        </select>\n\
-	                                    </div>\n\
-	                                    <div class="form-group col-lg-6 col-md-12 col-12 no-margin pad-bot-30">\n\
-	                                        <label for="inputState">Variant Description</label>\n\
-	                                        <input type="text" class="form-control" name="variant_description[]">\n\
-	                                        </select>\n\
-	                                    </div>\n\
-	                                    <div class="form-group col-lg-2 col-md-12 col-12 no-margin pad-bot-30">\n\
-	                                        <label for="inputZip"></label>\n\
-	                                        <button type="button" class="btn btn-primary removeVariant">remove</button>\n\
-	                                    </div>\n\
-	                                </div>');
-			});
-
-			$(document).on('click', '.removeVariant', function(){
-				var ele = $(this).parent().parent();
-				ele.remove();
-			});
+			
 		});
 	</script>
 @endsection

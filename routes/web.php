@@ -32,6 +32,10 @@ use App\Http\Middleware;
                 Route::prefix('menus')->group(function(){
                         Route::get('/', 'menuController@menu')->name('restaurant.menu');
                         Route::post('/add', 'menuController@addMenu')->name('restaurant.menu.add');
+
+                        Route::get('/delete/{id}', 'menuController@menuDelete');
+                        Route::get('/edit/{id}', 'menuController@menuEdit');
+                        Route::post('/update', 'menuController@updateMenu')->name('restaurant.menu.update');
                 });
                 Route::prefix('orders')->group(function(){
                         Route::get('/order', 'mainController@order')->name('restaurant.order');
