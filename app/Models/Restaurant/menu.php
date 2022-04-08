@@ -28,6 +28,18 @@ class menu extends Model
         return $m->id;
     }
 
+    public static function editMenu($id, array $data){
+        $m = menu::find($id);
+        $m->category_id = $data['category'];
+        $m->title = $data['title'];
+        $m->price = $data['price'];
+        $m->preparation_time = $data['prepration_time'];
+        $m->description = $data['description'];
+        $m->save();
+
+        return $m->id;
+    }
+
     public static function updateImage($id, $filename){
         $i = menu::find($id);
         $i->image = $filename;
@@ -40,7 +52,9 @@ class menu extends Model
     }
 
     public function variant(){
-        return $this->hasMany(variant::class, 'product_id', 'id');
+
+        return $this->hasMany(variant::class, 'product_id', 'id')->orderBy('id');
+
     }
 
 }

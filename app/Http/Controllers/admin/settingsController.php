@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\categories;
-use App\Models\generalSettings;
+use App\Models\marketplace;
 
 class settingsController extends Controller
 {
@@ -68,14 +68,15 @@ class settingsController extends Controller
 
     function general()
     {
-        $data = generalSettings::first();
+        $data = marketplace::first();
         return view('admin.settings.general', ['data' => $data]);
     }  
     function generalUpdate(Request $request){
         $data = $request->all();
 
-        $g = generalSettings::first();
+        $g = marketplace::first();
         $g->commission = $data['commission'];
+        $g->vat = $data['vat'];
         $g->save();
 
         return redirect()->back()->with('success', 'General Settings Updated.');

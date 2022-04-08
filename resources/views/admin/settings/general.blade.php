@@ -30,6 +30,15 @@
                                 <div class="form-row">                                    
                                     <div class="col-lg-3 col-md-4 col-12 no-margin">
                                         <div class="input-form res-section-1">
+                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">VAT %</label>
+                                            <input type="text" name="vat" value="{{$data->vat}}" class="form-control" required>
+                                            <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-lg-3 col-md-4 col-12 no-margin">
+                                        <div class="input-form res-section-1">
                                             <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Commission %</label>
                                             <input type="text" name="commission" value="{{$data->commission}}" class="form-control" required>
                                             <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
