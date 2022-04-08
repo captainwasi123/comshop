@@ -15,33 +15,35 @@ class bookingController extends Controller
 
     // get  nearest  Restaurant
 
-         function getRestuarant($lat,$lon){
+          function getRestuarant($lat,$lon){
 
-              $avg=DB::table("tbl_restaurant_info")
-              ->select("tbl_restaurant_info.*", DB::raw("6371 * acos(cos(radians(" . $lat . "))
-              * cos(radians(tbl_restaurant_info.latitude)) 
-              * cos(radians(tbl_restaurant_info.longitude) - radians(" . $lon . ")) 
-              + sin(radians(" .$lat. ")) 
-              * sin(radians(tbl_restaurant_info.latitude))) AS distance"))
-              ->having('distance', '<', 5)
-              ->where([['status','1'], ['service_status', '1']])->get();
+            $avg=DB::table("tbl_restaurant_info")
+            ->select("tbl_restaurant_info.*",  DB::raw("COUNT(tbl_products_info.id) as menuItem"), DB::raw("6371 * acos(cos(radians(" . $lat . "))
+            * cos(radians(tbl_restaurant_info.latitude)) 
+            * cos(radians(tbl_restaurant_info.longitude) - radians(" . $lon . ")) 
+            + sin(radians(" .$lat. ")) 
+            * sin(radians(tbl_restaurant_info.latitude))) AS distance"))
+            ->leftJoin('tbl_products_info', 'tbl_products_info.restaurant_id', '=', 'tbl_restaurant_info.id')
+            ->having('distance', '<', 5)
+            ->groupBy('tbl_restaurant_info.id')
+            ->where([['tbl_restaurant_info.status','1'], ['tbl_restaurant_info.service_status', '1']])->get();
+          //dd($avg);
+          if($avg->isEmpty())
+          {               
+              return response()->json(['data' =>'Not Found']);
+          }else{
+            foreach ($avg as $key => $value) { 
+              if($value->menuItem > 0){                                        
+                $ids[] = $value->id; 
+              }              
+            } 
+            $rest = Restaurant::whereIn('id', $ids)->get();
+            $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->get();     
+            return response()->json(['data' => $rest, 'menus' => $menu]);
+          }
 
-            if($avg->isEmpty())
-            {               
-                return response()->json(['data' =>'Not Found']);
-            }
-            else
-            {
-                    foreach ($avg as $key => $value) {                                         
-                          $ids[] = $value->id;               
-                    } 
 
-                $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->get();     
-                return response()->json(['data' => $avg, 'menus' => $menu]);
-            }
-
-
-         }
+      }
 
 
 
