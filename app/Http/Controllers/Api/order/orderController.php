@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api\order;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\order\order;
+use App\Models\order\order_detail;
+use App\Models\order\order_delivery;
 use App\Models\cart;
 use App\Models\User;
 use App\Models\paymentmethod;
@@ -40,52 +42,102 @@ class orderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$vat,$pymenttype)
+    public function store(Request $request,$vat,$pymenttype,$lat,$lon)
     {
 
         $cart=cart::where('user_id',Auth::id())->first();
+        
         if($cart){
-        $sum_price=cart::where('user_id',Auth::id())->sum('price');
-        $sum_quantity=cart::where('user_id',Auth::id())->sum('quantity');
-        $sub_total=$sum_price * $sum_quantity;
 
-        $total_price=$sub_total+$vat;
+                $allcart=cart::where('user_id',Auth::id())->get(); 
 
-         $validator = Validator::make($request->all(),[
+                $sum_price=cart::where('user_id',Auth::id())->sum('price');
+                $sum_quantity=cart::where('user_id',Auth::id())->sum('quantity');
+                $sub_total=$sum_price * $sum_quantity;
 
-            'sub_total' => 'required',
-            'vat_value' => 'required',
-            'total_price' => 'required',
-            'payment_method' => 'required',
+                $total_price=$sub_total+$vat;
 
-        ]);
+                    $validator = Validator::make($request->all(),[
 
-        if($validator->fails()){
-            return response()->json($validator->errors());
-        }
+                        'sub_total' => 'required',
+                        'vat_value' => 'required',
+                        'total_price' => 'required',
+                        'payment_method' => 'required',
 
-        $success = order::create([
-            'user_id' => Auth::id(),
-            'restaurant_id' => $request->restaurant_id,
-            'sub_total' => $sub_total,
-            'vat_value' => $vat,
-            'total_price' => $total_price,
-            'payment_method' => $pymenttype,
-            'special_instructions' => $request->special_instructions,
-            'status' => '1'
-         ]);
+                    ]);
 
-         if($success){
-                 $findcart=cart::where('user_id', Auth::id())->delete();
-            }
+                    if($validator->fails()){
+                        return response()->json($validator->errors());
+                    }
 
-        list($status,$data) = $success ? [true, order::find($success->id)] : [false, ''];
-        return ['success' => $status,'data' => $data];
+                $success = order::create([
+                    'user_id' => Auth::id(),
+                    'restaurant_id' => $request->restaurant_id,
+                    'sub_total' => $sub_total,
+                    'vat_value' => $vat,
+                    'total_price' => $total_price,
+                    'payment_method' => $pymenttype,
+                    'special_instructions' => $request->special_instructions,
+                    'status' => '1'
+                ]);
+       
+                if($success){
+
+                        $validator = Validator::make($request->all(),[
+                            'address' => 'required',
+                        ]);
+
+                        if($validator->fails()){
+                            return response()->json($validator->errors());
+                        }
+
+                    $odeliv = new order_delivery;
+                    $odeliv->order_id = $success->id;  
+                    $odeliv->address = $request->address;
+                    $odeliv->latitude=$lat;
+                    $odeliv->longitude=$lon;
+                    $odeliv->save();
+                      
+                 }
+                else{
+
+                    return response()->json('Order detail not Success', 404);
+
+                }
+
+                if($success){
+
+                    foreach ($allcart as $key => $value) {
+
+                        $od = new order_detail;
+                        $od->order_id = $success->id;  
+                        $od->product_id = $value->product_id;
+                        $od->varient_id=$value->variant_id;
+                        $od->price=$value->price;
+                        $od->quantity=$value->quantity;
+                        $od->total_price=$value->price * $value->quantity;
+                        $od->save();
+                    }   
+                }
+                else{
+
+                    return response()->json('Order detail not Success', 404);
+
+                }
+
+        
+
+                        if($success){
+                                $findcart=cart::where('user_id', Auth::id())->delete();
+                        }
+
+                list($status,$data) = $success ? [true, order::find($success->id)] : [false, ''];
+                return ['success' => $status,'data' => $data];
 
         }
         else{
 
-            return response()->json('Record not found', 404);
+            return response()->json('Cart Record not found', 404);
         }
 
 

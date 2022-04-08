@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\city;
 use App\Models\categories;
+use App\Models\paymentmethod;
 use App\Models\Restaurant\menu;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,6 +47,12 @@ class getCityController extends Controller
         return response()->json(['menus'=> $data]);         
     }
 
+    // get payment 
+    public function paymentType()
+    {
+        $paymentType = paymentmethod::all();
+        return response()->json(['paymentType'=> $paymentType]);         
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -57,14 +64,7 @@ class getCityController extends Controller
         //
     }
 
-
-    public function 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function show($id)
     {
         $city = city::find($id);

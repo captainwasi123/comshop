@@ -55,15 +55,23 @@ Route::get('getmenu', [getCityController::class, 'getmenu']);
 // DRIVER LOGIN
 Route::post('driverlogin', [driverAuthController::class, 'login']);
 
+
+
+
 // User Middleware
 Route::middleware('auth:sanctum')->group( function () {
 
     Route::post('profileUpdate', [profileController::class, 'profile_save']);
     Route::post('changePassword', [profileController::class, 'changePassword']);
 
+    
     Route::get('getRestuarant/{lat}/{lon}', [bookingController::class, 'getRestuarant']);
-
     Route::get('searchRestMenu/{search}', [bookingController::class, 'searchRestMenu']);
+
+//   menus with variant
+    Route::get('productDetail/{id}', [bookingController::class, 'productDetail']);
+
+
 
 // add to cart
     Route::post('addCart', [cartController::class, 'addtocart']);
@@ -78,15 +86,16 @@ Route::get('cartSummary', [orderController::class, 'cartSummary']);
 
 
     // checkout
-    Route::post('checkout/{vat}/{pymenttype}', [orderController::class, 'store']);
+    Route::post('checkout/{vat}/{pymenttype}/{lat}/{lon}', [orderController::class, 'store']);
 Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
 Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
 Route::get('destroy/{id}', [orderController::class, 'destroy']);
 Route::get('search/{keyword}', [orderController::class, 'search']);
    
 
+// get payment Method
 
-   
+Route::get('paymentType', [getCityController::class, 'paymentType']);
 
 
 

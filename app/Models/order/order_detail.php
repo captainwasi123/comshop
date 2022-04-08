@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class order_detail extends Model
 {
     use HasFactory;
+
+    protected $table = 'tbl_order_detail_info';
+    protected $guarded =[]; 
+
     public $timestamps = false;
 }

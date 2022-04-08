@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
 use App\Models\categories;
+use App\Models\variant;
 
 
 class menu extends Model
@@ -36,6 +37,10 @@ class menu extends Model
     public function cat()
     {
     	return $this->belongsTo(categories::class,'category_id','id');
+    }
+
+    public function variant(){
+        return $this->hasMany(variant::class, 'product_id', 'id');
     }
 
 }
