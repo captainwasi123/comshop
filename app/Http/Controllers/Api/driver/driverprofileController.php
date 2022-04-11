@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Driver\driver;
 use App\Models\Driver\driverDocument;
+use App\Models\Driver\driverWallet;
 use App\Models\city;
 use Validator;
 use Auth;
@@ -59,65 +60,84 @@ class driverprofileController extends Controller
         );        
 
         $id = driver::create($fields);
+        
+        if($id){
 
-        $dd = new driverDocument;
-        $dd->driver_id = $id->id;  
-        $dd->card_status = '1';
-        $dd->license_status='1';
-        $dd->save();
-
-        if($request->hasFile('card_front')) {
-            $extension = $request->file('card_front')->getClientOriginalExtension();
-            $compic =$id->id.'card_front'.date('dmyHis').'.'.$extension;
-            $path =$request->file('card_front')->move(public_path('/storage/driver/imginfo/'),$compic);
-            $dd->card_front = $compic;
-            $dd->save();
-        }
-
-
-        if($request->hasFile('card_back')) {
-            $extension = $request->file('card_back')->getClientOriginalExtension();
-            $compic =$id->id.'card_back'.date('dmyHis').'.'.$extension;
-            $path =$request->file('card_back')->move(public_path('/storage/driver/imginfo/'),$compic);
-            $dd->card_back = $compic;
-            $dd->save();
-        }
-
-        if($request->hasFile('license_front')) {
-            $extension = $request->file('license_front')->getClientOriginalExtension();
-            $compic =$id->id.'license_front'.date('dmyHis').'.'.$extension;
-            $path =$request->file('license_front')->move(public_path('/storage/driver/imginfo/'),$compic);
-            $dd->license_front = $compic;
-            $dd->save();
-        }
-
-        if($request->hasFile('license_back')) {
-            $extension = $request->file('license_back')->getClientOriginalExtension();
-            $compic =$id->id.'license_back'.date('dmyHis').'.'.$extension;
-            $path =$request->file('license_back')->move(public_path('/storage/driver/imginfo/'),$compic);
-            $dd->license_back = $compic;
-            $dd->save();
-        }
-
-
+                $dw = new driverWallet;
+                $dw->driver_id = $id->id;  
+                $dw->receivable = '0';
+                $dw->payable='0';
+                $dw->save();
 
         
-        $success['token'] =  $id->createToken('MyApp')->plainTextToken;
-        $success['first_name'] =  $id->first_name;
+                $dd = new driverDocument;
+                $dd->driver_id = $id->id;  
+                $dd->card_status = '1';
+                $dd->license_status='1';
+                $dd->save();
+
+                /*if($request->hasFile('card_front')) {
+                    $extension = $request->file('card_front')->getClientOriginalExtension();
+                    $compic =$id->id.'card_front'.date('dmyHis').'.'.$extension;
+                    $path =$request->file('card_front')->move(public_path('/storage/driver/imginfo/'),$compic);
+                    $dd->card_front = $compic;
+                    $dd->save();
+                }
+
+
+                if($request->hasFile('card_back')) {
+                    $extension = $request->file('card_back')->getClientOriginalExtension();
+                    $compic =$id->id.'card_back'.date('dmyHis').'.'.$extension;
+                    $path =$request->file('card_back')->move(public_path('/storage/driver/imginfo/'),$compic);
+                    $dd->card_back = $compic;
+                    $dd->save();
+                }
+
+                if($request->hasFile('license_front')) {
+                    $extension = $request->file('license_front')->getClientOriginalExtension();
+                    $compic =$id->id.'license_front'.date('dmyHis').'.'.$extension;
+                    $path =$request->file('license_front')->move(public_path('/storage/driver/imginfo/'),$compic);
+                    $dd->license_front = $compic;
+                    $dd->save();
+                }
+
+                if($request->hasFile('license_back')) {
+                    $extension = $request->file('license_back')->getClientOriginalExtension();
+                    $compic =$id->id.'license_back'.date('dmyHis').'.'.$extension;
+                    $path =$request->file('license_back')->move(public_path('/storage/driver/imginfo/'),$compic);
+                    $dd->license_back = $compic;
+                    $dd->save();
+                }*/
 
 
 
-      
-        list($status,$data) = $id ? [ true , driver::find($id->id) ] : [ false , ''];
+                
+                $success['token'] =  $id->createToken('MyApp')->plainTextToken;
+                $success['first_name'] =  $id->first_name;
 
-        list($status_dd,$data_dd) = $dd ? [ true , driverDocument::find($dd->id) ] : [ false , ''];
-        return ['status' => $status,'data' => $data , 'success' => $success, 'status_dd' => $status_dd, 'data_dd.' => $data_dd ];
-   
-   
+
+
+            
+                list($status,$data) = $id ? [ true , driver::find($id->id) ] : [ false , ''];
+
+                list($status_Wallet,$data_Wallet) = $dw ? [ true , driverWallet::find($dw->id) ] : [ false , ''];
+
+                list($status_dd,$data_dd) = $dd ? [ true , driverDocument::find($dd->id) ] : [ false , ''];
+
+                    return ['status' => $status,'data' => $data , 'success' => $success, 
+                    'status_dd' => $status_dd, 'data_dd.' => $data_dd,
+                    'status_Wallet' => $status_Wallet, 'data_Wallet.' => $data_Wallet,
+                 ];
+        }else{
+
+            return response()->json('Driver Id  not found', 404); 
+           
+        }
+        
         
     }
 
-
+//  change password
     function changePassword(Request $request){
 
 
@@ -165,10 +185,18 @@ class driverprofileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function ShowdriverWallet()
     {
-        //
+      
+        $drverwallet = driverWallet::where('driver_id',Auth::guard('driver-api')->user()->id)->first();
+    
+       if (is_null($drverwallet)) {
+           return response()->json('Record not found', 404); 
+       }      
+       return response()->json(['DriverWallet' => $drverwallet, ]);
+
     }
+
 
     /**
      * Update the specified resource in storage.

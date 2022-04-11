@@ -119,6 +119,11 @@ Route::middleware('auth:driver-api')->group( function () {
 
     Route::post('/logoutdriver',[driverAuthController::class,'logout']);
 
+    // driver wallet
+    Route::get('ShowdriverWallet', [driverprofileController::class, 'ShowdriverWallet']);
+
+    
+
 });
 
 
