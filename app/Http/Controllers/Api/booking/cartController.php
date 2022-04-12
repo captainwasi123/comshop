@@ -34,7 +34,7 @@ class cartController extends Controller
           }
 
       
-        $id=cart::newCart($data);
+           $id=cart::newCart($data);
   
       
 
@@ -58,7 +58,7 @@ class cartController extends Controller
     {
        $vat_percent=marketplace::orderBy('id', 'DESC')->first();
        
-        $getcart = cart::where('user_id',Auth::id())->get();
+        $getcart = cart::where('user_id',Auth::id())->with('prod')->get();
     
        if (is_null($getcart)) {
            return response()->json('Record not found', 404); 
