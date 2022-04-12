@@ -32,8 +32,8 @@ class driverprofileController extends Controller
      */
     public function driverRegister(Request $request)
     {
-       
-       
+
+
         $validator = Validator::make($request->all(), [
             'first_name' => 'required',
             'last_name' => 'required',
@@ -42,9 +42,9 @@ class driverprofileController extends Controller
             'city_id' => 'required',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
-           
+
         ]);
-   
+
         if($validator->fails()){
             return  ['success' => false, 'error' =>  $validator->errors()];
           }
@@ -56,25 +56,27 @@ class driverprofileController extends Controller
             'phone_number' => $request->phone_number,
             'city_id' => $request->city_id,
             'password' => bcrypt($request->password),
-           
-        );        
+
+        );
 
         $id = driver::create($fields);
-        
+
         if($id){
 
                 $dw = new driverWallet;
-                $dw->driver_id = $id->id;  
+                $dw->driver_id = $id->id;
                 $dw->receivable = '0';
                 $dw->payable='0';
                 $dw->save();
 
-        
+
                 $dd = new driverDocument;
-                $dd->driver_id = $id->id;  
+                $dd->driver_id = $id->id;
                 $dd->card_status = '1';
                 $dd->license_status='1';
                 $dd->save();
+
+                dd($request->file('card_front'));
 
                 /*if($request->hasFile('card_front')) {
                     $extension = $request->file('card_front')->getClientOriginalExtension();
@@ -111,30 +113,30 @@ class driverprofileController extends Controller
 
 
 
-                
+
                 $success['token'] =  $id->createToken('MyApp')->plainTextToken;
                 $success['first_name'] =  $id->first_name;
 
 
 
-            
+
                 list($status,$data) = $id ? [ true , driver::find($id->id) ] : [ false , ''];
 
                 list($status_Wallet,$data_Wallet) = $dw ? [ true , driverWallet::find($dw->id) ] : [ false , ''];
 
                 list($status_dd,$data_dd) = $dd ? [ true , driverDocument::find($dd->id) ] : [ false , ''];
 
-                    return ['status' => $status,'data' => $data , 'success' => $success, 
+                    return ['status' => $status,'data' => $data , 'success' => $success,
                     'status_dd' => $status_dd, 'data_dd.' => $data_dd,
                     'status_Wallet' => $status_Wallet, 'data_Wallet.' => $data_Wallet,
                  ];
         }else{
 
-            return response()->json('Driver Id  not found', 404); 
-           
+            return response()->json('Driver Id  not found', 404);
+
         }
-        
-        
+
+
     }
 
 //  change password
@@ -145,9 +147,9 @@ class driverprofileController extends Controller
             'old_password' => ['required','string'],
             'password' => ['required','string', 'min:8'],
             'confirm_password' => 'required|same:password',
-             
+
         ]);
-   
+
         if($validator->fails()){
             return  ['success' => false, 'error' =>  $validator->errors()];
           }
@@ -155,13 +157,13 @@ class driverprofileController extends Controller
         $password =  $request->input('password');
         $confirm_password = $request->input('confirm_password');
 
-        
+
         $id = Auth::guard('driver-api')->user()->id;
         $user = driver::find($id);
 
         if (!Hash::check($old_password, $user->password)) {
 
-           
+
             return response()->json(['status' => false, 'error' =>'Current password is incorrect.']);
         }else{
 
@@ -171,10 +173,10 @@ class driverprofileController extends Controller
                 $user->save();
 
                 return response()->json(['status' => True, 'success' => 'Password updated.']);
-               
+
             }else{
                 return response()->json(['status' => false, 'error' => 'Password does not match.']);
-              
+
             }
         }
     }
@@ -187,12 +189,12 @@ class driverprofileController extends Controller
      */
     public function ShowdriverWallet()
     {
-      
+
         $drverwallet = driverWallet::where('driver_id',Auth::guard('driver-api')->user()->id)->first();
-    
+
        if (is_null($drverwallet)) {
-           return response()->json('Record not found', 404); 
-       }      
+           return response()->json('Record not found', 404);
+       }
        return response()->json(['DriverWallet' => $drverwallet, ]);
 
     }
