@@ -59,11 +59,14 @@ class cartController extends Controller
        $vat_percent=marketplace::orderBy('id', 'DESC')->first();
        
         $getcart = cart::where('user_id',Auth::id())->with('prod')->get();
-    
-       if (is_null($getcart)) {
+       
+       if (Count($getcart)==0) {
            return response()->json('Record not found', 404); 
+       }else{
+
+            return response()->json(['AllcartSRecords' => $getcart, 'Vat' =>$vat_percent->vat ]);
        }      
-       return response()->json(['AllcartSRecords' => $getcart, 'Vat' =>$vat_percent->vat ]);
+      
 
     }
 
