@@ -61,7 +61,7 @@ class cartController extends Controller
         $getcart = cart::where('user_id',Auth::id())->with('prod')->get();
        
        if (Count($getcart)==0) {
-           return response()->json('Record not found', 404); 
+           return response()->json(['message'=>'Record not found'], 404); 
        }else{
 
             return response()->json(['AllcartSRecords' => $getcart, 'Vat' =>$vat_percent->vat ]);
