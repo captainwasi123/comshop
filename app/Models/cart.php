@@ -31,9 +31,10 @@ class cart extends Model
     }
 
     public static function updateCart($id, array $data){
+        // dd($data['quantity']);
         $c = cart::find($id);
         $c->user_id =Auth::user()->id;
-        $c->quantity = $data['quantity'];
+        $c->quantity = $data['quantity'] == 0 ? $c->quantity-1 : $c->quantity+1;
       
         $c->save();
         

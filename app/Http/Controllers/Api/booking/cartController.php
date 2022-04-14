@@ -82,6 +82,7 @@ class cartController extends Controller
     public function updateCart(Request $request, $id)
     {
         $data = $request->all();
+        // dd($data);
         $validator = Validator::make($request->all(), [
            
             'quantity' => 'required',
