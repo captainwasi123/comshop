@@ -57,14 +57,28 @@ class cartController extends Controller
     public function ShowAllCart()
     {
        $vat_percent=marketplace::orderBy('id', 'DESC')->first();
+
+       $getcart = cart::where('user_id',Auth::id())->with('prod')->get();
+       $sub_total=0;
+
+       foreach ($getcart as $key => $value) {
+
+        $sub_total = $sub_total+($value->price*$value->quantity);
+
+             
+       }
+    
+       $vat_amount=$sub_total * ( $vat_percent->vat/100);
+       $total=$sub_total + $vat_amount; 
+    
        
-        $getcart = cart::where('user_id',Auth::id())->with('prod')->get();
+        
        
        if (Count($getcart)==0) {
            return response()->json(['message'=>'Record not found'], 404); 
        }else{
 
-            return response()->json(['AllcartSRecords' => $getcart, 'Vat' =>$vat_percent->vat ]);
+            return response()->json(['AllcartSRecords' => $getcart, 'Vat' =>$vat_percent->vat, 'Vat_Amount' => $vat_amount, 'sub_total' => $sub_total, 'total' =>$total  ]);
        }      
       
 

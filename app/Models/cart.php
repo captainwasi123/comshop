@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Restaurant\menu;
 use App\Models\User;
+use App\Models\marketplace;
 use App\Models\Restaurant\Restaurant;
 use Auth;
 
@@ -24,6 +25,7 @@ class cart extends Model
         $c->restaurant_id = $data['restaurant_id'];
         $c->variant_id = $data['variant_id'];
         $c->price = $data['price'];
+        
         $c->quantity = $data['quantity'];
         $c->variant_id = $data['variant_id'];
         $c->save();

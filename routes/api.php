@@ -87,6 +87,7 @@ Route::get('cartSummary', [orderController::class, 'cartSummary']);
 
     // checkout
     Route::post('checkout/{vat}/{pymenttype}/{lat}/{lon}', [orderController::class, 'store']);
+    
 Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
 Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
 Route::get('destroy/{id}', [orderController::class, 'destroy']);
