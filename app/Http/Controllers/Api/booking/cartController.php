@@ -64,17 +64,17 @@ class cartController extends Controller
        foreach ($getcart as $key => $value) {
 
         $sub_total = $sub_total+($value->price*$value->quantity);
-       
+        $sub_total = round($sub_total, 2);
 
              
        }
     
        $vat_amount=$sub_total * ( $vat_percent->vat/100);
     //    dd($vat_amount);
-       $vat_amount = number_format($vat_amount, 2);
+       $vat_amount = round($vat_amount, 2);
 
        $total=$sub_total + $vat_amount; 
-       $total = number_format($total, 2);
+       $total = round($total, 2);
    
        
         
