@@ -76,9 +76,9 @@ class driverprofileController extends Controller
                 $dd->license_status='1';
                 $dd->save();
 
-                dd($request->file('card_front'));
+                // dd($request->file('card_front'));
 
-                /*if($request->hasFile('card_front')) {
+                if($request->hasFile('card_front')) {
                     $extension = $request->file('card_front')->getClientOriginalExtension();
                     $compic =$id->id.'card_front'.date('dmyHis').'.'.$extension;
                     $path =$request->file('card_front')->move(public_path('/storage/driver/imginfo/'),$compic);
@@ -109,7 +109,7 @@ class driverprofileController extends Controller
                     $path =$request->file('license_back')->move(public_path('/storage/driver/imginfo/'),$compic);
                     $dd->license_back = $compic;
                     $dd->save();
-                }*/
+                }
 
 
 
