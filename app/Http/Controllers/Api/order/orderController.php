@@ -154,7 +154,7 @@ class orderController extends Controller
          $orderShow = order::find($id);
 
         if (!$orderShow) {
-            return response()->json('Data not found', 404);
+            return response()->json([ 'message'=>  'Data not found'], 404);
         }
 
         return response()->json(['orderShow' => $orderShow]);
