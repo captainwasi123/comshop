@@ -153,7 +153,7 @@ class orderController extends Controller
     {
          $orderShow = order::find($id);
 
-        if (is_null($orderShow)) {
+        if (!$orderShow) {
             return response()->json('Data not found', 404);
         }
 
