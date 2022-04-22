@@ -38,7 +38,7 @@ use App\Http\Middleware;
                         Route::post('/update', 'menuController@updateMenu')->name('restaurant.menu.update');
                 });
                 Route::prefix('orders')->group(function(){
-                        Route::get('/order', 'mainController@order')->name('restaurant.order');
+                        Route::get('/order', 'orderController@index')->name('restaurant.order');
                 });
 
                 Route::prefix('reviews')->group(function(){
