@@ -85,7 +85,7 @@ class orderController extends Controller
                 }
 
                 $restaurant = Restaurant::find($request->restaurant_id);    
-                $distance = getDistance($lat, $lon, $restaurant->latitude, $restaurant->longitude);
+                $distance = $this->getDistance($lat, $lon, $restaurant->latitude, $restaurant->longitude);
 
                 $odeliv = new order_delivery;
                 $odeliv->order_id   = $success->id;  
@@ -95,7 +95,7 @@ class orderController extends Controller
                 $odeliv->distance   = $distance;
                 $odeliv->save();
                   
-             }else{
+            }else{
                 return response()->json('Order detail not Success', 404);
             }
 
