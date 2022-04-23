@@ -65,8 +65,6 @@ $(document).ready(function(){
             $('#editMenuModal').removeClass('show');
         });
 
-
-
         $(document).on('click', '#addVariant', function(){
             $('#variant_block').append('<div class="form-row">\n\
                     <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">\n\
@@ -89,7 +87,6 @@ $(document).ready(function(){
             ele.remove();
         });
 
-
         $(document).on('click', '#addVariant2', function(){
             $('#variant_block2').append('<div class="form-row">\n\
                     <div class="form-group col-lg-4 col-md-12 col-12 no-margin pad-bot-30">\n\
@@ -109,4 +106,12 @@ $(document).ready(function(){
         });
 
 
+    //Orders
+        $(document).on('click', '.orderDetails', function(){
+            var id = $(this).data('id');
+            $('.order_detail_tray').html('<img src="'+host+'/../public/loader.gif" class="detail_loader">');
+            $.get(host+'/orders/details/'+id, function(data){
+                $('.order_detail_tray').html(data);
+            });
+        });
 });

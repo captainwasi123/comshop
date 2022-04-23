@@ -17,3 +17,23 @@ button.remove-image {
 .modal {
     background-color:#0000008c !important;
 }
+.detailBtn a {
+    margin-left: 10px;
+}
+.detailBtn {
+    padding-top: 60px;
+}
+.empty_tray img {
+    width: 350px;
+}
+.empty_tray h3 {
+    color: #a3a3a3;
+}
+.empty_tray {
+    width: 100%;
+    text-align: center;
+    margin: 249px 0px;
+}
+.order_detail_tray .detail_loader {
+    margin: 147px 0px;
+}

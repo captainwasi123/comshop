@@ -11,6 +11,7 @@ use App\Models\cart;
 use App\Models\User;
 use App\Models\paymentmethod;
 use App\Models\marketplace;
+use App\Models\Restaurant\Restaurant;
 use Validator;
 use Auth;
 
@@ -44,103 +45,86 @@ class orderController extends Controller
      */
     public function store(Request $request,$vat,$pymenttype,$lat,$lon)
     {
-
         $cart=cart::where('user_id',Auth::id())->first();
-        
+
         if($cart){
 
-                $allcart=cart::where('user_id',Auth::id())->get(); 
+            $allcart=cart::where('user_id',Auth::id())->get(); 
+            $sum_price=cart::where('user_id',Auth::id())->sum('price');
+            $sum_quantity=cart::where('user_id',Auth::id())->sum('quantity');
+            $sub_total=$sum_price * $sum_quantity;
+            $total_price=$sub_total+$vat;
 
-                $sum_price=cart::where('user_id',Auth::id())->sum('price');
-                $sum_quantity=cart::where('user_id',Auth::id())->sum('quantity');
-                $sub_total=$sum_price * $sum_quantity;
+            $validator = Validator::make($request->all(),[
+                'sub_total' => 'required',
+                'vat_value' => 'required',
+                'total_price' => 'required',
+                'payment_method' => 'required',
+            ]);
+            if($validator->fails()){
+                return response()->json($validator->errors());
+            }
 
-                $total_price=$sub_total+$vat;
-
-                    $validator = Validator::make($request->all(),[
-
-                        'sub_total' => 'required',
-                        'vat_value' => 'required',
-                        'total_price' => 'required',
-                        'payment_method' => 'required',
-
-                    ]);
-
-                    if($validator->fails()){
-                        return response()->json($validator->errors());
-                    }
-
-                $success = order::create([
-                    'user_id' => Auth::id(),
-                    'restaurant_id' => $request->restaurant_id,
-                    'sub_total' => $sub_total,
-                    'vat_value' => $vat,
-                    'total_price' => $total_price,
-                    'payment_method' => $pymenttype,
-                    'special_instructions' => $request->special_instructions,
-                    'status' => '1'
-                ]);
+            $success = order::create([
+                'user_id' => Auth::id(),
+                'restaurant_id' => $request->restaurant_id,
+                'sub_total' => $sub_total,
+                'vat_value' => $vat,
+                'total_price' => $total_price,
+                'payment_method' => $pymenttype,
+                'special_instructions' => $request->special_instructions,
+                'status' => '1'
+            ]);
        
-                if($success){
-
-                        $validator = Validator::make($request->all(),[
-                            'address' => 'required',
-                        ]);
-
-                        if($validator->fails()){
-                            return response()->json($validator->errors());
-                        }
-
-                    $odeliv = new order_delivery;
-                    $odeliv->order_id = $success->id;  
-                    $odeliv->address = $request->address;
-                    $odeliv->latitude=$lat;
-                    $odeliv->longitude=$lon;
-                    $odeliv->save();
-                      
-                 }
-                else{
-
-                    return response()->json('Order detail not Success', 404);
-
+            if($success){
+                $validator = Validator::make($request->all(),[
+                    'address' => 'required',
+                ]);
+                if($validator->fails()){
+                    return response()->json($validator->errors());
                 }
 
-                if($success){
+                $restaurant = Restaurant::find($request->restaurant_id);    
+                $distance = getDistance($lat, $lon, $restaurant->latitude, $restaurant->longitude);
 
-                    foreach ($allcart as $key => $value) {
+                $odeliv = new order_delivery;
+                $odeliv->order_id   = $success->id;  
+                $odeliv->address    = $request->address;
+                $odeliv->latitude   = $lat;
+                $odeliv->longitude  = $lon;
+                $odeliv->distance   = $distance;
+                $odeliv->save();
+                  
+             }else{
+                return response()->json('Order detail not Success', 404);
+            }
 
-                        $od = new order_detail;
-                        $od->order_id = $success->id;  
-                        $od->product_id = $value->product_id;
-                        $od->varient_id=$value->variant_id;
-                        $od->price=$value->price;
-                        $od->quantity=$value->quantity;
-                        $od->total_price=$value->price * $value->quantity;
-                        $od->save();
-                    }   
-                }
-                else{
+            if($success){
+                foreach ($allcart as $key => $value) {
 
-                    return response()->json('Order detail not Success', 404);
+                    $od = new order_detail;
+                    $od->order_id = $success->id;  
+                    $od->product_id = $value->product_id;
+                    $od->varient_id=$value->variant_id;
+                    $od->price=$value->price;
+                    $od->quantity=$value->quantity;
+                    $od->total_price=$value->price * $value->quantity;
+                    $od->save();
+                }   
+            }else{
+                return response()->json('Order detail not Success', 404);
+            }
 
-                }
+            if($success){
+                $findcart=cart::where('user_id', Auth::id())->delete();
+            }
 
-        
+            list($status,$data) = $success ? [true, order::find($success->id)] : [false, ''];
+            return ['success' => $status,'data' => $data];
 
-                        if($success){
-                                $findcart=cart::where('user_id', Auth::id())->delete();
-                        }
-
-                list($status,$data) = $success ? [true, order::find($success->id)] : [false, ''];
-                return ['success' => $status,'data' => $data];
-
-        }
-        else{
-
+        }else{
             return response()->json('Cart Record not found', 404);
         }
-
-
     }
 
     /**
@@ -215,6 +199,22 @@ class orderController extends Controller
 
             return ['status' => true, 'data' => $search];
 
+    }
+
+    public function getDistance($latFrom, $longFrom, $latTo, $longTo){
+        $earthRadius = 6371000;
+        $latFrom = deg2rad($latFrom);
+        $lonFrom = deg2rad($longFrom);
+        $latTo = deg2rad($latTo);
+        $lonTo = deg2rad($longTo);
+
+        $latDelta = $latTo - $latFrom;
+        $lonDelta = $lonTo - $lonFrom;
+
+        $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+        cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+        
+        return $angle * $earthRadius;
     }
 
 }
