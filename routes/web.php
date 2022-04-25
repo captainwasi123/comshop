@@ -40,6 +40,8 @@ use App\Http\Middleware;
                 Route::prefix('orders')->group(function(){
                         Route::get('/order', 'orderController@index')->name('restaurant.order');
                         Route::get('/details/{id}', 'orderController@details');
+
+                        Route::get('/approve/{id}', 'orderController@approve');
                 });
 
                 Route::prefix('reviews')->group(function(){

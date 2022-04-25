@@ -24,4 +24,13 @@ class orderController extends Controller
 
         return view('restaurant.orders.response.detail')->with($data);
     }
+
+    function approve($id){
+        $id = base64_decode($id);
+        $o = order::find($id);
+        $o->status = '2';
+        $o->save();
+
+        return redirect()->back()->with('success', 'Status Updated. | Order#: '.$id);
+    }
 }

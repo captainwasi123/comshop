@@ -114,4 +114,23 @@ $(document).ready(function(){
                 $('.order_detail_tray').html(data);
             });
         });
+
+        $(document).on('click', '.acceptOrder', function(){
+            var id = $(this).data('id');
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#F8B602',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, approve it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = host+'/orders/approve/'+id;
+                }else{
+                    Swal.close();
+                }
+            });
+        });
 });
