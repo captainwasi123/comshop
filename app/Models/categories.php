@@ -36,10 +36,10 @@ class categories extends Model
     }
 
     public function menu(){
-        return $this->hasMany(menu::class, 'category_id', 'id');
+        return $this->hasMany(menu::class, 'category_id', 'id')->where('status', '1');
     }
 
     public function menuRes(){
-        return $this->hasMany(menu::class, 'category_id', 'id')->where('restaurant_id', Auth::guard('restaurant')->user()->id);
+        return $this->hasMany(menu::class, 'category_id', 'id')->where('restaurant_id', Auth::guard('restaurant')->user()->id)->where('status', '1');
     }
 }

@@ -63,12 +63,12 @@ class Restaurant extends Authenticatable
 
     public function menus()
     {
-    	return $this->hasMany(menu::class, 'restaurant_id', 'id');
+    	return $this->hasMany(menu::class, 'restaurant_id', 'id')->where('status', '1');
     }
 
     public function menuswithCat()
     {
-    	return $this->hasMany(menu::class, 'restaurant_id', 'id')->orderBy('category_id');
+    	return $this->hasMany(menu::class, 'restaurant_id', 'id')->where('status', '1')->orderBy('category_id');
     }
 
     
