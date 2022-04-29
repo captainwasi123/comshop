@@ -52,7 +52,7 @@ class User extends Authenticatable
         $u->phone = '-';
         $u->password = '-';
         $u->facebook_id ='-';
-        $u->google_id = $data['google_id'];
+        $u->google_id = '1';
         $u->status = '1';
         $u->save();
 

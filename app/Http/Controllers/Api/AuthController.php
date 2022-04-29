@@ -114,7 +114,6 @@ class AuthController extends BaseController
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
-            'google_id' => 'required',
         ]);
    
         if($validator->fails()){
