@@ -86,7 +86,7 @@ use App\Http\Controllers\Api\driver\driverprofileController;
 
 
         //User Gerneral
-            Route::put('userUpdate',[AuthController::class,'userUpdate']);
+            Route::post('userUpdate',[AuthController::class,'userUpdate']);
             Route::get('userDetail',[AuthController::class,'userShow']);
 
             Route::post('logout',[AuthController::class,'logout']);
