@@ -123,11 +123,15 @@ class AuthController extends BaseController
         $loginUser = User::where('email', $request->get('email'))->first();
         if(empty($loginUser->id)){ 
             $user = User::newGoogleUser($request->all());
-            Auth::login($user);
+            $authUser = Auth::login($user);
+            $success['token'] =  $authUser->createToken('MyApp')->plainTextToken; 
+            $success['name'] =  $authUser->name;
             return $this->sendResponse($success, 'User login successfully.');
         }else{
             if($loginUser->status == '1'){
-                Auth::login($loginUser);
+                $authUser = Auth::login($loginUser);
+                $success['token'] =  $authUser->createToken('MyApp')->plainTextToken; 
+                $success['name'] =  $authUser->name;
                 return $this->sendResponse($success, 'User login successfully.');
             }else{
                 return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
