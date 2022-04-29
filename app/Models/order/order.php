@@ -9,6 +9,7 @@ use App\Models\marketplace;
 use App\Models\order\order_delivery;
 use App\Models\order\order_detail;
 use App\Models\User;
+use App\Models\Restaurant\Restaurant;
 
 class order extends Model
 {
@@ -33,5 +34,8 @@ class order extends Model
     }
     public function marketVat(){
     	return $this->belongsTo(marketplace::class,'vat_value','id');
+    }
+    public function restaurant(){
+        return $this->belongsTo(Restaurant::class, 'restaurant_id', 'id');
     }
 }

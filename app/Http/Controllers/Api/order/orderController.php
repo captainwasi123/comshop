@@ -146,7 +146,10 @@ class orderController extends Controller
 
     public function allOrders()
     {
-         $orderShow = order::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+         $orderShow = order::where('user_id', Auth::user()->id)
+                        ->with('restaurant', 'details', 'details.menu')
+                        ->orderBy('created_at', 'desc')
+                        ->get();
 
         if (!$orderShow) {
             return response()->json([ 'message'=>  'Data not found'], 404);

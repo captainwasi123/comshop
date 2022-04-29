@@ -31,6 +31,7 @@ use App\Http\Controllers\Api\driver\driverprofileController;
 //Buyer Authentication
     Route::post('UserRegister', [AuthController::class, 'UserRegister']);
     Route::post('login', [AuthController::class, 'login']);
+    Route::post('googleLogin', [AuthController::class, 'googleLogin']);
 
 // DRIVER LOGIN
     Route::post('driverlogin', [driverAuthController::class, 'login']);
