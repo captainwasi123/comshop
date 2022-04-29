@@ -50,11 +50,10 @@ class AuthController extends BaseController
         
     }
 
-    public function update(Request $request,$id)
+    public function userUpdate(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|unique:tbl_users_info',
             'phone' => 'required',
            
         ]);
@@ -64,7 +63,7 @@ class AuthController extends BaseController
         }
 
 
-        $user=User::find($id);
+        $user=User::find(Auth::user()->id);
         $user->update($request->all());
 
         return response()->json(['success' => $user]);
@@ -72,9 +71,15 @@ class AuthController extends BaseController
 
     }
 
-    public function show($id)
-    {
-        return User::find($id);
+    public function userShow()
+    {   
+        $user = User::find(Auth::user()->id);
+
+        if (is_null($user)) {
+            return response()->json('Data not found', 404); 
+        }
+
+        return response()->json(['user' => $user]);
     }
 
 

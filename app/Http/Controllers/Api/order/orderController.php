@@ -144,6 +144,17 @@ class orderController extends Controller
         return response()->json(['orderShow' => $orderShow]);
     }
 
+    public function allOrders()
+    {
+         $orderShow = order::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+
+        if (!$orderShow) {
+            return response()->json([ 'message'=>  'Data not found'], 404);
+        }
+
+        return response()->json(['orders' => $orderShow]);
+    }
+
     /**
      * Update the specified resource in storage.
      *

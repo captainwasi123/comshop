@@ -52,7 +52,6 @@ use App\Http\Controllers\Api\driver\driverprofileController;
         Route::post('profileUpdate', [profileController::class, 'profile_save']);
         Route::post('changePassword', [profileController::class, 'changePassword']);
 
-        
         Route::get('getRestuarant/{lat}/{lon}', [bookingController::class, 'getRestuarant']);
         Route::get('searchRestMenu/{search}', [bookingController::class, 'searchRestMenu']);
 
@@ -78,6 +77,7 @@ use App\Http\Controllers\Api\driver\driverprofileController;
             Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
             Route::get('destroy/{id}', [orderController::class, 'destroy']);
             Route::get('search/{keyword}', [orderController::class, 'search']);
+            Route::get('allOrders', [orderController::class, 'allOrders']);
 
         // get payment Method
             Route::get('paymentType', [getCityController::class, 'paymentType']);
@@ -85,8 +85,8 @@ use App\Http\Controllers\Api\driver\driverprofileController;
 
 
         //User Gerneral
-            Route::put('user/{id}',[AuthController::class,'update']);
-            Route::get('user/{id}',[AuthController::class,'show']);
+            Route::put('userUpdate',[AuthController::class,'userUpdate']);
+            Route::get('userDetail',[AuthController::class,'userShow']);
 
             Route::post('logout',[AuthController::class,'logout']);
 
