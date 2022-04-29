@@ -112,25 +112,28 @@ class AuthController extends BaseController
     public function googleLogin(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
-          
+            'google_id' => 'required',
         ]);
    
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
         }
 
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status'=>1])){ 
-            $user = Auth::user(); 
-            $success['token'] =  $user->createToken('MyApp')->plainTextToken; 
-            $success['name'] =  $user->name;
-   
+        $loginUser = User::where('email', $request->get('email'))->first();
+        if(empty($loginUser->id)){ 
+            $user = User::newGoogleUser($request->all());
+            Auth::login($user);
             return $this->sendResponse($success, 'User login successfully.');
-        } 
-        else{ 
-            return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
-        } 
+        }else{
+            if($loginUser->status == '1'){
+                Auth::login($loginUser);
+                return $this->sendResponse($success, 'User login successfully.');
+            }else{
+                return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
+            }
+        }
     } 
 
 

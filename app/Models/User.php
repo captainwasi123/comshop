@@ -45,6 +45,19 @@ class User extends Authenticatable
         return $u->id;
     }
 
+    public static function newGoogleUser(array $data){
+        $u = new User;
+        $u->name = $data['name'];
+        $u->email = $data['email'];
+        $u->phone = '-';
+        $u->password = '-';
+        $u->facebook_id ='-';
+        $u->google_id = $data['google_id'];
+        $u->status = '1';
+        $u->save();
+
+        return $u;
+    }
 
 
     protected $guarded = [];
