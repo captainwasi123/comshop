@@ -25,12 +25,12 @@ class orderController extends Controller
     public function cartSummary()
     {
         // $vat_percent=marketplace::orderBy('id', 'DESC')->first();
-       
+
         $getcart = cart::where('user_id',Auth::id())->with('prod')->get();
-    
+
        if (is_null($getcart)) {
-           return response()->json('Record not found', 404); 
-       }      
+           return response()->json('Record not found', 404);
+       }
     //    return response()->json(['AllcartSRecords' => $getcart, 'Vat' =>$vat_percent->vat ]);
 
        return response()->json(['AllcartSRecords' => $getcart ]);
@@ -49,7 +49,7 @@ class orderController extends Controller
 
         if($cart){
 
-            $allcart=cart::where('user_id',Auth::id())->get(); 
+            $allcart=cart::where('user_id',Auth::id())->get();
             $sum_price=cart::where('user_id',Auth::id())->sum('price');
             $sum_quantity=cart::where('user_id',Auth::id())->sum('quantity');
             $sub_total=$sum_price * $sum_quantity;
@@ -75,7 +75,7 @@ class orderController extends Controller
                 'special_instructions' => $request->special_instructions,
                 'status' => '1'
             ]);
-       
+
             if($success){
                 $validator = Validator::make($request->all(),[
                     'address' => 'required',
@@ -84,17 +84,17 @@ class orderController extends Controller
                     return response()->json($validator->errors());
                 }
 
-                $restaurant = Restaurant::find($request->restaurant_id);    
+                $restaurant = Restaurant::find($request->restaurant_id);
                 $distance = $this->getDistance($lat, $lon, $restaurant->latitude, $restaurant->longitude);
 
                 $odeliv = new order_delivery;
-                $odeliv->order_id   = $success->id;  
+                $odeliv->order_id   = $success->id;
                 $odeliv->address    = $request->address;
                 $odeliv->latitude   = $lat;
                 $odeliv->longitude  = $lon;
                 $odeliv->distance   = number_format($distance, 1);
                 $odeliv->save();
-                  
+
             }else{
                 return response()->json('Order detail not Success', 404);
             }
@@ -103,14 +103,14 @@ class orderController extends Controller
                 foreach ($allcart as $key => $value) {
 
                     $od = new order_detail;
-                    $od->order_id = $success->id;  
+                    $od->order_id = $success->id;
                     $od->product_id = $value->product_id;
                     $od->varient_id=$value->variant_id;
                     $od->price=$value->price;
                     $od->quantity=$value->quantity;
                     $od->total_price=$value->price * $value->quantity;
                     $od->save();
-                }   
+                }
             }else{
                 return response()->json('Order detail not Success', 404);
             }
@@ -138,7 +138,7 @@ class orderController extends Controller
          $orderShow = order::find($id);
 
         if (!$orderShow) {
-            return response()->json([ 'message'=>  'Data not found'], 404);
+            return response()->json([ 'message' =>  'Data not found'], 404);
         }
 
         return response()->json(['orderShow' => $orderShow]);
@@ -220,17 +220,17 @@ class orderController extends Controller
            $long2 = deg2rad($longitudeTo);
            $lat1 = deg2rad($latitudeFrom);
            $lat2 = deg2rad($latitudeTo);
-             
+
            //Haversine Formula
            $dlong = $long2 - $long1;
            $dlati = $lat2 - $lat1;
-             
+
            $val = pow(sin($dlati/2),2)+cos($lat1)*cos($lat2)*pow(sin($dlong/2),2);
-             
+
            $res = 2 * asin(sqrt($val));
-             
+
            $radius = 3958.756;
-             
+
            return ($res*$radius);
       }
 

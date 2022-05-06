@@ -37,11 +37,11 @@ use App\Http\Controllers\Api\driver\driverprofileController;
     Route::post('forgetPassword',[AuthController::class, 'forgetPassword']);
 
 
-    
 
 
-    
-   
+
+
+
 
 // DRIVER LOGIN
     Route::post('driverlogin', [driverAuthController::class, 'login']);
@@ -82,7 +82,7 @@ use App\Http\Controllers\Api\driver\driverprofileController;
 
         // checkout
             Route::post('checkout/{vat}/{pymenttype}/{lat}/{lon}', [orderController::class, 'store']);
-        
+
         //Order
             Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
             Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
@@ -98,16 +98,16 @@ use App\Http\Controllers\Api\driver\driverprofileController;
         //User Gerneral
             Route::post('userUpdate',[AuthController::class,'userUpdate']);
             Route::get('userDetail',[AuthController::class,'userShow']);
-            
+
 
         // forgetPassword
         Route::post('ResetPasswordForm',[AuthController::class, 'ResetPasswordForm']);
 
             Route::post('logout',[AuthController::class,'logout']);
 
-      
 
-    });   
+
+    });
 
 
 
@@ -123,7 +123,7 @@ Route::middleware('auth:driver-api')->group( function () {
     // driver wallet
     Route::get('ShowdriverWallet', [driverprofileController::class, 'ShowdriverWallet']);
 
-    
+
 
 });
 
