@@ -35,6 +35,8 @@ use App\Http\Controllers\Api\driver\driverprofileController;
 
     // forgetPassword
     Route::post('forgetPassword',[AuthController::class, 'forgetPassword']);
+   
+     Route::post('ResetPasswordForm',[AuthController::class, 'ResetPasswordForm']);
 
 
 
@@ -100,8 +102,7 @@ use App\Http\Controllers\Api\driver\driverprofileController;
             Route::get('userDetail',[AuthController::class,'userShow']);
 
 
-        // forgetPassword
-        Route::post('ResetPasswordForm',[AuthController::class, 'ResetPasswordForm']);
+       
 
             Route::post('logout',[AuthController::class,'logout']);
 
