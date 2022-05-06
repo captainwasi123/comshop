@@ -33,6 +33,16 @@ use App\Http\Controllers\Api\driver\driverprofileController;
     Route::post('login', [AuthController::class, 'login']);
     Route::post('googleLogin', [AuthController::class, 'googleLogin']);
 
+    // forgetPassword
+    Route::post('forgetPassword',[AuthController::class, 'forgetPassword']);
+
+
+    
+
+
+    
+   
+
 // DRIVER LOGIN
     Route::post('driverlogin', [driverAuthController::class, 'login']);
     Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']);
@@ -88,6 +98,10 @@ use App\Http\Controllers\Api\driver\driverprofileController;
         //User Gerneral
             Route::post('userUpdate',[AuthController::class,'userUpdate']);
             Route::get('userDetail',[AuthController::class,'userShow']);
+            
+
+        // forgetPassword
+        Route::post('ResetPasswordForm',[AuthController::class, 'ResetPasswordForm']);
 
             Route::post('logout',[AuthController::class,'logout']);
 

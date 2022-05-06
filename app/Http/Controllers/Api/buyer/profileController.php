@@ -96,46 +96,46 @@ class profileController extends BaseController
     }
 
 
-    // function changePassword(Request $request){
+    function changePassword(Request $request){
 
 
-    //     $validator = Validator::make($request->all(), [
-    //         'old_password' => ['required','string'],
-    //         'password' => ['required','string', 'min:8'],
-    //         'confirm_password' => 'required|same:password',
+        $validator = Validator::make($request->all(), [
+            'old_password' => ['required','string'],
+            'password' => ['required','string', 'min:8'],
+            'confirm_password' => 'required|same:password',
              
-    //     ]);
+        ]);
    
-    //     if($validator->fails()){
-    //         return  ['success' => false, 'error' =>  $validator->errors()];
-    //       }
-    //     $old_password = $request->input('old_password');
-    //     $password =  $request->input('password');
-    //     $confirm_password = $request->input('confirm_password');
+        if($validator->fails()){
+            return  ['success' => false, 'error' =>  $validator->errors()];
+          }
+        $old_password = $request->input('old_password');
+        $password =  $request->input('password');
+        $confirm_password = $request->input('confirm_password');
 
         
         
-    //     $user = User::find(Auth::id());
+        $user = User::find(Auth::id());
 
-    //     if (!Hash::check($old_password, $user->password)) {
+        if (!Hash::check($old_password, $user->password)) {
 
            
-    //         return response()->json(['status' => false, 'error' =>'Current password is incorrect.']);
-    //     }else{
+            return response()->json(['status' => false, 'error' =>'Current password is incorrect.']);
+        }else{
 
-    //         if($password == $confirm_password ){
+            if($password == $confirm_password ){
 
-    //             $user->password = bcrypt($request->password);
-    //             $user->save();
+                $user->password = bcrypt($request->password);
+                $user->save();
 
-    //             return response()->json(['status' => True, 'success' => 'Password updated.']);
+                return response()->json(['status' => True, 'success' => 'Password updated.']);
                
-    //         }else{
-    //             return response()->json(['status' => false, 'error' => 'Password does not match.']);
+            }else{
+                return response()->json(['status' => false, 'error' => 'Password does not match.']);
               
-    //         }
-    //     }
-    // }
+            }
+        }
+    }
 
     public function logout(Request $request)
     {
