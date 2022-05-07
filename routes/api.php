@@ -34,9 +34,17 @@ use App\Http\Controllers\Api\driver\driverprofileController;
     Route::post('googleLogin', [AuthController::class, 'googleLogin']);
 
     // forgetPassword
-    Route::post('forgetPassword',[AuthController::class, 'forgetPassword']);
-   
-     Route::post('ResetPasswordForm',[AuthController::class, 'ResetPasswordForm']);
+        Route::post('forgetPassword',[AuthController::class, 'forgetPassword']);
+       
+        Route::post('userOtp',[AuthController::class, 'userOtp']);
+
+        Route::post('ResetPasswordForm',[AuthController::class, 'ResetPasswordForm']);
+
+
+
+
+    //  Route::get('getDriver',[bookingController::class, 'getDriver']);
+
 
 
 
@@ -122,7 +130,11 @@ Route::middleware('auth:driver-api')->group( function () {
     Route::post('/logoutdriver',[driverAuthController::class,'logout']);
 
     // driver wallet
-    Route::get('ShowdriverWallet', [driverprofileController::class, 'ShowdriverWallet']);
+        Route::get('ShowdriverWallet', [driverprofileController::class, 'ShowdriverWallet']);
+
+    // driver lat long update
+        Route::post('latlonupdate_driver/$lat/$lon', [driverprofileController::class, 'latlonupdate_driver']);
+
 
 
 

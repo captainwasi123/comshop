@@ -202,7 +202,32 @@ class AuthController extends BaseController
     }
 
 
+    // otp
+
+    public function userOtp(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'otp' => 'required'
+               
+        ]);
+   
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
+
+        $reqCode = User::where([ 'otp_byemail' => $request->otp])->first();
+     
+        if(!$reqCode){
     
+            return response()->json([ 'error' =>  'Invalid Code!'], 404);
+        }
+        else{
+
+            return response()->json([ 'success' =>  'Your code has been matched! '], 200);
+        }
+
+    }
 
     public function ResetPasswordForm(Request $request)
     {
@@ -238,6 +263,8 @@ class AuthController extends BaseController
 
 
     }
+
+
 
 
   
