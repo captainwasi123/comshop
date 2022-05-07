@@ -33,6 +33,26 @@ use App\Http\Controllers\Api\driver\driverprofileController;
     Route::post('login', [AuthController::class, 'login']);
     Route::post('googleLogin', [AuthController::class, 'googleLogin']);
 
+    // forgetPassword
+        Route::post('forgetPassword',[AuthController::class, 'forgetPassword']);
+       
+        Route::post('userOtp',[AuthController::class, 'userOtp']);
+
+        Route::post('ResetPasswordForm',[AuthController::class, 'ResetPasswordForm']);
+
+
+
+
+    //  Route::get('getDriver',[bookingController::class, 'getDriver']);
+
+
+
+
+
+
+
+
+
 // DRIVER LOGIN
     Route::post('driverlogin', [driverAuthController::class, 'login']);
     Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']);
@@ -72,7 +92,7 @@ use App\Http\Controllers\Api\driver\driverprofileController;
 
         // checkout
             Route::post('checkout/{vat}/{pymenttype}/{lat}/{lon}', [orderController::class, 'store']);
-        
+
         //Order
             Route::get('orderShow/{id}', [orderController::class, 'orderShow']);
             Route::post('orderUpdate/{id}', [orderController::class, 'orderUpdate']);
@@ -89,11 +109,14 @@ use App\Http\Controllers\Api\driver\driverprofileController;
             Route::post('userUpdate',[AuthController::class,'userUpdate']);
             Route::get('userDetail',[AuthController::class,'userShow']);
 
+
+       
+
             Route::post('logout',[AuthController::class,'logout']);
 
-      
 
-    });   
+
+    });
 
 
 
@@ -107,9 +130,13 @@ Route::middleware('auth:driver-api')->group( function () {
     Route::post('/logoutdriver',[driverAuthController::class,'logout']);
 
     // driver wallet
-    Route::get('ShowdriverWallet', [driverprofileController::class, 'ShowdriverWallet']);
+        Route::get('ShowdriverWallet', [driverprofileController::class, 'ShowdriverWallet']);
 
-    
+    // driver lat long update
+        Route::post('latlonupdate_driver/$lat/$lon', [driverprofileController::class, 'latlonupdate_driver']);
+
+
+
 
 });
 

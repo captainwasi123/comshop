@@ -9,7 +9,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Models\userAddress;
-
+use Mail;
+use Hash;
 
 class AuthController extends BaseController
 {
@@ -165,11 +166,105 @@ class AuthController extends BaseController
     }
 
     
+
+   // forget password
+
+
+
+    function forgetPassword(Request $request){
+
+
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|exists:tbl_users_info',
+               
+        ]);
    
-    public function store(Request $request)
-    {
-        //
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
+
+        $reqEmail = User::where([ 'email' => $request->email])->first();
+
+        $otp = random_int(100000, 999999);
+        if($otp!=0) {
+            
+             User::where('email', $reqEmail->email)
+                 ->update(['otp_byemail' => $otp]);
+        }
+
+        Mail::send('mail.forgetPassword', ['OTP' => $otp], function($message) use($request){
+            $message->to($request->email);
+            $message->subject('Reset Password');
+        });
+
+        return response()->json([ 'success' =>  'We have e-mailed your password reset Code!'], 200);
+
     }
+
+
+    // otp
+
+    public function userOtp(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'otp' => 'required'
+               
+        ]);
+   
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
+
+        $reqCode = User::where([ 'otp_byemail' => $request->otp])->first();
+     
+        if(!$reqCode){
+    
+            return response()->json([ 'error' =>  'Invalid Code!'], 404);
+        }
+        else{
+
+            return response()->json([ 'success' =>  'Your code has been matched! '], 200);
+        }
+
+    }
+
+    public function ResetPasswordForm(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'password' => '|required_with:confirmation_password|same:confirmation_password',
+            'confirmation_password' => 'required',
+            'otp' => 'required'
+               
+        ]);
+   
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
+
+
+        $reqCode = User::where([ 'otp_byemail' => $request->otp])->first();
+
+      
+
+        if(!$reqCode){
+            
+            return response()->json([ 'error' =>  'Invalid Code!'], 404);
+
+        }
+        $user = User::where('email', $reqCode->email)
+                    ->update([
+                        'password' => Hash::make($request->password),
+                        'otp_byemail' => null
+                    ]);
+                   
+        return response()->json([ 'success' =>  'Your password has been changed!'], 200);
+
+
+    }
+
+
 
 
   

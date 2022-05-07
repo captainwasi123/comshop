@@ -200,17 +200,19 @@ class driverprofileController extends Controller
     }
 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    // public function latlonupdate_driver($lat,$lon)
+    // {
+    //     $driver = driver::where('id',Auth::guard('driver-api')->user()->id)->first();
+
+    //     dd($driver);
+    //     driver::where('email', $driver->email_address)
+    //     ->update([ 
+    //                'latitude' => $lat, 
+    //                'longitude' => $lon
+    //             ]);
+
+
+    // }
 
     /**
      * Remove the specified resource from storage.

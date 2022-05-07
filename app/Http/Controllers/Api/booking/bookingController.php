@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Api\booking;
 
 use App\Http\Controllers\Controller;
@@ -9,6 +8,8 @@ use App\Models\Restaurant\Restaurant;
 use App\Models\categories;
 use App\Models\Restaurant\menu;
 use Auth;
+use App\Models\order\order;
+
 
 class bookingController extends Controller
 {
@@ -122,7 +123,7 @@ class bookingController extends Controller
 
       }
 
-// Menus with variant
+    // Menus with variant
 
       public function productDetail($id)
       {
@@ -131,6 +132,23 @@ class bookingController extends Controller
 
         return response()->json(['productDetail' => $productDetail]);
       }
+
+
+        // get  nearest  Driver
+
+        // public function getDriver(){
+
+        //     $getorder=order::where('id',2)->get();
+        //     $Rest_id=$getorder[0]->restaurant_id;
+            
+        //     $getRest=Restaurant::where('id',$Rest_id)->get();
+            
+        //     $lat=$getRest[0]->latitude;
+        //     $lon=$getRest[0]->longitude;
+        //     dd($lat,$lon);
+
+
+        // }
 
 
 
