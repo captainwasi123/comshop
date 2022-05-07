@@ -5,6 +5,7 @@ namespace App\Http\Controllers\restaurant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Restaurant\Restaurant;
+use App\Models\Restaurant\payout;
 use Auth;
 use Hash;
 
@@ -32,6 +33,12 @@ class settingController extends Controller
         return redirect()->back()->with('success', 'Profile Updated Successfully.');
     }
 
+    function payoutSubmit(Request $request){
+        $data = $request->all();
+        payout::updatePayout($data);
+
+        return redirect()->back()->with('success', 'Payout Information Updated.');
+    }
 
 
 

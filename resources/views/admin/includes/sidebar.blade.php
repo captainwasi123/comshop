@@ -18,6 +18,7 @@
               <li><a href="{{route('admin.restaurants.active')}}">Active</a></li>
               <li><a href="{{route('admin.restaurants.blocked')}}">Blocked</a></li>
               <li><a href="{{route('admin.restaurants.trashed')}}">Trashed</a></li>
+              <li><a href="{{route('admin.restaurants.withdrawRequest')}}">Withdraw Request</a></li>
             </ul>
         </li>
         <li>

@@ -46,3 +46,24 @@ button.remove-image {
     font-size: 18px !important;
     font-weight: 700 !important;
 }
+.wallet-card {
+    background-color: #ffd258 !important;
+}
+.negative-review h1 span {
+    color: #777;
+    font-weight: 500;
+    font-size: 14px;
+}
+.withdraw-table tbody tr td h4 span{
+    color: #777;
+    font-weight: 500;
+    font-size: 12px;
+}
+.pull-right {
+    float: right;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #f8b602;
+    border-color: #ebac00;
+}

@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Auth;
 use App\Models\Restaurant\menu;
+use App\Models\Restaurant\wallet;
+use App\Models\Restaurant\payout;
+use App\Models\Restaurant\withdraw;
 
 class Restaurant extends Authenticatable
 {
@@ -61,13 +64,21 @@ class Restaurant extends Authenticatable
         $r->save();
     }
 
-    public function menus()
-    {
+
+
+    public function payout(){
+        return $this->belongsTo(payout::class, 'id', 'restaurant_id');
+    }
+    public function wallet(){
+        return $this->belongsTo(wallet::class, 'id', 'restaurant_id');
+    }
+    public function withdrawHistory(){
+        return $this->hasMany(withdraw::class, 'restaurant_id', 'id');
+    }
+    public function menus(){
     	return $this->hasMany(menu::class, 'restaurant_id', 'id')->where('status', '1');
     }
-
-    public function menuswithCat()
-    {
+    public function menuswithCat(){
     	return $this->hasMany(menu::class, 'restaurant_id', 'id')->where('status', '1')->orderBy('category_id');
     }
 
