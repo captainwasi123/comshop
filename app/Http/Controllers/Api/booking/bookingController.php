@@ -134,21 +134,7 @@ class bookingController extends Controller
       }
 
 
-        // get  nearest  Driver
-
-        // public function getDriver(){
-
-        //     $getorder=order::where('id',2)->get();
-        //     $Rest_id=$getorder[0]->restaurant_id;
-            
-        //     $getRest=Restaurant::where('id',$Rest_id)->get();
-            
-        //     $lat=$getRest[0]->latitude;
-        //     $lon=$getRest[0]->longitude;
-        //     dd($lat,$lon);
-
-
-        // }
+      
 
 
 

@@ -7,16 +7,20 @@ use Illuminate\Http\Request;
 use App\Models\order\order;
 use App\Models\order\order_detail;
 use App\Models\order\order_delivery;
+use App\Models\order\driver_order;
 use App\Models\cart;
 use App\Models\User;
 use App\Models\paymentmethod;
 use App\Models\marketplace;
+use App\Models\Driver\driver;
 use App\Models\Restaurant\Restaurant;
 use Validator;
 use Auth;
+use DB;
 
-class orderController extends Controller
+class UserOrderController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -118,6 +122,8 @@ class orderController extends Controller
             if($success){
                 $findcart=cart::where('user_id', Auth::id())->delete();
             }
+
+            
 
             list($status,$data) = $success ? [true, order::find($success->id)] : [false, ''];
             return ['success' => $status,'data' => $data];
@@ -234,4 +240,6 @@ class orderController extends Controller
            return ($res*$radius);
       }
 
+
+       
 }

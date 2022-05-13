@@ -189,6 +189,7 @@ class driverprofileController extends Controller
      */
     public function ShowdriverWallet()
     {
+        
 
         $drverwallet = driverWallet::where('driver_id',Auth::guard('driver-api')->user()->id)->first();
 
@@ -199,20 +200,47 @@ class driverprofileController extends Controller
 
     }
 
+    // driver Altitude
 
-    // public function latlonupdate_driver($lat,$lon)
-    // {
-    //     $driver = driver::where('id',Auth::guard('driver-api')->user()->id)->first();
+    public function latlonupdate_driver($lat,$lon)
+    {     
+        $driver = driver::where('id',Auth::guard('driver-api')->user()->id)->first();
 
-    //     dd($driver);
-    //     driver::where('email', $driver->email_address)
-    //     ->update([ 
-    //                'latitude' => $lat, 
-    //                'longitude' => $lon
-    //             ]);
+            if(!$driver)
+            {
+                return response()->json(['error' => 'Record not found' ], 404);
+            }
+            else{
+                    $driverup=driver::where('email_address', $driver->email_address)
+                                    ->update([ 
+                                            'latitude' => $lat, 
+                                            'longitude' => $lon
+                                            ]);
+            
+                 return response()->json(['status' => true, 'message' => 'Driver Altitude Updated'], 200);                
+            }
+        
+    }
 
+    public function driverWorkStatus($Wstatus)
+    {
 
-    // }
+        $driver = driver::where('id',Auth::guard('driver-api')->user()->id)->first();
+
+        if(!$driver)
+        {
+            return response()->json(['error' => 'Record not found' ], 404);
+        }
+        else{
+                $driverup=driver::where('email_address', $driver->email_address)
+                                ->update([ 
+                                        'working_status' => $Wstatus, 
+                                        ]);
+        
+             return response()->json(['status' => true, 'message' => 'Driver Work Status Updated'], 200);                
+        }
+        
+    }
 
     /**
      * Remove the specified resource from storage.

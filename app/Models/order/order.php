@@ -11,6 +11,8 @@ use App\Models\order\order_detail;
 use App\Models\User;
 use App\Models\Restaurant\Restaurant;
 
+
+
 class order extends Model
 {
     use HasFactory;
@@ -38,4 +40,6 @@ class order extends Model
     public function restaurant(){
         return $this->belongsTo(Restaurant::class, 'restaurant_id', 'id');
     }
+
+   
 }
