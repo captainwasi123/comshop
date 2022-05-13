@@ -40,6 +40,14 @@
           </a>
         </li>
         <li class="mm-active">
+          <a href="{{route('restaurant.wallet')}}" aria-expanded="false">
+            <div class="icon_menu">
+                <img src="{{URL::to('/public/restaurant/assets')}}/images/wallet-icon.png" style="width: 22px;" alt="">
+            </div>
+            <span>Wallet</span>
+          </a>
+        </li>
+        <li class="mm-active">
           <a href="{{route('restaurant.profile')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/setting-icon.png" alt="">

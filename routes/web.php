@@ -48,10 +48,15 @@ use App\Http\Middleware;
                         Route::get('/review', 'mainController@review')->name('restaurant.review');
                 });
 
+                Route::prefix('wallet')->group(function(){
+                        Route::get('/', 'walletController@index')->name('restaurant.wallet');
+                        Route::post('/makeRequest', 'walletController@makeRequest')->name('restaurant.wallet.makeRequest');
+                });
 
                 Route::prefix('setting')->group(function(){
                         Route::get('/', 'settingController@profile')->name('restaurant.profile');
                         Route::post('/restprofilesetting', 'settingController@restProfilesetting')->name('restaurant.restprofilesetting');
+                        Route::post('/payout', 'settingController@payoutSubmit')->name('restaurant.profile.payout');
                         Route::post('/changepassword', 'settingController@changePassword')->name('restaurant.changepassword');
                         Route::post('/location', 'settingController@locationSubmit')->name('restaurant.profile.location');
 
@@ -82,7 +87,15 @@ use App\Http\Middleware;
                             Route::get('/edit/{id}', 'restaurantController@edit');
 
                             Route::post('/add', 'restaurantController@addSubmit')->name('admin.restaurants.add');
-                            Route::post('/update', 'restaurantController@editSubmit')->name('admin.restaurants.update');    
+                            Route::post('/update', 'restaurantController@editSubmit')->name('admin.restaurants.update');
+
+                            //Withdraw
+                                Route::prefix('withdraw')->group(function(){
+
+                                    Route::get('/', 'restaurantController@withdrawRequest')->name('admin.restaurants.withdrawRequest');
+                                    Route::get('/complete/{id}', 'restaurantController@withdrawRequestComplete');
+                                    Route::get('/cancel/{id}', 'restaurantController@withdrawRequestCancel');
+                                });    
                         });
 
                     //Drivers

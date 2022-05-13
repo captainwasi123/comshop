@@ -87,6 +87,47 @@ $(document).ready(function(){
         });
 
 
+        $(document).on('click', '.completeRequest', function(){
+            var val = $(this).data('id');
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "Want to complete this request!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, Complete it'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = host+'/restaurants/withdraw/complete/'+val;
+                }else{
+                    Swal.close();
+                }
+            });
+            
+        });
+
+        $(document).on('click', '.cancelRequest', function(){
+            var val = $(this).data('id');
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "Want to cancel this request!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, Cancel it'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = host+'/restaurants/withdraw/cancel/'+val;
+                }else{
+                    Swal.close();
+                }
+            });
+            
+        });
+
+
         // buyeruser
 
            $(document).on('click', '.editUser', function(){

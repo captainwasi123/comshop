@@ -18,6 +18,17 @@
                         </div>
                     </div>
                 </button>
+                <button class="tablinks m-b-20" onclick="openCity(event, 'payout')">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-3 col-12 no-margin tab-image">
+                            <img src="{{URL::to('/public/restaurant/assets')}}/images/restaurant-payout-image.png" width="80%">
+                        </div>
+                        <div class="col-lg-10 col-md-9 col-12 no-pad">
+                            <h3 class="tab-head no-margin pad-bot-10">Payout</h3>
+                            <p class="btn-text desktop tablet">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        </div>
+                    </div>
+                </button>
                 <button class="tablinks m-b-20" onclick="openCity(event, 'Paris')">
                     <div class="row">
                         <div class="col-lg-2 col-md-3 col-12 no-margin tab-image">
@@ -107,6 +118,50 @@
                             </div>
                         </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="payout" class="tabcontent">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <h3 class="inner-btn-heading no-margin">Payout</h3>
+                        <p class="inner-btn-text pad-top-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor.</p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="row">
+                         <form class="profile-form pad-top-40 pad-bot-20" action="{{route('restaurant.profile.payout')}}" method="post">
+                            @csrf
+                                <div class="form-row security-section">
+                                    <div class="col-lg-12 col-md-12 col-12 no-margin">
+                                        <div class="input-form">
+                                            <label for="inputCurrentPassword"  class="no-margin pad-bot-10">Bank Name</label>
+                                            <input type="text" name="bank_name" value="{{@Auth::guard('restaurant')->user()->payout->bank_name}}" class="form-control" required>
+                                            <span class="text-danger" id="CurrentPasswordErrorMsg"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-12 no-margin">
+                                        <div class="input-form pad-top-20">
+                                            <label for="inputPassword" class="no-margin pad-bot-10">Account Title</label>
+                                            <input type="text" name="account_title" value="{{@Auth::guard('restaurant')->user()->payout->account_title}}" class="form-control" required>
+                                            <span class="text-danger" id="PasswordErrorMsg"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-12 no-margin">
+                                        <div class="input-form pad-top-20">
+                                            <label for="inputConfirmPassword" class="no-margin pad-bot-10">Account No.</label>
+                                            <input type="text" name="account_no" value="{{@Auth::guard('restaurant')->user()->payout->account_no}}" class="form-control" required>
+                                             <span class="text-danger" id="ConfirmPasswordErrorMsg"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sav-button pad-top-50 pad-right-20">
+                                    <input type="Submit" value="Submit" class="bg-yellow">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

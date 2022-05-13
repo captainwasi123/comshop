@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Restaurant\Restaurant;
+use App\Models\Restaurant\withdraw;
+use App\Models\Restaurant\wallet;
 
 class restaurantController extends Controller
 {
@@ -95,5 +97,37 @@ class restaurantController extends Controller
         $r->save();
 
         return redirect()->back()->with('success', 'Restaurant is Activated.');
+    }
+
+    //Withdraw Request
+
+    function withdrawRequest(){
+        $data = array(
+            'requests' => withdraw::orderBy('status', 'asc')->orderBy('created_at', 'desc')->get()
+        );
+        return view('admin.restaurants.withdrawRequest')->with($data);
+    }
+
+    function withdrawRequestComplete($id){
+        $id = base64_decode($id);
+        $w = withdraw::find($id);
+        $w->status = '2';
+        $w->save();
+
+        return redirect()->back()->with('success', 'Request successfully completed.');
+    }
+
+    function withdrawRequestCancel($id){
+        $id = base64_decode($id);
+        $w = withdraw::find($id);
+        $w->status = '3';
+        $w->save();
+
+        $amount = $w->amount;
+        $rid = $w->restaurant_id;
+
+        wallet::amountAddition($rid, $amount);
+
+        return redirect()->back()->with('success', 'Request successfully cancelled.');
     }
 }
