@@ -140,7 +140,7 @@ class driverprofileController extends Controller
     }
 
 //  change password
-    function changePassword(Request $request){
+    function driverchangePassword(Request $request){
 
 
         $validator = Validator::make($request->all(), [

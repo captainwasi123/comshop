@@ -37,33 +37,10 @@ use App\Http\Controllers\restaurant\orderController;
     Route::post('login', [AuthController::class, 'login']);
     Route::post('googleLogin', [AuthController::class, 'googleLogin']);
 
-    // forgetPassword
+// User forgetPassword
         Route::post('forgetPassword',[AuthController::class, 'forgetPassword']);
-       
         Route::post('userOtp',[AuthController::class, 'userOtp']);
-
         Route::post('ResetPasswordForm',[AuthController::class, 'ResetPasswordForm']);
-
-
-
-
-    //  Route::get('getDriver', [orderController::class, 'getDriver']);
-    //  Route::get('abc', [orderController::class, 'abc']);
-
-     
-     
-
-
-
-
-
-
-
-
-
-// DRIVER LOGIN
-    Route::post('driverlogin', [driverAuthController::class, 'login']);
-    Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']);
 
 
 // General Routes
@@ -128,6 +105,14 @@ use App\Http\Controllers\restaurant\orderController;
 
 
 
+// DRIVER LOGIN
+Route::post('driverlogin', [driverAuthController::class, 'login']);
+Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']);
+
+    // forgetPassword
+        Route::post('driverforgetPassword',[driverAuthController::class, 'driverforgetPassword']);
+        Route::post('dirverOtp',[driverAuthController::class, 'dirverOtp']);
+        Route::post('driverResetPasswordForm',[driverAuthController::class, 'driverResetPasswordForm']);
 
 
 // Driver Middleware
@@ -152,6 +137,14 @@ Route::middleware('auth:driver-api')->group( function () {
         Route::get('active_orderlist', [DriverOrderController::class, 'active_orderlist']);
         Route::get('orderDetail', [DriverOrderController::class, 'orderDetail']);
         Route::post('orderComplete/{id}', [DriverOrderController::class, 'orderComplete']);
+
+
+    // Driver change Password
+
+   
+
+    Route::post('driverchangePassword', [driverprofileController::class, 'driverchangePassword']);
+
 
 
     

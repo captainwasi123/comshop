@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Models\Driver\driver;
 use Hash;
+use Mail;
 
 
 class driverAuthController extends BaseController
@@ -41,28 +42,117 @@ class driverAuthController extends BaseController
         } 
     } 
 
-  
+
+     // forget password
+
+
+
+     function driverforgetPassword(Request $request){
+
+
+        $validator = Validator::make($request->all(), [
+            'email_address' => 'required|email|exists:tbl_driver_info',
+               
+        ]);
    
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
 
+        $reqEmail = driver::where([ 'email_address' => $request->email_address])->first();
 
-    public function logout(){
+        $otp = random_int(100000, 999999);
+        if($otp!=0) {
+            
+            driver::where('email_address', $reqEmail->email_address)
+                 ->update(['otp_byemail' => $otp]);
+        }
 
-        
-        Auth::guard('driver-api')->user()->tokens->each(function($token, $key) {
-            $token->delete();
+        Mail::send('mail.driverforgetPassword', ['OTP' => $otp], function($message) use($request){
+            $message->to($request->email_address);
+            $message->subject('Reset Password');
         });
 
-        return response()->json([
-            'logout' => true,
-            'message' => 'logout successfully'
-            ]);
+        return response()->json([ 'success' =>  'We have e-mailed your password reset Code!'], 200);
+
+    }
+
+
+    // otp
+
+    public function dirverOtp(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'otp' => 'required'
+               
+        ]);
+   
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
+
+        $reqCode = driver::where([ 'otp_byemail' => $request->otp])->first();
+     
+        if(!$reqCode){
+    
+            return response()->json([ 'error' =>  'Invalid Code!'], 404);
+        }
+        else{
+
+            return response()->json([ 'success' =>  'Your code has been matched! '], 200);
+        }
+
+    }
+
+    public function driverResetPasswordForm(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'password' => '|required_with:confirmation_password|same:confirmation_password',
+            'confirmation_password' => 'required',
+            'otp' => 'required'
+               
+        ]);
+   
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
+
+
+        $reqCode = driver::where([ 'otp_byemail' => $request->otp])->first();
+
+      
+
+        if(!$reqCode){
+            
+            return response()->json([ 'error' =>  'Invalid Code!'], 404);
+
+        }
+        $user = driver::where('email_address', $reqCode->email_address)
+                    ->update([
+                        'password' => Hash::make($request->password),
+                        'otp_byemail' => null
+                    ]);
+                   
+        return response()->json([ 'success' =>  'Your password has been changed!'], 200);
+
+
     }
 
 
 
+  
+   
 
 
-    
-    
+    public function logout(){     
+        Auth::guard('driver-api')->user()->tokens->each(function($token, $key) {
+            $token->delete();
+             });
+
+        return response()->json([ 'logout' => true, 'message' => 'logout successfully']);
+    }
+  
     
 }
