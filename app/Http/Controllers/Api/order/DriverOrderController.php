@@ -33,6 +33,20 @@ class DriverOrderController extends Controller
         }
     }
 
+    public function complete_orderlist()
+    {
+        $complete_order=driver_order::where(['status' => '3'],['driver_id' => Auth::guard('driver-api')->user()->id])->get();
+
+        if(count($complete_order)==0)
+        {
+            return response()->json(['error' => 'Record not found' ], 404);
+        }
+        else{
+               
+             return response()->json(['data' => $complete_order], 200);                
+        }
+    }
+
     public function active_orderlist()
     {
         $active_order=driver_order::where(['status' => '1'],['driver_id' => Auth::guard('driver-api')->user()->id])->get();
@@ -52,7 +66,7 @@ class DriverOrderController extends Controller
    {
      
             $data=driver_order::where(['driver_id' => Auth::guard('driver-api')->user()->id]
-                             )->with('order','order.restaurant','order.buyer')->get();
+                             )->with('order','order.restaurant','order.buyer.user_address')->get();
             if(count($data)!=0)
             {            
                     return response()->json(['data' => $data], 200);                

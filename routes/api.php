@@ -120,7 +120,7 @@ Route::middleware('auth:driver-api')->group( function () {
 
     Route::get('getCity', [getCityController::class, 'getCity']);
 
-    Route::post('/logoutdriver',[driverAuthController::class,'logout']);
+ 
 
     // driver wallet
         Route::get('ShowdriverWallet', [driverprofileController::class, 'ShowdriverWallet']);
@@ -128,11 +128,13 @@ Route::middleware('auth:driver-api')->group( function () {
     // driver lat long update
         Route::post('latlonupdate_driver/{lat}/{lon}', [driverprofileController::class, 'latlonupdate_driver']);
 
-    //  driver work status
+    //  driver work status            
         Route::post('driverWorkStatus/{Wstatus}', [driverprofileController::class, 'driverWorkStatus']);
 
     // driver oder approve
         Route::post('driver_orderAccept/{id}', [DriverOrderController::class, 'driver_orderAccept']);
+        
+        Route::get('complete_orderlist', [DriverOrderController::class, 'complete_orderlist']);
         Route::get('pending_orderlist', [DriverOrderController::class, 'pending_orderlist']);
         Route::get('active_orderlist', [DriverOrderController::class, 'active_orderlist']);
         Route::get('orderDetail', [DriverOrderController::class, 'orderDetail']);
@@ -146,7 +148,8 @@ Route::middleware('auth:driver-api')->group( function () {
     Route::post('driverchangePassword', [driverprofileController::class, 'driverchangePassword']);
 
 
-
+    // LOGOUT
+    Route::post('logoutdriver',[driverAuthController::class,'logout']);
     
 
 
