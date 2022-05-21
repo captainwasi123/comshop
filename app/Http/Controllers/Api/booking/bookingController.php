@@ -73,7 +73,7 @@ class bookingController extends Controller
               if($avg->isEmpty())
               {
                   
-                  return response()->json(['data' =>'Not Found']);
+                  return response()->json(['data' =>'Not Found'], 404);
               }
               else
               {
@@ -98,7 +98,7 @@ class bookingController extends Controller
                           ->orWhere('address', 'LIKE', "%$search%")
                           ->get();
 
-                return response()->json(['data'  => $data ]);
+                return response()->json(['data'  => $data ],200);
               }
 
 
@@ -119,7 +119,7 @@ class bookingController extends Controller
               return response()->json('Data not found', 404); 
             } 
 
-        return response()->json(['getRest' => $getRest, 'categories' => $getCat]);
+        return response()->json(['getRest' => $getRest, 'categories' => $getCat],200);
 
       }
 
@@ -130,7 +130,7 @@ class bookingController extends Controller
 
         $productDetail=menu::where('status','1')->where('id', $id)->with('variant')->get();
 
-        return response()->json(['productDetail' => $productDetail]);
+        return response()->json(['productDetail' => $productDetail], 200);
       }
 
 

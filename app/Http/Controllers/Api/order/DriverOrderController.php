@@ -77,6 +77,21 @@ class DriverOrderController extends Controller
     
        
    }
+
+   public function singleorder($id){
+
+             $data=driver_order::where(['id' => $id], ['driver_id' => Auth::guard('driver-api')->user()->id] )
+                        ->with('order', 'order.buyer.user_address')->get();
+
+                    if(count($data)!=0)
+                    {            
+                            return response()->json(['data' => $data], 200);                
+                    }
+                    else{
+                            return response()->json(['data' => 'Record Not Found'], 404);                            
+                    }
+                
+   }
     
 
     public function driver_orderAccept($id)
