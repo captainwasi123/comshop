@@ -35,7 +35,8 @@ class DriverOrderController extends Controller
 
     public function complete_orderlist()
     {
-        $complete_order=driver_order::where(['status' => '3'],['driver_id' => Auth::guard('driver-api')->user()->id])->get();
+        $complete_order=driver_order::where(['status' => '3'],['driver_id' => Auth::guard('driver-api')->user()->id])
+                                     ->with('order')->get();
 
         if(count($complete_order)==0)
         {
@@ -49,7 +50,8 @@ class DriverOrderController extends Controller
 
     public function active_orderlist()
     {
-        $active_order=driver_order::where(['status' => '1'],['driver_id' => Auth::guard('driver-api')->user()->id])->get();
+        $active_order=driver_order::where(['status' => '1'],['driver_id' => Auth::guard('driver-api')->user()->id])
+                                    ->with('order')->get();
 
         if(count($active_order)==0)
         {
