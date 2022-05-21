@@ -139,6 +139,23 @@ class driverprofileController extends Controller
 
     }
 
+
+    // GET DRIVER INFO
+
+    public function driverProfile()
+    {
+        $data=driver::where(['id' => Auth::guard('driver-api')->user()->id])->with('driverDoc')->get();
+        
+
+        if(count($data)!=0)
+            {            
+                    return response()->json(['data' => $data], 200);                
+            }
+            else{
+                    return response()->json(['data' => 'Record Not Found'], 404);                            
+            }
+    }
+
 //  change password
     function driverchangePassword(Request $request){
 

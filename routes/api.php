@@ -141,13 +141,19 @@ Route::middleware('auth:driver-api')->group( function () {
         Route::post('orderComplete/{id}', [DriverOrderController::class, 'orderComplete']);
         Route::get('singleorder/{id}', [DriverOrderController::class, 'singleorder']);
 
+
+
+       
+
+
+        
+
         
 
 
-    // Driver change Password
+    // Driver change Password $ Profile
 
-   
-
+    Route::get('driverProfile', [driverprofileController::class, 'driverProfile']);
     Route::post('driverchangePassword', [driverprofileController::class, 'driverchangePassword']);
 
 
