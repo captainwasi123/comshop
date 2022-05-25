@@ -78,6 +78,12 @@ class driver extends Authenticatable
         $r->save();
     }
 
+    public static function vaccine_cardImage($idd, $filename){
+        $r = driverDocument::find($idd);
+        $r->license_back = $filename;
+        $r->save();
+    }
+
     public function city()
     {
         return $this->belongsTo(city::class, 'city_id', 'id');

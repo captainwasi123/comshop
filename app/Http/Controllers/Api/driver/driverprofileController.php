@@ -111,6 +111,15 @@ class driverprofileController extends Controller
                     $dd->save();
                 }
 
+                if($request->hasFile('vaccine_card')) {
+                    $extension = $request->file('vaccine_card')->getClientOriginalExtension();
+                    $compic =$id->id.'vaccine_card'.date('dmyHis').'.'.$extension;
+                    $path =$request->file('vaccine_card')->move(public_path('/storage/driver/imginfo/'),$compic);
+                    $dd->vaccine_card = $compic;
+                    $dd->save();
+                }
+
+                
 
 
 

@@ -31,7 +31,7 @@ class bookingController extends Controller
           //dd($avg);
           if($avg->isEmpty())
           {               
-              return response()->json(['data' =>'Not Found']);
+              return response()->json(['data' =>'Not Found'],404);
           }else{
             foreach ($avg as $key => $value) { 
               if($value->menuItem > 0){                                        
@@ -40,7 +40,7 @@ class bookingController extends Controller
             } 
             $rest = Restaurant::whereIn('id', $ids)->get();
             $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->get();     
-            return response()->json(['data' => $rest, 'menus' => $menu]);
+            return response()->json(['data' => $rest, 'menus' => $menu],200);
           }
 
 

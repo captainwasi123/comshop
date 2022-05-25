@@ -12,6 +12,7 @@ class driverDocument extends Model
     use HasFactory;
 
     protected $table ='tbl_driver_document_info';
+    protected $guarded=[];
     public $timestamps = false;
 
     public static function addDocumentDriver(array $data){
