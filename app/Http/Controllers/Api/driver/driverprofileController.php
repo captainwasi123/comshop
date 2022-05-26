@@ -252,18 +252,14 @@ class driverprofileController extends Controller
     {
 
         $driver = driver::where('id',Auth::guard('driver-api')->user()->id)->first();
-
-        if(!$driver)
-        {
+        $message = $Wstatus == 0 ? 'You are offline now.' : 'You are online now.';
+        if(!$driver){
             return response()->json(['error' => 'Record not found' ], 404);
-        }
-        else{
-                $driverup=driver::where('email_address', $driver->email_address)
-                                ->update([ 
-                                        'working_status' => $Wstatus, 
-                                        ]);
+        }else{
+            $driver->working_status = $Wstatus;
+            $driver->save();
         
-             return response()->json(['status' => true, 'message' => 'Driver Work Status Updated'], 200);                
+            return response()->json(['status' => true, 'message' => $message], 200);                
         }
         
     }
