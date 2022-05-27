@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware;
+use App\Events\getNotify;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,11 @@ use App\Http\Middleware;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/testNotification', function () {
+    event(new getNotify('New Order Received', '1001', '20'));
+
+    return 'Done';
+});
 
 
 // Restaurant

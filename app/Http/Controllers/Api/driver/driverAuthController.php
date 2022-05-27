@@ -33,6 +33,7 @@ class driverAuthController extends BaseController
         if(Auth::guard('driver')->attempt(['email_address' => $request->email_address, 'password' => $request->password, 'status'=>1])){ 
             $user = Auth::guard('driver')->user(); 
             $success['token'] =  $user->createToken('MyApp')->plainTextToken; 
+            $success['user_id'] =  $user->id;  
             $success['first_name'] =  $user->first_name; 
             $success['working_status'] =  $user->working_status;
    
