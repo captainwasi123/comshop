@@ -16,9 +16,24 @@ use App\Events\getNotify;
 */
 
 Route::get('/testNotification', function () {
-    event(new getNotify('New Order Received', '1001', '20'));
+    $options = array(
+        'cluster' => env('PUSHER_APP_CLUSTER'),
+        'useTLS' => true
+    );
+    $pusher = new Pusher\Pusher(
+        env('PUSHER_APP_KEY'),
+        env('PUSHER_APP_SECRET'),
+        env('PUSHER_APP_ID'),
+        $options
+    );
 
+    $data = ['title' => 'New Order Received', 'orderId' => '1003', 'driverId' => '4'];
+    $pusher->trigger('notify_channel_4', 'getNotify', $data);
     return 'Done';
+});
+
+Route::get('/', function () {
+    return view('welcome');
 });
 
 

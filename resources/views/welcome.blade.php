@@ -128,5 +128,24 @@
                 </div>
             </div>
         </div>
+
+         <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+
+        <script type="text/javascript">
+
+            // Enable pusher logging - don't include this in production
+            Pusher.logToConsole = true;
+
+            var pusher = new Pusher('8bf2826e827199aba885', {
+                   cluster: 'ap2',
+                   encrypted: true
+            });
+
+            var channel = pusher.subscribe('notify_channel_4');
+
+           channel.bind('App\Events\getNotify', function(data) { ///<--this never triggers!
+               console.log("Data:".data);
+           });
+        </script>
     </body>
 </html>

@@ -34,4 +34,9 @@ class getNotify
     {
         return ['notify_channel_'.$this->driverId];
     }
+
+    public function broadcastAs()
+    {
+        return 'getNotify';
+    }
 }
