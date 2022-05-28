@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\buyer\profileController;
+use App\Http\Controllers\Api\buyer\reviewController;
 use App\Http\Controllers\Api\getCityController;
 use App\Http\Controllers\Api\order\UserOrderController;
 use App\Http\Controllers\Api\order\DriverOrderController;
@@ -64,6 +65,10 @@ use App\Http\Controllers\restaurant\orderController;
         //menus with variant
             Route::get('productDetail/{id}', [bookingController::class, 'productDetail']);
 
+        //Reviews
+            Route::get('getReview', [reviewController::class, 'getReview']);
+            Route::get('cancelReview/{id}', [reviewController::class, 'cancelReview']);
+            Route::post('submitReview', [reviewController::class, 'submitReview']);
 
 
         // add to cart
