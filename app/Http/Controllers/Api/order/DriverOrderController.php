@@ -105,7 +105,6 @@ class DriverOrderController extends Controller
         $restId=Rest_wallet::where('id',$orderDetail[0]->restaurant_id)->first();
 
         if($orderId->status==3){
-
             return response()->json(['error' => 'Order Already Completed' ], 404);
         }else{
             $orderComplete=driver_order::where(['driver_id'=> $driver->id], ['id' => $id])
@@ -118,13 +117,13 @@ class DriverOrderController extends Controller
                                     ->increment('payable', $orderDetail[0]->total_price, ['driver_id' =>Auth::guard('driver-api')->user()->id]);
                 $walletUpdate = driverWallet::where('driver_id',Auth::guard('driver-api')->user()->id)
                                     ->first();
-                $restWallet =   DB::table('tbl_restaurant_wallet_info')
+                $restWallet = DB::table('tbl_restaurant_wallet_info')
                                     ->increment('amount', $restAmount, ['id' => $orderDetail[0]->restaurant_id]);
-                $restWallet =   Rest_wallet::where('id',$orderDetail[0]->restaurant_id)
+                $restWallet = Rest_wallet::where('id',$orderDetail[0]->restaurant_id)
                                     ->first();
             }
 
-            return response()->json(['status' => true,'message' => 'Driver Order Status Updated'], 200);                
+            return response()->json(['status' => true,'message' => 'Driver Order Status Updated'], 200);              
         }
     }
 
