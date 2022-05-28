@@ -133,12 +133,14 @@ class DriverOrderController extends Controller
     public function orderDetailIndividual($id){
         $orderDetail = order_detail::where('order_id',$id)->with('menu')->get();
         $od = array();
+        $total_price = 0;
         foreach($orderDetail as $val){
-            array_push($od, array('menu' => @$val->menu->title, 'price' => $val->menu->price));
+            array_push($od, array('menu' => @$val->menu->title, 'price' => @$val->menu->price));
+            $total_price += $val->menu->price;
         }
         $order = order::find($id);
         $customer = Restaurant::where('id', $order->restaurant_id)->select('name', 'phone')->first();
 
-        return response()->json(['status' => true, 'orderId' => $id, 'customer' => $customer, 'orderDetail' =>$od,], 200);
+        return response()->json(['status' => true, 'orderId' => $id, 'total_price' => $total_price, 'customer' => $customer, 'orderDetail' =>$od,], 200);
     }
 }
