@@ -140,4 +140,12 @@ class DriverOrderController extends Controller
 
         return response()->json(['status' => true, 'orderId' => $id, 'total_price' => $total_price, 'customer' => $customer, 'orderDetail' =>$od,], 200);
     }
+
+    public function getOrderLocation($id){
+        $order = order::find($id);
+        $data['customer'] = array('lat' => $order->delivery->latitude, 'lng' => $order->delivery->longitude);
+        $data['restaurant'] = array('lat' => $order->restaurant->latitude, 'lng' => $order->restaurant->longitude);
+
+        return response()->json(['status' => true, 'orderId' => $id, 'data' => $data], 200);
+    }
 }
