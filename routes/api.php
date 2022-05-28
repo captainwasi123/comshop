@@ -141,7 +141,7 @@ Route::middleware('auth:driver-api')->group( function () {
         Route::post('orderComplete/{id}', [DriverOrderController::class, 'orderComplete']);
         Route::get('singleorder/{id}', [DriverOrderController::class, 'singleorder']);
 
-
+        Route::get('orderDetailIndividual/{id}', [DriverOrderController::class, 'orderDetailIndividual']);
 
        
 
