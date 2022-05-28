@@ -82,6 +82,9 @@ class Restaurant extends Authenticatable
     	return $this->hasMany(menu::class, 'restaurant_id', 'id')->where('status', '1')->orderBy('category_id');
     }
 
-    
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 
 }

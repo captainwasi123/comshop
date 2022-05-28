@@ -124,9 +124,7 @@ class DriverOrderController extends Controller
                                     ->first();
             }
 
-            return response()->json(['status' => true, 
-            'DriverOrder' =>$orderComplete , 'DriverWallet' => $walletUpdate, 'RestWallet' => $restWallet, 
-            'message' => 'Driver Order Status Updated'], 200);                
+            return response()->json(['status' => true,'message' => 'Driver Order Status Updated'], 200);                
         }
     }
 
