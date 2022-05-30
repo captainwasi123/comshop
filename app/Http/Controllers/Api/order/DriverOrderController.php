@@ -108,12 +108,10 @@ class DriverOrderController extends Controller
         if($orderId->status==3){
             return response()->json(['error' => 'Order Already Completed' ], 404);
         }else{
-            $orderComplete=driver_order::where(['driver_id'=> $driver->id], ['id' => $orderId->id])
-                            ->update([ 
-                                'status' => '3', 
-                            ]);
-            $orderComplete = driver_order::find($orderComplete);
-            if($orderComplete){ 
+            $orderDetail->status = '3';
+            $orderDetail->save();
+            
+            if($orderDetail->status = '3'){ 
                 $walletUpdate = DB::table('tbl_driver_wallet_info')
                                     ->increment('payable', $orderDetail->total_price, ['driver_id' =>Auth::guard('driver-api')->user()->id]);
                 $walletUpdate = driverWallet::where('driver_id',Auth::guard('driver-api')->user()->id)
