@@ -97,29 +97,29 @@ class DriverOrderController extends Controller
 
     public function orderComplete($id){
         $driver = driver::where('id',Auth::guard('driver-api')->user()->id)->first();
-        $orderId=driver_order::where('driver_id', $driver->id)->first();
-        $orderDetail=order::where('id',$orderId->order_id)->get();
+        $orderId=driver_order::where('order_id', $id)->first();
+        $orderDetail=order::where('id',$id)->first();
         $driverWallet=driverWallet::where('driver_id',Auth::guard('driver-api')->user()->id)->first();
         $compission=MP::all();
-        $restAmount=($orderDetail[0]->sub_total)-($orderDetail[0]->sub_total * $compission[0]->commission/100);
-        $restId=Rest_wallet::where('id',$orderDetail[0]->restaurant_id)->first();
+        $restAmount=($orderDetail->sub_total)-($orderDetail->sub_total * $compission->commission/100);
+        $restId=Rest_wallet::where('id',$orderDetail->restaurant_id)->first();
 
         if($orderId->status==3){
             return response()->json(['error' => 'Order Already Completed' ], 404);
         }else{
-            $orderComplete=driver_order::where(['driver_id'=> $driver->id], ['id' => $id])
+            $orderComplete=driver_order::where(['driver_id'=> $driver->id], ['id' => $orderId->id])
                             ->update([ 
                                 'status' => '3', 
                             ]);
             $orderComplete = driver_order::find($orderComplete);
             if($orderComplete){ 
                 $walletUpdate = DB::table('tbl_driver_wallet_info')
-                                    ->increment('payable', $orderDetail[0]->total_price, ['driver_id' =>Auth::guard('driver-api')->user()->id]);
+                                    ->increment('payable', $orderDetail->total_price, ['driver_id' =>Auth::guard('driver-api')->user()->id]);
                 $walletUpdate = driverWallet::where('driver_id',Auth::guard('driver-api')->user()->id)
                                     ->first();
                 $restWallet = DB::table('tbl_restaurant_wallet_info')
-                                    ->increment('amount', $restAmount, ['id' => $orderDetail[0]->restaurant_id]);
-                $restWallet = Rest_wallet::where('id',$orderDetail[0]->restaurant_id)
+                                    ->increment('amount', $restAmount, ['id' => $orderDetail->restaurant_id]);
+                $restWallet = Rest_wallet::where('id',$orderDetail->restaurant_id)
                                     ->first();
             }
 
