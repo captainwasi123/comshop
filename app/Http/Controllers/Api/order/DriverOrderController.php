@@ -59,6 +59,7 @@ class DriverOrderController extends Controller
     public function orderDetail(){
         $data = driver_order::where(['driver_id' => Auth::guard('driver-api')->user()->id])
                             ->with('order','order.restaurant','order.buyer.user_address')
+                            ->where('status', '0')
                             ->get();
 
         if(count($data) != 0){            
