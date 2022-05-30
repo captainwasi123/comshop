@@ -100,7 +100,7 @@ class DriverOrderController extends Controller
         $orderId=driver_order::where('order_id', $id)->first();
         $orderDetail=order::where('id',$id)->first();
         $driverWallet=driverWallet::where('driver_id',Auth::guard('driver-api')->user()->id)->first();
-        $compission=MP::all();
+        $compission=MP::first();
         $restAmount=($orderDetail->sub_total)-($orderDetail->sub_total * $compission->commission/100);
         $restId=Rest_wallet::where('id',$orderDetail->restaurant_id)->first();
 
