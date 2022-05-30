@@ -110,7 +110,10 @@ class DriverOrderController extends Controller
         }else{
             $orderDetail->status = '3';
             $orderDetail->save();
-            
+
+            $orderId->status = '3';
+            $orderId->save();
+
             if($orderDetail->status = '3'){ 
                 $walletUpdate = DB::table('tbl_driver_wallet_info')
                                     ->increment('payable', $orderDetail->total_price, ['driver_id' =>Auth::guard('driver-api')->user()->id]);
