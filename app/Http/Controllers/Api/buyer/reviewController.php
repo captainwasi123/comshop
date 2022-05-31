@@ -11,7 +11,7 @@ use Auth;
 class reviewController extends Controller
 {
     public function getReview(){
-        $order = order::where(['buyer_id' => Auth::id(), 'status' => '3')
+        $order = order::where(['buyer_id' => Auth::id(), 'status' => '3'])
                         ->where('is_reviewed', null)
                         ->first();
 
