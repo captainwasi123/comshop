@@ -30,7 +30,7 @@ class reviewController extends Controller
             $order->save();
         }
 
-        return response()->json(['status' => true, 'message' => 'test'], 200);
+        return response()->json(['status' => true], 200);
     }
 
     public function submitReview(Request $request){
