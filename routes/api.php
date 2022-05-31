@@ -53,7 +53,6 @@ use App\Http\Controllers\restaurant\orderController;
     Route::get('getsingleRest/{id}', [bookingController::class, 'getsingleRest']);
 
 
-    Route::get('cancelReview/{id}', [reviewController::class, 'cancelReview']);
 // User Middleware
     Route::middleware('auth:sanctum')->group( function () {
 
@@ -68,6 +67,7 @@ use App\Http\Controllers\restaurant\orderController;
 
         //Reviews
             Route::get('getReview', [reviewController::class, 'getReview']);
+            Route::get('cancelReview/{id}', [reviewController::class, 'cancelReview']);
             Route::post('submitReview', [reviewController::class, 'submitReview']);
 
 
