@@ -67,3 +67,9 @@ button.remove-image {
     background-color: #f8b602;
     border-color: #ebac00;
 }
+.fa.fa-star.disable {
+    color: #e6e6e6;
+}
+.profile_info:hover .profile_info_iner {
+    box-shadow: 0 0 50px #ccc;
+}

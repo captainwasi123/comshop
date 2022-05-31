@@ -10,6 +10,7 @@ use App\Models\Restaurant\menu;
 use App\Models\Restaurant\wallet;
 use App\Models\Restaurant\payout;
 use App\Models\Restaurant\withdraw;
+use App\Models\order\reviews;
 
 class Restaurant extends Authenticatable
 {
@@ -65,6 +66,15 @@ class Restaurant extends Authenticatable
     }
 
 
+
+    public function reviews(){
+        return $this->hasMany(reviews::class, 'restaurant_id', 'id');
+    }
+    public function avgRating()
+    {
+        return $this->reviews()
+          ->selectRaw('avg(rating) as avgRating');
+    }
 
     public function payout(){
         return $this->belongsTo(payout::class, 'id', 'restaurant_id');

@@ -157,7 +157,7 @@ class driverController extends Controller
     function active()
     {
         $data = array(
-            'driver' => driver::where('status', '1')->with(['driverDoc'])->get()
+            'driver' => driver::where('status', '1')->with(['driverDoc'])->paginate(10)
         );
       
         return view('admin.drivers.active')->with($data);
@@ -223,7 +223,7 @@ class driverController extends Controller
         $id = base64_decode($id);
         $data = driver::find($id);
 
-          
+        return view('admin.drivers.response.details', ['data' => $data]);
     }
 
 }

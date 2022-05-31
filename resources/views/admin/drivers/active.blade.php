@@ -27,12 +27,11 @@
                                     <thead>
                                       <tr>
                                             <th scope="col">S.No</th>
-                                            <th scope="col">First Name</th>
-                                            <th scope="col">Last Name</th>
+                                            <th scope="col">Full Name</th>
                                             <th scope="col">Phone</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">City</th>
-                                            <th scope="col">Details</th>
+                                            <th scope="col">Attachments</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">Action</th>
                                         </tr>
@@ -41,31 +40,25 @@
                                      @forelse ($driver as $key => $val)  
                                         <tr>
                                             <td>{{++$key}}</td>
-                                            <td>{{$val->first_name}}</td>
-                                            <td>{{$val->last_name}}</td>
+                                            <td>{{$val->first_name.' '.$val->last_name}}</td>
                                             <td>{{$val->phone_number}}</td>
                                             <td>{{$val->email_address}}</td>
                                             <td>{{@$val->city->name}}</td>
                                             
                                             <td>
-                                                <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver"  href="#">View</a>
+                                                <a href="javascript:void(0)" class="btn btn-sm btn-primary viewAttachment" data-id="{{base64_encode($val->id)}}">View</a>
                                             </td>
                                             <td>
-                                         @switch($val->status)
-                                                @case('1')
-                                                    <a href="#" class="status_btn">Active</a>
-                                                    @break
-
-
-                                        @endswitch
-                                        </td>
-                                            <td>
-                                                <a href="#" class="status_btn" data-toggle="modal" data-target="#new-driver">View</a>
+                                                @switch($val->status)
+                                                    @case('1')
+                                                        <label class="badge badge-success">Active</label>
+                                                        @break
+                                                @endswitch
                                             </td>
                                             <td>
                                             	
                                             	<a href="javascript:void(0)" class="status-icons driverEdit"  data-id="{{base64_encode($val->id)}}"><i class="fa fa-pencil-square-o"></i></a>
-                                            	<a href="javascript:void(0)"  class="status-icons driverDeleted" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
+                                            	<!-- <a href="javascript:void(0)"  class="status-icons driverDeleted" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a> -->
                                             	<a href="javascript:void(0)"  class="status-icons driverBlock" data-id="{{base64_encode($val->id)}}"><i class="fa fa-ban"></i></a>
                                             </td>
                                         </tr>
@@ -81,32 +74,7 @@
 	                </div>
 	            </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-12 page-shows-col">
-                    <div class="page-shows">
-                        <p>Showing <strong style="color: black;">1-5</strong> from <strong  style="color: black;">100</strong> data</p>
-                    </div>                  
-                </div>
-                <div class="col-lg-6 col-md-6 col-12 page-shows-nav">
-                    <nav aria-label="Page navigation example" class="Paginate">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link left-arrow" href="#" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="fas fa-angle-left"></i></span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link-nav " href="#">1</a></li>
-                            <li class="page-item"><a class="page-link-nav" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link-nav" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link rigt-arrow" href="#" aria-label="Next">
-                                    <span aria-hidden="true"><i class="fas fa-angle-right"></i></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            {{$driver->links()}}
         </div>
     </div>
 </div>

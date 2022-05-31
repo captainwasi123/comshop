@@ -20,3 +20,13 @@
 #driverDetailModal .loaderBlock img {
     height: 200px;
 }
+
+.btn-primary {
+    color: #fff !important;
+    background-color: #f8b602;
+    border-color: #ebac00;
+}
+.badge-success{
+    color: #fff !important;
+    padding: 5px 5px;
+}

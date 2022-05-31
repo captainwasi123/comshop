@@ -16,25 +16,25 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="drivers-sec-1">
-                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$data->driverDoc->card_front)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png';">                                         
+                                <img src="{{URL::to('/public/storage/driver/imginfo/'.@$data->driverDoc->card_front)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png';">                                         
                             </div>                                    
                             <label>Social Security (Front)</label>
                         </div>
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="drivers-sec-1">
-                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$data->driverDoc->card_back)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png';">                                           
+                                <img src="{{URL::to('/public/storage/driver/imginfo/'.@$data->driverDoc->card_back)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png';">                                           
                             </div>                                    
                             <label>Social Security (Back)</label>
                         </div>
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="drivers-sec-1">
-                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$data->driverDoc->license_front)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png';">
+                                <img src="{{URL::to('/public/storage/driver/imginfo/'.@$data->driverDoc->license_front)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png';">
                             </div>                                    
                             <label>Driving License (Front)</label>
                         </div>
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="drivers-sec-1">
-                                <img src="{{URL::to('/public/storage/driver/imginfo/'.$data->driverDoc->license_back)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png';">                                           
+                                <img src="{{URL::to('/public/storage/driver/imginfo/'.@$data->driverDoc->license_back)}}" width="100%" onerror="this.onerror=null;this.src='{{URL::to('/public/admin/assets')}}/images/id-card-placeholder.png';">                                           
                             </div>                                    
                             <label>Driving License (Back)</label>
                         </div>

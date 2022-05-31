@@ -23,13 +23,14 @@ class reviewController extends Controller
     }
 
     public function cancelReview($id){
+
         $order = order::find($id);
         if(!empty($order->id)){
             $order->is_reviewed = '1';
             $order->save();
         }
 
-        return response()->json(['status' => true], 100);
+        return response()->json(['status' => true, 'message' => 'test'], 200);
     }
 
     public function submitReview(Request $request){
