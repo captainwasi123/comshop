@@ -18,7 +18,7 @@ class reviewController extends Controller
         if(!empty($order->id)){
             return response()->json(['status' => true, 'orderId' => $order->id, 'restaurant' => @$order->restaurant->name], 200);
         }else{
-            return response()->json(['status' => false], 100);
+            return response()->json(['status' => false], 200);
         }
     }
 
