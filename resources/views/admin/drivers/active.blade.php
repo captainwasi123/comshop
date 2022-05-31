@@ -46,7 +46,7 @@
                                             <td>{{@$val->city->name}}</td>
                                             
                                             <td>
-                                                <a href="javascript:void(0)" class="btn btn-sm btn-primary viewAttachment" data-id="{{base64_encode($val->id)}}">View</a>
+                                                <a href="javascript:void(0)" class="btn btn-sm btn-primary viewDriverDetail" data-id="{{base64_encode($val->id)}}">View</a>
                                             </td>
                                             <td>
                                                 @switch($val->status)
