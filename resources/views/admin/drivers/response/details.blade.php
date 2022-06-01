@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col-lg-12 col-md-12 col-12">
         <div class="drive-sec-2">
-            <h5>First Name: <span>{{$data->first_name}}</span> &nbsp;</h5>
-            <h5>Last Name:  <span>{{$data->last_name}}</span> &nbsp;</h5>
+            <h5>Full Name: <span>{{$data->first_name}}</span> &nbsp;<span>{{$data->last_name}}</span> &nbsp;</h5>
             <h5>Phone: <span>{{$data->phone_number}}</span> &nbsp;</h5>
             <h5>Email: <span>{{$data->email_address}}</span> &nbsp;</h5>
         </div>

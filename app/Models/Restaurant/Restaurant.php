@@ -68,7 +68,7 @@ class Restaurant extends Authenticatable
 
 
     public function reviews(){
-        return $this->hasMany(reviews::class, 'restaurant_id', 'id');
+        return $this->hasMany(reviews::class, 'restaurant_id', 'id')->orderBy('id', 'desc');
     }
     public function avgRating()
     {

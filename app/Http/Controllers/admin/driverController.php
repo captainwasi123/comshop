@@ -166,7 +166,7 @@ class driverController extends Controller
     function blocked()
     {
         $data = array(
-            'driver' => driver::where('status', '2')->with(['driverDoc'])->get()
+            'driver' => driver::where('status', '2')->with(['driverDoc'])->paginate(10)
         );
 
         return view('admin.drivers.blocked')->with($data);
@@ -175,7 +175,7 @@ class driverController extends Controller
     function trashed()
     {
         $data = array(
-            'driver' => driver::where('status', '3')->with(['driverDoc'])->get()
+            'driver' => driver::where('status', '3')->with(['driverDoc'])->paginate(10)
         );
         return view('admin.drivers.trashed')->with($data);
     }

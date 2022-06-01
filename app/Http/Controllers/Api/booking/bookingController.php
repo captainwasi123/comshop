@@ -9,6 +9,7 @@ use App\Models\categories;
 use App\Models\Restaurant\menu;
 use Auth;
 use App\Models\order\order;
+use App\Models\order\reviews;
 
 
 class bookingController extends Controller
@@ -39,8 +40,9 @@ class bookingController extends Controller
               }              
             } 
             $rest = Restaurant::whereIn('id', $ids)->get();
-            $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->get();     
-            return response()->json(['data' => $rest, 'menus' => $menu],200);
+            $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->get();  
+            $rating = reviews::whereIn('restaurant_id', $ids)->select('restaurant_id as id')->selectRaw('avg(rating) as rating')->get();   
+            return response()->json(['data' => $rest, 'rating' => $rating, 'menus' => $menu],200);
           }
 
 

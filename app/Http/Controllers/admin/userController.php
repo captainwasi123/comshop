@@ -19,7 +19,7 @@ class userController extends Controller
     function active()
     {
        
-        $data['users'] = User::where('status', '1')->latest()->get();
+        $data['users'] = User::where('status', '1')->latest()->paginate(10);
  
         return view('admin.users.active')->with($data);
     }
@@ -67,7 +67,7 @@ class userController extends Controller
     function blocked()
     {
         $data = array(
-            'users' => User::where('status', '2')->get()
+            'users' => User::where('status', '2')->paginate(10)
         );
         return view('admin.users.blocked')->with($data);
     }
@@ -96,7 +96,7 @@ class userController extends Controller
     function trashed()
     {
         $data = array(
-            'users' => User::where('status', '4')->get()
+            'users' => User::where('status', '4')->paginate(10)
         );
     
         return view('admin.users.trashed')->with($data);

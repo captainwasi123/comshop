@@ -23,41 +23,32 @@
                                             <th scope="col">Phone</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Address</th>
-                                            <th scope="col">Role</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                     @forelse ($users as $key => $val)                                                                             
-                                        <tr>
-                                        <td>{{++$key}}</td>
-                                        <td>{{$val->name}}</td>
-                                        <td>{{$val->phone}}</td>
-                                        <td>{{$val->email}}</td>
-                                        <td>{{@$val->user_address->address}}</td>
-                                        <td>Admin</td>
-                                        <td>  
-                                            @switch($val->status)
-                                        @case('1')
-                                            <a href="#" class="status_btn">Active</a>
-                                            @break
-
-                                        @case('2')
-                                            <a href="#" class="status_btn  bg-red">Block</a>
-                                                @break
-
-                                        @endswitch</td>
-                                            <td>
+                                    <tbody>                                            
+                                        @foreach($users as $key => $val)
+                                            <tr>
+                                                <td>{{++$key}}</td>
+                                                <td>{{$val->name}}</td>
+                                                <td>{{$val->phone}}</td>
+                                                <td>{{$val->email}}</td>
+                                                <td>{{@$val->user_address->address}}</td>
+                                                <td>  
+                                                    <label class="badge badge-warning">Blocked</label>
+                                                </td>
+                                                <td>
                                                     <a href="javascript:void(0)" class="status-icons restoreUser" data-id="{{base64_encode($val->id)}}"><i class="fa fa-refresh"></i></a>
-                                                <a href="javascript:void(0)" class="status-icons userDeleted" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>  
-                                         @empty
-                                    
-                                            <h3>No user record found</h3>
-                                        
-                                        @endforelse                                            
+                                                    <a href="javascript:void(0)" class="status-icons userDeleted" data-id="{{base64_encode($val->id)}}"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        @if(count($users) == 0)                                            
+                                            <tr>
+                                                <td colspan="7">No user record found</td>
+                                            </tr>
+                                        @endif
                                     </tbody>
                                 </table>
                             </div>
@@ -65,32 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-12 page-shows-col">
-                    <div class="page-shows">
-                        <p>Showing <strong style="color: black;">1-5</strong> from <strong  style="color: black;">100</strong> data</p>
-                    </div>                  
-                </div>
-                <div class="col-lg-6 col-md-6 col-12 page-shows-nav">
-                    <nav aria-label="Page navigation example" class="Paginate">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link left-arrow" href="#" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="fas fa-angle-left"></i></span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link-nav " href="#">1</a></li>
-                            <li class="page-item"><a class="page-link-nav" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link-nav" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link rigt-arrow" href="#" aria-label="Next">
-                                    <span aria-hidden="true"><i class="fas fa-angle-right"></i></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            {{$users->links()}}
         </div>
     </div>
 </div>

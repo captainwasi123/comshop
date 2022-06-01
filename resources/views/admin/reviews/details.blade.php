@@ -18,69 +18,46 @@
                             <div class="white_box_tittle list_header no-margin">
                                 <h3 class="inner-order-head no-margin pad-bot-10">View Reviews</h3>
                                 <div class="drive-sec-2">
-                                    <h5>Restaurant Name: <span><b>MR.Cone</b></span></h5>
+                                    <h5>Restaurant Name: <span><b>{{$restaurant->name}}</b></span></h5>
                                 </div>                                
                             </div>
                             <hr>
-                            <div class="row">
-                                <div class="col-lg-1 col-md-2 col-4">
-                                    <div class="view-review-section">
-                                        <img src="{{URL::to('/public/restaurant/assets')}}/images/user-icon.png" alt="" width="100%">
+                            @foreach($restaurant->reviews as $val)
+                                <div class="row">
+                                    <div class="col-lg-1 col-md-2 col-4">
+                                        <div class="view-review-section">
+                                            <img src="{{URL::to('/public/restaurant/assets')}}/images/user-placeholder.jpg" alt="" width="100%">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-11 col-md-10 col-12">
+                                        <div class="view-review-section">
+                                            <h2 class="no-margin pad-bot-10">
+                                                {{@$val->user->name}} <span>{{$val->created_at->diffForHumans()}}</span>
+                                            </h2>
+                                            <p class="no-margin">
+                                                {{$val->reviews}}
+                                            </p>
+                                            <h3 class="no-margin pad-top-20 pad-bot-10">
+                                                @for($i=1; $i<=5; $i++)
+                                                    @if($i>$val->rating)
+                                                        <i class="fa fa-star disable"></i>
+                                                    @else
+                                                        <i class="fas fa-star"></i>
+                                                    @endif
+                                                @endfor
+                                            </h3>
+                                            <hr>
+                                        </div>                                    
                                     </div>
                                 </div>
-                                <div class="col-lg-11 col-md-10 col-12">
-                                    <div class="view-review-section">
-                                        <h2 class="no-margin pad-bot-10">John Doe <span>5 minutes ago</span></h2>
-                                        <p class="no-margin">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-                                        <h3 class="no-margin pad-top-20 pad-bot-10">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </h3>
-                                        <hr>
-                                    </div>                                    
-                                </div>
-                                <div class="col-lg-1 col-md-2 col-4">
-                                    <div class="view-review-section">
-                                        <img src="{{URL::to('/public/restaurant/assets')}}/images/user-icon.png" alt="" width="100%">
+                            @endforeach
+                            @if(count($restaurant->reviews) == 0)
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h5>No Reviews</h5>
                                     </div>
                                 </div>
-                                <div class="col-lg-11 col-md-10 col-12">
-                                    <div class="view-review-section">
-                                        <h2 class="no-margin pad-bot-10">John Doe <span>5 minutes ago</span></h2>
-                                        <p class="no-margin">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-                                        <h3 class="no-margin pad-top-20 pad-bot-10">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </h3>
-                                        <hr>
-                                    </div>                                    
-                                </div>
-                                <div class="col-lg-1 col-md-2 col-4">
-                                    <div class="view-review-section">
-                                        <img src="{{URL::to('/public/restaurant/assets')}}/images/user-icon.png" alt="" width="100%">
-                                    </div>
-                                </div>
-                                <div class="col-lg-11 col-md-10 col-12">
-                                    <div class="view-review-section">
-                                        <h2 class="no-margin pad-bot-10">John Doe <span>5 minutes ago</span></h2>
-                                        <p class="no-margin">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-                                        <h3 class="no-margin pad-top-20 pad-bot-10">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </h3>
-                                        <hr>
-                                    </div>                                    
-                                </div>
-                            </div>
+                            @endif
                         </div>                    		
 	                </div>
 	            </div>

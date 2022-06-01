@@ -139,7 +139,7 @@ Route::get('/', function () {
                     //Reviews & Ratings
                         Route::prefix('reviews')->group(function(){
                             Route::get('/', 'reviewsController@index')->name('admin.reviews');
-                            Route::get('/details', 'reviewsController@details')->name('admin.review.details');
+                            Route::get('/details/{id}', 'reviewsController@details')->name('admin.review.details');
                         });
 
                     //Users
