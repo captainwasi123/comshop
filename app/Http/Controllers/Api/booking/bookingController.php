@@ -39,10 +39,27 @@ class bookingController extends Controller
                 $ids[] = $value->id; 
               }              
             } 
+            $restArr = array();
             $rest = Restaurant::whereIn('id', $ids)->get();
+            foreach ($rest as $key => $val) {
+              $arr = array(
+                'id' => $val->id,
+                'name' => $val->name,
+                'phone' => $val->phone,
+                'email' => $val->email,
+                'logo_img' => $val->logo_img,
+                'address' => $val->address,
+                'latitude' => $val->latitude,
+                'longitude' => $val->longitude,
+                'rating' => number_format(@$val->avgRating[0]->avgRating, 1),
+              );
+
+              array_push($restArr, $arr);
+            }
+            //dd($restArr);
             $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->get();  
             $rating = reviews::whereIn('restaurant_id', $ids)->select('restaurant_id as id')->selectRaw('avg(rating) as rating')->get();   
-            return response()->json(['data' => $rest, 'rating' => $rating, 'menus' => $menu],200);
+            return response()->json(['data' => $restArr, 'menus' => $menu],200);
           }
 
 
