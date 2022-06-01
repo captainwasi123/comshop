@@ -56,9 +56,7 @@ class bookingController extends Controller
 
               array_push($restArr, $arr);
             }
-            //dd($restArr);
-            $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->get();  
-            $rating = reviews::whereIn('restaurant_id', $ids)->select('restaurant_id as id')->selectRaw('avg(rating) as rating')->get();   
+            $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->get();     
             return response()->json(['data' => $restArr, 'menus' => $menu],200);
           }
 
