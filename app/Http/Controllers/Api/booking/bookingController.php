@@ -52,6 +52,7 @@ class bookingController extends Controller
                 'latitude' => $val->latitude,
                 'longitude' => $val->longitude,
                 'rating' => number_format(@$val->avgRating[0]->avgRating, 1),
+                'reviews' => count($val->reviews),
               );
 
               array_push($restArr, $arr);
