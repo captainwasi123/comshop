@@ -114,19 +114,11 @@ class AuthController extends BaseController
 
     public function googleLogin($name, $email)
     {
-        return response()->json(['name' => $name, 'email' => $email]);
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required',
-        ]);
-   
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());       
-        }
-
-        $loginUser = User::where('email', $request->get('email'))->first();
+        //return response()->json(['name' => $name, 'email' => $email]);
+        
+        $loginUser = User::where('email', $email)->first();
         if(empty($loginUser->id)){ 
-            $user = User::newGoogleUser($request->all());
+            $user = User::newGoogleUser(array('name' => $name, 'email' => $email));
             Auth::login($user);
             $userr = Auth::user(); 
             $success['token'] =  $userr->createToken('MyApp')->plainTextToken; 
