@@ -36,7 +36,7 @@ use App\Http\Controllers\restaurant\orderController;
 //Buyer Authentication
     Route::post('UserRegister', [AuthController::class, 'UserRegister']);
     Route::post('login', [AuthController::class, 'login']);
-    Route::post('googleLogin', [AuthController::class, 'googleLogin']);
+    Route::get('googleLogin/{name}/{email}', [AuthController::class, 'googleLogin']);
 
 // User forgetPassword
         Route::post('forgetPassword',[AuthController::class, 'forgetPassword']);

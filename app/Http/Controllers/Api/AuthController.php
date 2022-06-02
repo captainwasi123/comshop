@@ -112,10 +112,9 @@ class AuthController extends BaseController
         } 
     } 
 
-    public function googleLogin(Request $request)
+    public function googleLogin($name, $email)
     {
-        $data = $request->all();
-        return response()->json(['data' => $data]);
+        return response()->json(['name' => $name, 'email' => $email]);
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
