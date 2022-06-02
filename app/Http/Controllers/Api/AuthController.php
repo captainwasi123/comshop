@@ -122,7 +122,7 @@ class AuthController extends BaseController
             Auth::login($user);
             $userr = Auth::user(); 
             $success['token'] =  $userr->createToken('MyApp')->plainTextToken;  
-            $success['user_id'] =  $user->id;
+            $success['user_id'] =  $userr->id;
             $success['name'] =  $userr->name;
             return $this->sendResponse($success, 'User login successfully.');
         }else{
@@ -130,7 +130,7 @@ class AuthController extends BaseController
                 Auth::login($loginUser);
                 $userr = Auth::user(); 
                 $success['token'] =  $userr->createToken('MyApp')->plainTextToken;  
-                $success['user_id'] =  $user->id;
+                $success['user_id'] =  $userr->id;
                 $success['name'] =  $userr->name;
                 return $this->sendResponse($success, 'User login successfully.');
             }else{
