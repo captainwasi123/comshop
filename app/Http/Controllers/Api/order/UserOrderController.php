@@ -164,6 +164,20 @@ class UserOrderController extends Controller
         return response()->json(['orders' => $orderShow]);
     }
 
+    public function activeOrders(){
+         $orderShow = order::where('user_id', Auth::user()->id)
+                        ->with('restaurant', 'details', 'details.menu')
+                        ->where('status', '2')
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+
+        if (!$orderShow) {
+            return response()->json([ 'message'=>  'Data not found'], 404);
+        }
+
+        return response()->json(['orders' => $orderShow]);
+    }
+
     /**
      * Update the specified resource in storage.
      *

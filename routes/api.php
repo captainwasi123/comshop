@@ -89,6 +89,7 @@ use App\Http\Controllers\restaurant\orderController;
             Route::get('destroy/{id}', [UserOrderController::class, 'destroy']);
             Route::get('search/{keyword}', [UserOrderController::class, 'search']);
             Route::get('allOrders', [UserOrderController::class, 'allOrders']);
+            Route::get('activeOrders', [UserOrderController::class, 'activeOrders']);
 
         // get payment Method
             Route::get('paymentType', [getCityController::class, 'paymentType']);
