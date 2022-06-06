@@ -8,6 +8,13 @@ use Auth;
 
 class adminController extends Controller
 {
+    function indexCheck(){
+        if(Auth::guard('admin')->check()){
+            return redirect(route('admin.restaurant'));
+        }else{
+            return redirect(route('admin.login'));
+        }
+    }
     function index()
     {
         return view('admin.index');

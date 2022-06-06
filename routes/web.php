@@ -85,6 +85,7 @@ Route::get('/', function () {
 	});
 
 // Admin
+    Route::get('/admin', 'adminController@indexCheck');
     Route::prefix('admin')->namespace('admin')->group(function(){
         Route::get('/login', 'adminController@login')->name('admin.login');
         Route::post('/login', 'adminController@loginSubmit')->name('admin.login');
@@ -92,7 +93,7 @@ Route::get('/', function () {
 
         //Middleware
             Route::middleware('adminAuth')->group(function(){
-                Route::get('/', 'adminController@index')->name('admin.restaurant');
+                Route::get('/dashboard', 'adminController@index')->name('admin.restaurant');
                     //Restaurants
                         Route::prefix('restaurants')->group(function(){
                             Route::get('/', 'restaurantController@index')->name('admin.restaurant');
