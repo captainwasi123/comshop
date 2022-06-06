@@ -93,7 +93,7 @@ Route::get('/', function () {
 
         //Middleware
             Route::middleware('adminAuth')->group(function(){
-                Route::get('/dashboard', 'adminController@index')->name('admin.restaurant');
+                Route::get('/dashboard', 'adminController@index')->name('admin.dashboard');
                     //Restaurants
                         Route::prefix('restaurants')->group(function(){
                             Route::get('/', 'restaurantController@index')->name('admin.restaurant');
