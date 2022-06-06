@@ -85,7 +85,7 @@ Route::get('/', function () {
 	});
 
 // Admin
-    Route::get('/admin', 'adminController@indexCheck');
+    Route::get('/admin', 'admin/adminController@indexCheck');
     Route::prefix('admin')->namespace('admin')->group(function(){
         Route::get('/login', 'adminController@login')->name('admin.login');
         Route::post('/login', 'adminController@loginSubmit')->name('admin.login');
