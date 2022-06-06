@@ -60,6 +60,7 @@ use App\Http\Controllers\restaurant\orderController;
         Route::post('changePassword', [profileController::class, 'changePassword']);
 
         Route::get('getRestuarant/{lat}/{lon}', [bookingController::class, 'getRestuarant']);
+        Route::get('getRestuarantCategory/{id}/{lat}/{lon}', [bookingController::class, 'getRestuarantCategory']);
         Route::get('searchRestMenu/{search}', [bookingController::class, 'searchRestMenu']);
 
         //menus with variant

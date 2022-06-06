@@ -64,6 +64,64 @@ class bookingController extends Controller
 
       }
 
+      function getRestuarantCategory($id,$lat,$lon){
+          if(empty($id) || empty($lat) || empty($lon)){
+            return response()->json(['message' => 'Invalid Parameters.']);
+          }
+          $avg=DB::table("tbl_restaurant_info")
+            ->select("tbl_restaurant_info.*",  DB::raw("COUNT(tbl_products_info.id) as menuItem"), DB::raw("6371 * acos(cos(radians(" . $lat . "))
+            * cos(radians(tbl_restaurant_info.latitude)) 
+            * cos(radians(tbl_restaurant_info.longitude) - radians(" . $lon . ")) 
+            + sin(radians(" .$lat. ")) 
+            * sin(radians(tbl_restaurant_info.latitude))) AS distance"))
+            ->leftJoin('tbl_products_info', 'tbl_products_info.restaurant_id', '=', 'tbl_restaurant_info.id')
+            ->having('distance', '<', 5)
+            ->groupBy('tbl_restaurant_info.id')
+            ->where([['tbl_restaurant_info.status','1'], ['tbl_restaurant_info.service_status', '1']])->get();
+          //dd($avg);
+          if($avg->isEmpty())
+          {               
+              return response()->json(['data' =>'Not Found'],404);
+          }else{
+            foreach ($avg as $key => $value) { 
+              if($value->menuItem > 0){                                        
+                $ids[] = $value->id; 
+              }              
+            } 
+            $restArr = array();
+            $rest = Restaurant::whereIn('id', $ids)
+                    ->whereHas('menus', function($q) use ($id){
+                      return $q->where('category_id', $id);
+                    })
+                    ->groupBy('id')
+                    ->get();
+            foreach ($rest as $key => $val) {
+              $arr = array(
+                'id' => $val->id,
+                'name' => $val->name,
+                'phone' => $val->phone,
+                'email' => $val->email,
+                'logo_img' => $val->logo_img,
+                'address' => $val->address,
+                'latitude' => $val->latitude,
+                'longitude' => $val->longitude,
+                'rating' => number_format(@$val->avgRating[0]->avgRating, 1),
+                'reviews' => count($val->reviews),
+              );
+
+              array_push($restArr, $arr);
+            }
+            $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->where('category_id', $id)->get();  
+
+            if(count($restArr) == 0){
+              return response()->json(['message' => 'No restaurant available.']);
+            }   
+            return response()->json(['data' => $restArr, 'menus' => $menu],200);
+          }
+
+
+      }
+
 
 
       function searchRestMenu($search){
