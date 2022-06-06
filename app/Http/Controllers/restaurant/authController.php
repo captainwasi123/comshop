@@ -11,6 +11,13 @@ use Hash;
 
 class authController extends Controller
 {
+    function indexCheck(){
+        if(Auth::guard('restaurant')->check()){
+            return redirect(route('restaurant.index'));
+        }else{
+            return redirect(route('restaurant.login'));
+        }
+    }
     function login(){
 
         return view('restaurant.login');
@@ -23,7 +30,7 @@ class authController extends Controller
 
         if(Auth::guard('restaurant')->attempt(['email' => $data['email'], 'password' => $data['password'], 'status' => 1])){
 
-    		return redirect('restaurant');
+    		return redirect('restaurant.index');
     	}else{
     		return redirect()->back()->with('error', 'Authentication Failed.');
     	}
@@ -31,13 +38,9 @@ class authController extends Controller
     }
 
     function logout(){
-    	if(Auth::guard('restaurant')->check()){
-    		Auth::guard('restaurant')->logout();
+		Auth::guard('restaurant')->logout();
 
-    		return redirect('/restaurant');
-    	}else{
-    		return redirect('/restaurant');
-    	}
+		return redirect(route('restaurant.login');
     }
 
   

@@ -38,6 +38,7 @@ Route::get('/', function () {
 
 
 // Restaurant
+    Route::get('/restaurant-panel', 'restaurant\authController@indexCheck');
 	Route::prefix('restaurant')->namespace('restaurant')->group(function(){
         Route::get('/login', 'authController@login')->name('restaurant.login');
         Route::post('/login', 'authController@loginSubmit');
@@ -45,7 +46,7 @@ Route::get('/', function () {
       
         //MiddleWare
             Route::middleware('restaurantAuth')->group(function(){
-                Route::get('/', 'mainController@index')->name('restaurant.index');
+                Route::get('/dashboard', 'mainController@index')->name('restaurant.index');
 
                 Route::prefix('menus')->group(function(){
                         Route::get('/', 'menuController@menu')->name('restaurant.menu');
