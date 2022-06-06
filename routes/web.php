@@ -15,7 +15,7 @@ use App\Events\getNotify;
 |
 */
 
-Route::get('/testNotification', function () {
+/*Route::get('/testNotification', function () {
     $options = array(
         'cluster' => env('PUSHER_APP_CLUSTER'),
         'useTLS' => true
@@ -30,7 +30,7 @@ Route::get('/testNotification', function () {
     $data = ['title' => 'New Order Received', 'orderId' => '1003', 'driverId' => '4'];
     $pusher->trigger('notify_channel_4', 'getNotify', $data);
     return 'Done';
-});
+});*/
 
 Route::get('/', function () {
     return view('welcome');
