@@ -10,7 +10,7 @@ class adminController extends Controller
 {
     function indexCheck(){
         if(Auth::guard('admin')->check()){
-            return redirect(route('admin.restaurant'));
+            return redirect(route('admin.dashboard'));
         }else{
             return redirect(route('admin.login'));
         }
