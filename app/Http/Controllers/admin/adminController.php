@@ -28,7 +28,7 @@ class adminController extends Controller
     function loginSubmit(Request $request){
         $data = $request->all();
         if(Auth::guard('admin')->attempt(['username' => $data['username'], 'password' => $data['password']])){
-            return redirect('/admin');
+            return redirect(route('admin.dashboard'));
         }else{
             return redirect()->back()->with('error', 'Username or Password is incorrect.');
         }
