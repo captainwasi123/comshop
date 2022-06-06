@@ -30,7 +30,7 @@ class authController extends Controller
 
         if(Auth::guard('restaurant')->attempt(['email' => $data['email'], 'password' => $data['password'], 'status' => 1])){
 
-    		return redirect('restaurant.index');
+    		return redirect(route('restaurant.index'));
     	}else{
     		return redirect()->back()->with('error', 'Authentication Failed.');
     	}
