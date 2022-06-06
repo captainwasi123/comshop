@@ -1,14 +1,14 @@
  <!-- sidebar part here -->
 <nav class="sidebar vertical-scroll ps-container ps-theme-default ps-active-y">
     <div class="logo d-flex justify-content-between">
-        <a href="{{URL::to('/restaurant')}}"><img src="{{URL::to('/public/restaurant/assets')}}/images/logo-black.png" width="100%" alt=""></a>
+        <a href="{{route('restaurant.index')}}"><img src="{{URL::to('/public/restaurant/assets')}}/images/logo-black.png" width="100%" alt=""></a>
         <div class="sidebar_close_icon d-lg-none">
             <i class="ti-close"></i>
         </div>
     </div>
     <ul id="sidebar_menu">
         <li class="mm-active">
-          <a href="{{URL::to('/restaurant')}}" aria-expanded="false">
+          <a href="{{route('restaurant.index')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/dashboard-icon.png" alt="">
             </div>
@@ -24,7 +24,7 @@
           </a>
         </li>
         <li class="mm-active">
-          <a href="{{URL::to('/restaurant/orders/order')}}" aria-expanded="false">
+          <a href="{{route('restaurant.order')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/order-icon.png" alt="">
             </div>
@@ -32,7 +32,7 @@
           </a>
         </li>
         <li class="mm-active">
-          <a href="{{URL::to('/restaurant/reviews/review')}}" aria-expanded="false">
+          <a href="{{route('restaurant.review')}}" aria-expanded="false">
             <div class="icon_menu">
                 <img src="{{URL::to('/public/restaurant/assets')}}/images/review-icon.png" alt="">
             </div>
