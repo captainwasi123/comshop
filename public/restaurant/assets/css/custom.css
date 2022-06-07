@@ -388,9 +388,9 @@ input:checked + .slider:before {
 }
 
 .profile_info img {
-    max-width: 40px;
-    max-height: 40px;
-    border-radius: 0px; 
+    width: 40px;
+    height: 40px;
+    border-radius: 10px; 
     cursor: pointer;
 }
 .header_iner.default_header {
