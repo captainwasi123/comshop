@@ -112,10 +112,7 @@ class bookingController extends Controller
               array_push($restArr, $arr);
             }
             $menu=menu::where('status','1')->whereIn('restaurant_id', $ids)->where('category_id', $id)->get();  
-
-            if(count($restArr) == 0){
-              return response()->json(['message' => 'No restaurant available.']);
-            }   
+  
             return response()->json(['data' => $restArr, 'menus' => $menu],200);
           }
 
