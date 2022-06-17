@@ -274,4 +274,10 @@ class driverprofileController extends Controller
     {
         //
     }
+
+    public function getStatus(){
+        $user = driver::find(Auth::guard('driver-api')->user()->id);
+
+        return response()->json(['status' => true, 'status' => $user->working_status], 200); 
+    }
 }

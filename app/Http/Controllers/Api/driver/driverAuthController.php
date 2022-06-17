@@ -35,7 +35,6 @@ class driverAuthController extends BaseController
             $success['token'] =  $user->createToken('MyApp')->plainTextToken; 
             $success['user_id'] =  $user->id;  
             $success['first_name'] =  $user->first_name; 
-            $success['working_status'] =  $user->working_status;
    
             return $this->sendResponse($success, 'Driver login successfully.');
         } 

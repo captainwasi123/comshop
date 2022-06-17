@@ -126,6 +126,7 @@ Route::post('DriverRegister', [driverprofileController::class, 'driverRegister']
 Route::middleware('auth:driver-api')->group( function () {
 
     Route::get('getCity', [getCityController::class, 'getCity']);
+    Route::get('getDriverStatus', [driverprofileController::class, 'getStatus']);
 
  
 
