@@ -149,6 +149,9 @@ class driverAuthController extends BaseController
 
 
     public function logout(){     
+        $user = driver::find(Auth::guard('driver-api')->user()->id);
+        $user->working_status = '0';
+        $user->save();
         Auth::guard('driver-api')->user()->tokens->each(function($token, $key) {
             $token->delete();
              });
