@@ -277,7 +277,7 @@ class driverprofileController extends Controller
 
     public function getStatus(){
         $user = driver::find(Auth::guard('driver-api')->user()->id);
-
-        return response()->json(['status' => true, 'status' => $user->working_status], 200); 
+        $message = $user->working_status == 1 ? 'Online' : 'Offline';
+        return response()->json(['status' => true, 'status' => $user->working_status, 'message' => $message], 200); 
     }
 }
