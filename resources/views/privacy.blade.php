@@ -30,7 +30,7 @@
          <div class="container">
             <div class="header-row">
                <div class="logo">
-                  <a href=""> <img src="{{URL::to('public/website')}}/images/logo.png"> </a>
+                  <a href="{{URL::to('/')}}"> <img src="{{URL::to('public/website')}}/images/logo.png"> </a>
                </div>
                <button class="navbar-handler">
                <img src="{{URL::to('public/website')}}/images/hamburger.png">  
