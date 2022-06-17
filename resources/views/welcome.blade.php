@@ -36,21 +36,17 @@
                <img src="{{URL::to('public/website')}}/images/hamburger.png">  
                </button>
                <div class="navbar-custom">
-                  <div class="menu-item">
-                     <a href=""> Home </a>
-                  </div>
-                  <div class="menu-item">
-                     <a href=""> Creative Solutions </a>
-                  </div>
-                  <div class="menu-item">
-                     <a href=""> Recipe Development </a>
-                  </div>
-                  <div class="menu-item">
-                     <a href=""> Contact Us </a>
-                  </div>
-                  <div class="menu-item">
-                     <a href=""> Delivery Services </a>
-                  </div>
+                  <nav id="desktop-nav">
+                     <ul>
+                        <li class="active"><a href="#home-sec" class="page-scroll">Home</a></li>
+                        <li><a href="#delivery-services-sec" class="page-scroll">Delivery Services</a></li>
+                        <li><a href="#about-sec" class="page-scroll">About Us</a></li>
+                        <li><a href="#gallery-sec" class="page-scroll">Gallery</a></li>
+                        <li><a href="#recipe-development" class="page-scroll">Recipe Development</a></li>
+                        <li><a href="#creative-solutions-sec" class="page-scroll">Creative Solutions</a></li>
+                        <li><a href="#contact-us-sec" class="page-scroll">Contact Us</a></li>
+                     </ul>
+                  </nav>
                </div>
             </div>
          </div>

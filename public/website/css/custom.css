@@ -669,13 +669,13 @@ header {
     flex-flow: row;
 }
 
-.menu-item a {
+#desktop-nav ul li a {
     color: #585757;
     font-weight: 500;
     letter-spacing: 0.5px;
     font-size: 14px;
 }
-.menu-item a:hover {
+#desktop-nav ul li a:hover {
     color:#f3ec1a;
 }
 .navbar-handler {
@@ -866,6 +866,103 @@ section.banner-sec {
     max-width: 360px;
 }
 
+
+
+/*Header Fixed*/
+
+header , .logo img {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.header-fixed header {
+    padding: 8px 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    background: white;
+    box-shadow: 1px 1px 9px #dfdfdf;
+}
+
+
+.header-fixed .logo img {
+    width: 90px;
+}
+
+
+
+.gallery-block .card {
+    color: transparent;
+    border-radius: 0px;
+    background: #ffffff;
+    box-shadow: none;
+    border: none;
+    display: block;
+}
+.gallery-block .card-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 0px;
+    background: #ffffff;
+
+}
+.gallery-block .card-image img {
+    display: block;
+ 
+}
+
+ 
+ 
+
+nav#desktop-nav ul {
+    padding: 0px;
+    display: flex;
+    list-style: none;
+    grid-gap: 28px;
+    margin: 0px;
+}
+
+
+#desktop-nav .active a {
+    color: #f3ec1a !important;
+}
+.gallery-row .card {
+    border: none;
+}
+
+
+.legal-content h4 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    margin-bottom: 15px;
+}
+.legal-content p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+.legal-content b {
+    font-weight: 600;
+}
+
+.custom-list4 li {
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 8px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+.legal-content h5 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -1264,6 +1361,10 @@ section.banner-sec {
 .banner-text h4 br {
     display: none;
 }
+nav#desktop-nav ul {
+    flex-flow: column;
+    grid-gap: 17px;
+}
 }
 
 
@@ -1553,4 +1654,20 @@ section.banner-sec {
 .banner-text h4 br {
     display: none;
 }
+
+.gallery-block {
+    column-gap: 10px;
+    column-count: 2;
+}
+nav#desktop-nav ul {
+    flex-flow: column;
+    grid-gap: 17px;
+}
+
+.gallery-row {
+    padding: 0px 20px;
+    max-width: 400px;
+    margin: auto;
+}
+
 }
